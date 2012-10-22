@@ -11,4 +11,5 @@
 @interface PhotoUploader : NSObject
 
 - (void)uploadPhoto:(UIImage *)image;
+- (UIImage *)centerAndResizeImage:(UIImage *)theImage toBounds:(CGRect)bounds;
 @end

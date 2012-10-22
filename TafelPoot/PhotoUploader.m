@@ -17,16 +17,21 @@
     
     //Do get the image which provided
 
-    if()
     
-    //TODO: Resize the image
+    //Check if there is an image
+    CGImageRef cgref = [image CGImage];
+    CIImage *cim = [image CIImage];
     
-    //Set the image of the imageview
-    //imageView1.image = image;
+    if (cim == nil && cgref == NULL)
+    {
+        NSLog(@"ERROR-----------");
+        NSLog(@"PhotoUploader - No image data received");
+        
+    }else{
     
-    //Remove the foto choser
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    
+    //Crop the image
+    UIImage *croppedImage = [self centerAndResizeImage:image toBounds:CGRectMake(0, 0, 280, 280)];
+        
     #define DataDownloaderRunMode @"myapp.run_mode"
 	NSString *urlString = @"http://klanten.deictprins.nl/school/postImage.php";
     NSURL *url = [[NSURL alloc] initWithString:urlString];
@@ -49,7 +54,7 @@
     
     [body appendData:[@"Content-Disposition: form-data; name='attachment[file]';filename='image.png'\r\n"dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    NSData *imageData = UIImageJPEGRepresentation(croppedImage, 1.0);
     
     [body appendData:[[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -63,7 +68,18 @@
     // make the connection to the web
     
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
+}
+
+- (UIImage *)centerAndResizeImage:(UIImage *)theImage toBounds:(CGRect)bounds
+{
+    CGImageRef imageRef = CGImageCreateWithImageInRect(theImage.CGImage, bounds);
     
+    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    
+    return croppedImage;
 }
 
 //The posting is password protected
@@ -83,6 +99,14 @@
     NSString *returnString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"%@",returnString);
     
+}
+
+-(void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
+{
+    // Handle the error properly
+    
+    NSLog(@"ERROR -------");
+    NSLog(@"Error bij het uploaden van het bestand");   
 }
 
 

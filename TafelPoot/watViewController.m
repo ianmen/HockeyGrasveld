@@ -40,9 +40,11 @@
     
     PhotoUploader *up = [[PhotoUploader alloc] init];
     
-    UIImage *img = [UIImage imageWithContentsOfFile:@"test.jpeg"];
+    NSURL *url = [NSURL URLWithString:@"http://www.sijmen.nl/public/Photo/306/image/kleine_mantelmeeuw7900.jpg"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:data];
     
-    [up uploadPhoto:img];
+    [up uploadPhoto:image];
     
 }
 @end
