@@ -13,6 +13,8 @@
     NSURLConnection *connection;
 }
 
+@synthesize url;
+
 - (void)uploadPhoto:(UIImage *)image{
     
     //Do get the image which provided
@@ -34,10 +36,10 @@
         
     #define DataDownloaderRunMode @"myapp.run_mode"
 	NSString *urlString = @"http://klanten.deictprins.nl/school/postImage.php";
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSURL *url2 = [[NSURL alloc] initWithString:urlString];
     
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url2
                                                                 cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                             timeoutInterval:60];
     
@@ -97,16 +99,26 @@
 {
     
     NSString *returnString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",returnString);
     
+    //Set the url property
+    self.url = [NSURL URLWithString:returnString];
+    
+    //Notify the caller the uploading is done
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"photoUploadDone" object:nil];
+    
+        
 }
 
 -(void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
 {
     // Handle the error properly
     
-    NSLog(@"ERROR -------");
-    NSLog(@"Error bij het uploaden van het bestand");   
+    NSLog(@"=== ERROR ===");
+    NSLog(@"Error bij het uploaden van het bestand");
+    
+    //Notify the caller there was an error
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"photoUploadError" object:nil];
+    
 }
 
 

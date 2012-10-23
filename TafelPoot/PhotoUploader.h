@@ -12,4 +12,6 @@
 
 - (void)uploadPhoto:(UIImage *)image;
 - (UIImage *)centerAndResizeImage:(UIImage *)theImage toBounds:(CGRect)bounds;
+
+@property(nonatomic,strong) NSURL *url;
 @end
