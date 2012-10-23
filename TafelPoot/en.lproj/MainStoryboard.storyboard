@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="926" y="-1059"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Details-->
         <scene sceneID="qHQ-Rg-JDc">
             <objects>
-                <viewController id="F6t-pD-eeP" sceneMemberID="viewController">
+                <viewController title="Details" id="F6t-pD-eeP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ekc-93-dDf">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,16 +63,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="UZy-DJ-Ym0"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="8en-G0-SZP"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -83,25 +77,95 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="80" id="20g-VU-KvN"/>
                             <constraint firstAttribute="bottom" secondItem="o74-vQ-aH1" secondAttribute="bottom" constant="134" id="7cE-Ps-F6J"/>
-                            <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Coi-7c-9IC"/>
-                            <constraint firstItem="o74-vQ-aH1" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="Fk7-94-Jvu"/>
-                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="93" id="Hhc-Tx-6bF"/>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="sMb-t2-y27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Hng-xB-Ni2"/>
-                            <constraint firstItem="o74-vQ-aH1" firstAttribute="trailing" secondItem="sn2-AT-cIO" secondAttribute="trailing" type="default" id="VL4-58-77a"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="o74-vQ-aH1" secondAttribute="leading" type="default" id="IFU-pT-RK1"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="trailing" secondItem="sn2-AT-cIO" secondAttribute="trailing" type="default" id="LhT-Rb-cRo"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="leading" type="default" id="QwN-CG-RqM"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UYG-gg-8ah"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="trailing" secondItem="o74-vQ-aH1" secondAttribute="trailing" type="default" id="Web-HP-00G"/>
                             <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="99" id="ZqA-sg-tEW"/>
-                            <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="79" id="yQl-YP-bS6"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="trailing" secondItem="RtO-JY-cTI" secondAttribute="trailing" type="default" id="aF5-qh-qP7"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="leading" type="default" id="fm8-Tk-aAP"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="84" id="kBS-A0-0L9"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="sMb-t2-y27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pMP-iZ-Bda"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Gdg-Rm-D5R">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="v9u-97-B86"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="yrG-In-Kkg"/>
+                    <navigationItem key="navigationItem" title="Activiteit" id="Gdg-Rm-D5R">
+                        <barButtonItem key="leftBarButtonItem" title="Annuleren" id="v9u-97-B86">
+                            <connections>
+                                <segue destination="Tw3-8c-Qr1" kind="modal" id="Kir-cR-KrJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="yrG-In-Kkg">
+                            <connections>
+                                <segue destination="pd6-fD-fvD" kind="push" id="VHx-ZB-wPy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="pd6-fD-fvD" kind="push" id="Erl-aD-hl6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zK-Y8-2jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1340" y="-1059"/>
+        </scene>
+        <!--View Controller - Adress-->
+        <scene sceneID="imq-zY-XvZ">
+            <objects>
+                <viewController title="Adress" id="pd6-fD-fvD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tTR-la-WDG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-04-0MH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="7SR-iV-sap"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sg6-04-0MH" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="30" id="DNb-we-JE1"/>
+                            <constraint firstItem="Sg6-04-0MH" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="36" id="oQR-We-Rt0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adres" id="AA9-6W-pAP">
+                        <barButtonItem key="leftBarButtonItem" title="Terug" id="OQ0-7k-Clh">
+                            <connections>
+                                <segue destination="F6t-pD-eeP" kind="push" id="6cK-jp-Qjh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="dNB-G7-4u4">
+                            <connections>
+                                <segue destination="WmE-Pv-lat" kind="push" id="7ty-wx-myX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="-1066"/>
+        </scene>
+        <!--View Controller - Waar-->
+        <scene sceneID="Awk-HQ-QBl">
+            <objects>
+                <viewController id="WmE-Pv-lat" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6A-N2-5KK">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Waar" id="vIU-e8-8oE">
+                        <barButtonItem key="leftBarButtonItem" title="Terug" id="R81-76-XgY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Klaar" id="Lfe-aZ-0PX"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYb-iE-Ixl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2275" y="-1087"/>
         </scene>
         <!--Wat View Controller - Item 1-->
         <scene sceneID="YSJ-Tz-SHe">
@@ -176,4 +240,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="VHx-ZB-wPy"/>
+        <segue reference="6cK-jp-Qjh"/>
+    </inferredMetricsTieBreakers>
 </document>
