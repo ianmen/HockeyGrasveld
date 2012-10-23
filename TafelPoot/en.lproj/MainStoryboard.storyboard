@@ -140,7 +140,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="dNB-G7-4u4">
                             <connections>
-                                <segue destination="WmE-Pv-lat" kind="push" id="7ty-wx-myX"/>
+                                <segue destination="9SU-AF-lJs" kind="push" id="tCs-I8-nKM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -149,7 +149,83 @@
             </objects>
             <point key="canvasLocation" x="1785" y="-1066"/>
         </scene>
-        <!--View Controller - Waar-->
+        <!--View Controller - Wanneer-->
+        <scene sceneID="Y4C-Kd-eGO">
+            <objects>
+                <viewController id="9SU-AF-lJs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Sa-Sb-2t0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Begintijd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-CU-cW4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="xl2-6O-Ldu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eindtijd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6D-kf-C5Q">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Bp9-X4-TTN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dug-6z-5J3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="sy2-Jk-t9z"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="372679738.09669799">
+                                    <!--2012-10-23 10:08:58 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="trailing" secondItem="8Sa-Sb-2t0" secondAttribute="trailing" type="default" id="29w-bE-PKP"/>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" type="default" id="CEE-3h-lcs"/>
+                            <constraint firstAttribute="trailing" secondItem="Z6D-kf-C5Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KX5-bt-s2b"/>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="bottom" secondItem="8Sa-Sb-2t0" secondAttribute="bottom" type="default" id="W25-4I-1Bv"/>
+                            <constraint firstItem="Z6D-kf-C5Q" firstAttribute="baseline" secondItem="Ka9-CU-cW4" secondAttribute="baseline" type="default" id="gRU-PJ-AKC"/>
+                            <constraint firstItem="Ka9-CU-cW4" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" constant="25" id="hjS-0q-rMb"/>
+                            <constraint firstItem="Ka9-CU-cW4" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="46" id="z7x-mw-moq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wanneer" id="JjE-9z-t86">
+                        <barButtonItem key="leftBarButtonItem" title="Terug" id="R2U-YS-vCM"/>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="CXS-54-Rr2">
+                            <connections>
+                                <segue destination="WmE-Pv-lat" kind="push" id="7DO-4G-tsa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AhF-4h-jkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229" y="-1104"/>
+        </scene>
+        <!--View Controller - Wie-->
         <scene sceneID="Awk-HQ-QBl">
             <objects>
                 <viewController id="WmE-Pv-lat" sceneMemberID="viewController">
@@ -158,14 +234,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Waar" id="vIU-e8-8oE">
+                    <navigationItem key="navigationItem" title="Wie" id="vIU-e8-8oE">
                         <barButtonItem key="leftBarButtonItem" title="Terug" id="R81-76-XgY"/>
                         <barButtonItem key="rightBarButtonItem" title="Klaar" id="Lfe-aZ-0PX"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYb-iE-Ixl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="-1087"/>
+            <point key="canvasLocation" x="2663" y="-1141"/>
         </scene>
         <!--Wat View Controller - Item 1-->
         <scene sceneID="YSJ-Tz-SHe">
@@ -241,7 +317,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="FYt-HS-10K"/>
         <segue reference="VHx-ZB-wPy"/>
-        <segue reference="6cK-jp-Qjh"/>
     </inferredMetricsTieBreakers>
 </document>
