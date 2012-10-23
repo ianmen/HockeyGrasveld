@@ -58,7 +58,7 @@
     
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     
-    [body appendData:[[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
     
     [body appendData:[NSData dataWithData:imageData]];

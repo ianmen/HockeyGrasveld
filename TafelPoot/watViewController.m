@@ -76,6 +76,7 @@
 	hud.labelText = @"Voltooid";
     
     //Save the url of the image
+    //NSLog(@"%@",up.url);
 
     //Remove the spinner after a  delay
     [hud hide:YES afterDelay:2];
