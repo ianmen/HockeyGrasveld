@@ -10,4 +10,6 @@
 
 @interface ViewControllerActivityWhere : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *address;
+
 @end

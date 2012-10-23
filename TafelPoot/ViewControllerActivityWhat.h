@@ -10,4 +10,9 @@
 
 @interface ViewControllerActivityWhat : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *name;
+@property (strong, nonatomic) IBOutlet UITextField *category;
+@property (strong, nonatomic) IBOutlet UITextField *tags;
+@property (strong, nonatomic) IBOutlet UITextField *description;
+
 @end

@@ -10,4 +10,7 @@
 
 @interface ViewControllerActivityWhen : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *startTime;
+@property (strong, nonatomic) IBOutlet UITextField *endTime;
+
 @end

@@ -103,6 +103,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="category" destination="sMb-t2-y27" id="84V-uh-AxP"/>
+                        <outlet property="description" destination="o74-vQ-aH1" id="gsr-yK-wdd"/>
+                        <outlet property="name" destination="sn2-AT-cIO" id="caG-0H-7Tm"/>
+                        <outlet property="tags" destination="RtO-JY-cTI" id="lpv-rW-ruu"/>
                         <segue destination="pd6-fD-fvD" kind="push" id="Erl-aD-hl6"/>
                     </connections>
                 </viewController>
@@ -144,6 +148,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="address" destination="Sg6-04-0MH" id="oZ6-rU-gSs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,7 +166,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Begintijd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-CU-cW4">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="xl2-6O-Ldu"/>
+                                    <constraint firstAttribute="width" constant="94" id="eAw-Tx-IAj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -203,7 +210,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dug-6z-5J3" firstAttribute="trailing" secondItem="8Sa-Sb-2t0" secondAttribute="trailing" type="default" id="29w-bE-PKP"/>
                             <constraint firstItem="dug-6z-5J3" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" type="default" id="CEE-3h-lcs"/>
                             <constraint firstAttribute="trailing" secondItem="Z6D-kf-C5Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KX5-bt-s2b"/>
                             <constraint firstItem="dug-6z-5J3" firstAttribute="bottom" secondItem="8Sa-Sb-2t0" secondAttribute="bottom" type="default" id="W25-4I-1Bv"/>
@@ -220,6 +226,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="endTime" destination="Z6D-kf-C5Q" id="U3P-uA-Flf"/>
+                        <outlet property="startTime" destination="Ka9-CU-cW4" id="JG0-in-oNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhF-4h-jkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -306,12 +316,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="ViewControllerActivityWhat" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
+            <relationships>
+                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="ViewControllerActivityWhen" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
+            <relationships>
+                <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="ViewControllerActivityWhere" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
+            <relationships>
+                <relationship kind="outlet" name="address" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="ViewControllerActivityWho" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
