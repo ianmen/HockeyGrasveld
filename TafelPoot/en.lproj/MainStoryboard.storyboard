@@ -34,20 +34,228 @@
             </objects>
             <point key="canvasLocation" x="926" y="288"/>
         </scene>
-        <!--View Controller - Item-->
-        <scene sceneID="0kH-bd-OPF">
+        <!--Navigation Controller - AddActivity-->
+        <scene sceneID="sKT-vw-JiM">
             <objects>
-                <viewController id="e7a-2g-oWM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hax-jl-smB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                <navigationController title="AddActivity" definesPresentationContext="YES" id="oVq-kz-Xoi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Toevoegen" id="AvT-Eh-Epi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Xh-do-jw7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="F6t-pD-eeP" kind="relationship" relationship="rootViewController" id="FYt-HS-10K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXJ-dH-eHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="-1059"/>
+        </scene>
+        <!--View Controller Activity What - Details-->
+        <scene sceneID="qHQ-Rg-JDc">
+            <objects>
+                <viewController title="Details" id="F6t-pD-eeP" customClass="ViewControllerActivityWhat" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ekc-93-dDf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschrijving" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o74-vQ-aH1">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="o74-vQ-aH1" secondAttribute="leading" type="default" id="IFU-pT-RK1"/>
+                            <constraint firstItem="o74-vQ-aH1" firstAttribute="top" secondItem="RtO-JY-cTI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Igp-vi-fMb"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="trailing" secondItem="sn2-AT-cIO" secondAttribute="trailing" type="default" id="LhT-Rb-cRo"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="leading" type="default" id="QwN-CG-RqM"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UYG-gg-8ah"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="trailing" secondItem="o74-vQ-aH1" secondAttribute="trailing" type="default" id="Web-HP-00G"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="99" id="ZqA-sg-tEW"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="trailing" secondItem="RtO-JY-cTI" secondAttribute="trailing" type="default" id="aF5-qh-qP7"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="leading" type="default" id="fm8-Tk-aAP"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="84" id="kBS-A0-0L9"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="sMb-t2-y27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pMP-iZ-Bda"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activiteit" id="Gdg-Rm-D5R">
+                        <barButtonItem key="leftBarButtonItem" title="Annuleren" id="v9u-97-B86">
+                            <connections>
+                                <segue destination="Tw3-8c-Qr1" kind="modal" id="Kir-cR-KrJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="yrG-In-Kkg">
+                            <connections>
+                                <segue destination="pd6-fD-fvD" kind="push" id="VHx-ZB-wPy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="category" destination="sMb-t2-y27" id="84V-uh-AxP"/>
+                        <outlet property="description" destination="o74-vQ-aH1" id="gsr-yK-wdd"/>
+                        <outlet property="name" destination="sn2-AT-cIO" id="caG-0H-7Tm"/>
+                        <outlet property="tags" destination="RtO-JY-cTI" id="lpv-rW-ruu"/>
+                        <segue destination="pd6-fD-fvD" kind="push" id="Erl-aD-hl6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zK-Y8-2jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="-1059"/>
+        </scene>
+        <!--View Controller Activity Where - Adress-->
+        <scene sceneID="imq-zY-XvZ">
+            <objects>
+                <viewController title="Adress" id="pd6-fD-fvD" customClass="ViewControllerActivityWhere" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tTR-la-WDG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-04-0MH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="7SR-iV-sap"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sg6-04-0MH" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="30" id="DNb-we-JE1"/>
+                            <constraint firstItem="Sg6-04-0MH" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="36" id="oQR-We-Rt0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adres" id="AA9-6W-pAP">
+                        <barButtonItem key="leftBarButtonItem" title="Terug" id="OQ0-7k-Clh">
+                            <connections>
+                                <segue destination="F6t-pD-eeP" kind="push" id="6cK-jp-Qjh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="dNB-G7-4u4">
+                            <connections>
+                                <segue destination="9SU-AF-lJs" kind="push" id="tCs-I8-nKM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="address" destination="Sg6-04-0MH" id="oZ6-rU-gSs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="-1066"/>
+        </scene>
+        <!--View Controller Activity When - Wanneer-->
+        <scene sceneID="Y4C-Kd-eGO">
+            <objects>
+                <viewController id="9SU-AF-lJs" customClass="ViewControllerActivityWhen" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Sa-Sb-2t0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Begintijd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-CU-cW4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="eAw-Tx-IAj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eindtijd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6D-kf-C5Q">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Bp9-X4-TTN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dug-6z-5J3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="sy2-Jk-t9z"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="372679738.09669799">
+                                    <!--2012-10-23 10:08:58 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" type="default" id="CEE-3h-lcs"/>
+                            <constraint firstAttribute="trailing" secondItem="Z6D-kf-C5Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KX5-bt-s2b"/>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="bottom" secondItem="8Sa-Sb-2t0" secondAttribute="bottom" type="default" id="W25-4I-1Bv"/>
+                            <constraint firstItem="Z6D-kf-C5Q" firstAttribute="baseline" secondItem="Ka9-CU-cW4" secondAttribute="baseline" type="default" id="gRU-PJ-AKC"/>
+                            <constraint firstItem="Ka9-CU-cW4" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" constant="25" id="hjS-0q-rMb"/>
+                            <constraint firstItem="Ka9-CU-cW4" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="46" id="z7x-mw-moq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wanneer" id="JjE-9z-t86">
+                        <barButtonItem key="leftBarButtonItem" title="Terug" id="R2U-YS-vCM"/>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="CXS-54-Rr2">
+                            <connections>
+                                <segue destination="WmE-Pv-lat" kind="push" id="7DO-4G-tsa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="endTime" destination="Z6D-kf-C5Q" id="U3P-uA-Flf"/>
+                        <outlet property="startTime" destination="Ka9-CU-cW4" id="JG0-in-oNg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AhF-4h-jkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229" y="-1104"/>
+        </scene>
+        <!--View Controller Activity Who - Wie-->
+        <scene sceneID="Awk-HQ-QBl">
+            <objects>
+                <viewController id="WmE-Pv-lat" customClass="ViewControllerActivityWho" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6A-N2-5KK">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="b7D-3t-BD5"/>
+                    <navigationItem key="navigationItem" title="Wie" id="vIU-e8-8oE">
+                        <barButtonItem key="leftBarButtonItem" title="Terug" id="R81-76-XgY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Klaar" id="Lfe-aZ-0PX">
+                            <connections>
+                                <action selector="finished:" destination="WmE-Pv-lat" id="J7T-aK-Yug"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sdV-Ij-uTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYb-iE-Ixl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="-1023"/>
+            <point key="canvasLocation" x="2663" y="-1141"/>
         </scene>
         <!--Wat View Controller - Item 1-->
         <scene sceneID="YSJ-Tz-SHe">
@@ -97,8 +305,8 @@
                     <connections>
                         <segue destination="nlQ-bi-eHf" kind="relationship" relationship="viewControllers" id="hhq-UA-uNg"/>
                         <segue destination="Mtm-3t-PSv" kind="relationship" relationship="viewControllers" id="OUy-Ir-lt3"/>
-                        <segue destination="e7a-2g-oWM" kind="relationship" relationship="viewControllers" id="Fbv-Wp-YJ2"/>
                         <segue destination="aKz-Bf-QHr" kind="relationship" relationship="viewControllers" id="TvC-3v-w3G"/>
+                        <segue destination="oVq-kz-Xoi" kind="relationship" relationship="viewControllers" id="FXb-Nw-I4Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Slx-0R-dgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,9 +314,52 @@
             <point key="canvasLocation" x="290" y="-286"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
+            <relationships>
+                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
+            <relationships>
+                <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
+            <relationships>
+                <relationship kind="outlet" name="address" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWho" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
+            <relationships>
+                <relationship kind="action" name="finished:"/>
+            </relationships>
+        </class>
+        <class className="watViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/watViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="testImage:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="6cK-jp-Qjh"/>
+        <segue reference="VHx-ZB-wPy"/>
+    </inferredMetricsTieBreakers>
 </document>

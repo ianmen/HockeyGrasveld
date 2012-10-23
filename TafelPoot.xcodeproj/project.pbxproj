@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
+		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
+		00E3D8FE1636A89600F46A68 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8FD1636A89600F46A68 /* Activity.m */; };
+		00E3D9011636A8A800F46A68 /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9001636A8A800F46A68 /* Activities.m */; };
+		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
+		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
 		606B588816354A8300574894 /* PhotoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B588716354A8300574894 /* PhotoUploader.m */; };
 		6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073C0D81636A36800BB9363 /* MBProgressHUD.m */; };
 		6073C0E21636A82700BB9363 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073C0E01636A82700BB9363 /* 37x-Checkmark.png */; };
@@ -34,6 +40,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E3D8EB1636A7EA00F46A68 /* ViewControllerActivityWhere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWhere.h; sourceTree = "<group>"; };
+		00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhere.m; sourceTree = "<group>"; };
+		00E3D8EE1636A80E00F46A68 /* ViewControllerActivityWhen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWhen.h; sourceTree = "<group>"; };
+		00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhen.m; sourceTree = "<group>"; };
+		00E3D8FC1636A89600F46A68 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		00E3D8FD1636A89600F46A68 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		00E3D8FF1636A8A800F46A68 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
+		00E3D9001636A8A800F46A68 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
+		00E3D9021636AA1C00F46A68 /* ViewControllerActivityWhat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWhat.h; sourceTree = "<group>"; };
+		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
+		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
+		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
 		606B588616354A8300574894 /* PhotoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoUploader.h; sourceTree = "<group>"; };
 		606B588716354A8300574894 /* PhotoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoUploader.m; sourceTree = "<group>"; };
 		6073C0D71636A36800BB9363 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -124,6 +142,8 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
+				00E3D8FB1636A87E00F46A68 /* Utils */,
+				00E3D8FA1636A86900F46A68 /* Models */,
 				99DBD6F11635573900727B94 /* Graphics */,
 				609C4DE816354790006017DE /* AppDelegate.h */,
 				609C4DE916354790006017DE /* AppDelegate.m */,
@@ -133,6 +153,14 @@
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
 				609C4DE016354790006017DE /* Supporting Files */,
+				00E3D8EB1636A7EA00F46A68 /* ViewControllerActivityWhere.h */,
+				00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */,
+				00E3D8EE1636A80E00F46A68 /* ViewControllerActivityWhen.h */,
+				00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */,
+				00E3D9021636AA1C00F46A68 /* ViewControllerActivityWhat.h */,
+				00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */,
+				00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */,
+				00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */,
 			);
 			path = TafelPoot;
 			sourceTree = "<group>";
