@@ -19,6 +19,7 @@
     
     //Do get the image which provided
 
+    //if()
     
     //Check if there is an image
     CGImageRef cgref = [image CGImage];
