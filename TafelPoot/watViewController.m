@@ -40,7 +40,7 @@
     
     PhotoUploader *up = [[PhotoUploader alloc] init];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.sijmen.nl/public/Photo/306/image/kleine_mantelmeeuw7900.jpg"];
+    NSURL *url = [NSURL URLWithString:@"http://aeroclubsalland.nl/_img/nieuws/2008/mooi-weer.jpg"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     

@@ -30,7 +30,7 @@
     }else{
     
     //Crop the image
-    UIImage *croppedImage = [self centerAndResizeImage:image toBounds:CGRectMake(0, 0, 280, 280)];
+   // UIImage *croppedImage = [self centerAndResizeImage:image toBounds:CGRectMake(0, 0, 280, 280)];
         
     #define DataDownloaderRunMode @"myapp.run_mode"
 	NSString *urlString = @"http://klanten.deictprins.nl/school/postImage.php";
@@ -54,7 +54,7 @@
     
     [body appendData:[@"Content-Disposition: form-data; name='attachment[file]';filename='image.png'\r\n"dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSData *imageData = UIImageJPEGRepresentation(croppedImage, 1.0);
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     
     [body appendData:[[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     
