@@ -10,4 +10,6 @@
 
 @interface ViewControllerActivityWho : UIViewController
 
+- (IBAction)finished:(id)sender;
+
 @end
