@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="926" y="-1059"/>
         </scene>
-        <!--View Controller - Details-->
+        <!--View Controller Activity What - Details-->
         <scene sceneID="qHQ-Rg-JDc">
             <objects>
-                <viewController title="Details" id="F6t-pD-eeP" sceneMemberID="viewController">
+                <viewController title="Details" id="F6t-pD-eeP" customClass="ViewControllerActivityWhat" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ekc-93-dDf">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1340" y="-1059"/>
         </scene>
-        <!--View Controller - Adress-->
+        <!--View Controller Activity Where - Adress-->
         <scene sceneID="imq-zY-XvZ">
             <objects>
-                <viewController title="Adress" id="pd6-fD-fvD" sceneMemberID="viewController">
+                <viewController title="Adress" id="pd6-fD-fvD" customClass="ViewControllerActivityWhere" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tTR-la-WDG">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1785" y="-1066"/>
         </scene>
-        <!--View Controller - Wanneer-->
+        <!--View Controller Activity When - Wanneer-->
         <scene sceneID="Y4C-Kd-eGO">
             <objects>
-                <viewController id="9SU-AF-lJs" sceneMemberID="viewController">
+                <viewController id="9SU-AF-lJs" customClass="ViewControllerActivityWhen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Sa-Sb-2t0">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -225,10 +225,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2229" y="-1104"/>
         </scene>
-        <!--View Controller - Wie-->
+        <!--View Controller Activity Who - Wie-->
         <scene sceneID="Awk-HQ-QBl">
             <objects>
-                <viewController id="WmE-Pv-lat" sceneMemberID="viewController">
+                <viewController id="WmE-Pv-lat" customClass="ViewControllerActivityWho" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6A-N2-5KK">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -304,6 +304,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
+        </class>
+        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
+        </class>
+        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
+        </class>
+        <class className="ViewControllerActivityWho" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
+        </class>
         <class className="watViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/watViewController.h"/>
             <relationships>
@@ -317,7 +329,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="FYt-HS-10K"/>
+        <segue reference="6cK-jp-Qjh"/>
         <segue reference="VHx-ZB-wPy"/>
     </inferredMetricsTieBreakers>
 </document>
