@@ -10,4 +10,16 @@
 
 @implementation Activity
 
+@synthesize activityName;
+@synthesize imagePath;
+@synthesize tags;
+@synthesize address;
+@synthesize latitude;
+@synthesize longitude;
+@synthesize startTime;
+@synthesize endTime;
+@synthesize startDate;
+@synthesize activityDescription;
+@synthesize locationDescription;
+
 @end

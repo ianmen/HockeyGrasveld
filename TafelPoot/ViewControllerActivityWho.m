@@ -7,9 +7,12 @@
 //
 
 #import "ViewControllerActivityWho.h"
+#import "Activity.h"
 
 @interface ViewControllerActivityWho ()
-
+{
+    Activity *activity;
+}
 @end
 
 @implementation ViewControllerActivityWho
@@ -33,6 +36,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setActivity:(Activity*)currentActivity
+{
+    activity = currentActivity;
 }
 
 - (IBAction)finished:(id)sender {

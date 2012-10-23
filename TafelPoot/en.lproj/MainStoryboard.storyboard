@@ -98,7 +98,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="yrG-In-Kkg">
                             <connections>
-                                <segue destination="pd6-fD-fvD" kind="push" id="VHx-ZB-wPy"/>
+                                <segue destination="pd6-fD-fvD" kind="push" identifier="toWhere" id="VHx-ZB-wPy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -144,12 +144,12 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="dNB-G7-4u4">
                             <connections>
-                                <segue destination="9SU-AF-lJs" kind="push" id="tCs-I8-nKM"/>
+                                <segue destination="9SU-AF-lJs" kind="push" identifier="toWhen" id="tCs-I8-nKM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="address" destination="Sg6-04-0MH" id="oZ6-rU-gSs"/>
+                        <outlet property="activityAddress" destination="Sg6-04-0MH" id="YHN-Fa-04m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,9 +210,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dug-6z-5J3" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" type="default" id="CEE-3h-lcs"/>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="bottom" secondItem="8Sa-Sb-2t0" secondAttribute="bottom" type="default" id="B8V-9z-gBC"/>
+                            <constraint firstItem="dug-6z-5J3" firstAttribute="centerX" secondItem="8Sa-Sb-2t0" secondAttribute="centerX" type="default" id="FqM-8M-dWw"/>
                             <constraint firstAttribute="trailing" secondItem="Z6D-kf-C5Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KX5-bt-s2b"/>
-                            <constraint firstItem="dug-6z-5J3" firstAttribute="bottom" secondItem="8Sa-Sb-2t0" secondAttribute="bottom" type="default" id="W25-4I-1Bv"/>
                             <constraint firstItem="Z6D-kf-C5Q" firstAttribute="baseline" secondItem="Ka9-CU-cW4" secondAttribute="baseline" type="default" id="gRU-PJ-AKC"/>
                             <constraint firstItem="Ka9-CU-cW4" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" constant="25" id="hjS-0q-rMb"/>
                             <constraint firstItem="Ka9-CU-cW4" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="46" id="z7x-mw-moq"/>
@@ -222,11 +222,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem key="leftBarButtonItem" title="Terug" id="R2U-YS-vCM"/>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="CXS-54-Rr2">
                             <connections>
-                                <segue destination="WmE-Pv-lat" kind="push" id="7DO-4G-tsa"/>
+                                <segue destination="WmE-Pv-lat" kind="push" identifier="toWho" id="7DO-4G-tsa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="date" destination="dug-6z-5J3" id="lFP-hA-51v"/>
                         <outlet property="endTime" destination="Z6D-kf-C5Q" id="U3P-uA-Flf"/>
                         <outlet property="startTime" destination="Ka9-CU-cW4" id="JG0-in-oNg"/>
                     </connections>
@@ -330,6 +331,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ViewControllerActivityWhen" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
             <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
             </relationships>
@@ -337,6 +339,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ViewControllerActivityWhere" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
             <relationships>
+                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="address" candidateClass="UITextField"/>
             </relationships>
         </class>
