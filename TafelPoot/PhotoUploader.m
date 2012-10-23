@@ -17,7 +17,7 @@
     
     //Do get the image which provided
 
-    if()
+    //if()
     
     //TODO: Resize the image
     

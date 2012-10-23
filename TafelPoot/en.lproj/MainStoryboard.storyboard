@@ -34,20 +34,74 @@
             </objects>
             <point key="canvasLocation" x="926" y="288"/>
         </scene>
-        <!--View Controller - Item-->
-        <scene sceneID="0kH-bd-OPF">
+        <!--Navigation Controller - AddActivity-->
+        <scene sceneID="sKT-vw-JiM">
             <objects>
-                <viewController id="e7a-2g-oWM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hax-jl-smB">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="b7D-3t-BD5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sdV-Ij-uTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController title="AddActivity" definesPresentationContext="YES" id="oVq-kz-Xoi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Toevoegen" id="AvT-Eh-Epi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Xh-do-jw7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="F6t-pD-eeP" kind="relationship" relationship="rootViewController" id="FYt-HS-10K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXJ-dH-eHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="-1023"/>
+            <point key="canvasLocation" x="926" y="-1059"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qHQ-Rg-JDc">
+            <objects>
+                <viewController id="F6t-pD-eeP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ekc-93-dDf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="UZy-DJ-Ym0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="8en-G0-SZP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschrijving" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o74-vQ-aH1">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="80" id="20g-VU-KvN"/>
+                            <constraint firstAttribute="bottom" secondItem="o74-vQ-aH1" secondAttribute="bottom" constant="134" id="7cE-Ps-F6J"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Coi-7c-9IC"/>
+                            <constraint firstItem="o74-vQ-aH1" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="Fk7-94-Jvu"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="93" id="Hhc-Tx-6bF"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="sMb-t2-y27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Hng-xB-Ni2"/>
+                            <constraint firstItem="o74-vQ-aH1" firstAttribute="trailing" secondItem="sn2-AT-cIO" secondAttribute="trailing" type="default" id="VL4-58-77a"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="99" id="ZqA-sg-tEW"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="79" id="yQl-YP-bS6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gdg-Rm-D5R">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="v9u-97-B86"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="yrG-In-Kkg"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zK-Y8-2jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="-1059"/>
         </scene>
         <!--Wat View Controller - Item 1-->
         <scene sceneID="YSJ-Tz-SHe">
@@ -97,8 +151,8 @@
                     <connections>
                         <segue destination="nlQ-bi-eHf" kind="relationship" relationship="viewControllers" id="hhq-UA-uNg"/>
                         <segue destination="Mtm-3t-PSv" kind="relationship" relationship="viewControllers" id="OUy-Ir-lt3"/>
-                        <segue destination="e7a-2g-oWM" kind="relationship" relationship="viewControllers" id="Fbv-Wp-YJ2"/>
                         <segue destination="aKz-Bf-QHr" kind="relationship" relationship="viewControllers" id="TvC-3v-w3G"/>
+                        <segue destination="oVq-kz-Xoi" kind="relationship" relationship="viewControllers" id="FXb-Nw-I4Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Slx-0R-dgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,6 +160,17 @@
             <point key="canvasLocation" x="290" y="-286"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="watViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/watViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="testImage:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
