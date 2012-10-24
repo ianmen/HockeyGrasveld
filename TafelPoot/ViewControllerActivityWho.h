@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ServerConnection.h"
 
 @class Activity;
 
-@interface ViewControllerActivityWho : UIViewController<ServerConnectionDelegate>
+@interface ViewControllerActivityWho : UIViewController
 @property (strong, nonatomic) IBOutlet UITextView *xmlResponseMsg;
 @property (strong, nonatomic) IBOutlet UILabel *xmlStatusResponse;
 

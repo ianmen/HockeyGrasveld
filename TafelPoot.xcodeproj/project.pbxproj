@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F6163800F100512046 /* GDataXMLNode.m */; };
-		00DB89FA163800F100512046 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F8163800F100512046 /* ServerConnection.m */; };
-		00E0F0E81636C94D0064C35F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0F0E71636C94D0064C35F /* ServerConnection.m */; };
-		00E0F0F11636CF6B0064C35F /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0F0EF1636CDB20064C35F /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F6163800F100512046 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
 		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
@@ -25,8 +22,6 @@
 		6012D5011637F6C100319904 /* backgroundWat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4EC1637F6C100319904 /* backgroundWat@2x.png */; };
 		6012D5021637F6C100319904 /* backgroundWie.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4ED1637F6C100319904 /* backgroundWie.png */; };
 		6012D5031637F6C100319904 /* backgroundWie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4EE1637F6C100319904 /* backgroundWie@2x.png */; };
-		6012D5041637F6C100319904 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F01637F6C100319904 /* InfoPlist.strings */; };
-		6012D5051637F6C100319904 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F21637F6C100319904 /* MainStoryboard.storyboard */; };
 		6012D5061637F6C100319904 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F41637F6C100319904 /* icon.png */; };
 		6012D5071637F6C100319904 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F51637F6C100319904 /* icon@2x.png */; };
 		6012D514163803EC00319904 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012D513163803EC00319904 /* Activity.m */; };
@@ -62,8 +57,6 @@
 /* Begin PBXFileReference section */
 		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		00DB89F6163800F100512046 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
-		00DB89F7163800F100512046 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = TafelPoot/ServerConnection.h; sourceTree = "<group>"; };
-		00DB89F8163800F100512046 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerConnection.m; path = TafelPoot/ServerConnection.m; sourceTree = "<group>"; };
 		00E0F0E61636C94D0064C35F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		00E0F0E71636C94D0064C35F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		00E0F0EE1636CDB20064C35F /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -86,8 +79,6 @@
 		6012D4EC1637F6C100319904 /* backgroundWat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWat@2x.png"; path = "../backgroundWat@2x.png"; sourceTree = "<group>"; };
 		6012D4ED1637F6C100319904 /* backgroundWie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWie.png; path = ../backgroundWie.png; sourceTree = "<group>"; };
 		6012D4EE1637F6C100319904 /* backgroundWie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWie@2x.png"; path = "../backgroundWie@2x.png"; sourceTree = "<group>"; };
-		6012D4F11637F6C100319904 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
-		6012D4F31637F6C100319904 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6012D4F41637F6C100319904 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		6012D4F51637F6C100319904 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		6012D512163803EC00319904 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
@@ -185,8 +176,6 @@
 			children = (
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
-				00DB89F7163800F100512046 /* ServerConnection.h */,
-				00DB89F8163800F100512046 /* ServerConnection.m */,
 			);
 			name = Utils;
 			path = ..;
@@ -195,12 +184,10 @@
 		6012D4EF1637F6C100319904 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				6012D4F01637F6C100319904 /* InfoPlist.strings */,
-				6012D4F21637F6C100319904 /* MainStoryboard.storyboard */,
 			);
 			name = en.lproj;
-			path = ../en.lproj;
-			sourceTree = "<group>";
+			path = /Users/jeffrey/Desktop/BredApp/en.lproj;
+			sourceTree = "<absolute>";
 		};
 		604BB3E91636C67400097EA7 /* image-resize */ = {
 			isa = PBXGroup;
@@ -270,7 +257,6 @@
 				00CE1325163804D400173D2F /* Controllers */,
 				00CE1323163804A300173D2F /* Models */,
 				00DB89F41638008000512046 /* Utils */,
-				6012D4EF1637F6C100319904 /* en.lproj */,
 				6012D4F41637F6C100319904 /* icon.png */,
 				6012D4F51637F6C100319904 /* icon@2x.png */,
 				99DBD6F11635573900727B94 /* Graphics */,
@@ -417,8 +403,6 @@
 				6012D5011637F6C100319904 /* backgroundWat@2x.png in Resources */,
 				6012D5021637F6C100319904 /* backgroundWie.png in Resources */,
 				6012D5031637F6C100319904 /* backgroundWie@2x.png in Resources */,
-				6012D5041637F6C100319904 /* InfoPlist.strings in Resources */,
-				6012D5051637F6C100319904 /* MainStoryboard.storyboard in Resources */,
 				6012D5061637F6C100319904 /* icon.png in Resources */,
 				6012D5071637F6C100319904 /* icon@2x.png in Resources */,
 			);
@@ -431,7 +415,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E0F0F11636CF6B0064C35F /* GDataXMLNode.m in Sources */,
 				609C4DE616354790006017DE /* main.m in Sources */,
 				609C4DEA16354790006017DE /* AppDelegate.m in Sources */,
 				606B588816354A8300574894 /* PhotoUploader.m in Sources */,
@@ -439,11 +422,9 @@
 				00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */,
 				00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */,
 				00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */,
-				00E0F0E81636C94D0064C35F /* ServerConnection.m in Sources */,
 				6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */,
 				60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */,
 				00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */,
-				00DB89FA163800F100512046 /* ServerConnection.m in Sources */,
 				6012D514163803EC00319904 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,22 +432,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6012D4F01637F6C100319904 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6012D4F11637F6C100319904 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6012D4F21637F6C100319904 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6012D4F31637F6C100319904 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		609C4DE216354790006017DE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
