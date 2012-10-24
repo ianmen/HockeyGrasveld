@@ -18,6 +18,7 @@
 
 @implementation ViewControllerActivityWhere
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,4 +59,9 @@
 }
 
 
+- (IBAction)locationNow:(id)sender {
+}
+
+- (IBAction)fetchCoordinates:(id)sender {
+}
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -137,18 +137,107 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-04-0MH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Straat" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sG-Xj-QVe">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="7SR-iV-sap"/>
+                                    <constraint firstAttribute="width" constant="161" id="Nij-GY-qVv"/>
+                                    <constraint firstAttribute="height" constant="31" id="x7e-3O-5bE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Plaats" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ek-OL-REO">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="phi-fX-8kv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-xs-XAF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="96G-Pu-Sa0"/>
+                                    <constraint firstAttribute="height" constant="25" id="kYs-Y1-4oF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Zoek!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchCoordinates:" destination="pd6-fD-fvD" eventType="touchUpInside" id="fKe-7m-o0S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fu-Jw-9tt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="Fsy-uw-D93"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Huidige locatie">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationNow:" destination="pd6-fD-fvD" eventType="touchUpInside" id="V20-Vl-7a5"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="URa-nc-JzR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="1Ro-MN-BBx"/>
+                                    <constraint firstAttribute="width" constant="293" id="SiW-eQ-I4G"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Onjuiste locatie? Houd je vinger 2 seconde op de" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQv-lH-mQs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="fvb-fd-kJe"/>
+                                    <constraint firstAttribute="width" constant="857" id="p39-H6-7J8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="juiste plaats en de juiste locatie wordt geselecteerd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-eJ-r9e">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="j1d-xW-flI"/>
+                                    <constraint firstAttribute="width" constant="479" id="luP-qJ-swg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="op de kaart." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as5-ZD-Q8Z">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="lSV-AG-du4"/>
+                                    <constraint firstAttribute="height" constant="21" id="zNZ-bI-wRC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Sg6-04-0MH" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="30" id="DNb-we-JE1"/>
-                            <constraint firstItem="Sg6-04-0MH" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="36" id="oQR-We-Rt0"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0KQ-Hq-eZk"/>
+                            <constraint firstItem="6ek-OL-REO" firstAttribute="baseline" secondItem="1sG-Xj-QVe" secondAttribute="baseline" type="default" id="2DL-gA-W6I"/>
+                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="12" id="2KY-4V-SDY"/>
+                            <constraint firstItem="Z9C-eJ-r9e" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="323" id="6Ig-c3-uMm"/>
+                            <constraint firstItem="TQv-lH-mQs" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="284" id="7fn-yj-8FD"/>
+                            <constraint firstItem="URa-nc-JzR" firstAttribute="top" secondItem="gvz-xs-XAF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9UQ-QI-fvu"/>
+                            <constraint firstItem="Z9C-eJ-r9e" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="13" id="IJv-Uz-RrD"/>
+                            <constraint firstItem="TQv-lH-mQs" firstAttribute="leading" secondItem="URa-nc-JzR" secondAttribute="leading" type="default" id="JHq-8K-l16"/>
+                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LEi-5U-mDZ"/>
+                            <constraint firstAttribute="bottom" secondItem="as5-ZD-Q8Z" secondAttribute="bottom" constant="6" id="LJy-QK-FzN"/>
+                            <constraint firstItem="Z9C-eJ-r9e" firstAttribute="leading" secondItem="as5-ZD-Q8Z" secondAttribute="leading" type="default" id="LeG-g4-cyx"/>
+                            <constraint firstItem="6ek-OL-REO" firstAttribute="trailing" secondItem="3Fu-Jw-9tt" secondAttribute="trailing" type="default" id="NKm-gM-ldy"/>
+                            <constraint firstItem="6ek-OL-REO" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RLx-5w-QA9"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="baseline" secondItem="3Fu-Jw-9tt" secondAttribute="baseline" type="default" id="aDF-5B-KJj"/>
+                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="leading" secondItem="gvz-xs-XAF" secondAttribute="leading" type="default" id="ags-Bp-ZHr"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bci-jV-QWs"/>
+                            <constraint firstItem="URa-nc-JzR" firstAttribute="top" secondItem="3Fu-Jw-9tt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dZj-V7-l4s"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="top" secondItem="6ek-OL-REO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gZe-2D-Gvu"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="trailing" secondItem="URa-nc-JzR" secondAttribute="trailing" type="default" id="hM9-NC-eVL"/>
+                            <constraint firstItem="URa-nc-JzR" firstAttribute="leading" secondItem="gvz-xs-XAF" secondAttribute="leading" type="default" id="sSq-We-DL5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Adres" id="AA9-6W-pAP">
@@ -164,7 +253,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityAddress" destination="Sg6-04-0MH" id="YHN-Fa-04m"/>
+                        <outlet property="cityField" destination="6ek-OL-REO" id="7fq-v1-t4n"/>
+                        <outlet property="fetchCoordinatesButton" destination="gvz-xs-XAF" id="RmZ-MC-ylK"/>
+                        <outlet property="locationNowButton" destination="3Fu-Jw-9tt" id="8Dx-3B-xBl"/>
+                        <outlet property="mapKit" destination="URa-nc-JzR" id="ksg-Ca-vfT"/>
+                        <outlet property="streetField" destination="1sG-Xj-QVe" id="Gs7-mj-Z9U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,43 +454,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="290" y="-286"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
-            <relationships>
-                <relationship kind="action" name="addPhoto:"/>
-                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWho" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
-            <relationships>
-                <relationship kind="action" name="finished:"/>
-                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
