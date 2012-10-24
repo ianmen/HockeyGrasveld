@@ -258,8 +258,6 @@
 				00CE1325163804D400173D2F /* Controllers */,
 				00CE1323163804A300173D2F /* Models */,
 				00DB89F41638008000512046 /* Utils */,
-				6012D4F41637F6C100319904 /* icon.png */,
-				6012D4F51637F6C100319904 /* icon@2x.png */,
 				99DBD6F11635573900727B94 /* Graphics */,
 				609C4DE816354790006017DE /* AppDelegate.h */,
 				609C4DE916354790006017DE /* AppDelegate.m */,
@@ -284,6 +282,8 @@
 		99DBD6F11635573900727B94 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				6012D4F41637F6C100319904 /* icon.png */,
+				6012D4F51637F6C100319904 /* icon@2x.png */,
 				6012D4E51637F6C100319904 /* background1.png */,
 				6012D4E61637F6C100319904 /* background1@2x.png */,
 				6012D4E71637F6C100319904 /* backgroundWaar.png */,
