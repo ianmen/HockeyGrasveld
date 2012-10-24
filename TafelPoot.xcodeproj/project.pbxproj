@@ -76,26 +76,26 @@
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
-		6012D4E11637F6C100319904 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activities.h; path = /Users/jeffrey/Desktop/BredApp/Activities.h; sourceTree = "<absolute>"; };
-		6012D4E21637F6C100319904 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activities.m; path = /Users/jeffrey/Desktop/BredApp/Activities.m; sourceTree = "<absolute>"; };
-		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
-		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1@2x.png"; sourceTree = "<group>"; };
-		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWaar.png; sourceTree = "<group>"; };
-		6012D4E81637F6C100319904 /* backgroundWaar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWaar@2x.png"; sourceTree = "<group>"; };
-		6012D4E91637F6C100319904 /* backgroundWanneer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWanneer.png; sourceTree = "<group>"; };
-		6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWanneer@2x.png"; sourceTree = "<group>"; };
-		6012D4EB1637F6C100319904 /* backgroundWat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWat.png; sourceTree = "<group>"; };
-		6012D4EC1637F6C100319904 /* backgroundWat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWat@2x.png"; sourceTree = "<group>"; };
-		6012D4ED1637F6C100319904 /* backgroundWie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWie.png; sourceTree = "<group>"; };
-		6012D4EE1637F6C100319904 /* backgroundWie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWie@2x.png"; sourceTree = "<group>"; };
+		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
+		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "../background1@2x.png"; sourceTree = "<group>"; };
+		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = ../backgroundWaar.png; sourceTree = "<group>"; };
+		6012D4E81637F6C100319904 /* backgroundWaar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWaar@2x.png"; path = "../backgroundWaar@2x.png"; sourceTree = "<group>"; };
+		6012D4E91637F6C100319904 /* backgroundWanneer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWanneer.png; path = ../backgroundWanneer.png; sourceTree = "<group>"; };
+		6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWanneer@2x.png"; path = "../backgroundWanneer@2x.png"; sourceTree = "<group>"; };
+		6012D4EB1637F6C100319904 /* backgroundWat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWat.png; path = ../backgroundWat.png; sourceTree = "<group>"; };
+		6012D4EC1637F6C100319904 /* backgroundWat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWat@2x.png"; path = "../backgroundWat@2x.png"; sourceTree = "<group>"; };
+		6012D4ED1637F6C100319904 /* backgroundWie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWie.png; path = ../backgroundWie.png; sourceTree = "<group>"; };
+		6012D4EE1637F6C100319904 /* backgroundWie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWie@2x.png"; path = "../backgroundWie@2x.png"; sourceTree = "<group>"; };
 		6012D4F11637F6C100319904 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		6012D4F31637F6C100319904 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6012D4F41637F6C100319904 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		6012D4F51637F6C100319904 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		6012D4F61637F6C100319904 /* ViewControllerWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerWho.h; path = /Users/jeffrey/Desktop/BredApp/ViewControllerWho.h; sourceTree = "<absolute>"; };
-		6012D4F71637F6C100319904 /* ViewControllerWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerWho.m; path = /Users/jeffrey/Desktop/BredApp/ViewControllerWho.m; sourceTree = "<absolute>"; };
+		6012D4F41637F6C100319904 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		6012D4F51637F6C100319904 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		6012D512163803EC00319904 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		6012D513163803EC00319904 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		6012D5161638044A00319904 /* Activities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
+		6012D5171638044A00319904 /* Activities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
+		6012D5181638045F00319904 /* ViewControllerWho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerWho.h; sourceTree = "<group>"; };
+		6012D5191638045F00319904 /* ViewControllerWho.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWho.m; sourceTree = "<group>"; };
 		602E62D71637EDA50095EDA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		606B588616354A8300574894 /* PhotoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoUploader.h; sourceTree = "<group>"; };
 		606B588716354A8300574894 /* PhotoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoUploader.m; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 				00DB89F8163800F100512046 /* ServerConnection.m */,
 			);
 			name = Utils;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6012D4EF1637F6C100319904 /* en.lproj */ = {
@@ -164,7 +165,8 @@
 				6012D4F01637F6C100319904 /* InfoPlist.strings */,
 				6012D4F21637F6C100319904 /* MainStoryboard.storyboard */,
 			);
-			path = en.lproj;
+			name = en.lproj;
+			path = ../en.lproj;
 			sourceTree = "<group>";
 		};
 		604BB3E91636C67400097EA7 /* image-resize */ = {
@@ -203,20 +205,6 @@
 		609C4DCA16354790006017DE = {
 			isa = PBXGroup;
 			children = (
-				00DB89F41638008000512046 /* Utils */,
-				6012D4E51637F6C100319904 /* background1.png */,
-				6012D4E61637F6C100319904 /* background1@2x.png */,
-				6012D4E71637F6C100319904 /* backgroundWaar.png */,
-				6012D4E81637F6C100319904 /* backgroundWaar@2x.png */,
-				6012D4E91637F6C100319904 /* backgroundWanneer.png */,
-				6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */,
-				6012D4EB1637F6C100319904 /* backgroundWat.png */,
-				6012D4EC1637F6C100319904 /* backgroundWat@2x.png */,
-				6012D4ED1637F6C100319904 /* backgroundWie.png */,
-				6012D4EE1637F6C100319904 /* backgroundWie@2x.png */,
-				6012D4EF1637F6C100319904 /* en.lproj */,
-				6012D4F41637F6C100319904 /* icon.png */,
-				6012D4F51637F6C100319904 /* icon@2x.png */,
 				609C4DDF16354790006017DE /* TafelPoot */,
 				609C4DD816354790006017DE /* Frameworks */,
 				609C4DD616354790006017DE /* Products */,
@@ -245,12 +233,16 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
-				6012D4E11637F6C100319904 /* Activities.h */,
-				6012D4E21637F6C100319904 /* Activities.m */,
+				00DB89F41638008000512046 /* Utils */,
+				6012D4EF1637F6C100319904 /* en.lproj */,
+				6012D4F41637F6C100319904 /* icon.png */,
+				6012D4F51637F6C100319904 /* icon@2x.png */,
+				6012D5161638044A00319904 /* Activities.h */,
+				6012D5171638044A00319904 /* Activities.m */,
 				6012D512163803EC00319904 /* Activity.h */,
 				6012D513163803EC00319904 /* Activity.m */,
-				6012D4F61637F6C100319904 /* ViewControllerWho.h */,
-				6012D4F71637F6C100319904 /* ViewControllerWho.m */,
+				6012D5181638045F00319904 /* ViewControllerWho.h */,
+				6012D5191638045F00319904 /* ViewControllerWho.m */,
 				99DBD6F11635573900727B94 /* Graphics */,
 				609C4DE816354790006017DE /* AppDelegate.h */,
 				609C4DE916354790006017DE /* AppDelegate.m */,
@@ -285,6 +277,16 @@
 		99DBD6F11635573900727B94 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				6012D4E51637F6C100319904 /* background1.png */,
+				6012D4E61637F6C100319904 /* background1@2x.png */,
+				6012D4E71637F6C100319904 /* backgroundWaar.png */,
+				6012D4E81637F6C100319904 /* backgroundWaar@2x.png */,
+				6012D4E91637F6C100319904 /* backgroundWanneer.png */,
+				6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */,
+				6012D4EB1637F6C100319904 /* backgroundWat.png */,
+				6012D4EC1637F6C100319904 /* backgroundWat@2x.png */,
+				6012D4ED1637F6C100319904 /* backgroundWie.png */,
+				6012D4EE1637F6C100319904 /* backgroundWie@2x.png */,
 				6012D4E51637F6C100319904 /* background1.png */,
 				6012D4E61637F6C100319904 /* background1@2x.png */,
 				6012D4E71637F6C100319904 /* backgroundWaar.png */,
