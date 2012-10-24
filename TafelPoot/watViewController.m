@@ -42,15 +42,15 @@
 }
 
 - (IBAction)testImage:(id)sender {
-    
-    //Create an new object for the image uploader
-    up = [[PhotoUploader alloc] init];
 
     //==== TEMP ====
     //Load in a image
-    NSURL *url = [NSURL URLWithString:@"http://aeroclubsalland.nl/_img/nieuws/2008/mooi-weer.jpg"];
+    NSURL *url = [NSURL URLWithString:@"http://basdekker.eu/afbeeldingen/fotografie/landschap/panorama/011276-011282-ps1-panorama-aekingerzand.jpg"];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
+    
+    //Create an new object for the image uploader
+    up = [[PhotoUploader alloc] init];
     
     //Load the spinner
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

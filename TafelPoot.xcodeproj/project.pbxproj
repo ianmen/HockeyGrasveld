@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
-		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
-		00E3D8FE1636A89600F46A68 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8FD1636A89600F46A68 /* Activity.m */; };
-		00E3D9011636A8A800F46A68 /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9001636A8A800F46A68 /* Activities.m */; };
-		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
-		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
 		606B588816354A8300574894 /* PhotoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B588716354A8300574894 /* PhotoUploader.m */; };
 		6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073C0D81636A36800BB9363 /* MBProgressHUD.m */; };
 		6073C0E21636A82700BB9363 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073C0E01636A82700BB9363 /* 37x-Checkmark.png */; };
@@ -25,6 +19,7 @@
 		609C4DEA16354790006017DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C4DE916354790006017DE /* AppDelegate.m */; };
 		609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DF116354790006017DE /* MainStoryboard.storyboard */; };
 		60CAE2DD1635504900D5B4C3 /* watViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CAE2DC1635504900D5B4C3 /* watViewController.m */; };
+		60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEA9B1637E40500200662 /* UIImage+Resize.m */; };
 		99DBD6DE1635572600727B94 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D41635572600727B94 /* background1.png */; };
 		99DBD6DF1635572600727B94 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D51635572600727B94 /* background1@2x.png */; };
 		99DBD6E01635572600727B94 /* backgroundWaar.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D61635572600727B94 /* backgroundWaar.png */; };
@@ -44,10 +39,6 @@
 		00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhere.m; sourceTree = "<group>"; };
 		00E3D8EE1636A80E00F46A68 /* ViewControllerActivityWhen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWhen.h; sourceTree = "<group>"; };
 		00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhen.m; sourceTree = "<group>"; };
-		00E3D8FC1636A89600F46A68 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		00E3D8FD1636A89600F46A68 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		00E3D8FF1636A8A800F46A68 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
-		00E3D9001636A8A800F46A68 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
 		00E3D9021636AA1C00F46A68 /* ViewControllerActivityWhat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWhat.h; sourceTree = "<group>"; };
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
@@ -71,6 +62,8 @@
 		609C4DF216354790006017DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		60CAE2DB1635504900D5B4C3 /* watViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = watViewController.h; sourceTree = "<group>"; };
 		60CAE2DC1635504900D5B4C3 /* watViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = watViewController.m; sourceTree = "<group>"; };
+		60EBEA9A1637E40500200662 /* UIImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		60EBEA9B1637E40500200662 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		99DBD6D41635572600727B94 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
 		99DBD6D51635572600727B94 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "../background1@2x.png"; sourceTree = "<group>"; };
 		99DBD6D61635572600727B94 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = ../backgroundWaar.png; sourceTree = "<group>"; };
@@ -101,13 +94,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6073C0DA1636A37000BB9363 /* ext. libs */ = {
+		604BB3E91636C67400097EA7 /* image-resize */ = {
+			isa = PBXGroup;
+			children = (
+				60EBEA9A1637E40500200662 /* UIImage+Resize.h */,
+				60EBEA9B1637E40500200662 /* UIImage+Resize.m */,
+			);
+			name = "image-resize";
+			sourceTree = "<group>";
+		};
+		604BB3EA1636C85F00097EA7 /* ActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
 				6073C0E01636A82700BB9363 /* 37x-Checkmark.png */,
 				6073C0E11636A82700BB9363 /* 37x-Checkmark@2x.png */,
 				6073C0D71636A36800BB9363 /* MBProgressHUD.h */,
 				6073C0D81636A36800BB9363 /* MBProgressHUD.m */,
+			);
+			name = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		6073C0DA1636A37000BB9363 /* ext. libs */ = {
+			isa = PBXGroup;
+			children = (
+				604BB3E91636C67400097EA7 /* image-resize */,
+				604BB3EA1636C85F00097EA7 /* ActivityIndicator */,
 			);
 			name = "ext. libs";
 			sourceTree = "<group>";
@@ -142,8 +153,6 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
-				00E3D8FB1636A87E00F46A68 /* Utils */,
-				00E3D8FA1636A86900F46A68 /* Models */,
 				99DBD6F11635573900727B94 /* Graphics */,
 				609C4DE816354790006017DE /* AppDelegate.h */,
 				609C4DE916354790006017DE /* AppDelegate.m */,
@@ -280,6 +289,7 @@
 				606B588816354A8300574894 /* PhotoUploader.m in Sources */,
 				60CAE2DD1635504900D5B4C3 /* watViewController.m in Sources */,
 				6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */,
+				60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "PhotoUploader.h"
+#import "UIImage+Resize.h"
 
 @implementation PhotoUploader{
     
@@ -31,9 +32,9 @@
         NSLog(@"PhotoUploader - No image data received");
         
     }else{
-    
-    //Crop the image
-   // UIImage *croppedImage = [self centerAndResizeImage:image toBounds:CGRectMake(0, 0, 280, 280)];
+            
+    //Resize the image to 500X500 no scaling, this for faster uploading
+    UIImage *croppedImage = [self centerAndResizeImage:image scaledToSize:CGSizeMake(500, 500)];
         
     #define DataDownloaderRunMode @"myapp.run_mode"
 	NSString *urlString = @"http://klanten.deictprins.nl/school/postImage.php";
@@ -57,7 +58,7 @@
     
     [body appendData:[@"Content-Disposition: form-data; name='attachment[file]';filename='image.png'\r\n"dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    NSData *imageData = UIImageJPEGRepresentation(croppedImage, 1.0);
     
     [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -74,15 +75,10 @@
     }
 }
 
-- (UIImage *)centerAndResizeImage:(UIImage *)theImage toBounds:(CGRect)bounds
+- (UIImage *)centerAndResizeImage:(UIImage *)theImage scaledToSize:(CGSize)newSize
 {
-    CGImageRef imageRef = CGImageCreateWithImageInRect(theImage.CGImage, bounds);
-    
-    UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
-    CGImageRelease(imageRef);
-    
-    
-    return croppedImage;
+    //Handle the resizing by an external lib
+    return [theImage resizedImageToFitInSize:CGSizeMake(500, 500) scaleIfSmaller:NO];
 }
 
 //The posting is password protected
