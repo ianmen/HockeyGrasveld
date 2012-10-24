@@ -11,8 +11,6 @@
 		00E0F0F11636CF6B0064C35F /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0F0EF1636CDB20064C35F /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
-		00E3D8FE1636A89600F46A68 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		00E3D9011636A8A800F46A68 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
 		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
 		6012D4F81637F6C100319904 /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012D4E21637F6C100319904 /* Activities.m */; };
@@ -388,8 +386,6 @@
 				606B588816354A8300574894 /* PhotoUploader.m in Sources */,
 				00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */,
 				00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */,
-				00E3D8FE1636A89600F46A68 /* (null) in Sources */,
-				00E3D9011636A8A800F46A68 /* (null) in Sources */,
 				00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */,
 				00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */,
 				00E0F0E81636C94D0064C35F /* ServerConnection.m in Sources */,
