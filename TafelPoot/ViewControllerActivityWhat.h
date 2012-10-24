@@ -10,11 +10,12 @@
 
 @class Activity;
 
-@interface ViewControllerActivityWhat : UIViewController
+@interface ViewControllerActivityWhat : UIViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *category;
 @property (strong, nonatomic) IBOutlet UITextField *tags;
 @property (strong, nonatomic) IBOutlet UITextField *description;
 
+- (IBAction)addPhoto:(id)sender;
 @end
