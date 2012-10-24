@@ -147,6 +147,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00CE1323163804A300173D2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6012D5161638044A00319904 /* Activities.h */,
+				6012D5171638044A00319904 /* Activities.m */,
+				6012D512163803EC00319904 /* Activity.h */,
+				6012D513163803EC00319904 /* Activity.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		00DB89F41638008000512046 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,14 +244,11 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
+				00CE1323163804A300173D2F /* Models */,
 				00DB89F41638008000512046 /* Utils */,
 				6012D4EF1637F6C100319904 /* en.lproj */,
 				6012D4F41637F6C100319904 /* icon.png */,
 				6012D4F51637F6C100319904 /* icon@2x.png */,
-				6012D5161638044A00319904 /* Activities.h */,
-				6012D5171638044A00319904 /* Activities.m */,
-				6012D512163803EC00319904 /* Activity.h */,
-				6012D513163803EC00319904 /* Activity.m */,
 				6012D5181638045F00319904 /* ViewControllerWho.h */,
 				6012D5191638045F00319904 /* ViewControllerWho.m */,
 				99DBD6F11635573900727B94 /* Graphics */,
