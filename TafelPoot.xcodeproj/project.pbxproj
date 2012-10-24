@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F6163800F100512046 /* GDataXMLNode.m */; };
+		00DB89FA163800F100512046 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F8163800F100512046 /* ServerConnection.m */; };
 		00E0F0E81636C94D0064C35F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0F0E71636C94D0064C35F /* ServerConnection.m */; };
 		00E0F0F11636CF6B0064C35F /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E0F0EF1636CDB20064C35F /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
@@ -61,6 +63,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = TafelPoot/GDataXMLNode.h; sourceTree = "<group>"; };
+		00DB89F6163800F100512046 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = TafelPoot/GDataXMLNode.m; sourceTree = "<group>"; };
+		00DB89F7163800F100512046 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = TafelPoot/ServerConnection.h; sourceTree = "<group>"; };
+		00DB89F8163800F100512046 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerConnection.m; path = TafelPoot/ServerConnection.m; sourceTree = "<group>"; };
 		00E0F0E61636C94D0064C35F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		00E0F0E71636C94D0064C35F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		00E0F0EE1636CDB20064C35F /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -146,6 +152,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00DB89F41638008000512046 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				00DB89F5163800F100512046 /* GDataXMLNode.h */,
+				00DB89F6163800F100512046 /* GDataXMLNode.m */,
+				00DB89F7163800F100512046 /* ServerConnection.h */,
+				00DB89F8163800F100512046 /* ServerConnection.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		6012D4EF1637F6C100319904 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +209,7 @@
 		609C4DCA16354790006017DE = {
 			isa = PBXGroup;
 			children = (
+				00DB89F41638008000512046 /* Utils */,
 				6012D4E11637F6C100319904 /* Activities.h */,
 				6012D4E21637F6C100319904 /* Activities.m */,
 				6012D4E31637F6C100319904 /* Activity.h */,
@@ -401,6 +419,8 @@
 				6012D4F81637F6C100319904 /* Activities.m in Sources */,
 				6012D4F91637F6C100319904 /* Activity.m in Sources */,
 				6012D5081637F6C100319904 /* ViewControllerWho.m in Sources */,
+				00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */,
+				00DB89FA163800F100512046 /* ServerConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
