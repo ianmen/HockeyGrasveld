@@ -23,6 +23,7 @@
     __weak UIButton *_fetchCoordinatesButton;
 }
 
+@property (nonatomic, strong) CLGeocoder *geocoder;
 @property (strong, nonatomic) IBOutlet UITextField *activityAddress;
 
 - (void)setActivity:(Activity*)currentActivity;
