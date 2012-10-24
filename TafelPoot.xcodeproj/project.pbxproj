@@ -20,6 +20,10 @@
 		609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DF116354790006017DE /* MainStoryboard.storyboard */; };
 		60CAE2DD1635504900D5B4C3 /* watViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CAE2DC1635504900D5B4C3 /* watViewController.m */; };
 		60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEA9B1637E40500200662 /* UIImage+Resize.m */; };
+		60EBEA9E1637EB7700200662 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
+		60EBEA9F1637EB7A00200662 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
+		60EBEAA01637EB7C00200662 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
+		60EBEAA11637EB7E00200662 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
 		99DBD6DE1635572600727B94 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D41635572600727B94 /* background1.png */; };
 		99DBD6DF1635572600727B94 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D51635572600727B94 /* background1@2x.png */; };
 		99DBD6E01635572600727B94 /* backgroundWaar.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D61635572600727B94 /* backgroundWaar.png */; };
@@ -290,6 +294,10 @@
 				60CAE2DD1635504900D5B4C3 /* watViewController.m in Sources */,
 				6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */,
 				60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */,
+				60EBEA9E1637EB7700200662 /* ViewControllerActivityWhat.m in Sources */,
+				60EBEA9F1637EB7A00200662 /* ViewControllerActivityWho.m in Sources */,
+				60EBEAA01637EB7C00200662 /* ViewControllerActivityWhen.m in Sources */,
+				60EBEAA11637EB7E00200662 /* ViewControllerActivityWhere.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
