@@ -46,7 +46,6 @@
 		609C4DE616354790006017DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C4DE516354790006017DE /* main.m */; };
 		609C4DEA16354790006017DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C4DE916354790006017DE /* AppDelegate.m */; };
 		609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DF116354790006017DE /* MainStoryboard.storyboard */; };
-		60CAE2DD1635504900D5B4C3 /* watViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CAE2DC1635504900D5B4C3 /* watViewController.m */; };
 		60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEA9B1637E40500200662 /* UIImage+Resize.m */; };
 		99DBD6DE1635572600727B94 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D41635572600727B94 /* background1.png */; };
 		99DBD6DF1635572600727B94 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D51635572600727B94 /* background1@2x.png */; };
@@ -79,26 +78,26 @@
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
-		6012D4E11637F6C100319904 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activities.h; path = TafelPoot/Activities.h; sourceTree = "<group>"; };
-		6012D4E21637F6C100319904 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activities.m; path = TafelPoot/Activities.m; sourceTree = "<group>"; };
-		6012D4E31637F6C100319904 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = TafelPoot/Activity.h; sourceTree = "<group>"; };
-		6012D4E41637F6C100319904 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = TafelPoot/Activity.m; sourceTree = "<group>"; };
-		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = TafelPoot/background1.png; sourceTree = "<group>"; };
-		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "TafelPoot/background1@2x.png"; sourceTree = "<group>"; };
-		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = TafelPoot/backgroundWaar.png; sourceTree = "<group>"; };
-		6012D4E81637F6C100319904 /* backgroundWaar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWaar@2x.png"; path = "TafelPoot/backgroundWaar@2x.png"; sourceTree = "<group>"; };
-		6012D4E91637F6C100319904 /* backgroundWanneer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWanneer.png; path = TafelPoot/backgroundWanneer.png; sourceTree = "<group>"; };
-		6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWanneer@2x.png"; path = "TafelPoot/backgroundWanneer@2x.png"; sourceTree = "<group>"; };
-		6012D4EB1637F6C100319904 /* backgroundWat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWat.png; path = TafelPoot/backgroundWat.png; sourceTree = "<group>"; };
-		6012D4EC1637F6C100319904 /* backgroundWat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWat@2x.png"; path = "TafelPoot/backgroundWat@2x.png"; sourceTree = "<group>"; };
-		6012D4ED1637F6C100319904 /* backgroundWie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWie.png; path = TafelPoot/backgroundWie.png; sourceTree = "<group>"; };
-		6012D4EE1637F6C100319904 /* backgroundWie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroundWie@2x.png"; path = "TafelPoot/backgroundWie@2x.png"; sourceTree = "<group>"; };
+		6012D4E11637F6C100319904 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
+		6012D4E21637F6C100319904 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
+		6012D4E31637F6C100319904 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		6012D4E41637F6C100319904 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1@2x.png"; sourceTree = "<group>"; };
+		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWaar.png; sourceTree = "<group>"; };
+		6012D4E81637F6C100319904 /* backgroundWaar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWaar@2x.png"; sourceTree = "<group>"; };
+		6012D4E91637F6C100319904 /* backgroundWanneer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWanneer.png; sourceTree = "<group>"; };
+		6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWanneer@2x.png"; sourceTree = "<group>"; };
+		6012D4EB1637F6C100319904 /* backgroundWat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWat.png; sourceTree = "<group>"; };
+		6012D4EC1637F6C100319904 /* backgroundWat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWat@2x.png"; sourceTree = "<group>"; };
+		6012D4ED1637F6C100319904 /* backgroundWie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWie.png; sourceTree = "<group>"; };
+		6012D4EE1637F6C100319904 /* backgroundWie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundWie@2x.png"; sourceTree = "<group>"; };
 		6012D4F11637F6C100319904 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		6012D4F31637F6C100319904 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6012D4F41637F6C100319904 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = TafelPoot/icon.png; sourceTree = "<group>"; };
-		6012D4F51637F6C100319904 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "TafelPoot/icon@2x.png"; sourceTree = "<group>"; };
-		6012D4F61637F6C100319904 /* ViewControllerWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerWho.h; path = TafelPoot/ViewControllerWho.h; sourceTree = "<group>"; };
-		6012D4F71637F6C100319904 /* ViewControllerWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerWho.m; path = TafelPoot/ViewControllerWho.m; sourceTree = "<group>"; };
+		6012D4F41637F6C100319904 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6012D4F51637F6C100319904 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		6012D4F61637F6C100319904 /* ViewControllerWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerWho.h; sourceTree = "<group>"; };
+		6012D4F71637F6C100319904 /* ViewControllerWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWho.m; sourceTree = "<group>"; };
 		602E62D71637EDA50095EDA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		606B588616354A8300574894 /* PhotoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoUploader.h; sourceTree = "<group>"; };
 		606B588716354A8300574894 /* PhotoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoUploader.m; sourceTree = "<group>"; };
@@ -117,8 +116,6 @@
 		609C4DE816354790006017DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		609C4DE916354790006017DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		609C4DF216354790006017DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		60CAE2DB1635504900D5B4C3 /* watViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = watViewController.h; sourceTree = "<group>"; };
-		60CAE2DC1635504900D5B4C3 /* watViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = watViewController.m; sourceTree = "<group>"; };
 		60EBEA9A1637E40500200662 /* UIImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		60EBEA9B1637E40500200662 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		99DBD6D41635572600727B94 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
@@ -169,8 +166,7 @@
 				6012D4F01637F6C100319904 /* InfoPlist.strings */,
 				6012D4F21637F6C100319904 /* MainStoryboard.storyboard */,
 			);
-			name = en.lproj;
-			path = TafelPoot/en.lproj;
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		604BB3E91636C67400097EA7 /* image-resize */ = {
@@ -257,12 +253,16 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
+				6012D4E11637F6C100319904 /* Activities.h */,
+				6012D4E21637F6C100319904 /* Activities.m */,
+				6012D4E31637F6C100319904 /* Activity.h */,
+				6012D4E41637F6C100319904 /* Activity.m */,
+				6012D4F61637F6C100319904 /* ViewControllerWho.h */,
+				6012D4F71637F6C100319904 /* ViewControllerWho.m */,
 				99DBD6F11635573900727B94 /* Graphics */,
 				609C4DE816354790006017DE /* AppDelegate.h */,
 				609C4DE916354790006017DE /* AppDelegate.m */,
 				609C4DF116354790006017DE /* MainStoryboard.storyboard */,
-				60CAE2DB1635504900D5B4C3 /* watViewController.h */,
-				60CAE2DC1635504900D5B4C3 /* watViewController.m */,
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
 				609C4DE016354790006017DE /* Supporting Files */,
@@ -293,6 +293,19 @@
 		99DBD6F11635573900727B94 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				6012D4E51637F6C100319904 /* background1.png */,
+				6012D4E61637F6C100319904 /* background1@2x.png */,
+				6012D4E71637F6C100319904 /* backgroundWaar.png */,
+				6012D4E81637F6C100319904 /* backgroundWaar@2x.png */,
+				6012D4E91637F6C100319904 /* backgroundWanneer.png */,
+				6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */,
+				6012D4EB1637F6C100319904 /* backgroundWat.png */,
+				6012D4EC1637F6C100319904 /* backgroundWat@2x.png */,
+				6012D4ED1637F6C100319904 /* backgroundWie.png */,
+				6012D4EE1637F6C100319904 /* backgroundWie@2x.png */,
+				6012D4EF1637F6C100319904 /* en.lproj */,
+				6012D4F41637F6C100319904 /* icon.png */,
+				6012D4F51637F6C100319904 /* icon@2x.png */,
 				99DBD6D41635572600727B94 /* background1.png */,
 				99DBD6D51635572600727B94 /* background1@2x.png */,
 				99DBD6E91635573100727B94 /* Default.png */,
@@ -408,7 +421,6 @@
 				609C4DE616354790006017DE /* main.m in Sources */,
 				609C4DEA16354790006017DE /* AppDelegate.m in Sources */,
 				606B588816354A8300574894 /* PhotoUploader.m in Sources */,
-				60CAE2DD1635504900D5B4C3 /* watViewController.m in Sources */,
 				00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */,
 				00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */,
 				00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */,
