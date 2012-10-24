@@ -7,9 +7,13 @@
 //
 
 #import "ViewControllerActivityWhen.h"
+#import "ViewControllerActivityWho.h"
+#import "Activity.h"
 
 @interface ViewControllerActivityWhen ()
-
+{
+    Activity *activity;
+}
 @end
 
 @implementation ViewControllerActivityWhen
@@ -35,4 +39,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setActivity:(Activity*)currentActivity
+{
+    activity = currentActivity;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"toWho"])
+    {
+        activity.startTime = [self.startTime.text copy];
+        activity.endTime = [self.endTime.text copy];
+        activity.startDate = [self.date.date copy];
+        
+        ViewControllerActivityWho *vc = [segue destinationViewController];
+        
+        [vc setActivity:activity];
+    }
+}
 @end

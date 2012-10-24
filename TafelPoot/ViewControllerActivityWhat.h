@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Activity;
+
 @interface ViewControllerActivityWhat : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *name;

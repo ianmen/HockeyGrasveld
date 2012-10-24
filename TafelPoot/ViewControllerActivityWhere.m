@@ -7,9 +7,13 @@
 //
 
 #import "ViewControllerActivityWhere.h"
+#import "ViewControllerActivityWhen.h"
+#import "Activity.h"
 
 @interface ViewControllerActivityWhere ()
-
+{
+    Activity *activity;
+}
 @end
 
 @implementation ViewControllerActivityWhere
@@ -34,5 +38,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)setActivity:(Activity*)currentActivity
+{
+    activity = currentActivity;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"toWhen"])
+    {
+        activity.address = [self.activityAddress.text copy];
+        
+        ViewControllerActivityWhen *vc = [segue destinationViewController];
+        
+        [vc setActivity:activity];
+    }
+}
+
 
 @end

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Activity;
+
 @interface ViewControllerActivityWho : UIViewController
 
 - (IBAction)finished:(id)sender;
+- (void)setActivity:(Activity*)currentActivity;
 
 @end

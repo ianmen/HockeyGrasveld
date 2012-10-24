@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class Activity;
+
 @interface ViewControllerActivityWhen : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *startTime;
 @property (strong, nonatomic) IBOutlet UITextField *endTime;
+@property (strong, nonatomic) IBOutlet UIDatePicker *date;
+
+- (void)setActivity:(Activity*)currentActivity;
 
 @end

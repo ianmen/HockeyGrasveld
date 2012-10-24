@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Activity;
+
 @interface ViewControllerActivityWhere : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *address;
+@property (strong, nonatomic) IBOutlet UITextField *activityAddress;
+
+- (void)setActivity:(Activity*)currentActivity;
 
 @end
