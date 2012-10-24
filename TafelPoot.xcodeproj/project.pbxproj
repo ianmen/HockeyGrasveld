@@ -60,8 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = TafelPoot/GDataXMLNode.h; sourceTree = "<group>"; };
-		00DB89F6163800F100512046 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = TafelPoot/GDataXMLNode.m; sourceTree = "<group>"; };
+		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		00DB89F6163800F100512046 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		00DB89F7163800F100512046 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerConnection.h; path = TafelPoot/ServerConnection.h; sourceTree = "<group>"; };
 		00DB89F8163800F100512046 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerConnection.m; path = TafelPoot/ServerConnection.m; sourceTree = "<group>"; };
 		00E0F0E61636C94D0064C35F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
@@ -171,13 +171,20 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		00CE132B1638058400173D2F /* GDataXMLNode */ = {
+			isa = PBXGroup;
+			children = (
+				00DB89F5163800F100512046 /* GDataXMLNode.h */,
+				00DB89F6163800F100512046 /* GDataXMLNode.m */,
+			);
+			name = GDataXMLNode;
+			sourceTree = "<group>";
+		};
 		00DB89F41638008000512046 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
-				00DB89F5163800F100512046 /* GDataXMLNode.h */,
-				00DB89F6163800F100512046 /* GDataXMLNode.m */,
 				00DB89F7163800F100512046 /* ServerConnection.h */,
 				00DB89F8163800F100512046 /* ServerConnection.m */,
 			);
@@ -222,6 +229,7 @@
 		6073C0DA1636A37000BB9363 /* ext. libs */ = {
 			isa = PBXGroup;
 			children = (
+				00CE132B1638058400173D2F /* GDataXMLNode */,
 				604BB3E91636C67400097EA7 /* image-resize */,
 				604BB3EA1636C85F00097EA7 /* ActivityIndicator */,
 			);
