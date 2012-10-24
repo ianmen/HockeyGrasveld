@@ -12,6 +12,8 @@
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
 		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
 		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
+		13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FD816380CA5001D3EB9 /* CoreLocation.framework */; };
+		13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FDB16380CAB001D3EB9 /* MapKit.framework */; };
 		6012D4FA1637F6C100319904 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4E51637F6C100319904 /* background1.png */; };
 		6012D4FB1637F6C100319904 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4E61637F6C100319904 /* background1@2x.png */; };
 		6012D4FC1637F6C100319904 /* backgroundWaar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4E71637F6C100319904 /* backgroundWaar.png */; };
@@ -69,6 +71,8 @@
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
+		13B86FD816380CA5001D3EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		13B86FDB16380CAB001D3EB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
 		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "../background1@2x.png"; sourceTree = "<group>"; };
 		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = ../backgroundWaar.png; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */,
+				13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */,
 				602E62D81637EDA50095EDA3 /* QuartzCore.framework in Frameworks */,
 				609C4DDA16354790006017DE /* UIKit.framework in Frameworks */,
 				609C4DDC16354790006017DE /* Foundation.framework in Frameworks */,
@@ -226,6 +232,8 @@
 		609C4DCA16354790006017DE = {
 			isa = PBXGroup;
 			children = (
+				13B86FDB16380CAB001D3EB9 /* MapKit.framework */,
+				13B86FD816380CA5001D3EB9 /* CoreLocation.framework */,
 				609C4DDF16354790006017DE /* TafelPoot */,
 				609C4DD816354790006017DE /* Frameworks */,
 				609C4DD616354790006017DE /* Products */,

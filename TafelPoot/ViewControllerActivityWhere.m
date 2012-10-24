@@ -71,6 +71,7 @@
     
     // Add the gesture to the mapKit
     [self.mapKit addGestureRecognizer:lpgr];
+    
 
 }
 
@@ -296,6 +297,10 @@
 
 - (void) handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        
+        if (!self.geocoder) {
+            self.geocoder = [[CLGeocoder alloc] init];
+        }
         
         // Get coordinates
         CLLocationCoordinate2D coordinate = [self.mapKit convertPoint:[gestureRecognizer locationInView:self.mapKit] toCoordinateFromView:self.mapKit];
