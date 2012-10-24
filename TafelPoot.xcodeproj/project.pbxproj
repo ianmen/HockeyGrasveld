@@ -29,6 +29,7 @@
 		6012D5051637F6C100319904 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F21637F6C100319904 /* MainStoryboard.storyboard */; };
 		6012D5061637F6C100319904 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F41637F6C100319904 /* icon.png */; };
 		6012D5071637F6C100319904 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F51637F6C100319904 /* icon@2x.png */; };
+		6012D514163803EC00319904 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012D513163803EC00319904 /* Activity.m */; };
 		602E62D81637EDA50095EDA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E62D71637EDA50095EDA3 /* QuartzCore.framework */; };
 		602E62DA1637EDF10095EDA3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6E91635573100727B94 /* Default.png */; };
 		602E62DB1637EDF50095EDA3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EA1635573100727B94 /* Default@2x.png */; };
@@ -77,8 +78,6 @@
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
 		6012D4E11637F6C100319904 /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activities.h; path = /Users/jeffrey/Desktop/BredApp/Activities.h; sourceTree = "<absolute>"; };
 		6012D4E21637F6C100319904 /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activities.m; path = /Users/jeffrey/Desktop/BredApp/Activities.m; sourceTree = "<absolute>"; };
-		6012D4E31637F6C100319904 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = /Users/jeffrey/Desktop/BredApp/Activity.h; sourceTree = "<absolute>"; };
-		6012D4E41637F6C100319904 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = /Users/jeffrey/Desktop/BredApp/Activity.m; sourceTree = "<absolute>"; };
 		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
 		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1@2x.png"; sourceTree = "<group>"; };
 		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundWaar.png; sourceTree = "<group>"; };
@@ -95,6 +94,8 @@
 		6012D4F51637F6C100319904 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		6012D4F61637F6C100319904 /* ViewControllerWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerWho.h; path = /Users/jeffrey/Desktop/BredApp/ViewControllerWho.h; sourceTree = "<absolute>"; };
 		6012D4F71637F6C100319904 /* ViewControllerWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerWho.m; path = /Users/jeffrey/Desktop/BredApp/ViewControllerWho.m; sourceTree = "<absolute>"; };
+		6012D512163803EC00319904 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		6012D513163803EC00319904 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		602E62D71637EDA50095EDA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		606B588616354A8300574894 /* PhotoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoUploader.h; sourceTree = "<group>"; };
 		606B588716354A8300574894 /* PhotoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoUploader.m; sourceTree = "<group>"; };
@@ -246,8 +247,8 @@
 			children = (
 				6012D4E11637F6C100319904 /* Activities.h */,
 				6012D4E21637F6C100319904 /* Activities.m */,
-				6012D4E31637F6C100319904 /* Activity.h */,
-				6012D4E41637F6C100319904 /* Activity.m */,
+				6012D512163803EC00319904 /* Activity.h */,
+				6012D513163803EC00319904 /* Activity.m */,
 				6012D4F61637F6C100319904 /* ViewControllerWho.h */,
 				6012D4F71637F6C100319904 /* ViewControllerWho.m */,
 				99DBD6F11635573900727B94 /* Graphics */,
@@ -421,6 +422,7 @@
 				60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */,
 				00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */,
 				00DB89FA163800F100512046 /* ServerConnection.m in Sources */,
+				6012D514163803EC00319904 /* Activity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
