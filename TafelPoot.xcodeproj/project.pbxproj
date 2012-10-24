@@ -158,6 +158,21 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		00CE1325163804D400173D2F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				00E3D8EB1636A7EA00F46A68 /* ViewControllerActivityWhere.h */,
+				00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */,
+				00E3D8EE1636A80E00F46A68 /* ViewControllerActivityWhen.h */,
+				00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */,
+				00E3D9021636AA1C00F46A68 /* ViewControllerActivityWhat.h */,
+				00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */,
+				00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */,
+				00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		00DB89F41638008000512046 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +259,7 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
+				00CE1325163804D400173D2F /* Controllers */,
 				00CE1323163804A300173D2F /* Models */,
 				00DB89F41638008000512046 /* Utils */,
 				6012D4EF1637F6C100319904 /* en.lproj */,
@@ -258,14 +274,6 @@
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
 				609C4DE016354790006017DE /* Supporting Files */,
-				00E3D8EB1636A7EA00F46A68 /* ViewControllerActivityWhere.h */,
-				00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */,
-				00E3D8EE1636A80E00F46A68 /* ViewControllerActivityWhen.h */,
-				00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */,
-				00E3D9021636AA1C00F46A68 /* ViewControllerActivityWhat.h */,
-				00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */,
-				00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */,
-				00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */,
 			);
 			path = TafelPoot;
 			sourceTree = "<group>";
