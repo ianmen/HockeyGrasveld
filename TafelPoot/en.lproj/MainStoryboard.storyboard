@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -138,16 +138,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Straat" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sG-Xj-QVe">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="Nij-GY-qVv"/>
-                                    <constraint firstAttribute="height" constant="31" id="x7e-3O-5bE"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Plaats" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ek-OL-REO">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="117" id="phi-fX-8kv"/>
+                                    <constraint firstAttribute="width" constant="124" id="tY3-LM-fq6"/>
+                                    <constraint firstAttribute="height" constant="31" id="uxu-e2-jsE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -155,7 +152,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-xs-XAF">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="96G-Pu-Sa0"/>
-                                    <constraint firstAttribute="height" constant="25" id="kYs-Y1-4oF"/>
+                                    <constraint firstAttribute="height" constant="31" id="zu3-9a-3m2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Zoek!">
@@ -171,7 +168,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fu-Jw-9tt">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="Fsy-uw-D93"/>
+                                    <constraint firstAttribute="width" constant="140" id="q4R-k3-991"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Huidige locatie">
@@ -188,7 +185,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="URa-nc-JzR">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="213" id="1Ro-MN-BBx"/>
-                                    <constraint firstAttribute="width" constant="293" id="SiW-eQ-I4G"/>
                                 </constraints>
                             </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Onjuiste locatie? Houd je vinger 2 seconde op de" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQv-lH-mQs">
@@ -218,26 +214,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gvz-xs-XAF" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0KQ-Hq-eZk"/>
+                            <constraint firstItem="6ek-OL-REO" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="top" type="default" id="2B0-bo-9dR"/>
                             <constraint firstItem="6ek-OL-REO" firstAttribute="baseline" secondItem="1sG-Xj-QVe" secondAttribute="baseline" type="default" id="2DL-gA-W6I"/>
-                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="12" id="2KY-4V-SDY"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="48" id="4DD-nY-xK7"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="trailing" secondItem="URa-nc-JzR" secondAttribute="trailing" type="default" id="4dU-Kw-w3v"/>
                             <constraint firstItem="Z9C-eJ-r9e" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="323" id="6Ig-c3-uMm"/>
                             <constraint firstItem="TQv-lH-mQs" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="284" id="7fn-yj-8FD"/>
-                            <constraint firstItem="URa-nc-JzR" firstAttribute="top" secondItem="gvz-xs-XAF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9UQ-QI-fvu"/>
-                            <constraint firstItem="Z9C-eJ-r9e" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="13" id="IJv-Uz-RrD"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="leading" secondItem="gvz-xs-XAF" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8uZ-ie-g8c"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="bottom" secondItem="3Fu-Jw-9tt" secondAttribute="bottom" type="default" id="Gdg-Ds-Ldb"/>
                             <constraint firstItem="TQv-lH-mQs" firstAttribute="leading" secondItem="URa-nc-JzR" secondAttribute="leading" type="default" id="JHq-8K-l16"/>
-                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LEi-5U-mDZ"/>
                             <constraint firstAttribute="bottom" secondItem="as5-ZD-Q8Z" secondAttribute="bottom" constant="6" id="LJy-QK-FzN"/>
                             <constraint firstItem="Z9C-eJ-r9e" firstAttribute="leading" secondItem="as5-ZD-Q8Z" secondAttribute="leading" type="default" id="LeG-g4-cyx"/>
-                            <constraint firstItem="6ek-OL-REO" firstAttribute="trailing" secondItem="3Fu-Jw-9tt" secondAttribute="trailing" type="default" id="NKm-gM-ldy"/>
-                            <constraint firstItem="6ek-OL-REO" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RLx-5w-QA9"/>
-                            <constraint firstItem="gvz-xs-XAF" firstAttribute="baseline" secondItem="3Fu-Jw-9tt" secondAttribute="baseline" type="default" id="aDF-5B-KJj"/>
-                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="leading" secondItem="gvz-xs-XAF" secondAttribute="leading" type="default" id="ags-Bp-ZHr"/>
-                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bci-jV-QWs"/>
-                            <constraint firstItem="URa-nc-JzR" firstAttribute="top" secondItem="3Fu-Jw-9tt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dZj-V7-l4s"/>
-                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="top" secondItem="6ek-OL-REO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gZe-2D-Gvu"/>
-                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="trailing" secondItem="URa-nc-JzR" secondAttribute="trailing" type="default" id="hM9-NC-eVL"/>
-                            <constraint firstItem="URa-nc-JzR" firstAttribute="leading" secondItem="gvz-xs-XAF" secondAttribute="leading" type="default" id="sSq-We-DL5"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="top" secondItem="6ek-OL-REO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OpT-Xp-ozJ"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RGt-Xk-nfo"/>
+                            <constraint firstItem="6ek-OL-REO" firstAttribute="leading" secondItem="1sG-Xj-QVe" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Stu-x6-gSt"/>
+                            <constraint firstItem="3Fu-Jw-9tt" firstAttribute="top" secondItem="1sG-Xj-QVe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="e1g-kq-5cH"/>
+                            <constraint firstItem="Z9C-eJ-r9e" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="13" id="ere-QK-eE0"/>
+                            <constraint firstItem="URa-nc-JzR" firstAttribute="top" secondItem="tTR-la-WDG" secondAttribute="top" constant="92" id="fxv-lt-G35"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="leading" secondItem="URa-nc-JzR" secondAttribute="leading" type="default" id="gFu-B7-XmC"/>
+                            <constraint firstItem="6ek-OL-REO" firstAttribute="trailing" secondItem="3Fu-Jw-9tt" secondAttribute="trailing" type="default" id="l1i-HZ-QzM"/>
+                            <constraint firstItem="gvz-xs-XAF" firstAttribute="leading" secondItem="1sG-Xj-QVe" secondAttribute="leading" type="default" id="lXZ-hw-9br"/>
+                            <constraint firstItem="1sG-Xj-QVe" firstAttribute="leading" secondItem="tTR-la-WDG" secondAttribute="leading" constant="12" id="yWn-jm-cCp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Adres" id="AA9-6W-pAP">
@@ -454,6 +451,50 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="290" y="-286"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
+            <relationships>
+                <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
+            <relationships>
+                <relationship kind="action" name="fetchCoordinates:"/>
+                <relationship kind="action" name="locationNow:"/>
+                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWho" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
+            <relationships>
+                <relationship kind="action" name="finished:"/>
+                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
