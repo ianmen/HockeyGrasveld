@@ -65,7 +65,6 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="74Q-xk-lvQ"/>
                                     <constraint firstAttribute="width" constant="150" id="HTz-Pi-jYJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -86,37 +85,45 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Vi-0TD">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Vi-0TD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="OtE-xH-Obd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="addPhoto:" destination="F6t-pD-eeP" eventType="touchUpInside" id="e4A-Gi-rhh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_upload_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="vov-Ss-k1g">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="rpn-Xk-mcI"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="68" id="7rb-Yz-V1o"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="8LK-oR-Y68"/>
-                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="baseline" secondItem="sn2-AT-cIO" secondAttribute="baseline" type="default" id="JCo-xU-zuo"/>
                             <constraint firstItem="RtO-JY-cTI" firstAttribute="trailing" secondItem="sMb-t2-y27" secondAttribute="trailing" type="default" id="KKZ-h8-AHd"/>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="PWW-W0-coq"/>
+                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="leading" secondItem="vov-Ss-k1g" secondAttribute="leading" type="default" id="NLX-ST-H4a"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="RTx-hc-NF9"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="99" id="T1d-Yk-nf5"/>
                             <constraint firstItem="o74-vQ-aH1" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="179" id="WHF-Oq-uFh"/>
+                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="vov-Ss-k1g" secondAttribute="trailing" type="default" id="a3j-ZI-Fbu"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" type="default" id="aL7-5c-ZIJ"/>
+                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="o74-vQ-aH1" secondAttribute="trailing" type="default" id="bKd-oV-32U"/>
                             <constraint firstItem="o74-vQ-aH1" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="leading" type="default" id="bWI-JK-CSr"/>
-                            <constraint firstAttribute="trailing" secondItem="Djo-Vi-0TD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c4P-td-7M8"/>
                             <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="df0-e2-uWb"/>
-                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="77" id="n8K-Bf-arn"/>
+                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="bottom" secondItem="vov-Ss-k1g" secondAttribute="bottom" type="default" id="pLS-VY-4Z7"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="-61" id="pih-WR-dZX"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="trailing" secondItem="sn2-AT-cIO" secondAttribute="trailing" type="default" id="pnO-tw-MfY"/>
                             <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="59" id="qCH-Od-k6y"/>
                             <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="leading" type="default" id="sEU-a7-pUM"/>
+                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="top" secondItem="vov-Ss-k1g" secondAttribute="top" type="default" id="tiI-ID-qQ0"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="trailing" secondItem="ekc-93-dDf" secondAttribute="trailing" type="default" id="xP2-og-WCY"/>
                         </constraints>
                     </view>
@@ -149,7 +156,7 @@
             <objects>
                 <viewController title="Adress" id="pd6-fD-fvD" customClass="ViewControllerActivityWhere" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tTR-la-WDG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWaar@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="c3J-8f-FM7">
@@ -291,7 +298,7 @@
             <objects>
                 <viewController id="9SU-AF-lJs" customClass="ViewControllerActivityWhen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Sa-Sb-2t0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWanneer@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-9V-0CA">
@@ -384,7 +391,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="WmE-Pv-lat" customClass="ViewControllerActivityWho" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6A-N2-5KK">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWie@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hvd-oC-kyM">
@@ -506,6 +513,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="backgroundWanneer@2x.png" width="640" height="960"/>
         <image name="backgroundWat@2x.png" width="640" height="960"/>
         <image name="backgroundWie@2x.png" width="640" height="960"/>
+        <image name="photo_upload_button.png" width="132" height="126"/>
         <image name="toevoegen_icon.png" width="50" height="59"/>
     </resources>
     <classes>
@@ -559,7 +567,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="FYt-HS-10K"/>
+        <segue reference="VHx-ZB-wPy"/>
         <segue reference="tCs-I8-nKM"/>
-        <segue reference="UaC-eX-Hcv"/>
     </inferredMetricsTieBreakers>
 </document>
