@@ -13,7 +13,7 @@
 @interface ViewControllerActivityWho ()
 {
     Activity *activity;
-    //ServerConnection *serverConn;
+    ServerConnection *serverConn;
 }
 @end
 
@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    serverConn.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +47,12 @@
     activity = currentActivity;
 }
 
+-(void)serverResponse {
+    self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
+    
+    self.xmlResponseMsg.text = serverConn.responseString;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
@@ -56,6 +64,12 @@
     }
 }
 
+- (IBAction)finished:(id)sender
+{
+   serverConn = [[ServerConnection alloc] init];
+
+    [serverConn xmlPostActivity:activity];
+}
 //-(void)serverResponse {
 //    self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
 //    

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00CE133B16380A3800173D2F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE133A16380A3800173D2F /* ServerConnection.m */; };
 		00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F6163800F100512046 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00CE133916380A3800173D2F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
+		00CE133A16380A3800173D2F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		00DB89F6163800F100512046 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		00E0F0E61636C94D0064C35F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 			children = (
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
+				00CE133916380A3800173D2F /* ServerConnection.h */,
+				00CE133A16380A3800173D2F /* ServerConnection.m */,
 			);
 			name = Utils;
 			path = ..;
@@ -442,6 +447,7 @@
 				60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */,
 				00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */,
 				6012D514163803EC00319904 /* Activity.m in Sources */,
+				00CE133B16380A3800173D2F /* ServerConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -130,7 +130,8 @@
         activity.category = [self.category.text copy];
         activity.tags = [self.tags.text copy];
         activity.activityDescription = [self.description.text copy];
-        
+        activity.imagePath = [up.url copy];
+
         ViewControllerActivityWhere *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
