@@ -148,10 +148,15 @@
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"toWhen"])
     {
-        NSString *address = [NSString stringWithFormat:@"%@ %@ Netherlands", self.streetField.text, self.cityField.text];
-        activity.address = [address copy];
-        //activity.latitude = [self.mapKit.];
-        //activity.longitude = ;
+        activity.address_city = [self.cityField.text copy];
+        activity.address_street = [self.streetField.text copy];
+        
+        ViewControllerActivityWhen *vc = [segue destinationViewController];
+        
+        [vc setActivity:activity];
+    } else if ([[segue identifier] isEqualToString:@"toWhat"]) {
+        activity.address_city = [self.cityField.text copy];
+        activity.address_street = [self.streetField.text copy];
         
         ViewControllerActivityWhen *vc = [segue destinationViewController];
         
