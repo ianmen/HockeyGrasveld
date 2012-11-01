@@ -17,6 +17,8 @@
     CLLocationManager *locationManager;
     
     CLGeocoder *_geocoder;
+    double longitude;
+    double latitude;
     
     __weak UITextField *_streetField;
     __weak UITextField *_cityField;
@@ -34,5 +36,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapKit;
 - (IBAction)locationNow:(id)sender;
 - (IBAction)fetchCoordinates:(id)sender;
+
+@property double longitude;
+@property double latitude;
 
 @end
