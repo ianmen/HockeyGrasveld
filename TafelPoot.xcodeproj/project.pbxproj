@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00CE133B16380A3800173D2F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE133A16380A3800173D2F /* ServerConnection.m */; };
 		00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F6163800F100512046 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
@@ -43,6 +44,7 @@
 		609C4DEA16354790006017DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C4DE916354790006017DE /* AppDelegate.m */; };
 		609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DF116354790006017DE /* MainStoryboard.storyboard */; };
 		60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEA9B1637E40500200662 /* UIImage+Resize.m */; };
+		9950F30E16426B2C00F60838 /* photo_upload_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9950F30D16426B2C00F60838 /* photo_upload_button.png */; };
 		99DBD6DE1635572600727B94 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D41635572600727B94 /* background1.png */; };
 		99DBD6DF1635572600727B94 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D51635572600727B94 /* background1@2x.png */; };
 		99DBD6E01635572600727B94 /* backgroundWaar.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D61635572600727B94 /* backgroundWaar.png */; };
@@ -59,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00CE133916380A3800173D2F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
+		00CE133A16380A3800173D2F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		00DB89F6163800F100512046 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		00E0F0E61636C94D0064C35F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		609C4DF216354790006017DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		60EBEA9A1637E40500200662 /* UIImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		60EBEA9B1637E40500200662 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		9950F30D16426B2C00F60838 /* photo_upload_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_upload_button.png; sourceTree = "<group>"; };
 		99DBD6D41635572600727B94 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
 		99DBD6D51635572600727B94 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "../background1@2x.png"; sourceTree = "<group>"; };
 		99DBD6D61635572600727B94 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = ../backgroundWaar.png; sourceTree = "<group>"; };
@@ -185,6 +190,8 @@
 			children = (
 				606B588616354A8300574894 /* PhotoUploader.h */,
 				606B588716354A8300574894 /* PhotoUploader.m */,
+				00CE133916380A3800173D2F /* ServerConnection.h */,
+				00CE133A16380A3800173D2F /* ServerConnection.m */,
 			);
 			name = Utils;
 			path = ..;
@@ -419,6 +426,7 @@
 				6012D5061637F6C100319904 /* icon.png in Resources */,
 				6012D5071637F6C100319904 /* icon@2x.png in Resources */,
 				99F28B8E16425E62009F26AF /* toevoegen_icon.png in Resources */,
+				9950F30E16426B2C00F60838 /* photo_upload_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +448,7 @@
 				60EBEA9D1637E51000200662 /* UIImage+Resize.m in Sources */,
 				00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */,
 				6012D514163803EC00319904 /* Activity.m in Sources */,
+				00CE133B16380A3800173D2F /* ServerConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

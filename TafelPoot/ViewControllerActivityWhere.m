@@ -2,7 +2,7 @@
 //  ViewControllerActivityWhere.m
 //  TafelPoot
 //
-//  Created by Jeffrey on 10/23/12.
+//  Created by Stan Janssen on 10/23/12.
 //  Copyright (c) 2012 Avans Hogeschool. All rights reserved.
 //
 
@@ -201,9 +201,23 @@
          //Print the location in the console
          NSLog(@"Currently address is: %@",locatedaddress);
          
-         self.streetField.text = [NSString stringWithFormat:@"%@", street];
-         self.cityField.text = [NSString stringWithFormat:@"%@", city];
          
+         
+         if( self.streetField.text == nil )
+         {
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Helaas.."
+                                                             message:@"We hebben geen adres op kunnen halen. Maar we hebben wel jouw locatie."
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles:nil];
+             
+             [alert show];
+         }
+         else
+         {
+             self.streetField.text = [NSString stringWithFormat:@"%@", street];
+             self.cityField.text = [NSString stringWithFormat:@"%@", city];
+         }
          
      }];
     
@@ -322,6 +336,15 @@
             
             
         }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Helaas.."
+                                                            message:@"Waarschijnlijk heb je het adres verkeerd ingevuld.."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Probeer opnieuw!"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
         
         // Enable Button
         self.fetchCoordinatesButton.hidden = NO;
@@ -391,8 +414,20 @@
              NSString *street = [placemark.addressDictionary valueForKey:@"Street"];
              NSString *city = [placemark.addressDictionary valueForKey:@"City"];
              
-             self.streetField.text = [NSString stringWithFormat:@"%@", street];
-             self.cityField.text = [NSString stringWithFormat:@"%@", city];
+             if( [street length] == 0 )
+             {
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Helaas.."
+                                                                 message:@"Bij deze locatie is geen adres gevonden.. Maar je kunt wel verder!"
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+                 [alert show];
+             }
+             else
+             {
+                 self.streetField.text = [NSString stringWithFormat:@"%@", street];
+                 self.cityField.text = [NSString stringWithFormat:@"%@", city];
+             }
              
              
          }];

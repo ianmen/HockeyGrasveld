@@ -20,6 +20,7 @@
 @synthesize startTime;
 @synthesize endTime;
 @synthesize startDate;
+@synthesize endDate;
 @synthesize activityDescription;
 @synthesize locationDescription;
 
