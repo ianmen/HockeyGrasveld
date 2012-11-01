@@ -21,6 +21,8 @@
 @synthesize geocoder = _geocoder;
 @synthesize streetField = _streetField, cityField = _cityField, fetchCoordinatesButton = _fetchCoordinatesButton;
 
+@synthesize longitude, latitude;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -151,6 +153,9 @@
         activity.address_city = [self.cityField.text copy];
         activity.address_street = [self.streetField.text copy];
         
+        activity.longitude = self.longitude;
+        activity.latitude = self.latitude;
+        
         ViewControllerActivityWhen *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
@@ -217,6 +222,11 @@
          {
              self.streetField.text = [NSString stringWithFormat:@"%@", street];
              self.cityField.text = [NSString stringWithFormat:@"%@", city];
+             
+             self.longitude = locationManager.location.coordinate.longitude;
+             self.latitude = locationManager.location.coordinate.latitude;
+             
+             //NSLog(@"%f", longitude);
          }
          
      }];
@@ -318,6 +328,12 @@
             newRegion.span.longitudeDelta = 0.016243;
             
             [self.mapKit setRegion:newRegion animated:YES];
+            
+            
+            
+            self.longitude = coordinate.latitude;
+            self.latitude = coordinate.latitude;
+            
             
             
             // Set annotation
@@ -427,6 +443,9 @@
              {
                  self.streetField.text = [NSString stringWithFormat:@"%@", street];
                  self.cityField.text = [NSString stringWithFormat:@"%@", city];
+                 
+                 self.longitude = coordinate.latitude;
+                 self.latitude = coordinate.latitude;
              }
              
              

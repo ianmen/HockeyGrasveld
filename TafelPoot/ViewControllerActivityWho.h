@@ -16,5 +16,6 @@
 
 - (IBAction)finished:(id)sender;
 - (void)setActivity:(Activity*)currentActivity;
+- (IBAction)shareButton:(id)sender;
 
 @end
