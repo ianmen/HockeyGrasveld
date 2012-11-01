@@ -146,6 +146,8 @@
     }
 }
 
+
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     //Did finisch picking the media
