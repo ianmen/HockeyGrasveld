@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerActivityWho.h"
+#import "ViewControllerActivityWhen.h"
 #import "Activity.h"
 
 @interface ViewControllerActivityWho ()
@@ -42,6 +43,17 @@
 - (void)setActivity:(Activity*)currentActivity
 {
     activity = currentActivity;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"toWhen"])
+    {   
+        ViewControllerActivityWhen *vc = [segue destinationViewController];
+        
+        [vc setActivity:activity];
+    }
 }
 
 //-(void)serverResponse {
