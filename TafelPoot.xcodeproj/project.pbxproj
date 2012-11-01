@@ -294,6 +294,7 @@
 			children = (
 				6012D4F41637F6C100319904 /* icon.png */,
 				6012D4F51637F6C100319904 /* icon@2x.png */,
+				99F28B8D16425E61009F26AF /* toevoegen_icon.png */,
 				6012D4E51637F6C100319904 /* background1.png */,
 				6012D4E61637F6C100319904 /* background1@2x.png */,
 				6012D4E71637F6C100319904 /* backgroundWaar.png */,
