@@ -51,6 +51,15 @@
     self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
     
     self.xmlResponseMsg.text = serverConn.responseString;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"toWhen"])
+    {   
+        ViewControllerActivityWhen *vc = [segue destinationViewController];
+        
+        [vc setActivity:activity];
+    }
 }
 
 - (IBAction)finished:(id)sender
@@ -59,4 +68,16 @@
 
     [serverConn xmlPostActivity:activity];
 }
+//-(void)serverResponse {
+//    self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
+//    
+//    self.xmlResponseMsg.text = serverConn.responseString;
+//}
+//
+//- (IBAction)finished:(id)sender
+//{
+//   serverConn = [[ServerConnection alloc] init];
+//
+//    [serverConn xmlPostActivity:activity];
+//}
 @end

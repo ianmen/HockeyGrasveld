@@ -27,6 +27,8 @@ typedef enum {
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *address_city;
+@property (nonatomic, strong) NSString *address_street;
 @property (nonatomic, assign) double longitude;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, strong) NSString *locationDescription;
