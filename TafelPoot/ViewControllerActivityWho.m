@@ -51,6 +51,8 @@
     self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
     
     self.xmlResponseMsg.text = serverConn.responseString;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
