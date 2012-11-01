@@ -6,6 +6,10 @@
 //  Copyright (c) 2012 Avans Hogeschool. All rights reserved.
 //
 
+//Framework import
+#import <QuartzCore/QuartzCore.h>
+
+
 #import "ViewControllerActivityWhat.h"
 #import "ViewControllerActivityWhere.h"
 #import "Activity.h"
@@ -22,7 +26,10 @@
     Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
+    UIImage *imageDone;
 }
+
+@synthesize imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +54,7 @@
     } else {
         activity = [[Activity alloc] init];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -164,6 +172,9 @@
     //Start the upload
     [up uploadPhoto:image];
     
+    //Save the image
+    imageDone = image;
+    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -251,6 +262,18 @@
     
     //Remove the spinner after a  delay
     [hud hide:YES afterDelay:2];
+
+    //Set the rounded corners of the image
+    imageView.layer.cornerRadius = 10.0f;
+    imageView.layer.masksToBounds = YES;
+    
+    //Set a border color of the image
+    imageView.layer.borderWidth = 2.0;
+    imageView.layer.borderColor = [[UIColor grayColor] CGColor];
+    
+    //Set the image on the location of the upload
+    imageView.image = imageDone ;
+    
     
 }
 

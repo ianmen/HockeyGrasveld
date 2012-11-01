@@ -31,6 +31,7 @@
 		602E62D81637EDA50095EDA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E62D71637EDA50095EDA3 /* QuartzCore.framework */; };
 		602E62DA1637EDF10095EDA3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6E91635573100727B94 /* Default.png */; };
 		602E62DB1637EDF50095EDA3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EA1635573100727B94 /* Default@2x.png */; };
+		6044F619163808C0004F4F06 /* TafelPoot-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DE116354790006017DE /* TafelPoot-Info.plist */; };
 		606B588816354A8300574894 /* PhotoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B588716354A8300574894 /* PhotoUploader.m */; };
 		6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073C0D81636A36800BB9363 /* MBProgressHUD.m */; };
 		6073C0E21636A82700BB9363 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073C0E01636A82700BB9363 /* 37x-Checkmark.png */; };
@@ -201,7 +202,7 @@
 			children = (
 			);
 			name = en.lproj;
-			path = /Users/jeffrey/Desktop/BredApp/en.lproj;
+			path = /Users/ianmen/Documents/HockeyGrasveld/en.lproj;
 			sourceTree = "<absolute>";
 		};
 		604BB3E91636C67400097EA7 /* image-resize */ = {
@@ -274,8 +275,6 @@
 				00CE1325163804D400173D2F /* Controllers */,
 				00CE1323163804A300173D2F /* Models */,
 				00DB89F41638008000512046 /* Utils */,
-				6012D4F41637F6C100319904 /* icon.png */,
-				6012D4F51637F6C100319904 /* icon@2x.png */,
 				99DBD6F11635573900727B94 /* Graphics */,
 				609C4DE816354790006017DE /* AppDelegate.h */,
 				609C4DE916354790006017DE /* AppDelegate.m */,
@@ -300,6 +299,8 @@
 		99DBD6F11635573900727B94 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				6012D4F41637F6C100319904 /* icon.png */,
+				6012D4F51637F6C100319904 /* icon@2x.png */,
 				9950F30D16426B2C00F60838 /* photo_upload_button.png */,
 				99F28B8D16425E61009F26AF /* toevoegen_icon.png */,
 				6012D4E51637F6C100319904 /* background1.png */,
@@ -394,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6044F619163808C0004F4F06 /* TafelPoot-Info.plist in Resources */,
 				609C4DE416354790006017DE /* InfoPlist.strings in Resources */,
 				609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */,
 				99DBD6DE1635572600727B94 /* background1.png in Resources */,
