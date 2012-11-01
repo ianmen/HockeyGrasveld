@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerActivityWho.h"
+#import "ViewControllerActivityWhen.h"
 #import "Activity.h"
 
 @interface ViewControllerActivityWho ()

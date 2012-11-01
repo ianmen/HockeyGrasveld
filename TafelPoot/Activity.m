@@ -13,7 +13,8 @@
 @synthesize activityName;
 @synthesize imagePath;
 @synthesize tags;
-@synthesize address;
+@synthesize address_city;
+@synthesize address_street;
 @synthesize latitude;
 @synthesize longitude;
 @synthesize startTime;

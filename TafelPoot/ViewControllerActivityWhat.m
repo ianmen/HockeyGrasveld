@@ -38,7 +38,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    activity = [[Activity alloc] init];
+    // If activity already exists, automaticly fill in the form
+    if( [activity.activityName length] > 0 ) {
+        self.name.text = activity.activityName;
+        self.category.text = activity.category;
+        self.tags.text = activity.tags;
+        self.description.text = activity.activityDescription;
+    } else {
+        activity = [[Activity alloc] init];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +73,52 @@
 - (void)setActivity:(Activity*)currentActivity
 {
     activity = currentActivity;
+}
+
+- (NSMutableArray *) validateForm
+{
+    NSMutableArray *errors = [[NSMutableArray alloc] init];
+    
+    if( [self.name.text length] == 0 ) [errors addObject:@"Naam"];
+    if( [self.category.text length] == 0 ) [errors addObject:@"Categorie"];
+    if( [self.tags.text length] == 0 ) [errors addObject:@"Tags"];
+    if( [self.description.text length] == 0 ) [errors addObject:@"Beschrijving"];
+    
+    return errors;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"toWhere"]) {
+        
+        NSMutableArray *errors = [self validateForm];
+        BOOL segueShouldOccur = YES;
+        
+        if ( [errors count] > 0 ) {
+            segueShouldOccur = NO;
+        }
+        
+        NSString *errors_string = [errors componentsJoinedByString: @"\n"];
+        NSString *message = [@"De volgende velden zijn niet (correct) ingevuld: \n" stringByAppendingString:errors_string];
+        
+        // you determine this
+        if (!segueShouldOccur) {
+            UIAlertView *notPermitted = [[UIAlertView alloc]
+                                         initWithTitle:@"Niet alle velden zijn ingevuld"
+                                         message: message
+                                         delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+            
+            // shows alert to user
+            [notPermitted show];
+            
+            // prevent segue from occurring
+            return NO;
+        }
+    }
+    
+    // by default perform the segue transition
+    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
