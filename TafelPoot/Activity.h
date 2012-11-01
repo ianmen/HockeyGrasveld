@@ -11,6 +11,7 @@
 typedef enum {
     Spelen,
     Muziek,
+    Party,
     Picknikken
 } Category;
 
@@ -26,7 +27,6 @@ typedef enum {
 @property (nonatomic, strong) NSString *endTime;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
-@property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *address_city;
 @property (nonatomic, strong) NSString *address_street;
 @property (nonatomic, assign) double longitude;

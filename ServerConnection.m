@@ -56,9 +56,7 @@
     // [dateComps setHour:9]; // keynote started at 9:00 am
     // [dateComps setMinute:0]; // default value, can be omitted
     // [dateComps setSecond:0]; // default value, can be omitted
-    
-    
-    
+        
     //NSDate *dateOfKeynote = [cal dateFromComponents:dateComps];
     
     // NSLog(@"[%@]", dateOfKeynote);
@@ -73,6 +71,15 @@
     //    NSString *contentType = [NSString stringWithFormat:@"text/xml"];
     //    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
     //
+    
+    
+    // Current date
+    NSDate *date = [NSDate date];
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    NSString *currentDate = [DateFormatter stringFromDate:[NSDate date]];
+    
+    
     //prepare request
     NSString *urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -103,13 +110,16 @@
     [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.endDate]] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<locatie>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:@"<locatieomschrijving>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:activity.address] dataUsingEncoding: NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:@"</locatieomschrijving>"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"<locatiestraat>"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:activity.address_street] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"</locatiestraat>"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"<locatieplaats>"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:activity.address_city] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"</locatieplaats>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<long>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat: [NSString stringWithFormat:@"%f",activity.longitude]] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</long>"] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -118,13 +128,16 @@
     [postBody appendData:[[NSString stringWithFormat:@"</lat>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</locatie>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<foto>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:activity.imagePath] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:[activity.imagePath absoluteString]] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</foto>"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"<datum>"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"</datum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</activiteit>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</activiteiten>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</bredapp>"] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    //    //post
+    //post
     [request setHTTPBody:postBody];
     
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -154,6 +167,8 @@
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     self.responseCode = [httpResponse statusCode];
     self.responseStatus = [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]];
+    
+    [delegate performSelector:@selector(serverResponse)];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -166,6 +181,8 @@
     }
     
     self.responseData = data;
+    
+    [delegate performSelector:@selector(serverResponse)];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -174,10 +191,6 @@
     
     self.responseString = [error localizedDescription];
     
-    [delegate performSelector:@selector(serverResponse)];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [delegate performSelector:@selector(serverResponse)];
 }
 

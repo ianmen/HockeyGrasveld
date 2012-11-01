@@ -33,6 +33,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    serverConn = [[ServerConnection alloc] init];
+    
     serverConn.delegate = self;
 }
 
@@ -66,8 +68,6 @@
 
 - (IBAction)finished:(id)sender
 {
-   serverConn = [[ServerConnection alloc] init];
-
     [serverConn xmlPostActivity:activity];
 }
 //-(void)serverResponse {
