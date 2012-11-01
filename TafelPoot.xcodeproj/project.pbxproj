@@ -484,6 +484,7 @@
 				00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */,
 				6012D514163803EC00319904 /* Activity.m in Sources */,
 				00CE133B16380A3800173D2F /* ServerConnection.m in Sources */,
+				1BE37A491642992D004B214E /* FacebookViewController.m in Sources */,
 				608F39BB164297D5006B8A57 /* CustomBackSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
