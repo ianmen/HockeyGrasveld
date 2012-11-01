@@ -9,6 +9,10 @@
 #import "ViewControllerActivityWho.h"
 #import "ViewControllerActivityWhen.h"
 #import "Activity.h"
+#import "Twitter/TWTweetComposeViewController.h"
+#import "FacebookViewController.h"
+#import "AppDelegate.h"
+
 
 @interface ViewControllerActivityWho ()
 {
@@ -38,6 +42,55 @@
     serverConn.delegate = self;
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == 0)
+	{
+        Class tweeterClass = NSClassFromString(@"TWTweetComposeViewController");
+        
+        if(tweeterClass != nil) {   // check for Twitter integration
+            
+            // check Twitter accessibility and at least one account is setup
+            if([TWTweetComposeViewController canSendTweet]) {
+                
+                TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+                // set initial text
+                [tweetViewController setInitialText:@"Ik heb net de activiteit \"...\" toegevoegd in BredApp! Check het op Facebook: https://www.facebook.com/pages/Testpagina"];
+                
+                [self presentViewController:tweetViewController animated:YES completion:nil];
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You can't send a tweet right now, make sure you have at least one Twitter account setup and your device is using iOS5 or iOS6" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            }
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"You must upgrade to iOS5.0 or 6.0 in order to send tweets from this application" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        }
+    }
+    else if (buttonIndex == 1)
+	{
+        if (FBLoggedIn == 0)
+        {
+            NSLog(@"Nog niet ingelogd!");
+            AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+            // The user has initiated a login, so call the openSession method
+            // and show the login UX if necessary.
+            [appDelegate openSessionWithAllowLoginUI:YES];
+            //if (FBLoggedIn == 1)
+            //{
+            [self performSegueWithIdentifier:@"gotoFB" sender:self];
+            NSLog(@"FB!");
+            //}
+        }
+        else if (FBLoggedIn == 1)
+        {
+            NSLog(@"Ingelogd!");
+            [self performSegueWithIdentifier:@"gotoFB" sender:self];
+            NSLog(@"FB!");
+        }
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -47,6 +100,11 @@
 - (void)setActivity:(Activity*)currentActivity
 {
     activity = currentActivity;
+}
+
+- (IBAction)shareButton:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Delen" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Twitter", @"Facebook", @"Cancel", nil];
+    [actionSheet showInView:self.view];
 }
 
 -(void)serverResponse {
