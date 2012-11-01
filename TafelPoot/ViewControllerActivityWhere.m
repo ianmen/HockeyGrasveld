@@ -33,6 +33,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // If activity already exists, automaticly fill in the form
+    if( [activity.address_city length] > 0 ) {
+        self.cityField.text = activity.address_city;
+    }
+    if( [activity.address_street length] > 0 ) {
+        self.streetField.text = activity.address_street;
+    }
 	
     //Make this controller the delegate for the map view.
     self.mapKit.delegate = self;
@@ -89,6 +97,50 @@
 - (void)setActivity:(Activity*)currentActivity
 {
     activity = currentActivity;
+}
+
+- (NSMutableArray *) validateForm
+{
+    NSMutableArray *errors = [[NSMutableArray alloc] init];
+    
+    if( [self.streetField.text length] == 0 ) [errors addObject:@"Straat"];
+    if( [self.cityField.text length] == 0 ) [errors addObject:@"Plaats"];
+    
+    return errors;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"toWhen"]) {
+        
+        NSMutableArray *errors = [self validateForm];
+        BOOL segueShouldOccur = YES;
+        
+        if ( [errors count] > 0 ) {
+            segueShouldOccur = NO;
+        }
+        
+        NSString *errors_string = [errors componentsJoinedByString: @"\n"];
+        NSString *message = [@"Het volgende veld is niet (correct) ingevuld: \n" stringByAppendingString:errors_string];
+        
+        // you determine this
+        if (!segueShouldOccur) {
+            UIAlertView *notPermitted = [[UIAlertView alloc]
+                                         initWithTitle:@"Niet alle velden zijn ingevuld"
+                                         message: message
+                                         delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+            
+            // shows alert to user
+            [notPermitted show];
+            
+            // prevent segue from occurring
+            return NO;
+        }
+    }
+    
+    // by default perform the segue transition
+    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

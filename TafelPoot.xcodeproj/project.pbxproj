@@ -54,6 +54,7 @@
 		99DBD6E71635572600727B94 /* backgroundWie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6DD1635572600727B94 /* backgroundWie@2x.png */; };
 		99DBD6EF1635573100727B94 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EB1635573100727B94 /* icon.png */; };
 		99DBD6F01635573100727B94 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EC1635573100727B94 /* icon@2x.png */; };
+		99F28B8E16425E62009F26AF /* toevoegen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99F28B8D16425E61009F26AF /* toevoegen_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		99DBD6EA1635573100727B94 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		99DBD6EB1635573100727B94 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		99DBD6EC1635573100727B94 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
+		99F28B8D16425E61009F26AF /* toevoegen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toevoegen_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		99DBD6F11635573900727B94 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				99F28B8D16425E61009F26AF /* toevoegen_icon.png */,
 				6012D4E51637F6C100319904 /* background1.png */,
 				6012D4E61637F6C100319904 /* background1@2x.png */,
 				6012D4E71637F6C100319904 /* backgroundWaar.png */,
@@ -413,6 +416,7 @@
 				6012D5031637F6C100319904 /* backgroundWie@2x.png in Resources */,
 				6012D5061637F6C100319904 /* icon.png in Resources */,
 				6012D5071637F6C100319904 /* icon@2x.png in Resources */,
+				99F28B8E16425E62009F26AF /* toevoegen_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
