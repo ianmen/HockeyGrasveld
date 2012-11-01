@@ -205,11 +205,12 @@
          
          if( self.streetField.text == nil )
          {
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Test Message"
-                                                             message:@"This is a test"
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Helaas.."
+                                                             message:@"We hebben geen adres op kunnen halen. Maar we hebben wel jouw locatie."
                                                             delegate:nil
                                                    cancelButtonTitle:@"OK"
                                                    otherButtonTitles:nil];
+             
              [alert show];
          }
          else
