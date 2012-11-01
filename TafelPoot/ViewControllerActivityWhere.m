@@ -33,6 +33,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // If activity already exists, automaticly fill in the form
+    if( [activity.address_city length] > 0 ) {
+        self.cityField.text = activity.address_city;
+    }
+    if( [activity.address_street length] > 0 ) {
+        self.streetField.text = activity.address_street;
+    }
 	
     //Make this controller the delegate for the map view.
     self.mapKit.delegate = self;
@@ -96,7 +104,15 @@
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"toWhen"])
     {
-        activity.address = [self.activityAddress.text copy];
+        activity.address_city = [self.cityField.text copy];
+        activity.address_street = [self.streetField.text copy];
+        
+        ViewControllerActivityWhen *vc = [segue destinationViewController];
+        
+        [vc setActivity:activity];
+    } else if ([[segue identifier] isEqualToString:@"toWhat"]) {
+        activity.address_city = [self.cityField.text copy];
+        activity.address_street = [self.streetField.text copy];
         
         ViewControllerActivityWhen *vc = [segue destinationViewController];
         

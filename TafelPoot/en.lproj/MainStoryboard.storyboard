@@ -265,7 +265,7 @@
                     <navigationItem key="navigationItem" title="Adres" id="AA9-6W-pAP">
                         <barButtonItem key="leftBarButtonItem" title="Terug" id="OQ0-7k-Clh">
                             <connections>
-                                <segue destination="F6t-pD-eeP" kind="push" id="6cK-jp-Qjh"/>
+                                <segue destination="F6t-pD-eeP" kind="push" identifier="toWhat" id="6cK-jp-Qjh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="dNB-G7-4u4">
@@ -498,50 +498,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="backgroundWanneer@2x.png" width="640" height="960"/>
         <image name="backgroundWat@2x.png" width="640" height="960"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
-            <relationships>
-                <relationship kind="action" name="addPhoto:"/>
-                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
-            <relationships>
-                <relationship kind="action" name="fetchCoordinates:"/>
-                <relationship kind="action" name="locationNow:"/>
-                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWho" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
-            <relationships>
-                <relationship kind="action" name="finished:"/>
-                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -549,6 +505,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="6cK-jp-Qjh"/>
-        <segue reference="Erl-aD-hl6"/>
+        <segue reference="VHx-ZB-wPy"/>
     </inferredMetricsTieBreakers>
 </document>
