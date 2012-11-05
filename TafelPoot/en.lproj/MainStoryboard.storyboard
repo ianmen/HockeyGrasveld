@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--View Controller - Item-->
@@ -78,11 +78,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschrijving" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o74-vQ-aH1">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Vi-0TD">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="83" id="73a-gS-8Q5"/>
@@ -99,27 +94,43 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_upload_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="vov-Ss-k1g">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="dAg-1L-PSL"/>
+                                    <constraint firstAttribute="width" constant="103" id="Dmz-gg-Vj6"/>
                                     <constraint firstAttribute="height" constant="103" id="t30-Ny-kUA"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="uitextview_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="bY3-Il-ojy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="5ab-AJ-cv1"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Beschrijving - Placeholder bij Text View werkt nog niet" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Zf-EKY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="YKm-V1-dS2"/>
+                                    <constraint firstAttribute="width" constant="260" id="kPq-W8-RpT"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="o74-vQ-aH1" secondAttribute="trailing" type="default" id="23K-uY-nB1"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="trailing" secondItem="Djo-Vi-0TD" secondAttribute="trailing" type="default" id="4mh-O2-C4X"/>
                             <constraint firstItem="Djo-Vi-0TD" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="68" id="5cn-Gv-OgT"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="64H-fI-JBd"/>
+                            <constraint firstItem="bY3-Il-ojy" firstAttribute="top" secondItem="RtO-JY-cTI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6Tp-FV-UsY"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="8LK-oR-Y68"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8XV-4j-uLw"/>
-                            <constraint firstItem="o74-vQ-aH1" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="179" id="JZh-OI-ULJ"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="leading" secondItem="bY3-Il-ojy" secondAttribute="leading" type="default" id="PUE-Xs-Mly"/>
                             <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="59" id="Q4n-Gd-Kat"/>
                             <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="RTx-hc-NF9"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="99" id="T1d-Yk-nf5"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ybv-Rw-X7c"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="176" id="Zyp-Na-zBi"/>
                             <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="vov-Ss-k1g" secondAttribute="trailing" type="default" id="a3j-ZI-Fbu"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" type="default" id="aL7-5c-ZIJ"/>
-                            <constraint firstItem="o74-vQ-aH1" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="leading" type="default" id="bWI-JK-CSr"/>
-                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="df0-e2-uWb"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="trailing" secondItem="bY3-Il-ojy" secondAttribute="trailing" type="default" id="ahG-mk-IoI"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="dRn-Vm-5pF"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="-61" id="hf7-gB-irW"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="top" type="default" id="o1x-Og-X0Z"/>
                             <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="leading" type="default" id="sEU-a7-pUM"/>
@@ -140,7 +151,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="category" destination="sMb-t2-y27" id="84V-uh-AxP"/>
-                        <outlet property="description" destination="o74-vQ-aH1" id="gsr-yK-wdd"/>
+                        <outlet property="description" destination="unb-Zf-EKY" id="kFA-gR-p8D"/>
                         <outlet property="imageView" destination="vov-Ss-k1g" id="xag-i6-i2w"/>
                         <outlet property="name" destination="sn2-AT-cIO" id="caG-0H-7Tm"/>
                         <outlet property="tags" destination="RtO-JY-cTI" id="lpv-rW-ruu"/>
@@ -643,6 +654,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="backgroundWie@2x.png" width="640" height="960"/>
         <image name="photo_upload_button.png" width="132" height="126"/>
         <image name="toevoegen_icon.png" width="50" height="59"/>
+        <image name="uitextview_background.png" width="573" height="378"/>
     </resources>
     <classes>
         <class className="FacebookViewController" superclassName="UIViewController">
@@ -667,7 +679,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <relationships>
                 <relationship kind="action" name="addPhoto:"/>
                 <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
@@ -710,8 +722,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="FFk-gi-mPA"/>
-        <segue reference="tCs-I8-nKM"/>
         <segue reference="6cK-jp-Qjh"/>
+        <segue reference="VHx-ZB-wPy"/>
+        <segue reference="tCs-I8-nKM"/>
     </inferredMetricsTieBreakers>
 </document>

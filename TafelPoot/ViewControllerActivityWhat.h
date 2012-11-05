@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *category;
 @property (strong, nonatomic) IBOutlet UITextField *tags;
-@property (strong, nonatomic) IBOutlet UITextField *description;
+@property (strong, nonatomic) IBOutlet UITextView *description;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)addPhoto:(id)sender;
