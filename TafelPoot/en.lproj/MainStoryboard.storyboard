@@ -63,18 +63,18 @@
                                     <constraint firstAttribute="height" constant="480" id="KgW-b3-l9w"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="HTz-Pi-jYJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -103,35 +103,79 @@
                                     <constraint firstAttribute="height" constant="160" id="5ab-AJ-cv1"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Beschrijving - Placeholder bij Text View werkt nog niet" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Zf-EKY">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" text="Beschrijving" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Zf-EKY">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="YKm-V1-dS2"/>
                                     <constraint firstAttribute="width" constant="260" id="kPq-W8-RpT"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rra-C9-cBQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="6ee-bc-v0A"/>
+                                    <constraint firstAttribute="width" constant="26" id="W0J-O2-KI5"/>
+                                </constraints>
+                            </imageView>
+                            <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrs-iL-pXI">
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zp8-Mo-PDu">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="8wo-Yn-9za"/>
+                                            <constraint firstAttribute="width" constant="322" id="K59-XG-zMF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="F6t-pD-eeP" id="FyA-db-sg5"/>
+                                            <outlet property="delegate" destination="F6t-pD-eeP" id="0e8-xH-Kp6"/>
+                                        </connections>
+                                    </pickerView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-ml-v1N">
+                                        <items>
+                                            <barButtonItem width="251" style="plain" systemItem="fixedSpace" id="pPx-qy-Adr"/>
+                                            <barButtonItem systemItem="done" id="gxg-se-Ncn">
+                                                <connections>
+                                                    <action selector="selectCategoryFromPicker:" destination="F6t-pD-eeP" id="u8b-DQ-hem"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="top" secondItem="xrs-iL-pXI" secondAttribute="top" constant="107" id="42a-rX-FqZ"/>
+                                    <constraint firstItem="zp8-Mo-PDu" firstAttribute="leading" secondItem="xrs-iL-pXI" secondAttribute="leading" type="default" id="CIo-B9-FMu"/>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="trailing" secondItem="xrs-iL-pXI" secondAttribute="trailing" type="default" id="Jl9-MR-Nho"/>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="leading" secondItem="xrs-iL-pXI" secondAttribute="leading" type="default" id="fKj-8K-oXb"/>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="bottom" secondItem="zp8-Mo-PDu" secondAttribute="top" type="default" id="hat-hp-sQT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xrs-iL-pXI" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" type="default" id="0iZ-Hv-U7b"/>
                             <constraint firstItem="unb-Zf-EKY" firstAttribute="trailing" secondItem="Djo-Vi-0TD" secondAttribute="trailing" type="default" id="4mh-O2-C4X"/>
                             <constraint firstItem="Djo-Vi-0TD" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="68" id="5cn-Gv-OgT"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="64H-fI-JBd"/>
+                            <constraint firstItem="xrs-iL-pXI" firstAttribute="trailing" secondItem="ekc-93-dDf" secondAttribute="trailing" type="default" id="6GV-FC-pJX"/>
                             <constraint firstItem="bY3-Il-ojy" firstAttribute="top" secondItem="RtO-JY-cTI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6Tp-FV-UsY"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="8LK-oR-Y68"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8XV-4j-uLw"/>
+                            <constraint firstItem="Rra-C9-cBQ" firstAttribute="centerY" secondItem="sMb-t2-y27" secondAttribute="centerY" type="default" id="Aa1-Ja-0dq"/>
+                            <constraint firstItem="xrs-iL-pXI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" type="default" id="Gs1-aw-nbq"/>
+                            <constraint firstItem="Rra-C9-cBQ" firstAttribute="centerX" secondItem="xrs-iL-pXI" secondAttribute="centerX" type="default" id="Kci-Dd-EHz"/>
+                            <constraint firstAttribute="bottom" secondItem="xrs-iL-pXI" secondAttribute="bottom" constant="-5" id="LsW-WO-4xS"/>
                             <constraint firstItem="unb-Zf-EKY" firstAttribute="leading" secondItem="bY3-Il-ojy" secondAttribute="leading" type="default" id="PUE-Xs-Mly"/>
                             <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="59" id="Q4n-Gd-Kat"/>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="RTx-hc-NF9"/>
                             <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="99" id="T1d-Yk-nf5"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ybv-Rw-X7c"/>
                             <constraint firstItem="unb-Zf-EKY" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="176" id="Zyp-Na-zBi"/>
                             <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="vov-Ss-k1g" secondAttribute="trailing" type="default" id="a3j-ZI-Fbu"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" type="default" id="aL7-5c-ZIJ"/>
                             <constraint firstItem="unb-Zf-EKY" firstAttribute="trailing" secondItem="bY3-Il-ojy" secondAttribute="trailing" type="default" id="ahG-mk-IoI"/>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="dRn-Vm-5pF"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="hCa-Eo-nSn"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="-61" id="hf7-gB-irW"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="khk-Iq-doj"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="top" type="default" id="o1x-Og-X0Z"/>
                             <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="leading" type="default" id="sEU-a7-pUM"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="trailing" secondItem="ekc-93-dDf" secondAttribute="trailing" type="default" id="xP2-og-WCY"/>
@@ -151,9 +195,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="category" destination="sMb-t2-y27" id="84V-uh-AxP"/>
+                        <outlet property="category_icon" destination="Rra-C9-cBQ" id="fjb-aL-pC3"/>
                         <outlet property="description" destination="unb-Zf-EKY" id="kFA-gR-p8D"/>
                         <outlet property="imageView" destination="vov-Ss-k1g" id="xag-i6-i2w"/>
                         <outlet property="name" destination="sn2-AT-cIO" id="caG-0H-7Tm"/>
+                        <outlet property="picker" destination="zp8-Mo-PDu" id="gz5-TP-6cj"/>
+                        <outlet property="pickerView" destination="xrs-iL-pXI" id="Ugv-hP-Lj2"/>
                         <outlet property="tags" destination="RtO-JY-cTI" id="lpv-rW-ruu"/>
                         <segue destination="pd6-fD-fvD" kind="push" id="Erl-aD-hl6"/>
                     </connections>
@@ -678,10 +725,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
             <relationships>
                 <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="action" name="selectCategoryFromPicker:"/>
+                <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="category" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="category_icon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="customInput" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="description" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
             </relationships>
         </class>
