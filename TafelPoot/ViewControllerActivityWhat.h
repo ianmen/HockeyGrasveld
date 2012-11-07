@@ -10,10 +10,19 @@
 
 @class Activity;
 
+// Naar boven schuiven annimatie
+NSTimeInterval animationDuration;
+UIViewAnimationCurve animationCurve;
+CGRect keyboardFrame;
+
+
 @interface ViewControllerActivityWhat : UIViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate> {
     UIView *inputAccView;
     UIButton *btnDone;
+    
 }
+
+
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *category;
@@ -29,4 +38,5 @@
 - (IBAction)selectCategoryFromPicker:(id)sender;
 
 - (IBAction)addPhoto:(id)sender;
+
 @end
