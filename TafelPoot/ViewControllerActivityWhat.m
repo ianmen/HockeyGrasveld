@@ -50,9 +50,7 @@
     [self.category setDelegate: self];
     [self.description setDelegate: self];
     
-    categories = [[NSArray alloc] initWithObjects: @"", @"Algemeen", @"Sport", @"Muziek", @"Cultuur", nil];
-    
-    //self.description
+    categories = [[NSArray alloc] initWithObjects: @"", @"Muziek", @"Sport", @"Eten", @"Reizen", @"Games", @"Kunst en Cultuur", @"Natuur en Milieu", @"Gezondheid en Uiterlijk", @"Bouwen en Ondernemen", @"Uitgaan en Evenementen", @"Foto en Film", @"Boeken", @"Dieren", nil];
 
     
     // If activity already exists, automaticly fill in the form
@@ -205,13 +203,33 @@
     [self.pickerView setHidden:YES];
     UIImage *icon;
     
-    if ( self.category.text == @"Cultuur" ) {
+    if ( [self.category.text isEqualToString: @"Muziek"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_music.png"];
+    } else if ( [self.category.text isEqualToString: @"Sport"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_sport.png"];
+    } else if ( [self.category.text isEqualToString: @"Eten"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_food.png"];
+    } else if ( [self.category.text isEqualToString: @"Reizen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_travel.png"];
+    } else if ( [self.category.text isEqualToString: @"Games"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_games.png"];
+    } else if ( [self.category.text isEqualToString: @"Kunst en Cultuur"] ) {
         icon = [UIImage imageNamed:@"categoryIcon_culture.png"];
-    } else if ( self.category.text == @"Sport" ) {
-        icon = [UIImage imageNamed:@"categoryIcon_unknown.png"];
-    } else if ( self.category.text == @"Muziek" ) {
-        icon = [UIImage imageNamed:@"categoryIcon_unknown.png"];
-    } else {
+    } else if ( [self.category.text isEqualToString: @"Natuur en Milieu"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_nature.png"];
+    } else if ( [self.category.text isEqualToString: @"Gezondheid en Uiterlijk"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_health.png"];
+    } else if ( [self.category.text isEqualToString: @"Bouwen en Ondernemen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_building.png"];
+    } else if ( [self.category.text isEqualToString: @"Uitgaan en Evenementen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_events.png"];
+    } else if ( [self.category.text isEqualToString: @"Foto en Film"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_photo.png"];
+    } else if ( [self.category.text isEqualToString: @"Boeken"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_books.png"];
+    } else if ( [self.category.text isEqualToString: @"Dieren"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_animals.png"];
+    }  else {
         icon = [UIImage imageNamed:@"categoryIcon_unknown.png"];
     }
     
