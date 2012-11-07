@@ -15,7 +15,7 @@
 #import "Activity.h"
 #import "PhotoUploader.h"
 #import "MBProgressHUD.h"
-
+#import "ServerConnection.h"
 
 @interface ViewControllerActivityWhat ()
 
@@ -62,7 +62,7 @@
     } else {
         activity = [[Activity alloc] init];
     }
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +109,12 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    ServerConnection *con = [[ServerConnection alloc] init];
+    
+    [con loadActivities];
+    
+    
     if ([identifier isEqualToString:@"toWhere"]) {
         
         NSMutableArray *errors = [self validateForm];
@@ -138,6 +144,9 @@
         }
     }
     
+
+
+    
     // by default perform the segue transition
     return YES;
 }
@@ -159,7 +168,8 @@
         ViewControllerActivityWhere *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
-    }
+        
+  }
 }
 
 
