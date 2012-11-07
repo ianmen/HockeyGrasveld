@@ -644,66 +644,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="photo_upload_button.png" width="132" height="126"/>
         <image name="toevoegen_icon.png" width="50" height="59"/>
     </resources>
-    <classes>
-        <class className="FacebookViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="action" name="shareButtonAction:"/>
-                <relationship kind="outlet" name="loginFBOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="postCaptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="postMessageTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="postNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
-            <relationships>
-                <relationship kind="action" name="addPhoto:"/>
-                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="endTime" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startTime" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
-            <relationships>
-                <relationship kind="action" name="fetchCoordinates:"/>
-                <relationship kind="action" name="locationNow:"/>
-                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWho" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
-            <relationships>
-                <relationship kind="action" name="finished:"/>
-                <relationship kind="action" name="shareButton:"/>
-                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
