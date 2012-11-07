@@ -72,6 +72,11 @@
     //    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
     //
     
+    if(activity.imagePath == nil)
+    {
+        NSLog(@"IFs");
+       activity.imagePath = [[NSURL alloc] initWithString:@"NO_IMAGE"];
+    }
     
     // Current date
     NSDate *date = [NSDate date];
