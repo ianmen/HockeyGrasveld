@@ -27,9 +27,13 @@
     MBProgressHUD *hud;
     PhotoUploader *up;
     UIImage *imageDone;
+    NSArray *categories;
 }
 
 @synthesize imageView;
+@synthesize picker;
+@synthesize accessoryView = _accessoryView;
+@synthesize customInput = _customInput;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,7 +47,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self.category setDelegate: self];
+    [self.description setDelegate: self];
+    
+    categories = [[NSArray alloc] initWithObjects: @"", @"Muziek", @"Sport", @"Eten", @"Reizen", @"Games", @"Kunst en Cultuur", @"Natuur en Milieu", @"Gezondheid en Uiterlijk", @"Bouwen en Ondernemen", @"Uitgaan en Evenementen", @"Foto en Film", @"Boeken", @"Dieren", nil];
+
     
     // If activity already exists, automaticly fill in the form
     if( [activity.activityName length] > 0 ) {
@@ -86,11 +94,16 @@
 - (NSMutableArray *) validateForm
 {
     NSMutableArray *errors = [[NSMutableArray alloc] init];
+    NSString *placeholder = @"Beschrijving";
     
     if( [self.name.text length] == 0 ) [errors addObject:@"Naam"];
     if( [self.category.text length] == 0 ) [errors addObject:@"Categorie"];
     if( [self.tags.text length] == 0 ) [errors addObject:@"Tags"];
-    if( [self.description.text length] == 0 ) [errors addObject:@"Beschrijving"];
+    if( [self.description.text length] == 0 ) {
+        [errors addObject:@"Beschrijving"];
+    } else if( [self.description.text isEqualToString: placeholder] ) {
+        [errors addObject:@"Beschrijving"];
+    }
     
     return errors;
 }
@@ -184,6 +197,45 @@
     //Did cancel the picker
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+- (IBAction)selectCategoryFromPicker:(id)sender {
+    [self.pickerView setHidden:YES];
+    UIImage *icon;
+    
+    if ( [self.category.text isEqualToString: @"Muziek"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_music.png"];
+    } else if ( [self.category.text isEqualToString: @"Sport"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_sport.png"];
+    } else if ( [self.category.text isEqualToString: @"Eten"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_food.png"];
+    } else if ( [self.category.text isEqualToString: @"Reizen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_travel.png"];
+    } else if ( [self.category.text isEqualToString: @"Games"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_games.png"];
+    } else if ( [self.category.text isEqualToString: @"Kunst en Cultuur"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_culture.png"];
+    } else if ( [self.category.text isEqualToString: @"Natuur en Milieu"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_nature.png"];
+    } else if ( [self.category.text isEqualToString: @"Gezondheid en Uiterlijk"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_health.png"];
+    } else if ( [self.category.text isEqualToString: @"Bouwen en Ondernemen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_building.png"];
+    } else if ( [self.category.text isEqualToString: @"Uitgaan en Evenementen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_events.png"];
+    } else if ( [self.category.text isEqualToString: @"Foto en Film"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_photo.png"];
+    } else if ( [self.category.text isEqualToString: @"Boeken"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_books.png"];
+    } else if ( [self.category.text isEqualToString: @"Dieren"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_animals.png"];
+    }  else {
+        icon = [UIImage imageNamed:@"categoryIcon_unknown.png"];
+    }
+    
+    
+    
+    [self.category_icon setImage:icon];
 }
 
 - (IBAction)addPhoto:(id)sender {
@@ -289,5 +341,67 @@
     //remove the spinner from the view
     [hud hide:YES afterDelay:4];
 }
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    [self.name resignFirstResponder];
+    [self.tags resignFirstResponder];
+    [self.description resignFirstResponder];
+    
+    //If textfield is Category
+    if( textField.tag == 2 ) {
+        [self.pickerView setHidden: NO];
+        
+        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+        toolbar.barStyle = UIBarStyleBlackTranslucent;
+        
+        self.category.inputAccessoryView = toolbar;
+        
+        
+        return NO;
+    } 
+    
+    return YES;
+    
+}
 
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    NSString *placeholder = @"Beschrijving";
+    
+    if( [self.description.text isEqualToString: placeholder] ) {
+        self.description.text = @"";
+        self.description.textColor = [UIColor blackColor];
+    }    
+    
+    return YES;
+}
+
+-(void) textViewDidChange:(UITextView *)textView
+{
+    if(self.description.text.length == 0){
+        self.description.textColor = [UIColor lightGrayColor];
+        self.description.text = @"Beschrijving";
+        [self.description resignFirstResponder];
+    }
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    //One column
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    //set number of rows
+    return categories.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    //set item per row
+    return [categories objectAtIndex:row];
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.category.text = [categories objectAtIndex:row];
+}
 @end
