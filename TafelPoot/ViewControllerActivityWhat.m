@@ -35,6 +35,8 @@
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,6 +45,49 @@
     }
     return self;
 }
+
+// naar boven schuiven annimatie
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideUpView:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideDownView:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)slideDownView:(NSNotification*)notification
+{
+	[[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
+    
+	[UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurve
+                     animations:^{
+                         self.view.frame = CGRectMake(0, 0, 320, 480);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Slide down Done..!");
+                     }];
+}
+
+-(void)slideUpView:(NSNotification*)notification
+{
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
+	
+	[UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurve
+                     animations:^{
+                         self.view.frame = CGRectMake(0, -keyboardFrame.size.height - 55, 320, 416);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Slide up Done..!");
+                     }];
+}
+
+//categorie picker
 
 - (void)viewDidLoad
 {
@@ -290,6 +335,8 @@
     return YES;
 }
 
+
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
         UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
@@ -417,4 +464,8 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.category.text = [categories objectAtIndex:row];
 }
+
+
+
+
 @end

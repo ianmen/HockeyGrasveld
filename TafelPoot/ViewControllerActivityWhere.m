@@ -69,6 +69,7 @@
     newRegion.span.longitudeDelta = 0.1f;
     
     [self.mapKit setRegion:newRegion animated:YES];
+
     
     
     
@@ -84,6 +85,8 @@
     
 
 }
+
+
 
 - (void)viewDidUnload {
     [self setMapKit:nil];
