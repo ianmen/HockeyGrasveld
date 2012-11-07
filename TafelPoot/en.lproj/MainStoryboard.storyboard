@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--View Controller - Item-->
@@ -55,7 +55,7 @@
             <objects>
                 <viewController title="Details" id="F6t-pD-eeP" customClass="ViewControllerActivityWhat" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ekc-93-dDf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWat@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="swF-cr-cIb">
@@ -63,24 +63,22 @@
                                     <constraint firstAttribute="height" constant="480" id="KgW-b3-l9w"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Naam" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-AT-cIO">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="HTz-Pi-jYJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categorie" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-t2-y27">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="F4U-Ij-Mzf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RtO-JY-cTI">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschrijving" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o74-vQ-aH1">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-Vi-0TD">
@@ -99,31 +97,90 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_upload_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="vov-Ss-k1g">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="dAg-1L-PSL"/>
+                                    <constraint firstAttribute="width" constant="103" id="Dmz-gg-Vj6"/>
                                     <constraint firstAttribute="height" constant="103" id="t30-Ny-kUA"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="uitextview_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="bY3-Il-ojy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="5ab-AJ-cv1"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="4" contentMode="scaleToFill" text="Beschrijving" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Zf-EKY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="YKm-V1-dS2"/>
+                                    <constraint firstAttribute="width" constant="260" id="kPq-W8-RpT"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rra-C9-cBQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="6ee-bc-v0A"/>
+                                    <constraint firstAttribute="width" constant="26" id="W0J-O2-KI5"/>
+                                </constraints>
+                            </imageView>
+                            <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrs-iL-pXI">
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zp8-Mo-PDu">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="8wo-Yn-9za"/>
+                                            <constraint firstAttribute="width" constant="322" id="K59-XG-zMF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="F6t-pD-eeP" id="FyA-db-sg5"/>
+                                            <outlet property="delegate" destination="F6t-pD-eeP" id="0e8-xH-Kp6"/>
+                                        </connections>
+                                    </pickerView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="UAY-ml-v1N">
+                                        <items>
+                                            <barButtonItem width="251" style="plain" systemItem="fixedSpace" id="pPx-qy-Adr"/>
+                                            <barButtonItem systemItem="done" id="gxg-se-Ncn">
+                                                <connections>
+                                                    <action selector="selectCategoryFromPicker:" destination="F6t-pD-eeP" id="u8b-DQ-hem"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="top" secondItem="xrs-iL-pXI" secondAttribute="top" constant="107" id="42a-rX-FqZ"/>
+                                    <constraint firstItem="zp8-Mo-PDu" firstAttribute="leading" secondItem="xrs-iL-pXI" secondAttribute="leading" type="default" id="CIo-B9-FMu"/>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="trailing" secondItem="xrs-iL-pXI" secondAttribute="trailing" type="default" id="Jl9-MR-Nho"/>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="leading" secondItem="xrs-iL-pXI" secondAttribute="leading" type="default" id="fKj-8K-oXb"/>
+                                    <constraint firstItem="UAY-ml-v1N" firstAttribute="bottom" secondItem="zp8-Mo-PDu" secondAttribute="top" type="default" id="hat-hp-sQT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="o74-vQ-aH1" secondAttribute="trailing" type="default" id="23K-uY-nB1"/>
+                            <constraint firstItem="xrs-iL-pXI" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" type="default" id="0iZ-Hv-U7b"/>
                             <constraint firstItem="Djo-Vi-0TD" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="68" id="5cn-Gv-OgT"/>
-                            <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="64H-fI-JBd"/>
-                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="8LK-oR-Y68"/>
-                            <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8XV-4j-uLw"/>
-                            <constraint firstItem="o74-vQ-aH1" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="179" id="JZh-OI-ULJ"/>
+                            <constraint firstItem="xrs-iL-pXI" firstAttribute="trailing" secondItem="ekc-93-dDf" secondAttribute="trailing" type="default" id="6GV-FC-pJX"/>
+                            <constraint firstItem="bY3-Il-ojy" firstAttribute="top" secondItem="RtO-JY-cTI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6Tp-FV-UsY"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="98" id="Atm-Nx-xvH"/>
+                            <constraint firstItem="xrs-iL-pXI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" type="default" id="Gs1-aw-nbq"/>
+                            <constraint firstAttribute="trailing" secondItem="Djo-Vi-0TD" secondAttribute="trailing" constant="18" id="KsB-p3-jRA"/>
+                            <constraint firstAttribute="bottom" secondItem="xrs-iL-pXI" secondAttribute="bottom" constant="-5" id="LsW-WO-4xS"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="leading" secondItem="bY3-Il-ojy" secondAttribute="leading" type="default" id="PUE-Xs-Mly"/>
                             <constraint firstItem="sn2-AT-cIO" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="59" id="Q4n-Gd-Kat"/>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="RTx-hc-NF9"/>
-                            <constraint firstItem="sMb-t2-y27" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="99" id="T1d-Yk-nf5"/>
-                            <constraint firstItem="swF-cr-cIb" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="-56" id="Vhx-KI-zTg"/>
-                            <constraint firstItem="vov-Ss-k1g" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ybv-Rw-X7c"/>
-                            <constraint firstItem="Djo-Vi-0TD" firstAttribute="trailing" secondItem="vov-Ss-k1g" secondAttribute="trailing" type="default" id="a3j-ZI-Fbu"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="trailing" secondItem="RtO-JY-cTI" secondAttribute="trailing" type="default" id="Vtm-eh-Tgg"/>
+                            <constraint firstAttribute="trailing" secondItem="vov-Ss-k1g" secondAttribute="trailing" constant="19" id="WKr-6i-uSL"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="176" id="Zyp-Na-zBi"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" type="default" id="aL7-5c-ZIJ"/>
-                            <constraint firstItem="o74-vQ-aH1" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="leading" type="default" id="bWI-JK-CSr"/>
-                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="df0-e2-uWb"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="trailing" secondItem="bY3-Il-ojy" secondAttribute="trailing" type="default" id="ahG-mk-IoI"/>
+                            <constraint firstItem="RtO-JY-cTI" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="139" id="hCa-Eo-nSn"/>
+                            <constraint firstItem="swF-cr-cIb" firstAttribute="top" secondItem="ekc-93-dDf" secondAttribute="top" constant="-61" id="hf7-gB-irW"/>
+                            <constraint firstItem="unb-Zf-EKY" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="28" id="iRG-7q-1am"/>
+                            <constraint firstItem="Rra-C9-cBQ" firstAttribute="centerY" secondItem="sMb-t2-y27" secondAttribute="centerY" type="default" id="kSC-27-Kw2"/>
+                            <constraint firstItem="sn2-AT-cIO" firstAttribute="leading" secondItem="ekc-93-dDf" secondAttribute="leading" constant="27" id="mpO-ek-fhs"/>
                             <constraint firstItem="vov-Ss-k1g" firstAttribute="top" secondItem="sn2-AT-cIO" secondAttribute="top" type="default" id="o1x-Og-X0Z"/>
-                            <constraint firstItem="RtO-JY-cTI" firstAttribute="leading" secondItem="sMb-t2-y27" secondAttribute="leading" type="default" id="sEU-a7-pUM"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="sn2-AT-cIO" secondAttribute="leading" type="default" id="u68-gJ-SaZ"/>
                             <constraint firstItem="swF-cr-cIb" firstAttribute="trailing" secondItem="ekc-93-dDf" secondAttribute="trailing" type="default" id="xP2-og-WCY"/>
+                            <constraint firstItem="sMb-t2-y27" firstAttribute="leading" secondItem="RtO-JY-cTI" secondAttribute="leading" type="default" id="xdl-q5-vY9"/>
+                            <constraint firstAttribute="trailing" secondItem="Rra-C9-cBQ" secondAttribute="trailing" constant="127" id="ycw-pC-MMJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Activiteit" id="Gdg-Rm-D5R">
@@ -140,9 +197,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="category" destination="sMb-t2-y27" id="84V-uh-AxP"/>
-                        <outlet property="description" destination="o74-vQ-aH1" id="gsr-yK-wdd"/>
+                        <outlet property="category_icon" destination="Rra-C9-cBQ" id="fjb-aL-pC3"/>
+                        <outlet property="description" destination="unb-Zf-EKY" id="kFA-gR-p8D"/>
                         <outlet property="imageView" destination="vov-Ss-k1g" id="xag-i6-i2w"/>
                         <outlet property="name" destination="sn2-AT-cIO" id="caG-0H-7Tm"/>
+                        <outlet property="picker" destination="zp8-Mo-PDu" id="gz5-TP-6cj"/>
+                        <outlet property="pickerView" destination="xrs-iL-pXI" id="Ugv-hP-Lj2"/>
                         <outlet property="tags" destination="RtO-JY-cTI" id="lpv-rW-ruu"/>
                         <segue destination="pd6-fD-fvD" kind="push" id="Erl-aD-hl6"/>
                     </connections>
@@ -156,7 +216,7 @@
             <objects>
                 <viewController title="Adress" id="pd6-fD-fvD" customClass="ViewControllerActivityWhere" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tTR-la-WDG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWaar@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="c3J-8f-FM7">
@@ -272,12 +332,12 @@
                     <navigationItem key="navigationItem" title="Adres" id="AA9-6W-pAP">
                         <barButtonItem key="leftBarButtonItem" title="Terug" id="OQ0-7k-Clh">
                             <connections>
-                                <segue destination="F6t-pD-eeP" kind="push" identifier="toWhat" id="6cK-jp-Qjh"/>
+                                <segue destination="F6t-pD-eeP" kind="custom" identifier="toWhat" customClass="CustomBackSegue" id="6cK-jp-Qjh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="dNB-G7-4u4">
                             <connections>
-                                <segue destination="9SU-AF-lJs" kind="push" identifier="toWhen" id="tCs-I8-nKM"/>
+                                <segue destination="9SU-AF-lJs" kind="push" identifier="toWhen" customClass="CustomBackSegue" id="tCs-I8-nKM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -291,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797" y="-1084"/>
+            <point key="canvasLocation" x="1667" y="-1910"/>
         </scene>
         <!--View Controller Activity When - Wanneer-->
         <scene sceneID="Y4C-Kd-eGO">
@@ -367,7 +427,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Wanneer" id="JjE-9z-t86">
                         <barButtonItem key="leftBarButtonItem" title="Terug" id="R2U-YS-vCM">
                             <connections>
-                                <segue destination="pd6-fD-fvD" kind="push" identifier="toWhere" id="UaC-eX-Hcv"/>
+                                <segue destination="pd6-fD-fvD" kind="custom" customClass="CustomBackSegue" id="FFk-gi-mPA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="CXS-54-Rr2">
@@ -384,7 +444,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhF-4h-jkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2265" y="-1122"/>
+            <point key="canvasLocation" x="3082" y="-2031"/>
         </scene>
         <!--View Controller Activity Who - Wie-->
         <scene sceneID="Awk-HQ-QBl">
@@ -484,7 +544,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Wie" id="vIU-e8-8oE">
                         <barButtonItem key="leftBarButtonItem" title="Terug" id="R81-76-XgY">
                             <connections>
-                                <segue destination="9SU-AF-lJs" kind="push" identifier="toWhen" id="R9t-Dk-fe4"/>
+                                <segue destination="9SU-AF-lJs" kind="custom" identifier="toWhen" customClass="CustomBackSegue" id="R9t-Dk-fe4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Klaar" id="Lfe-aZ-0PX">
@@ -500,7 +560,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYb-iE-Ixl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2663" y="-1141"/>
+            <point key="canvasLocation" x="2863" y="-891"/>
         </scene>
         <!--Facebook View Controller-->
         <scene sceneID="haC-gN-NTg">
@@ -643,8 +703,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="backgroundWie@2x.png" width="640" height="960"/>
         <image name="photo_upload_button.png" width="132" height="126"/>
         <image name="toevoegen_icon.png" width="50" height="59"/>
+        <image name="uitextview_background.png" width="573" height="378"/>
     </resources>
     <classes>
+        <class className="FacebookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="logIn:"/>
+                <relationship kind="action" name="shareButtonAction:"/>
+                <relationship kind="outlet" name="loginFBOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="postCaptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="postMessageTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="postNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -652,10 +727,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
             <relationships>
                 <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="action" name="selectCategoryFromPicker:"/>
+                <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="category_icon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="customInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
             </relationships>
         </class>
@@ -684,6 +765,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
             <relationships>
                 <relationship kind="action" name="finished:"/>
+                <relationship kind="action" name="shareButton:"/>
                 <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
             </relationships>
@@ -696,7 +778,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="6cK-jp-Qjh"/>
-        <segue reference="UaC-eX-Hcv"/>
-        <segue reference="R9t-Dk-fe4"/>
+        <segue reference="VHx-ZB-wPy"/>
+        <segue reference="tCs-I8-nKM"/>
     </inferredMetricsTieBreakers>
 </document>
