@@ -363,7 +363,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWanneer@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-9V-0CA">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="527" id="SOJ-xb-8MM"/>
+                                    <constraint firstAttribute="height" constant="488" id="ovq-Ul-Jcr"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ji-Ba-bH5">
@@ -382,7 +382,7 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nog geen begintijd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y2-RZ-uWU">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="sbB-sP-IXi"/>
+                                    <constraint firstAttribute="width" constant="167" id="mjY-Jo-ya4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -410,20 +410,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="7wh-2k-pMa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="43H-i5-elo"/>
+                            <constraint firstAttribute="trailing" secondItem="7wh-2k-pMa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4hu-78-oZN"/>
                             <constraint firstAttribute="trailing" secondItem="4Ji-Ba-bH5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6ae-9p-cqp"/>
                             <constraint firstItem="eMk-9V-0CA" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" type="default" id="6pb-a1-brP"/>
-                            <constraint firstItem="4Ji-Ba-bH5" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="52" id="6sQ-Xe-1bS"/>
                             <constraint firstItem="eMk-9V-0CA" firstAttribute="trailing" secondItem="8Sa-Sb-2t0" secondAttribute="trailing" type="default" id="89S-9y-EX6"/>
-                            <constraint firstItem="7wh-2k-pMa" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="102" id="Jpg-fq-0fC"/>
-                            <constraint firstItem="eMk-9V-0CA" firstAttribute="bottom" secondItem="8Sa-Sb-2t0" secondAttribute="bottom" type="default" id="TRU-If-jNS"/>
-                            <constraint firstItem="8cO-pP-pbl" firstAttribute="leading" secondItem="7Y2-RZ-uWU" secondAttribute="leading" type="default" id="WXD-zZ-h7Z"/>
-                            <constraint firstAttribute="trailing" secondItem="7Y2-RZ-uWU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XFg-2v-qjA"/>
-                            <constraint firstItem="8cO-pP-pbl" firstAttribute="baseline" secondItem="7wh-2k-pMa" secondAttribute="baseline" type="default" id="dff-dj-yMr"/>
-                            <constraint firstItem="4Ji-Ba-bH5" firstAttribute="baseline" secondItem="7Y2-RZ-uWU" secondAttribute="baseline" type="default" id="kGx-KX-8qt"/>
+                            <constraint firstItem="7wh-2k-pMa" firstAttribute="top" secondItem="4Ji-Ba-bH5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Blb-nh-ptv"/>
+                            <constraint firstItem="8cO-pP-pbl" firstAttribute="baseline" secondItem="7wh-2k-pMa" secondAttribute="baseline" type="default" id="FoB-Qt-CD2"/>
+                            <constraint firstItem="7wh-2k-pMa" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="I2H-ui-dJJ"/>
+                            <constraint firstAttribute="trailing" secondItem="7Y2-RZ-uWU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oe7-CV-4dH"/>
+                            <constraint firstItem="7wh-2k-pMa" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="99" id="fNT-Z0-HNF"/>
                             <constraint firstItem="4Ji-Ba-bH5" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lEZ-YX-avW"/>
-                            <constraint firstItem="7wh-2k-pMa" firstAttribute="leading" secondItem="8Sa-Sb-2t0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x22-35-Zhj"/>
-                            <constraint firstAttribute="trailing" secondItem="8cO-pP-pbl" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="z8E-fL-XXi"/>
+                            <constraint firstItem="7Y2-RZ-uWU" firstAttribute="baseline" secondItem="4Ji-Ba-bH5" secondAttribute="baseline" type="default" id="qMJ-lv-yzQ"/>
+                            <constraint firstItem="7Y2-RZ-uWU" firstAttribute="leading" secondItem="8cO-pP-pbl" secondAttribute="leading" type="default" id="toN-xO-xar"/>
+                            <constraint firstAttribute="trailing" secondItem="8cO-pP-pbl" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xSk-01-wpl"/>
+                            <constraint firstItem="eMk-9V-0CA" firstAttribute="top" secondItem="8Sa-Sb-2t0" secondAttribute="top" constant="-62" id="zzX-gZ-xeP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wanneer" id="JjE-9z-t86">
