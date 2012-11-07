@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADP-Hx-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="-1910"/>
+            <point key="canvasLocation" x="2015" y="-1070"/>
         </scene>
         <!--View Controller Activity When - Wanneer-->
         <scene sceneID="Y4C-Kd-eGO">
@@ -444,7 +444,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhF-4h-jkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3082" y="-2031"/>
+            <point key="canvasLocation" x="2778" y="-1059"/>
         </scene>
         <!--View Controller Activity Who - Wie-->
         <scene sceneID="Awk-HQ-QBl">
@@ -560,7 +560,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYb-iE-Ixl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863" y="-891"/>
+            <point key="canvasLocation" x="3431" y="-1070"/>
         </scene>
         <!--Facebook View Controller-->
         <scene sceneID="haC-gN-NTg">
@@ -657,7 +657,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Sy-9U-aTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2663" y="-540"/>
+            <point key="canvasLocation" x="3463" y="-340"/>
         </scene>
         <!--View Controller - Item 1-->
         <scene sceneID="YSJ-Tz-SHe">
@@ -777,8 +777,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="FFk-gi-mPA"/>
+        <segue reference="R9t-Dk-fe4"/>
         <segue reference="6cK-jp-Qjh"/>
-        <segue reference="VHx-ZB-wPy"/>
-        <segue reference="tCs-I8-nKM"/>
     </inferredMetricsTieBreakers>
 </document>
