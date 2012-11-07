@@ -16,6 +16,12 @@
 
 @synthesize url;
 
+
+- (void)viewDidLoad
+{
+    url = [[NSURL alloc] init];
+}
+
 - (void)uploadPhoto:(UIImage *)image{
     
     //Do get the image which provided

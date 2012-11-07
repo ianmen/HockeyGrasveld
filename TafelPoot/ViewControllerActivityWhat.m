@@ -147,11 +147,14 @@
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"toWhere"])
     {
+        NSURL *imagePath = [[NSURL alloc] init];
+        imagePath = [up.url copy];
+
         activity.activityName = [self.name.text copy];
         activity.category = [self.category.text copy];
         activity.tags = [self.tags.text copy];
         activity.activityDescription = [self.description.text copy];
-        activity.imagePath = [up.url copy];
+        activity.imagePath = imagePath;
 
         ViewControllerActivityWhere *vc = [segue destinationViewController];
         

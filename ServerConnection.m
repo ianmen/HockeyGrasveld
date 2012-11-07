@@ -31,18 +31,18 @@
     
     NSDateComponents *dateComps = [cal components:( NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
-    NSLog(@"Current date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
-    [dateComps setHour:activity.startTime];
-    NSLog(@"Custom date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
+  //  NSLog(@"Current date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
+   // [dateComps setHour:activity.startTime];
+  //  NSLog(@"Custom date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
     
     //NSLog(@"%@", [NSTimeZone knownTimeZoneNames]);
     
-    NSDate *myDate = [NSDate date];
-    NSString *strDate = [dateFormatter stringFromDate:myDate];
-    NSLog(@"[%@]", strDate);
+  //  NSDate *myDate = [NSDate date];
+  //  NSString *strDate = [dateFormatter stringFromDate:myDate];
+  //  NSLog(@"[%@]", strDate);
     
     //NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     // NSDateComponents *dateComps = [cal components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
@@ -75,10 +75,10 @@
     
     // Current date
     NSDate *date = [NSDate date];
-    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    [DateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-    NSString *currentDate = [DateFormatter stringFromDate:[NSDate date]];
-    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
+    NSString *currentDate = [dateFormatter stringFromDate:[NSDate date]];
     
     //prepare request
     NSString *urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
