@@ -35,6 +35,7 @@
 		6012D5061637F6C100319904 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F41637F6C100319904 /* icon.png */; };
 		6012D5071637F6C100319904 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F51637F6C100319904 /* icon@2x.png */; };
 		6012D514163803EC00319904 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012D513163803EC00319904 /* Activity.m */; };
+		6015CD98164A7E6A00AC9A41 /* uitextview_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6015CD97164A7E6A00AC9A41 /* uitextview_background.png */; };
 		602E62D81637EDA50095EDA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E62D71637EDA50095EDA3 /* QuartzCore.framework */; };
 		602E62DA1637EDF10095EDA3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6E91635573100727B94 /* Default.png */; };
 		602E62DB1637EDF50095EDA3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EA1635573100727B94 /* Default@2x.png */; };
@@ -67,7 +68,6 @@
 		998A1D7A164A4F680079EF15 /* categoryIcon_books.png in Resources */ = {isa = PBXBuildFile; fileRef = 998A1D76164A4F680079EF15 /* categoryIcon_books.png */; };
 		998A1D7B164A4F680079EF15 /* categoryIcon_events.png in Resources */ = {isa = PBXBuildFile; fileRef = 998A1D77164A4F680079EF15 /* categoryIcon_events.png */; };
 		998A1D7C164A4F680079EF15 /* categoryIcon_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 998A1D78164A4F680079EF15 /* categoryIcon_photo.png */; };
-		99990CA91647FA7700B16AAF /* uitextview_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 99990CA81647FA7700B16AAF /* uitextview_background.png */; };
 		99DBD6DE1635572600727B94 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D41635572600727B94 /* background1.png */; };
 		99DBD6DF1635572600727B94 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D51635572600727B94 /* background1@2x.png */; };
 		99DBD6E01635572600727B94 /* backgroundWaar.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6D61635572600727B94 /* backgroundWaar.png */; };
@@ -126,6 +126,7 @@
 		6012D513163803EC00319904 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		6012D5161638044A00319904 /* Activities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
 		6012D5171638044A00319904 /* Activities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
+		6015CD97164A7E6A00AC9A41 /* uitextview_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uitextview_background.png; sourceTree = "<group>"; };
 		602E62D71637EDA50095EDA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		606B588616354A8300574894 /* PhotoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoUploader.h; path = TafelPoot/PhotoUploader.h; sourceTree = "<group>"; };
 		606B588716354A8300574894 /* PhotoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoUploader.m; path = TafelPoot/PhotoUploader.m; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		998A1D76164A4F680079EF15 /* categoryIcon_books.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_books.png; sourceTree = "<group>"; };
 		998A1D77164A4F680079EF15 /* categoryIcon_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_events.png; sourceTree = "<group>"; };
 		998A1D78164A4F680079EF15 /* categoryIcon_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_photo.png; sourceTree = "<group>"; };
-		99990CA81647FA7700B16AAF /* uitextview_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uitextview_background.png; path = ../../../../../../../../../Desktop/uitextview_background.png; sourceTree = "<group>"; };
 		99DBD6D41635572600727B94 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
 		99DBD6D51635572600727B94 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "../background1@2x.png"; sourceTree = "<group>"; };
 		99DBD6D61635572600727B94 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = ../backgroundWaar.png; sourceTree = "<group>"; };
@@ -388,11 +388,11 @@
 				6012D4F51637F6C100319904 /* icon@2x.png */,
 				9950F30D16426B2C00F60838 /* photo_upload_button.png */,
 				99F28B8D16425E61009F26AF /* toevoegen_icon.png */,
-				99990CA81647FA7700B16AAF /* uitextview_background.png */,
 				6012D4E51637F6C100319904 /* background1.png */,
 				6012D4E61637F6C100319904 /* background1@2x.png */,
 				6012D4E71637F6C100319904 /* backgroundWaar.png */,
 				6012D4E81637F6C100319904 /* backgroundWaar@2x.png */,
+				6015CD97164A7E6A00AC9A41 /* uitextview_background.png */,
 				6012D4E91637F6C100319904 /* backgroundWanneer.png */,
 				6012D4EA1637F6C100319904 /* backgroundWanneer@2x.png */,
 				6012D4EB1637F6C100319904 /* backgroundWat.png */,
@@ -515,7 +515,6 @@
 				99F28B8E16425E62009F26AF /* toevoegen_icon.png in Resources */,
 				9950F30E16426B2C00F60838 /* photo_upload_button.png in Resources */,
 				1BE37A44164295C1004B214E /* FacebookSDKResources.bundle in Resources */,
-				99990CA91647FA7700B16AAF /* uitextview_background.png in Resources */,
 				990AC13016492E1F00C0A74B /* categoryIcon_culture.png in Resources */,
 				990AC13216492F1E00C0A74B /* categoryIcon_unknown.png in Resources */,
 				998A1D6B164A4E060079EF15 /* categoryIcon_building.png in Resources */,
@@ -530,6 +529,7 @@
 				998A1D7A164A4F680079EF15 /* categoryIcon_books.png in Resources */,
 				998A1D7B164A4F680079EF15 /* categoryIcon_events.png in Resources */,
 				998A1D7C164A4F680079EF15 /* categoryIcon_photo.png in Resources */,
+				6015CD98164A7E6A00AC9A41 /* uitextview_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
