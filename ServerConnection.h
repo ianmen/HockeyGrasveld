@@ -30,4 +30,7 @@
 
 -(void)xmlPostActivity:(Activity*)activity;
 
+-(void)loadActivities;
+
+
 @end

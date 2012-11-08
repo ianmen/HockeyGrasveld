@@ -15,7 +15,7 @@
 #import "Activity.h"
 #import "PhotoUploader.h"
 #import "MBProgressHUD.h"
-
+#import "ServerConnection.h"
 
 @interface ViewControllerActivityWhat ()
 
@@ -35,6 +35,8 @@
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,6 +45,49 @@
     }
     return self;
 }
+
+// naar boven schuiven annimatie
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideUpView:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideDownView:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)slideDownView:(NSNotification*)notification
+{
+	[[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
+    
+	[UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurve
+                     animations:^{
+                         self.view.frame = CGRectMake(0, 0, 320, 480);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Slide down Done..!");
+                     }];
+}
+
+-(void)slideUpView:(NSNotification*)notification
+{
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
+	
+	[UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurve
+                     animations:^{
+                         self.view.frame = CGRectMake(0, -keyboardFrame.size.height - 55, 320, 416);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Slide up Done..!");
+                     }];
+}
+
+//categorie picker
 
 - (void)viewDidLoad
 {
@@ -62,7 +107,7 @@
     } else {
         activity = [[Activity alloc] init];
     }
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +154,12 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    ServerConnection *con = [[ServerConnection alloc] init];
+    
+    [con loadActivities];
+    
+    
     if ([identifier isEqualToString:@"toWhere"]) {
         
         NSMutableArray *errors = [self validateForm];
@@ -138,6 +189,9 @@
         }
     }
     
+
+
+    
     // by default perform the segue transition
     return YES;
 }
@@ -147,16 +201,20 @@
     // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"toWhere"])
     {
+        NSURL *imagePath = [[NSURL alloc] init];
+        imagePath = [up.url copy];
+
         activity.activityName = [self.name.text copy];
         activity.category = [self.category.text copy];
         activity.tags = [self.tags.text copy];
         activity.activityDescription = [self.description.text copy];
-        activity.imagePath = [up.url copy];
+        activity.imagePath = imagePath;
 
         ViewControllerActivityWhere *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
-    }
+        
+  }
 }
 
 
@@ -276,6 +334,8 @@
     //[controller presentModalViewController: cameraUI animated: YES];
     return YES;
 }
+
+
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
@@ -404,4 +464,8 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.category.text = [categories objectAtIndex:row];
 }
+
+
+
+
 @end

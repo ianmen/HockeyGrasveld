@@ -12,9 +12,11 @@
 
 @interface ViewControllerActivityWhen : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *startTime;
-@property (strong, nonatomic) IBOutlet UITextField *endTime;
-@property (strong, nonatomic) IBOutlet UIDatePicker *date;
+@property (strong, nonatomic) IBOutlet UILabel *startDate;
+@property (strong, nonatomic) IBOutlet UILabel *endDate;
+
+- (IBAction)beginTijd:(id)sender;
+- (IBAction)eindTijd:(id)sender;
 
 - (void)setActivity:(Activity*)currentActivity;
 

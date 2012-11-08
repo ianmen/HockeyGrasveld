@@ -8,6 +8,7 @@
 
 #import "ServerConnection.h"
 #import "Activity.h"
+#import "GDataXMLNode.h"
 
 @implementation ServerConnection
 {
@@ -24,6 +25,37 @@
 @synthesize responseStatus;
 @synthesize responseData;
 
+
+-(void)loadActivities
+{
+    
+NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"http://klanten.deictprins.nl/school/getData.php?actie=activiteiten"]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+    
+    if(con)
+    {
+        NSData *xmlData = [responseData copy];
+        NSError *error;
+        
+        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
+                                                               options:0 error:&error];
+        
+        NSString *name;
+        NSString *category;
+        NSString *activityDescription;
+        NSDate *startDate;
+        NSDate *endDate;
+        NSString *locationDescription;
+        double longitude;
+        double latitude;
+        NSString *imagePath;
+
+    }
+    
+    
+}
+
 -(void)xmlPostActivity:(Activity*)activity
 {
     NSDate *now = [NSDate date];
@@ -31,18 +63,18 @@
     
     NSDateComponents *dateComps = [cal components:( NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
-    NSLog(@"Current date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
-    [dateComps setHour:activity.startTime];
-    NSLog(@"Custom date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
+  //  NSLog(@"Current date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
+   // [dateComps setHour:activity.startTime];
+  //  NSLog(@"Custom date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
     
     //NSLog(@"%@", [NSTimeZone knownTimeZoneNames]);
     
-    NSDate *myDate = [NSDate date];
-    NSString *strDate = [dateFormatter stringFromDate:myDate];
-    NSLog(@"[%@]", strDate);
+  //  NSDate *myDate = [NSDate date];
+  //  NSString *strDate = [dateFormatter stringFromDate:myDate];
+  //  NSLog(@"[%@]", strDate);
     
     //NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     // NSDateComponents *dateComps = [cal components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
@@ -72,13 +104,18 @@
     //    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
     //
     
+    if(activity.imagePath == nil)
+    {
+        NSLog(@"IFs");
+       activity.imagePath = [[NSURL alloc] initWithString:@"NO_IMAGE"];
+    }
     
     // Current date
     NSDate *date = [NSDate date];
-    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    [DateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-    NSString *currentDate = [DateFormatter stringFromDate:[NSDate date]];
-    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
+    NSString *currentDate = [dateFormatter stringFromDate:[NSDate date]];
     
     //prepare request
     NSString *urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
@@ -107,10 +144,10 @@
     [postBody appendData:[[NSString stringWithFormat:@"</omschrijving>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<locatie>"] dataUsingEncoding:NSUTF8StringEncoding]];
