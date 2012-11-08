@@ -16,7 +16,16 @@
 }
 @end
 
-@implementation ViewControllerActivityWhen
+@implementation ViewControllerActivityWhen {
+    UIActionSheet *pickerViewPopup;
+    UIDatePicker *pickerView;
+    
+    UIToolbar *pickerToolbar;
+    NSMutableArray *barItems;
+}
+
+@synthesize startDate;
+@synthesize endDate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,10 +43,10 @@
     
     // If activity already exists, automaticly fill in the form
     if( [activity.startTime length] > 0 ) {
-        self.startTime.text = activity.startTime;
+        self.startDate.text = activity.startTime;
     }
     if( [activity.endTime length] > 0 ) {
-        self.endTime.text = activity.endTime;
+        self.endDate.text = activity.endTime;
     }
 }
 
@@ -45,6 +54,91 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)actionSheet {
+    pickerViewPopup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    pickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
+    //pickerView.datePickerMode = UIDatePickerModeDate;
+    pickerView.hidden = NO;
+    
+    NSDate *currentTime = [NSDate date];
+    
+    pickerView.minimumDate = currentTime;
+    // 86400 = precies 1 dag in seconden
+    pickerView.maximumDate = [currentTime dateByAddingTimeInterval:86400];
+    
+    pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    pickerToolbar.barStyle = UIBarStyleBlackOpaque;
+    [pickerToolbar sizeToFit];
+    
+    barItems = [[NSMutableArray alloc] init];
+    
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+}
+
+- (void)actionSheet2 {
+    UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+    [barItems addObject:cancelBtn];
+    
+    [pickerToolbar setItems:barItems animated:YES];
+    
+    [pickerViewPopup addSubview:pickerToolbar];
+    [pickerViewPopup addSubview:pickerView];
+    [pickerViewPopup showInView:self.view];
+    [pickerViewPopup setBounds:CGRectMake(0,0,320, 464)];
+}
+
+- (IBAction)beginTijd:(id)sender {
+    [self actionSheet];
+    
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
+    [barItems addObject:doneBtn];
+    
+    [self actionSheet2];
+}
+
+-(void)doneButtonPressed:(id)sender{
+    //Do something here here with the value selected using [pickerView date] to get that value
+    
+    NSDate *date = pickerView.date;
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    startDate.text = dateString;
+    
+    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+}
+
+-(void)doneButtonPressed2:(id)sender{
+    //Do something here here with the value selected using [pickerView date] to get that value
+    
+    NSDate *date = pickerView.date;
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    endDate.text = dateString;
+    
+    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+}
+
+-(void)cancelButtonPressed:(id)sender{
+    [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
+}
+
+- (IBAction)eindTijd:(id)sender {
+    [self actionSheet];
+    
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed2:)];
+    [barItems addObject:doneBtn];
+    
+    [self actionSheet2];
 }
 
 - (void)setActivity:(Activity*)currentActivity
@@ -57,8 +151,8 @@
 {
     NSMutableArray *errors = [[NSMutableArray alloc] init];
     
-    if( [self.startTime.text length] == 0 ) [errors addObject:@"Begintijd"];
-    if( [self.endTime.text length] == 0 ) [errors addObject:@"Eindtijd"];
+    if( [self.startDate.text length] == 0 ) [errors addObject:@"Begintijd"];
+    if( [self.endDate.text length] == 0 ) [errors addObject:@"Eindtijd"];
     
     return errors;
 }
@@ -102,18 +196,16 @@
 {
     if ([[segue identifier] isEqualToString:@"toWho"])
     {
-        activity.startTime = [self.startTime.text copy];
-        activity.endTime = [self.endTime.text copy];
-        activity.startDate = [self.date.date copy];
+        activity.startDate = [self.startDate.text copy];
+        activity.endDate = [self.endDate.text copy];
         
         ViewControllerActivityWho *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
     } else if ([[segue identifier] isEqualToString:@"toWhere"])
     {
-        activity.startTime = [self.startTime.text copy];
-        activity.endTime = [self.endTime.text copy];
-        activity.startDate = [self.date.date copy];
+        activity.startDate = [self.startDate.text copy];
+        activity.endDate = [self.endDate.text copy];
         
         ViewControllerActivityWho *vc = [segue destinationViewController];
         
