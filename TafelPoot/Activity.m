@@ -10,8 +10,10 @@
 
 @implementation Activity
 
+@synthesize activityId;
 @synthesize activityName;
 @synthesize imagePath;
+@synthesize imagePathThumbnail;
 @synthesize tags;
 @synthesize address_city;
 @synthesize address_street;
