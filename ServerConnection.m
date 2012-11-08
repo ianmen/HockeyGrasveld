@@ -8,6 +8,7 @@
 
 #import "ServerConnection.h"
 #import "Activity.h"
+#import "GDataXMLNode.h"
 
 @implementation ServerConnection
 {
@@ -23,6 +24,37 @@
 @synthesize responseString;
 @synthesize responseStatus;
 @synthesize responseData;
+
+
+-(void)loadActivities
+{
+    
+NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"http://klanten.deictprins.nl/school/getData.php?actie=activiteiten"]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    
+NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+    
+    if(con)
+    {
+        NSData *xmlData = [responseData copy];
+        NSError *error;
+        
+        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
+                                                               options:0 error:&error];
+        
+        NSString *name;
+        NSString *category;
+        NSString *activityDescription;
+        NSDate *startDate;
+        NSDate *endDate;
+        NSString *locationDescription;
+        double longitude;
+        double latitude;
+        NSString *imagePath;
+
+    }
+    
+    
+}
 
 -(void)xmlPostActivity:(Activity*)activity
 {
@@ -72,6 +104,11 @@
     //    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
     //
     
+    if(activity.imagePath == nil)
+    {
+        NSLog(@"IFs");
+       activity.imagePath = [[NSURL alloc] initWithString:@"NO_IMAGE"];
+    }
     
     // Current date
     NSDate *date = [NSDate date];
@@ -107,10 +144,10 @@
     [postBody appendData:[[NSString stringWithFormat:@"</omschrijving>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:[self dateToStr:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<locatie>"] dataUsingEncoding:NSUTF8StringEncoding]];
