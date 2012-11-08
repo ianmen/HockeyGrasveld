@@ -72,8 +72,11 @@
     
     //Sett the entity
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD"
                                               inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest2 setEntity:entity];
     
     //Settings
     NSError *error2;
@@ -85,11 +88,10 @@
     // For loop
     
     //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(uID like %@)", ID_HERE];
-    //[idsFromServer addObject:<#(id)#>]
+    //[idsFromServer addObject:ID_Here]
 
     //Fetch them
     [fetchRequest setPredicate:predicate];
-    [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error2];
     
     //Count
@@ -106,6 +108,31 @@
         NSError *error;
         if (![context save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+    }
+    
+    // ======== - =======
+    // End of for loop
+
+    
+    //Remove the items that wheren't found in the list
+    NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest error:&error2];
+
+    for (ActivityCD *Acd in fetchedObjects2){
+        
+        if(![idsFromServer containsObject:[NSString stringWithFormat:@"%@",Acd.uID]]){
+            //ID is in the local database but not in the file pulled from the server\\
+            
+            //Remove the object
+            [context deleteObject:Acd];
+            
+            //Save
+            NSError *error3;
+            if (![context save:&error3]) {
+                NSLog(@"Whoops, couldn't save: %@", [error3 localizedDescription]);
+            }
+            
         }
         
     }
