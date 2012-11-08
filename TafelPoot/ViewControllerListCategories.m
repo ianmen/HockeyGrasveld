@@ -38,7 +38,7 @@
     
     // configure your cell here...
     
-    cell.categoryLabel = @"Muziek";
+    // cell.categoryLabel = @"Muziek";
     
     return cell;
 }
