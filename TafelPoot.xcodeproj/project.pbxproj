@@ -36,6 +36,9 @@
 		6012D5071637F6C100319904 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4F51637F6C100319904 /* icon@2x.png */; };
 		6012D514163803EC00319904 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012D513163803EC00319904 /* Activity.m */; };
 		6015CD98164A7E6A00AC9A41 /* uitextview_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6015CD97164A7E6A00AC9A41 /* uitextview_background.png */; };
+		6015CD9A164A856600AC9A41 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6015CD99164A856600AC9A41 /* CoreData.framework */; };
+		6015CD9D164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6015CD9B164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld */; };
+		6015CDA0164A8C0100AC9A41 /* ActivityCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6015CD9F164A8C0100AC9A41 /* ActivityCD.m */; };
 		602E62D81637EDA50095EDA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E62D71637EDA50095EDA3 /* QuartzCore.framework */; };
 		602E62DA1637EDF10095EDA3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6E91635573100727B94 /* Default.png */; };
 		602E62DB1637EDF50095EDA3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EA1635573100727B94 /* Default@2x.png */; };
@@ -127,6 +130,10 @@
 		6012D5161638044A00319904 /* Activities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
 		6012D5171638044A00319904 /* Activities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
 		6015CD97164A7E6A00AC9A41 /* uitextview_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uitextview_background.png; sourceTree = "<group>"; };
+		6015CD99164A856600AC9A41 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6015CD9C164A85B400AC9A41 /* CoreDataBreda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataBreda.xcdatamodel; sourceTree = "<group>"; };
+		6015CD9E164A8C0100AC9A41 /* ActivityCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCD.h; sourceTree = "<group>"; };
+		6015CD9F164A8C0100AC9A41 /* ActivityCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCD.m; sourceTree = "<group>"; };
 		602E62D71637EDA50095EDA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		606B588616354A8300574894 /* PhotoUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoUploader.h; path = TafelPoot/PhotoUploader.h; sourceTree = "<group>"; };
 		606B588716354A8300574894 /* PhotoUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoUploader.m; path = TafelPoot/PhotoUploader.m; sourceTree = "<group>"; };
@@ -186,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6015CD9A164A856600AC9A41 /* CoreData.framework in Frameworks */,
 				1BE37A421642955E004B214E /* AdSupport.framework in Frameworks */,
 				1BE37A4016429554004B214E /* Social.framework in Frameworks */,
 				1BE37A3E1642954D004B214E /* Accounts.framework in Frameworks */,
@@ -210,6 +218,8 @@
 				6012D5171638044A00319904 /* Activities.m */,
 				6012D512163803EC00319904 /* Activity.h */,
 				6012D513163803EC00319904 /* Activity.m */,
+				6015CD9E164A8C0100AC9A41 /* ActivityCD.h */,
+				6015CD9F164A8C0100AC9A41 /* ActivityCD.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -299,6 +309,7 @@
 		609C4DCA16354790006017DE = {
 			isa = PBXGroup;
 			children = (
+				6015CD99164A856600AC9A41 /* CoreData.framework */,
 				1BE37A411642955E004B214E /* AdSupport.framework */,
 				1BE37A3F16429554004B214E /* Social.framework */,
 				1BE37A3D1642954D004B214E /* Accounts.framework */,
@@ -355,6 +366,7 @@
 				609C4DE216354790006017DE /* InfoPlist.strings */,
 				609C4DE516354790006017DE /* main.m */,
 				609C4DE716354790006017DE /* TafelPoot-Prefix.pch */,
+				6015CD9B164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -554,6 +566,8 @@
 				00CE133B16380A3800173D2F /* ServerConnection.m in Sources */,
 				1BE37A491642992D004B214E /* FacebookViewController.m in Sources */,
 				608F39BB164297D5006B8A57 /* CustomBackSegue.m in Sources */,
+				6015CD9D164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld in Sources */,
+				6015CDA0164A8C0100AC9A41 /* ActivityCD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +705,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6015CD9B164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6015CD9C164A85B400AC9A41 /* CoreDataBreda.xcdatamodel */,
+			);
+			currentVersion = 6015CD9C164A85B400AC9A41 /* CoreDataBreda.xcdatamodel */;
+			path = CoreDataBreda.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 609C4DCC16354790006017DE /* Project object */;
 }

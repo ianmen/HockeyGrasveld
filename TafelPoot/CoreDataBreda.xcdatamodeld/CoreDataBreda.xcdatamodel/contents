@@ -15,8 +15,9 @@
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ActivityCD" positionX="160" positionY="192" width="128" height="253"/>
+        <element name="ActivityCD" positionX="160" positionY="192" width="128" height="268"/>
     </elements>
 </model>

@@ -15,6 +15,8 @@
 #import "Activity.h"
 #import "PhotoUploader.h"
 #import "MBProgressHUD.h"
+#import "ActivityCD.h"
+#import "AppDelegate.h"
 
 
 @interface ViewControllerActivityWhat ()
@@ -63,6 +65,51 @@
         activity = [[Activity alloc] init];
     }
     
+    
+    //Check if the item allready is in the local database
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    //Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD"
+                                              inManagedObjectContext:context];
+    
+    //Settings
+    NSError *error2;
+    
+    //Loop for all id's
+    NSMutableArray *idsFromServer = [[NSMutableArray alloc] init];
+
+    // ======== - =========
+    // For loop
+    
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(uID like %@)", ID_HERE];
+    //[idsFromServer addObject:<#(id)#>]
+
+    //Fetch them
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error2];
+    
+    //Count
+    if ([fetchedObjects count] == 0){
+        
+        //Item staat dus nog niet in de database, toevoegen
+        
+        
+        ActivityCD *aCD = [NSEntityDescription
+                           insertNewObjectForEntityForName:@"ActivityCD"
+                           inManagedObjectContext:context];
+        aCD.activityName = @"Test one";
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning
