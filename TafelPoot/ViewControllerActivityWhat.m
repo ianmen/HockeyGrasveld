@@ -15,7 +15,6 @@
 #import "Activity.h"
 #import "PhotoUploader.h"
 #import "MBProgressHUD.h"
-#import "ServerConnection.h"
 
 @interface ViewControllerActivityWhat ()
 
@@ -154,11 +153,6 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    
-    ServerConnection *con = [[ServerConnection alloc] init];
-    
-    [con loadActivities];
-    
     
     if ([identifier isEqualToString:@"toWhere"]) {
         
