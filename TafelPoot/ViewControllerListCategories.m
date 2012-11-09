@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerListCategories.h"
+#import "ViewControllerViewActivity.h"
 #import "CustomCell.h"
 #import "AppDelegate.h"
 #import "ActivityCD.h"
@@ -264,5 +265,18 @@
     
     [self updateList];
     [self.categoryTable reloadData];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"showDetails"])
+    {
+        ViewControllerViewActivity *vc = [segue destinationViewController];
+        NSIndexPath *p = [self.categoryTable indexPathForSelectedRow];
+        
+        ActivityCD *act = [alphabeticMutableArray objectAtIndex: p.row];
+        
+        [vc setActivity: act];
+    }
 }
 @end
