@@ -39,8 +39,8 @@
     
     
     serverConn = [[ServerConnection alloc] init];
-    
-    //[self.imageView setImage:activity];
+
+    //[self.imagePreview setImage:activity.image];
     
     serverConn.delegate = self;
 }

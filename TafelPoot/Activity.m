@@ -12,6 +12,7 @@
 
 @synthesize activityId;
 @synthesize activityName;
+//@synthesize image;
 @synthesize imagePath;
 @synthesize imagePathThumbnail;
 @synthesize tags;
