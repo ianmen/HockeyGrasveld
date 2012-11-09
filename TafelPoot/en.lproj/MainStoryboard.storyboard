@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller - Item-->
@@ -93,6 +93,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addPhoto:" destination="F6t-pD-eeP" eventType="touchUpInside" id="e4A-Gi-rhh"/>
+                                    <action selector="photoDone:" destination="F6t-pD-eeP" eventType="touchUpInside" id="U85-I2-wg5"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_upload_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="vov-Ss-k1g">
@@ -216,7 +217,7 @@
             <objects>
                 <viewController title="Adress" id="pd6-fD-fvD" customClass="ViewControllerActivityWhere" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tTR-la-WDG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWaar@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="c3J-8f-FM7">
@@ -907,6 +908,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="baseline" secondItem="hfJ-eb-Ccw" secondAttribute="baseline" type="default" id="7la-nI-rOX"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="6" id="Dlo-zn-ch1"/>
                             <constraint firstItem="FfW-ao-bYF" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="160" id="FI3-79-IjP"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" type="default" id="FWP-p3-OSg"/>
@@ -917,8 +919,19 @@
                             <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="P8A-TE-pCj"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="ZHQ-ce-Lhl" secondAttribute="baseline" type="default" id="cFm-lP-AF0"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-1" id="hyg-iW-FD6"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="baseline" secondItem="ZHQ-ce-Lhl" secondAttribute="baseline" type="default" id="LI6-4Y-Qt6"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="top" secondItem="FfW-ao-bYF" secondAttribute="top" type="default" id="LPl-xa-kpj"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="160" id="Ldj-4C-kVA"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="ZHQ-ce-Lhl" secondAttribute="baseline" type="default" id="PMZ-Ex-aFL"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="QSv-BE-4UE"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="Qid-Uv-Ixe"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="top" secondItem="FfW-ao-bYF" secondAttribute="top" type="default" id="T1Q-dY-gqh"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="236" id="Xrj-Ee-jx3"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="ZHQ-ce-Lhl" secondAttribute="top" type="default" id="gxr-wi-ooN"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="ZoP-Hb-hEO" secondAttribute="leading" type="default" id="iHg-dz-I2j"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-61" id="rHX-Kg-NPB"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="baseline" secondItem="KEU-JN-ia4" secondAttribute="baseline" type="default" id="xOu-22-kK5"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-1" id="xsF-i2-hmK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lijst" id="b6J-rq-aCi"/>
