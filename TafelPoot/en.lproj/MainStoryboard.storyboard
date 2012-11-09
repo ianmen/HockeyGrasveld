@@ -1089,6 +1089,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
             <relationships>
                 <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="action" name="photoDone:"/>
                 <relationship kind="action" name="selectCategoryFromPicker:"/>
                 <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="category" candidateClass="UITextField"/>
