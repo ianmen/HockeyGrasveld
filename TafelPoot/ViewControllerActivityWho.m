@@ -50,12 +50,14 @@
     self.tags.text = [activity.tags copy];
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM yyyy HH:mm"];
-    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
-        
-    self.startDate.text = [dateFormatter stringFromDate:activity.startDate];
-    self.endDate.text = [dateFormatter stringFromDate:activity.endDate];
+    [dateFormatter setDateFormat:@"dd-MM yyyy"];
+    
+    NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
 
+    self.startDate.text = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.startDate],[timeFormatter stringFromDate:activity.startDate]];
+    self.endDate.text = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.endDate],[timeFormatter stringFromDate:activity.endDate]];
     self.location.text = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
     [self.imagePreview setImage:activity.image];
     
