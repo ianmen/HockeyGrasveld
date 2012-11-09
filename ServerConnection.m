@@ -204,9 +204,10 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
                 aCD.endDate = endDate;
                 aCD.address_street = locationStreet;
                 aCD.address_city = locationCity;
-                //aCD.longitude = longitude;
-               // aCD.latitud
-                
+                aCD.longitude = [NSNumber numberWithDouble:longitude];
+                aCD.latitude = [NSNumber numberWithDouble:latitude];
+                aCD.imagePath = [imagePath absoluteString];
+                aCD.imagePathThumbnails = [imagePathThumbnail absoluteString];
                 
                 aCD.address_street = locationStreet;
                 NSError *error;
@@ -227,9 +228,12 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     
     for (ActivityCD *Acd in fetchedObjects2){
         
-        NSLog(@"%@", Acd.address_street);
+        //Debug test
+//        NSLog(@"%@", Acd.activityName);
+//        NSLog(@"%@",Acd.endDate);
+//        NSLog(@"%@", Acd.address_city);
+//        NSLog(@"%@", Acd.longitude);
         
-        /*
         if(![idsFromServer containsObject:[NSString stringWithFormat:@"%@",Acd.uID]]){
             //ID is in the local database but not in the file pulled from the server\\
             
@@ -243,10 +247,35 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
             }
             
         }
-         */
+        
         
     }
-     
+    
+    //[self loadAllActivitiesFromDb];
+       // NSLog(@"%u",[fetchedObjects2 count]);
+}
+
+-(NSArray*)loadAllActivitiesFromDb
+{
+    //Check if the item allready is in the local database
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+                                               
+    // Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD" inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+                                               
+    NSError *error;
+                                               
+    // Load all activities in an array
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+
+    NSMutableArray *parsedDataArray;
+    [parsedDataArray addObjectsFromArray:fetchedObjects];
+    
+     return fetchedObjects;
 }
 
 -(void)xmlPostActivity:(Activity*)activity

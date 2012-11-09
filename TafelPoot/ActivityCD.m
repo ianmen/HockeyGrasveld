@@ -26,5 +26,6 @@
 @dynamic locationDescription;
 @dynamic imagePath;
 @dynamic uID;
+@dynamic imagePathThumbnails;
 
 @end
