@@ -13,6 +13,8 @@
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
 		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
 		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
+		13044D55164CF8E600859E7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13044D54164CF8E600859E7E /* Default-568h@2x.png */; };
+		1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */; };
 		13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FD816380CA5001D3EB9 /* CoreLocation.framework */; };
 		13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FDB16380CAB001D3EB9 /* MapKit.framework */; };
 		1B5554CB164A894A00075F4B /* raadplegen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554CA164A894A00075F4B /* raadplegen_icon.png */; };
@@ -26,6 +28,21 @@
 		1B5554E0164A94AE00075F4B /* backgroundTijd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554D7164A94AE00075F4B /* backgroundTijd.png */; };
 		1B5554E1164A94AE00075F4B /* backgroundTijd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554D8164A94AE00075F4B /* backgroundTijd@2x.png */; };
 		1B5554E8164A9CBA00075F4B /* ViewControllerListCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5554E7164A9CBA00075F4B /* ViewControllerListCategories.m */; };
+		1B5554EF164BD57500075F4B /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5554EE164BD57500075F4B /* CustomCell.m */; };
+		1B5554F4164BDED300075F4B /* categoryIcon_Eten.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554F0164BDED300075F4B /* categoryIcon_Eten.png */; };
+		1B5554F5164BDED300075F4B /* categoryIcon_Kunst & Cultuur.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554F1164BDED300075F4B /* categoryIcon_Kunst & Cultuur.png */; };
+		1B5554F6164BDED300075F4B /* categoryIcon_Muziek.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554F2164BDED300075F4B /* categoryIcon_Muziek.png */; };
+		1B5554F7164BDED300075F4B /* categoryIcon_Sport.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554F3164BDED300075F4B /* categoryIcon_Sport.png */; };
+		1B5554F9164BF0DB00075F4B /* categoryIcon_Boeken.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554F8164BF0DB00075F4B /* categoryIcon_Boeken.png */; };
+		1B555503164BF22D00075F4B /* categoryIcon_Boeken.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554FA164BF22C00075F4B /* categoryIcon_Boeken.png */; };
+		1B555504164BF22D00075F4B /* categoryIcon_Bouwen & Ondernemen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554FB164BF22C00075F4B /* categoryIcon_Bouwen & Ondernemen.png */; };
+		1B555505164BF22D00075F4B /* categoryIcon_Dieren.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554FC164BF22D00075F4B /* categoryIcon_Dieren.png */; };
+		1B555506164BF22D00075F4B /* categoryIcon_Eten.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554FD164BF22D00075F4B /* categoryIcon_Eten.png */; };
+		1B555507164BF22D00075F4B /* categoryIcon_Foto & Film.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554FE164BF22D00075F4B /* categoryIcon_Foto & Film.png */; };
+		1B555508164BF22D00075F4B /* categoryIcon_Gezondheid & Uiterlijk.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554FF164BF22D00075F4B /* categoryIcon_Gezondheid & Uiterlijk.png */; };
+		1B555509164BF22D00075F4B /* categoryIcon_Natuur & Milieu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555500164BF22D00075F4B /* categoryIcon_Natuur & Milieu.png */; };
+		1B55550A164BF22D00075F4B /* categoryIcon_Reizen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555501164BF22D00075F4B /* categoryIcon_Reizen.png */; };
+		1B55550B164BF22D00075F4B /* categoryIcon_Uitgaan & Evenementen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555502164BF22D00075F4B /* categoryIcon_Uitgaan & Evenementen.png */; };
 		1BE37A3B16429539004B214E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3A16429539004B214E /* Twitter.framework */; };
 		1BE37A3E1642954D004B214E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3D1642954D004B214E /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BE37A4016429554004B214E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3F16429554004B214E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -114,6 +131,9 @@
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
+		13044D54164CF8E600859E7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1337F78E164BF1F9009C2AE3 /* ViewControllerViewActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerViewActivity.h; sourceTree = "<group>"; };
+		1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerViewActivity.m; sourceTree = "<group>"; };
 		13B86FD816380CA5001D3EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		13B86FDB16380CAB001D3EB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1B5554CA164A894A00075F4B /* raadplegen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raadplegen_icon.png; sourceTree = "<group>"; };
@@ -128,6 +148,22 @@
 		1B5554D8164A94AE00075F4B /* backgroundTijd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundTijd@2x.png"; sourceTree = "<group>"; };
 		1B5554E6164A9CBA00075F4B /* ViewControllerListCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerListCategories.h; sourceTree = "<group>"; };
 		1B5554E7164A9CBA00075F4B /* ViewControllerListCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerListCategories.m; sourceTree = "<group>"; };
+		1B5554ED164BD57500075F4B /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		1B5554EE164BD57500075F4B /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		1B5554F0164BDED300075F4B /* categoryIcon_Eten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Eten.png; sourceTree = "<group>"; };
+		1B5554F1164BDED300075F4B /* categoryIcon_Kunst & Cultuur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categoryIcon_Kunst & Cultuur.png"; sourceTree = "<group>"; };
+		1B5554F2164BDED300075F4B /* categoryIcon_Muziek.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Muziek.png; sourceTree = "<group>"; };
+		1B5554F3164BDED300075F4B /* categoryIcon_Sport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Sport.png; sourceTree = "<group>"; };
+		1B5554F8164BF0DB00075F4B /* categoryIcon_Boeken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Boeken.png; sourceTree = "<group>"; };
+		1B5554FA164BF22C00075F4B /* categoryIcon_Boeken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Boeken.png; sourceTree = "<group>"; };
+		1B5554FB164BF22C00075F4B /* categoryIcon_Bouwen & Ondernemen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categoryIcon_Bouwen & Ondernemen.png"; sourceTree = "<group>"; };
+		1B5554FC164BF22D00075F4B /* categoryIcon_Dieren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Dieren.png; sourceTree = "<group>"; };
+		1B5554FD164BF22D00075F4B /* categoryIcon_Eten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Eten.png; sourceTree = "<group>"; };
+		1B5554FE164BF22D00075F4B /* categoryIcon_Foto & Film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categoryIcon_Foto & Film.png"; sourceTree = "<group>"; };
+		1B5554FF164BF22D00075F4B /* categoryIcon_Gezondheid & Uiterlijk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categoryIcon_Gezondheid & Uiterlijk.png"; sourceTree = "<group>"; };
+		1B555500164BF22D00075F4B /* categoryIcon_Natuur & Milieu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categoryIcon_Natuur & Milieu.png"; sourceTree = "<group>"; };
+		1B555501164BF22D00075F4B /* categoryIcon_Reizen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_Reizen.png; sourceTree = "<group>"; };
+		1B555502164BF22D00075F4B /* categoryIcon_Uitgaan & Evenementen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "categoryIcon_Uitgaan & Evenementen.png"; sourceTree = "<group>"; };
 		1BE37A3A16429539004B214E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		1BE37A3D1642954D004B214E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1BE37A3F16429554004B214E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -264,6 +300,10 @@
 				608F39BA164297D5006B8A57 /* CustomBackSegue.m */,
 				1B5554E6164A9CBA00075F4B /* ViewControllerListCategories.h */,
 				1B5554E7164A9CBA00075F4B /* ViewControllerListCategories.m */,
+				1B5554ED164BD57500075F4B /* CustomCell.h */,
+				1B5554EE164BD57500075F4B /* CustomCell.m */,
+				1337F78E164BF1F9009C2AE3 /* ViewControllerViewActivity.h */,
+				1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -405,6 +445,20 @@
 				998A1D78164A4F680079EF15 /* categoryIcon_photo.png */,
 				998A1D63164A4E060079EF15 /* categoryIcon_building.png */,
 				998A1D64164A4E060079EF15 /* categoryIcon_food.png */,
+				1B5554F0164BDED300075F4B /* categoryIcon_Eten.png */,
+				1B5554F1164BDED300075F4B /* categoryIcon_Kunst & Cultuur.png */,
+				1B5554F2164BDED300075F4B /* categoryIcon_Muziek.png */,
+				1B5554F8164BF0DB00075F4B /* categoryIcon_Boeken.png */,
+				1B5554FA164BF22C00075F4B /* categoryIcon_Boeken.png */,
+				1B5554FB164BF22C00075F4B /* categoryIcon_Bouwen & Ondernemen.png */,
+				1B5554FC164BF22D00075F4B /* categoryIcon_Dieren.png */,
+				1B5554FD164BF22D00075F4B /* categoryIcon_Eten.png */,
+				1B5554FE164BF22D00075F4B /* categoryIcon_Foto & Film.png */,
+				1B5554FF164BF22D00075F4B /* categoryIcon_Gezondheid & Uiterlijk.png */,
+				1B555500164BF22D00075F4B /* categoryIcon_Natuur & Milieu.png */,
+				1B555501164BF22D00075F4B /* categoryIcon_Reizen.png */,
+				1B555502164BF22D00075F4B /* categoryIcon_Uitgaan & Evenementen.png */,
+				1B5554F3164BDED300075F4B /* categoryIcon_Sport.png */,
 				998A1D65164A4E060079EF15 /* categoryIcon_games.png */,
 				998A1D66164A4E060079EF15 /* categoryIcon_health.png */,
 				998A1D67164A4E060079EF15 /* categoryIcon_music.png */,
@@ -587,6 +641,21 @@
 				1B5554DF164A94AE00075F4B /* backgroundPopulair@2x.png in Resources */,
 				1B5554E0164A94AE00075F4B /* backgroundTijd.png in Resources */,
 				1B5554E1164A94AE00075F4B /* backgroundTijd@2x.png in Resources */,
+				1B5554F4164BDED300075F4B /* categoryIcon_Eten.png in Resources */,
+				1B5554F5164BDED300075F4B /* categoryIcon_Kunst & Cultuur.png in Resources */,
+				1B5554F6164BDED300075F4B /* categoryIcon_Muziek.png in Resources */,
+				1B5554F7164BDED300075F4B /* categoryIcon_Sport.png in Resources */,
+				1B5554F9164BF0DB00075F4B /* categoryIcon_Boeken.png in Resources */,
+				1B555503164BF22D00075F4B /* categoryIcon_Boeken.png in Resources */,
+				1B555504164BF22D00075F4B /* categoryIcon_Bouwen & Ondernemen.png in Resources */,
+				1B555505164BF22D00075F4B /* categoryIcon_Dieren.png in Resources */,
+				1B555506164BF22D00075F4B /* categoryIcon_Eten.png in Resources */,
+				1B555507164BF22D00075F4B /* categoryIcon_Foto & Film.png in Resources */,
+				1B555508164BF22D00075F4B /* categoryIcon_Gezondheid & Uiterlijk.png in Resources */,
+				1B555509164BF22D00075F4B /* categoryIcon_Natuur & Milieu.png in Resources */,
+				1B55550A164BF22D00075F4B /* categoryIcon_Reizen.png in Resources */,
+				1B55550B164BF22D00075F4B /* categoryIcon_Uitgaan & Evenementen.png in Resources */,
+				13044D55164CF8E600859E7E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +761,8 @@
 		609C4DFA16354790006017DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -705,6 +776,7 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -712,6 +784,8 @@
 		609C4DFB16354790006017DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -725,6 +799,7 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
