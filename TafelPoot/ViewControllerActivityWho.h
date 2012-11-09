@@ -13,7 +13,15 @@
 
 @interface ViewControllerActivityWho : UIViewController<ServerConnectionDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextView *xmlResponseMsg;
+
+@property (strong, nonatomic) IBOutlet UIImageView *imagePreview;
+@property (strong, nonatomic) IBOutlet UILabel *activity;
+@property (strong, nonatomic) IBOutlet UILabel *category;
+@property (strong, nonatomic) IBOutlet UILabel *tags;
+@property (strong, nonatomic) IBOutlet UILabel *location;
+@property (strong, nonatomic) IBOutlet UITextView *description;
+@property (strong, nonatomic) IBOutlet UILabel *startDate;
+@property (strong, nonatomic) IBOutlet UILabel *endDate;
 @property (strong, nonatomic) IBOutlet UILabel *xmlStatusResponse;
 
 - (IBAction)finished:(id)sender;
