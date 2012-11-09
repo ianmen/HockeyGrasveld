@@ -33,6 +33,7 @@ typedef enum {
 @property (nonatomic, assign) double longitude;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, strong) NSString *locationDescription;
+@property (nonatomic, strong) UIImage  *image;
 @property (nonatomic, strong) NSURL *imagePath;
 @property (nonatomic, strong) NSURL *imagePathThumbnail;
 
