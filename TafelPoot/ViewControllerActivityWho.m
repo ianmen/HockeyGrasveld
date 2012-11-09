@@ -42,13 +42,22 @@
     serverConn = [[ServerConnection alloc] init];
     
     self.imagePreview.layer.masksToBounds = YES;
-    self.imagePreview.layer.borderColor = [UIColor blackColor].CGColor;
-    self.imagePreview.layer.borderWidth = 1;
-    
+    self.imagePreview.layer.borderColor = [UIColor redColor].CGColor;
+    self.imagePreview.layer.borderWidth = 2;
     
     self.activityName.text = [activity.activityName copy];
     self.category.text = [activity.category copy];
     self.tags.text = [activity.tags copy];
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM yyyy"];
+    
+    NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
+
+    self.startDate.text = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.startDate],[timeFormatter stringFromDate:activity.startDate]];
+    self.endDate.text = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.endDate],[timeFormatter stringFromDate:activity.endDate]];
     self.location.text = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
     [self.imagePreview setImage:activity.image];
     
