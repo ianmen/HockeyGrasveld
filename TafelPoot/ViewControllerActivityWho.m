@@ -37,8 +37,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    
     serverConn = [[ServerConnection alloc] init];
-
+    
+    //[self.imageView setImage:activity];
+    
     serverConn.delegate = self;
 }
 
@@ -109,8 +112,6 @@
 
 -(void)serverResponse {
     self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
-    
-    self.xmlResponseMsg.text = serverConn.responseString;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

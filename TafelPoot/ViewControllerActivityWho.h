@@ -14,8 +14,8 @@
 @interface ViewControllerActivityWho : UIViewController<ServerConnectionDelegate>
 
 
+@property (strong, nonatomic) IBOutlet UILabel *activityName;
 @property (strong, nonatomic) IBOutlet UIImageView *imagePreview;
-@property (strong, nonatomic) IBOutlet UILabel *activity;
 @property (strong, nonatomic) IBOutlet UILabel *category;
 @property (strong, nonatomic) IBOutlet UILabel *tags;
 @property (strong, nonatomic) IBOutlet UILabel *location;

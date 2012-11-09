@@ -678,7 +678,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activity" destination="LUA-BD-w8l" id="iR0-tH-MKJ"/>
+                        <outlet property="activityName" destination="LUA-BD-w8l" id="Pd7-ms-1lH"/>
                         <outlet property="category" destination="fcB-UN-HSe" id="L1R-sJ-VQD"/>
                         <outlet property="description" destination="KEj-Hr-6gG" id="vin-y8-MJW"/>
                         <outlet property="endDate" destination="q1Q-mp-pet" id="qEJ-l9-IkP"/>
@@ -1175,7 +1175,7 @@
             <relationships>
                 <relationship kind="action" name="finished:"/>
                 <relationship kind="action" name="shareButton:"/>
-                <relationship kind="outlet" name="activity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="activityName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="category" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="description" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="endDate" candidateClass="UILabel"/>
