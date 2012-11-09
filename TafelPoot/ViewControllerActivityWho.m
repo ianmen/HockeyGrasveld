@@ -45,10 +45,20 @@
     self.imagePreview.layer.borderColor = [UIColor blackColor].CGColor;
     self.imagePreview.layer.borderWidth = 1;
     
-    
     self.activityName.text = [activity.activityName copy];
     self.category.text = [activity.category copy];
     self.tags.text = [activity.tags copy];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM yyyy HH:mm"];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
+        
+    self.startDate.text = [dateFormatter stringFromDate:activity.startDate];
+    self.endDate.text = [dateFormatter stringFromDate:activity.endDate];
+
     self.location.text = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
     [self.imagePreview setImage:activity.image];
     
