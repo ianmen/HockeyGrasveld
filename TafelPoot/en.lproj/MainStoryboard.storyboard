@@ -568,7 +568,7 @@
             <objects>
                 <viewController id="CNA-sX-rZm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCO-sl-MXY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qwW-i8-vpa"/>
@@ -826,18 +826,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="236" id="3rr-fr-90W"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="ZHQ-ce-Lhl" secondAttribute="top" type="default" id="3w1-Hh-59q"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="baseline" secondItem="KEU-JN-ia4" secondAttribute="baseline" type="default" id="6dp-ZQ-BCa"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="6" id="Dlo-zn-ch1"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" type="default" id="FWP-p3-OSg"/>
                             <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="83" id="Gw6-sB-AoH"/>
-                            <constraint firstAttribute="trailing" secondItem="KEU-JN-ia4" secondAttribute="trailing" constant="7" id="HgI-PA-Lqe"/>
                             <constraint firstItem="ZoP-Hb-hEO" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="37" id="IkJ-NA-eVQ"/>
-                            <constraint firstItem="KEU-JN-ia4" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="Oj1-cT-RJY"/>
-                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="Ozu-hv-Snu"/>
-                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="fZU-bc-blL"/>
-                            <constraint firstItem="FfW-ao-bYF" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="foZ-Su-X46"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="top" secondItem="ZHQ-ce-Lhl" secondAttribute="top" type="default" id="WVR-9I-mN2"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="160" id="aXb-N4-d2H"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="aiE-po-UpB"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-1" id="blX-9g-Q6d"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="top" secondItem="FfW-ao-bYF" secondAttribute="top" type="default" id="esG-YG-Qq2"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="ZoP-Hb-hEO" secondAttribute="leading" type="default" id="iHg-dz-I2j"/>
-                            <constraint firstAttribute="trailing" secondItem="FfW-ao-bYF" secondAttribute="trailing" constant="83" id="iNN-hJ-DxD"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="ZHQ-ce-Lhl" secondAttribute="baseline" type="default" id="pYH-0h-Jtr"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="qzn-Cj-ynN"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-61" id="rHX-Kg-NPB"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="baseline" secondItem="hfJ-eb-Ccw" secondAttribute="baseline" type="default" id="t0f-1d-p97"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="baseline" secondItem="KEU-JN-ia4" secondAttribute="baseline" type="default" id="zSc-mf-KyB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lijst" id="b6J-rq-aCi"/>
@@ -855,7 +861,7 @@
             <objects>
                 <viewController id="N3W-0o-Eim" customClass="ViewControllerViewActivity" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlZ-8S-rOf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-Z3-ImU">
@@ -1053,6 +1059,9 @@
                 <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="categoryTable" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="ViewControllerViewActivity" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerViewActivity.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
