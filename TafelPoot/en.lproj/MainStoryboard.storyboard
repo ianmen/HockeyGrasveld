@@ -776,10 +776,10 @@
             </objects>
             <point key="canvasLocation" x="1383" y="-356"/>
         </scene>
-        <!--View Controller - Activiteit naam-->
+        <!--View Controller View Activity - Activiteit naam-->
         <scene sceneID="Dmw-kR-Z2M">
             <objects>
-                <viewController id="N3W-0o-Eim" sceneMemberID="viewController">
+                <viewController id="N3W-0o-Eim" customClass="ViewControllerViewActivity" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlZ-8S-rOf">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -827,21 +827,32 @@
                                     <segue destination="CNA-sX-rZm" kind="push" id="D0e-bh-jDt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfa-DV-Qe5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="1oZ-8w-FeK"/>
+                                    <constraint firstAttribute="width" constant="161" id="hC6-ga-ENX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b9B-4K-u7V" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="20" symbolic="YES" type="default" id="2wB-Pe-2Hs"/>
+                            <constraint firstItem="eOI-Uz-ZEE" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="157" id="1lY-kd-Pq0"/>
                             <constraint firstItem="b9B-4K-u7V" firstAttribute="leading" secondItem="zlZ-8S-rOf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6j6-Pg-xKr"/>
                             <constraint firstItem="TSg-Z3-ImU" firstAttribute="leading" secondItem="zlZ-8S-rOf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6pO-hA-8Lo"/>
                             <constraint firstAttribute="bottom" secondItem="TSg-Z3-ImU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8Bu-ke-jqv"/>
+                            <constraint firstItem="RQ0-YF-a3y" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="115" id="8sF-Hq-N4W"/>
+                            <constraint firstItem="Lfa-DV-Qe5" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="103" id="EXu-uF-oMU"/>
                             <constraint firstItem="2kl-57-DQh" firstAttribute="leading" secondItem="TSg-Z3-ImU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Gba-z6-zMI"/>
-                            <constraint firstItem="RQ0-YF-a3y" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="81" id="HvU-UP-9LE"/>
                             <constraint firstAttribute="bottom" secondItem="2kl-57-DQh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TUG-iJ-XMa"/>
                             <constraint firstItem="eOI-Uz-ZEE" firstAttribute="trailing" secondItem="RQ0-YF-a3y" secondAttribute="trailing" type="default" id="VNE-Zb-6FR"/>
                             <constraint firstItem="eOI-Uz-ZEE" firstAttribute="leading" secondItem="RQ0-YF-a3y" secondAttribute="leading" type="default" id="YGF-aZ-Abg"/>
-                            <constraint firstAttribute="trailing" secondItem="RQ0-YF-a3y" secondAttribute="trailing" constant="30" id="cvD-7w-SHc"/>
+                            <constraint firstItem="b9B-4K-u7V" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="57" id="ZDk-3p-fTI"/>
                             <constraint firstAttribute="trailing" secondItem="2kl-57-DQh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mFF-dc-TpB"/>
-                            <constraint firstItem="eOI-Uz-ZEE" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="123" id="oiO-IZ-vrK"/>
+                            <constraint firstAttribute="trailing" secondItem="RQ0-YF-a3y" secondAttribute="trailing" constant="27" id="pil-7e-ekF"/>
+                            <constraint firstItem="Lfa-DV-Qe5" firstAttribute="leading" secondItem="zlZ-8S-rOf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ukR-wF-KMn"/>
                             <constraint firstItem="TSg-Z3-ImU" firstAttribute="top" secondItem="2kl-57-DQh" secondAttribute="top" type="default" id="zhC-Ov-kRQ"/>
                         </constraints>
                     </view>
@@ -885,87 +896,14 @@
         <image name="toevoegen_icon.png" width="50" height="59"/>
         <image name="uitextview_background.png" width="573" height="378"/>
     </resources>
-    <classes>
-        <class className="FacebookViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="action" name="shareButtonAction:"/>
-                <relationship kind="outlet" name="loginFBOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="postCaptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="postMessageTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="postNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
-            <relationships>
-                <relationship kind="action" name="addPhoto:"/>
-                <relationship kind="action" name="selectCategoryFromPicker:"/>
-                <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="category_icon" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="customInput" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
-            <relationships>
-                <relationship kind="action" name="beginTijd:"/>
-                <relationship kind="action" name="eindTijd:"/>
-                <relationship kind="outlet" name="endDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startDate" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
-            <relationships>
-                <relationship kind="action" name="fetchCoordinates:"/>
-                <relationship kind="action" name="locationNow:"/>
-                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWho" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
-            <relationships>
-                <relationship kind="action" name="finished:"/>
-                <relationship kind="action" name="shareButton:"/>
-                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerListCategories" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerListCategories.h"/>
-            <relationships>
-                <relationship kind="outlet" name="categoryTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="FFk-gi-mPA"/>
-        <segue reference="R9t-Dk-fe4"/>
+        <segue reference="VHx-ZB-wPy"/>
         <segue reference="6cK-jp-Qjh"/>
+        <segue reference="R9t-Dk-fe4"/>
     </inferredMetricsTieBreakers>
 </document>
