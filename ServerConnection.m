@@ -251,7 +251,31 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
         
     }
     
+    //[self loadAllActivitiesFromDb];
        // NSLog(@"%u",[fetchedObjects2 count]);
+}
+
+-(NSArray*)loadAllActivitiesFromDb
+{
+    //Check if the item allready is in the local database
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+                                               
+    // Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD" inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+                                               
+    NSError *error;
+                                               
+    // Load all activities in an array
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+
+    NSMutableArray *parsedDataArray;
+    [parsedDataArray addObjectsFromArray:fetchedObjects];
+    
+     return fetchedObjects;
 }
 
 -(void)xmlPostActivity:(Activity*)activity
