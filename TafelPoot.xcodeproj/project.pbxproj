@@ -611,6 +611,7 @@
 				00CE133B16380A3800173D2F /* ServerConnection.m in Sources */,
 				1BE37A491642992D004B214E /* FacebookViewController.m in Sources */,
 				608F39BB164297D5006B8A57 /* CustomBackSegue.m in Sources */,
+				1B5554E8164A9CBA00075F4B /* ViewControllerListCategories.m in Sources */,
 				6015CD9D164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld in Sources */,
 				6015CDA0164A8C0100AC9A41 /* ActivityCD.m in Sources */,
 			);

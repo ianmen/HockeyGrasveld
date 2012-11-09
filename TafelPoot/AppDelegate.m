@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ActivityCD.h"
+#import "ServerConnection.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext,managedObjectModel,persistentStoreCoordinator;
@@ -79,6 +80,10 @@ NSInteger FBLoggedIn = 0;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    ServerConnection *svr = [[ServerConnection alloc] init];
+    [svr loadActivities];
+    
     return YES;
     
 }
