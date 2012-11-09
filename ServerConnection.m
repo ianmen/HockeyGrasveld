@@ -204,9 +204,10 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
                 aCD.endDate = endDate;
                 aCD.address_street = locationStreet;
                 aCD.address_city = locationCity;
-                //aCD.longitude = longitude;
-               // aCD.latitud
-                
+                aCD.longitude = [NSNumber numberWithDouble:longitude];
+                aCD.latitude = [NSNumber numberWithDouble:latitude];
+                aCD.imagePath = [imagePath absoluteString];
+                aCD.imagePathThumbnails = [imagePathThumbnail absoluteString];
                 
                 aCD.address_street = locationStreet;
                 NSError *error;
@@ -227,9 +228,12 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     
     for (ActivityCD *Acd in fetchedObjects2){
         
-        NSLog(@"%@", Acd.address_street);
+        //Debug test
+//        NSLog(@"%@", Acd.activityName);
+//        NSLog(@"%@",Acd.endDate);
+//        NSLog(@"%@", Acd.address_city);
+//        NSLog(@"%@", Acd.longitude);
         
-        /*
         if(![idsFromServer containsObject:[NSString stringWithFormat:@"%@",Acd.uID]]){
             //ID is in the local database but not in the file pulled from the server\\
             
@@ -243,11 +247,12 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
             }
             
         }
-         */
+        
         
     }
     
     //[self loadAllActivitiesFromDb];
+       // NSLog(@"%u",[fetchedObjects2 count]);
 }
 
 -(NSArray*)loadAllActivitiesFromDb
