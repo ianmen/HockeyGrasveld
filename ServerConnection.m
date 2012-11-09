@@ -9,6 +9,8 @@
 #import "ServerConnection.h"
 #import "Activity.h"
 #import "GDataXMLNode.h"
+#import "ActivityCD.h"
+#import "AppDelegate.h"
 
 @implementation ServerConnection
 {
@@ -58,19 +60,44 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSURL *imagePath;
     NSURL *imagePathThumbnail;
     
+    
+    //=====
+    
+    
+    
+    //Check if the item allready is in the local database
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    //Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    [fetchRequest2 setEntity:entity];
+    
+    //Settings
+    NSError *error2;
+    
+    //Loop for all id's
+    NSMutableArray *idsFromServer = [[NSMutableArray alloc] init];
+    
+
+    
+    
     NSArray *activiteitsMembers = [doc nodesForXPath:@"//bredapp/activities/activity" error:nil];
     for (GDataXMLElement *activity in activiteitsMembers) {
         
         if([activity childCount] > 0)
         {
-			// ID
+            
+            // ID
 			NSArray *activityIDs = [activity elementsForName:@"id"];
 			if (activityIDs.count > 0) {
 				acitivityId = [[(GDataXMLElement *) [activityIDs objectAtIndex:0] stringValue] intValue];
 			} else continue;
-			
-            //NSString *activityIDs = [[partyMember attributeForName:@"id"] stringValue];
-			
+            
 			// Name
 			NSArray *names = [activity elementsForName:@"title"];
 			if (names.count > 0) {
@@ -150,8 +177,105 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
 			if (imagePathThumbnails.count > 0) {
 				imagePathThumbnail = [[NSURL alloc] initWithString:[(GDataXMLElement *) [imagePathThumbnails objectAtIndex:0] stringValue]];
 			} else continue;
+            
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(uID == %i)", acitivityId];
+            [idsFromServer addObject:[NSString stringWithFormat:@"%i",acitivityId]];
+            
+            //Fetch them
+            [fetchRequest setPredicate:predicate];
+            NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error2];
+            
+            //Count
+            if ([fetchedObjects count] == 0){
+                
+                //Item staat dus nog niet in de database, toevoegen
+                
+                
+                ActivityCD *aCD = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"ActivityCD"
+                                   inManagedObjectContext:context];
+                
+                //Save the actual data the CD object
+                aCD.uID = [NSNumber numberWithInt:acitivityId];
+                aCD.activityName = name;
+                aCD.category = category;
+                aCD.activityDescription = locationDescription;
+                aCD.startDate = startDate;
+                aCD.endDate = endDate;
+                aCD.address_street = locationStreet;
+                aCD.address_city = locationCity;
+                aCD.longitude = [NSNumber numberWithDouble:longitude];
+                aCD.latitude = [NSNumber numberWithDouble:latitude];
+                aCD.imagePath = [imagePath absoluteString];
+                //aCD.imagePathThumbnails = [imagePathThumbnail absoluteString];
+                
+                aCD.address_street = locationStreet;
+                NSError *error;
+                if (![context save:&error]) {
+                    NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+                }
+                
+            }
+
+            
+            
 		}
 	}
+    
+    
+    //Remove the items that wheren't found in the list
+    NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest2 error:&error2];
+    
+    for (ActivityCD *Acd in fetchedObjects2){
+        
+        //Debug test
+//        NSLog(@"%@", Acd.activityName);
+//        NSLog(@"%@",Acd.endDate);
+//        NSLog(@"%@", Acd.address_city);
+//        NSLog(@"%@", Acd.longitude);
+        
+        if(![idsFromServer containsObject:[NSString stringWithFormat:@"%@",Acd.uID]]){
+            //ID is in the local database but not in the file pulled from the server\\
+            
+            //Remove the object
+            [context deleteObject:Acd];
+            
+            //Save
+            NSError *error3;
+            if (![context save:&error3]) {
+                NSLog(@"Whoops, couldn't save: %@", [error3 localizedDescription]);
+            }
+            
+        }
+        
+        
+    }
+    
+    //[self loadAllActivitiesFromDb];
+       // NSLog(@"%u",[fetchedObjects2 count]);
+}
+
+-(NSArray*)loadAllActivitiesFromDb
+{
+    //Check if the item allready is in the local database
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+                                               
+    // Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD" inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+                                               
+    NSError *error;
+                                               
+    // Load all activities in an array
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+
+    NSMutableArray *parsedDataArray;
+    [parsedDataArray addObjectsFromArray:fetchedObjects];
+    
+     return fetchedObjects;
 }
 
 -(void)xmlPostActivity:(Activity*)activity
@@ -162,7 +286,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSDateComponents *dateComps = [cal components:( NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
     
     //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    ////[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
   //  NSLog(@"Current date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
    // [dateComps setHour:activity.startTime];

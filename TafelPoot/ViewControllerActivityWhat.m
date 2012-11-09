@@ -15,6 +15,8 @@
 #import "Activity.h"
 #import "PhotoUploader.h"
 #import "MBProgressHUD.h"
+#import "ActivityCD.h"
+#import "AppDelegate.h"
 
 @interface ViewControllerActivityWhat ()
 
@@ -106,8 +108,8 @@
     } else {
         activity = [[Activity alloc] init];
     }
-
-}
+    
+   }
 
 - (void)didReceiveMemoryWarning
 {
@@ -218,6 +220,8 @@
     //Did finisch picking the media
     //Save the image
     UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerOriginalImage];
+    
+    activity.image = image;
     
     //Remove the view from the screen
     [self dismissViewControllerAnimated:YES completion:nil];
