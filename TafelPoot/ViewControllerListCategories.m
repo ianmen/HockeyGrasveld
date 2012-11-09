@@ -145,6 +145,7 @@
 - (IBAction)sortCategories:(id)sender {
     backgroundImage.image = [UIImage imageNamed:@"backgroundCategorie"];
     currentArray = @"categories";
+    [self.categoryTable reloadData];
 }
 
 - (IBAction)sortAlphabetic:(id)sender {
