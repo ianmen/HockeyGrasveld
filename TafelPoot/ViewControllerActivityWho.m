@@ -42,8 +42,8 @@
     serverConn = [[ServerConnection alloc] init];
     
     self.imagePreview.layer.masksToBounds = YES;
-    self.imagePreview.layer.borderColor = [UIColor blackColor].CGColor;
-    self.imagePreview.layer.borderWidth = 1;
+    self.imagePreview.layer.borderColor = [UIColor redColor].CGColor;
+    self.imagePreview.layer.borderWidth = 2;
     
     self.activityName.text = [activity.activityName copy];
     self.category.text = [activity.category copy];
