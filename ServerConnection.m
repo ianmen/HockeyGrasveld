@@ -234,7 +234,6 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
 //        NSLog(@"%@", Acd.address_city);
 //        NSLog(@"%@", Acd.longitude);
         
-        
         if(![idsFromServer containsObject:[NSString stringWithFormat:@"%@",Acd.uID]]){
             //ID is in the local database but not in the file pulled from the server\\
             
