@@ -10,6 +10,7 @@
 #import "CustomCell.h"
 #import "AppDelegate.h"
 #import "ActivityCD.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface ViewControllerListCategories ()
 
@@ -51,7 +52,7 @@
         return [distanceMutableArray count];
     }
     else if (currentArray == @"time") {
-        return [timeMutableArray count];
+        return [alphabeticMutableArray count];
     }
     else {
         return [categoriesMutableArray count];
@@ -73,12 +74,15 @@
     NSString *Title;
     
     if (currentArray == @"categories") {
+        
         Title = [categoriesMutableArray objectAtIndex:indexPath.row];
         
         NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",Title];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        
     }
     else if (currentArray == @"alphabetic") {
+        
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
         
@@ -90,7 +94,14 @@
         Title = [distanceMutableArray objectAtIndex:indexPath.row];
     }
     else if (currentArray == @"time") {
-        Title = [timeMutableArray objectAtIndex:indexPath.row];
+        
+        ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Sett the image
+        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
+
     }
     else {
         Title = [categoriesMutableArray objectAtIndex:indexPath.row];
@@ -120,21 +131,12 @@
                               @"Bouwen & Ondernemen",
                               nil];
     
-//    alphabeticMutableArray = [[NSMutableArray alloc] initWithObjects:
-//                              @"Voetballen",
-//                              @"Tompoezen eten",
-//                              @"Gitaarspelen op het plein",
-//                              nil];
 //    distanceMutableArray = [[NSMutableArray alloc] initWithObjects:
 //                              @"Tompoezen eten",
 //                              @"Voetballen",
 //                              @"Gitaarspelen op het plein",
 //                              nil];
-//    timeMutableArray = [[NSMutableArray alloc] initWithObjects:
-//                              @"Gitaarspelen op het plein",
-//                              @"Tompoezen eten",
-//                              @"Voetballen",
-//                              nil];
+
     
     currentArray = @"categories";
     
@@ -176,8 +178,31 @@
     }
     else if (currentArray == @"distance") {
         
+        //TODO : if switch if the device is an iphony
+        
+        //Time to update each item on the distance
+        
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        for(ActivityCD *aCD in fetchedObjects){
+            
+                //Update each and every one of them
+            
+        }
+        
+    
     }
     else if (currentArray == @"time") {
+        
+        //Load them in Time
+        
+        // Load all activities in an array
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES selector:@selector(compare:)];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
+
         
     }
    
