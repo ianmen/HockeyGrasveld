@@ -290,6 +290,8 @@
 				1B5554E7164A9CBA00075F4B /* ViewControllerListCategories.m */,
 				1B5554ED164BD57500075F4B /* CustomCell.h */,
 				1B5554EE164BD57500075F4B /* CustomCell.m */,
+				1337F78E164BF1F9009C2AE3 /* ViewControllerViewActivity.h */,
+				1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -665,6 +667,7 @@
 				608F39BB164297D5006B8A57 /* CustomBackSegue.m in Sources */,
 				1B5554E8164A9CBA00075F4B /* ViewControllerListCategories.m in Sources */,
 				1B5554EF164BD57500075F4B /* CustomCell.m in Sources */,
+				1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
