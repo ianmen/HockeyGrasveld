@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--View Controller - Item-->
@@ -649,7 +649,7 @@
             <objects>
                 <viewController id="CNA-sX-rZm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCO-sl-MXY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qwW-i8-vpa"/>
@@ -894,6 +894,7 @@
                                         <connections>
                                             <outlet property="CategoryImage" destination="jMb-XH-uKe" id="hMv-Bl-oqP"/>
                                             <outlet property="NameLabel" destination="3gc-Oo-5IX" id="kj2-dS-jHU"/>
+                                            <segue destination="N3W-0o-Eim" kind="push" identifier="showDetails" id="J0n-aC-Ouq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -931,12 +932,12 @@
             </objects>
             <point key="canvasLocation" x="1383" y="-356"/>
         </scene>
-        <!--View Controller View Activity - Activiteit naam-->
+        <!--View Controller View Activity - Activiteit-->
         <scene sceneID="Dmw-kR-Z2M">
             <objects>
                 <viewController id="N3W-0o-Eim" customClass="ViewControllerViewActivity" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlZ-8S-rOf">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-Z3-ImU">
@@ -991,6 +992,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundWie.png" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-g1-WRA"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -999,8 +1001,10 @@
                             <constraint firstItem="TSg-Z3-ImU" firstAttribute="leading" secondItem="zlZ-8S-rOf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6pO-hA-8Lo"/>
                             <constraint firstAttribute="bottom" secondItem="TSg-Z3-ImU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8Bu-ke-jqv"/>
                             <constraint firstItem="RQ0-YF-a3y" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="115" id="8sF-Hq-N4W"/>
+                            <constraint firstItem="XDG-g1-WRA" firstAttribute="leading" secondItem="zlZ-8S-rOf" secondAttribute="leading" type="default" id="Aoi-Op-e7v"/>
                             <constraint firstItem="Lfa-DV-Qe5" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="103" id="EXu-uF-oMU"/>
                             <constraint firstItem="2kl-57-DQh" firstAttribute="leading" secondItem="TSg-Z3-ImU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Gba-z6-zMI"/>
+                            <constraint firstItem="XDG-g1-WRA" firstAttribute="top" secondItem="zlZ-8S-rOf" secondAttribute="top" constant="-61" id="Ldw-gT-ni0"/>
                             <constraint firstAttribute="bottom" secondItem="2kl-57-DQh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TUG-iJ-XMa"/>
                             <constraint firstItem="eOI-Uz-ZEE" firstAttribute="trailing" secondItem="RQ0-YF-a3y" secondAttribute="trailing" type="default" id="VNE-Zb-6FR"/>
                             <constraint firstItem="eOI-Uz-ZEE" firstAttribute="leading" secondItem="RQ0-YF-a3y" secondAttribute="leading" type="default" id="YGF-aZ-Abg"/>
@@ -1011,7 +1015,14 @@
                             <constraint firstItem="TSg-Z3-ImU" firstAttribute="top" secondItem="2kl-57-DQh" secondAttribute="top" type="default" id="zhC-Ov-kRQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activiteit naam" id="IWb-MG-eaB"/>
+                    <navigationItem key="navigationItem" title="Activiteit" id="IWb-MG-eaB"/>
+                    <connections>
+                        <outlet property="img_activityImage" destination="TSg-Z3-ImU" id="cmp-yL-uw8"/>
+                        <outlet property="lbl_activityBeginTime" destination="RQ0-YF-a3y" id="hGe-uy-CsA"/>
+                        <outlet property="lbl_activityDescription" destination="Lfa-DV-Qe5" id="vDY-Zt-nVs"/>
+                        <outlet property="lbl_activityEndTime" destination="eOI-Uz-ZEE" id="zjx-ND-01f"/>
+                        <outlet property="lbl_activityName" destination="b9B-4K-u7V" id="jiS-eH-u8k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fH1-vc-fni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1044,6 +1055,7 @@
         <image name="backgroundWaar@2x.png" width="640" height="960"/>
         <image name="backgroundWanneer@2x.png" width="640" height="960"/>
         <image name="backgroundWat@2x.png" width="640" height="960"/>
+        <image name="backgroundWie.png" width="320" height="480"/>
         <image name="backgroundWie@2x.png" width="640" height="960"/>
         <image name="categoryIcon_unknown.png" width="26" height="26"/>
         <image name="photo_upload_button.png" width="132" height="126"/>

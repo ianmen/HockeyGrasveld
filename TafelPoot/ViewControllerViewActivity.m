@@ -7,20 +7,46 @@
 //
 
 #import "ViewControllerViewActivity.h"
+#import "ActivityCD.h"
 
 @interface ViewControllerViewActivity ()
 {
-    
+    ActivityCD *activity;
 }
 
 @end
 
-/*@implementation ViewControllerViewActivity
+@implementation ViewControllerViewActivity
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.lbl_activityName.text = activity.activityName;
+    self.lbl_activityDescription.text = activity.activityDescription;
+    //self.lbl_activityBeginTime.text = activity.startDate;
+    //self.lbl_activityEndTime.text = activity.endDate;
+        
+    NSURL *img_url = [NSURL URLWithString:activity.imagePath];
+    NSData *img_data = [NSData dataWithContentsOfURL:img_url];
+    UIImage *image = [[UIImage alloc] initWithData: img_data];
+    
+    [self.img_activityImage setImage:image];
+}
+
+- (void)setActivity:(ActivityCD *)currentActivity
+{
+    activity = currentActivity;
+}
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 
 @end
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+
+/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ActivityCD.h"
 //#import <MapKit/MapKit.h>
 //#import <CoreLocation/CoreLocation.h>
 
@@ -20,8 +21,15 @@
 
 //@property (weak, nonatomic) IBOutlet UITextField *streetField;
 //@property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_activityName;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_activityDescription;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_activityBeginTime;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_activityEndTime;
+@property (strong, nonatomic) IBOutlet UIImageView *img_activityImage;
 
-@property double longitude;
-@property double latitude;
+- (void)setActivity:(ActivityCD *)currentActivity;
+
+//@property double longitude;
+//@property double latitude;
 
 @end
