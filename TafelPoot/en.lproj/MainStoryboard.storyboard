@@ -824,7 +824,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CNA-sX-rZm" kind="push" id="D0e-bh-jDt"/>
+                                    <segue destination="CNA-sX-rZm" kind="push" identifier="toMap" id="D0e-bh-jDt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfa-DV-Qe5">
@@ -902,8 +902,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VHx-ZB-wPy"/>
         <segue reference="6cK-jp-Qjh"/>
-        <segue reference="R9t-Dk-fe4"/>
+        <segue reference="Erl-aD-hl6"/>
+        <segue reference="tCs-I8-nKM"/>
     </inferredMetricsTieBreakers>
 </document>

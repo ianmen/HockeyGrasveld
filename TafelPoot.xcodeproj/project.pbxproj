@@ -13,6 +13,7 @@
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
 		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
 		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
+		13044D55164CF8E600859E7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13044D54164CF8E600859E7E /* Default-568h@2x.png */; };
 		1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */; };
 		13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FD816380CA5001D3EB9 /* CoreLocation.framework */; };
 		13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FDB16380CAB001D3EB9 /* MapKit.framework */; };
@@ -112,6 +113,7 @@
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
+		13044D54164CF8E600859E7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1337F78E164BF1F9009C2AE3 /* ViewControllerViewActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerViewActivity.h; sourceTree = "<group>"; };
 		1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerViewActivity.m; sourceTree = "<group>"; };
 		13B86FD816380CA5001D3EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -329,6 +331,7 @@
 		609C4DCA16354790006017DE = {
 			isa = PBXGroup;
 			children = (
+				13044D54164CF8E600859E7E /* Default-568h@2x.png */,
 				1BE37A411642955E004B214E /* AdSupport.framework */,
 				1BE37A3F16429554004B214E /* Social.framework */,
 				1BE37A3D1642954D004B214E /* Accounts.framework */,
@@ -580,6 +583,7 @@
 				1B5554DF164A94AE00075F4B /* backgroundPopulair@2x.png in Resources */,
 				1B5554E0164A94AE00075F4B /* backgroundTijd.png in Resources */,
 				1B5554E1164A94AE00075F4B /* backgroundTijd@2x.png in Resources */,
+				13044D55164CF8E600859E7E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
