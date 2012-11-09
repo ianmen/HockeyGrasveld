@@ -45,6 +45,8 @@
 		1B55555A164D357400075F4B /* catIconLarge_Kunst en Cultuur.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555554164D356900075F4B /* catIconLarge_Kunst en Cultuur.png */; };
 		1B55555B164D357400075F4B /* catIconLarge_Natuur en Milieu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555555164D356D00075F4B /* catIconLarge_Natuur en Milieu.png */; };
 		1B55555C164D357400075F4B /* catIconLarge_Uitgaan en Evenementen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555556164D357000075F4B /* catIconLarge_Uitgaan en Evenementen.png */; };
+		1B55555F164D38DA00075F4B /* iconEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55555D164D38D900075F4B /* iconEnd.png */; };
+		1B555560164D38DA00075F4B /* iconStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55555E164D38D900075F4B /* iconStart.png */; };
 		1BE37A3B16429539004B214E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3A16429539004B214E /* Twitter.framework */; };
 		1BE37A3E1642954D004B214E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3D1642954D004B214E /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BE37A4016429554004B214E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3F16429554004B214E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -167,6 +169,8 @@
 		1B555554164D356900075F4B /* catIconLarge_Kunst en Cultuur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catIconLarge_Kunst en Cultuur.png"; sourceTree = "<group>"; };
 		1B555555164D356D00075F4B /* catIconLarge_Natuur en Milieu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catIconLarge_Natuur en Milieu.png"; sourceTree = "<group>"; };
 		1B555556164D357000075F4B /* catIconLarge_Uitgaan en Evenementen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catIconLarge_Uitgaan en Evenementen.png"; sourceTree = "<group>"; };
+		1B55555D164D38D900075F4B /* iconEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconEnd.png; sourceTree = "<group>"; };
+		1B55555E164D38D900075F4B /* iconStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconStart.png; sourceTree = "<group>"; };
 		1BE37A3A16429539004B214E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		1BE37A3D1642954D004B214E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1BE37A3F16429554004B214E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -478,6 +482,8 @@
 				1B555537164D2FCF00075F4B /* categoryIcon_Sport.png */,
 				990AC13116492F1E00C0A74B /* categoryIcon_unknown.png */,
 				990AC12F16492E1F00C0A74B /* categoryIcon_culture.png */,
+				1B55555D164D38D900075F4B /* iconEnd.png */,
+				1B55555E164D38D900075F4B /* iconStart.png */,
 			);
 			name = "category icons";
 			sourceTree = "<group>";
@@ -669,6 +675,8 @@
 				1B55555A164D357400075F4B /* catIconLarge_Kunst en Cultuur.png in Resources */,
 				1B55555B164D357400075F4B /* catIconLarge_Natuur en Milieu.png in Resources */,
 				1B55555C164D357400075F4B /* catIconLarge_Uitgaan en Evenementen.png in Resources */,
+				1B55555F164D38DA00075F4B /* iconEnd.png in Resources */,
+				1B555560164D38DA00075F4B /* iconStart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
