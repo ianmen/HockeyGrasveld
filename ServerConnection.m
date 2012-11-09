@@ -257,7 +257,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
 
 -(NSArray*)loadAllActivitiesFromDb
 {
-    //Check if the item allready is in the local database
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
                                                
