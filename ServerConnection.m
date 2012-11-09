@@ -33,27 +33,125 @@ NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString:[NSString
     
 NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:self];
     
-    if(con)
-    {
-        NSData *xmlData = [responseData copy];
-        NSError *error;
-        
-        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:xmlData
-                                                               options:0 error:&error];
-        
-        NSString *name;
-        NSString *category;
-        NSString *activityDescription;
-        NSDate *startDate;
-        NSDate *endDate;
-        NSString *locationDescription;
-        double longitude;
-        double latitude;
-        NSString *imagePath;
+    
+}
 
-    }
+-(void)parseActivities
+{
+    NSError *error;
     
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:responseData
+                                                           options:0 error:&error];
     
+    int acitivityId;
+    NSString *name;
+    NSString *category;
+    NSString *tags;
+    NSString *locationDescription;
+    NSDate *startDate;
+    NSDate *endDate;
+    NSString *activityDescription;
+    NSString *locationStreet;
+    NSString *locationCity;
+    double longitude;
+    double latitude;
+    NSURL *imagePath;
+    NSURL *imagePathThumbnail;
+    
+    NSArray *activiteitsMembers = [doc nodesForXPath:@"//bredapp/activities/activity" error:nil];
+    for (GDataXMLElement *activity in activiteitsMembers) {
+        
+        if([activity childCount] > 0)
+        {
+			// ID
+			NSArray *activityIDs = [activity elementsForName:@"id"];
+			if (activityIDs.count > 0) {
+				acitivityId = [[(GDataXMLElement *) [activityIDs objectAtIndex:0] stringValue] intValue];
+			} else continue;
+			
+            //NSString *activityIDs = [[partyMember attributeForName:@"id"] stringValue];
+			
+			// Name
+			NSArray *names = [activity elementsForName:@"title"];
+			if (names.count > 0) {
+				name = [(GDataXMLElement *) [names objectAtIndex:0] stringValue];
+			} else continue;
+			
+			// Category
+			NSArray *categories = [activity elementsForName:@"categorytype"];
+			if (categories.count > 0) {
+				category = [(GDataXMLElement *) [categories objectAtIndex:0] stringValue];
+			} else continue;
+            
+			// Description
+			NSArray *descriptions = [activity elementsForName:@"description"];
+			if (descriptions.count > 0) {
+				locationDescription = [(GDataXMLElement *) [descriptions objectAtIndex:0] stringValue];
+			} else continue;
+            
+			// Dates
+			GDataXMLElement* dateElements = (GDataXMLElement*)[[activity elementsForName:@"datetime"] objectAtIndex:0];
+            
+			// Start date
+			NSArray *startDates = [dateElements elementsForName:@"startdate"];
+			if (startDates.count > 0) {
+				NSString *tmp = [(GDataXMLElement *) [startDates objectAtIndex:0] stringValue];
+				NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+				[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+				NSDate *dateFromString = [[NSDate alloc] init];
+				startDate = [dateFormatter dateFromString:tmp];
+			} else continue;
+            
+			// End date
+			NSArray *endDates = [dateElements elementsForName:@"enddate"];
+			if (endDates.count > 0) {
+				NSString *tmp = [(GDataXMLElement *) [endDates objectAtIndex:0] stringValue];
+				NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+				[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+				NSDate *dateFromString = [[NSDate alloc] init];
+				endDate = [dateFormatter dateFromString:tmp];
+			} else continue;
+            
+			// Location information
+			GDataXMLElement* locationElements = (GDataXMLElement*)[[activity elementsForName:@"location"] objectAtIndex:0];
+            
+			// Location street
+			NSArray *locationDescriptions = [locationElements elementsForName:@"locationstreet"];
+			if (locationDescriptions.count > 0) {
+				locationStreet = [(GDataXMLElement *) [locationDescriptions objectAtIndex:0] stringValue];
+			} else continue;
+            
+			// Location city
+			NSArray *locationCities = [locationElements elementsForName:@"locationcity"];
+			if (locationCities.count > 0) {
+				locationCity = [(GDataXMLElement *) [locationCities objectAtIndex:0] stringValue];
+			} else continue;
+            
+			// Longitude
+			NSArray *longitudes = [locationElements elementsForName:@"longitude"];
+			if (longitudes.count > 0) {
+				longitude = [[(GDataXMLElement *) [longitudes objectAtIndex:0] stringValue] doubleValue];
+			} else continue;
+            
+			// Latitude
+			NSArray *latitudes = [locationElements elementsForName:@"latitude"];
+			if (latitudes.count > 0) {
+				latitude = [[(GDataXMLElement *) [latitudes objectAtIndex:0] stringValue]doubleValue];
+			} else continue;
+			
+			// Real image
+			NSArray *imagePaths = [activity elementsForName:@"photo"];
+			if (imagePaths.count > 0) {
+				imagePath = [[NSURL alloc] initWithString:[(GDataXMLElement *) [imagePaths objectAtIndex:0] stringValue]];
+			} else continue;
+			
+			// Thumbnail
+			NSArray *imagePathThumbnails = [activity elementsForName:@"thumbnail"];
+			if (imagePathThumbnails.count > 0) {
+				imagePathThumbnail = [[NSURL alloc] initWithString:[(GDataXMLElement *) [imagePathThumbnails objectAtIndex:0] stringValue]];
+			} else continue;
+		}
+	}
 }
 
 -(void)xmlPostActivity:(Activity*)activity
@@ -218,6 +316,8 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     }
     
     self.responseData = data;
+    
+    [self parseActivities];
     
     [delegate performSelector:@selector(serverResponse)];
 }

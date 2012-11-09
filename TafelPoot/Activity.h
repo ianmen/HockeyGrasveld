@@ -19,6 +19,7 @@ typedef enum {
     
 }
 
+@property int activityId;
 @property (nonatomic, strong) NSString *activityName;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSString *tags;
@@ -33,5 +34,7 @@ typedef enum {
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, strong) NSString *locationDescription;
 @property (nonatomic, strong) NSURL *imagePath;
+@property (nonatomic, strong) NSURL *imagePathThumbnail;
+
 
 @end
