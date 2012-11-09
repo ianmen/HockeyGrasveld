@@ -110,6 +110,7 @@
     NSString *dateString = [dateFormatter stringFromDate:date];
     
     startDate.text = dateString;
+    activity.startDate = date;
     
     [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
 }
@@ -124,6 +125,7 @@
     NSString *dateString = [dateFormatter stringFromDate:date];
     
     endDate.text = dateString;
+    activity.endDate = date;
     
     [pickerViewPopup dismissWithClickedButtonIndex:1 animated:YES];
 }
@@ -196,16 +198,18 @@
 {
     if ([[segue identifier] isEqualToString:@"toWho"])
     {
-        activity.startDate = [self.startDate.text copy];
-        activity.endDate = [self.endDate.text copy];
+//        NSDate *dateFromString = [[NSDate alloc] init]; // <- non freed instance
+//        dateFromString = [dateFormatter dateFromString:<NSString containing date>];
+//        activity.startDate = self.startDate;
+//        activity.endDate = self.endDate;
         
         ViewControllerActivityWho *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
     } else if ([[segue identifier] isEqualToString:@"toWhere"])
     {
-        activity.startDate = [self.startDate.text copy];
-        activity.endDate = [self.endDate.text copy];
+//        activity.startDate = [self.startDate];
+//        activity.endDate = [self.endDate ];
         
         ViewControllerActivityWho *vc = [segue destinationViewController];
         

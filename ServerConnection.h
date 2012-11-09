@@ -32,5 +32,8 @@
 
 -(void)loadActivities;
 
+-(NSMutableArray*)loadActivitiesFromDb;
+
+
 
 @end
