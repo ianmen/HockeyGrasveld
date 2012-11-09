@@ -102,16 +102,16 @@
                               @"Muziek",
                               @"Eten",
                               @"Sport",
-                              @"Kunst & Cultuur",
+                              @"Kunst en Cultuur",
                               @"Reizen",
                               @"Games",
-                              @"Natuur & Milieu",
-                              @"Gezondheid & Uiterlijk",
-                              @"Uitgaan & Evenementen",
-                              @"Foto & Film",
+                              @"Natuur en Milieu",
+                              @"Gezondheid en Uiterlijk",
+                              @"Uitgaan en Evenementen",
+                              @"Foto en Film",
                               @"Boeken",
                               @"Dieren",
-                              @"Bouwen & Ondernemen",
+                              @"Bouwen en Ondernemen",
                               nil];
     
     alphabeticMutableArray = [[NSMutableArray alloc] initWithObjects:
