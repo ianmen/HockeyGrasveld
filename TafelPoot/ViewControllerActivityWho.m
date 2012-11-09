@@ -12,7 +12,8 @@
 #import "Twitter/TWTweetComposeViewController.h"
 #import "FacebookViewController.h"
 #import "AppDelegate.h"
-
+#import <CoreLocation/CoreLocation.h>
+#import <QuartzCore/CALayer.h>
 
 @interface ViewControllerActivityWho ()
 {
@@ -39,8 +40,17 @@
     
     
     serverConn = [[ServerConnection alloc] init];
-
-    //[self.imagePreview setImage:activity.image];
+    
+    self.imagePreview.layer.masksToBounds = YES;
+    self.imagePreview.layer.borderColor = [UIColor blackColor].CGColor;
+    self.imagePreview.layer.borderWidth = 1;
+    
+    
+    self.activityName.text = [activity.activityName copy];
+    self.category.text = [activity.category copy];
+    self.tags.text = [activity.tags copy];
+    self.location.text = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
+    [self.imagePreview setImage:activity.image];
     
     serverConn.delegate = self;
 }

@@ -221,7 +221,7 @@
     //Save the image
     UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerOriginalImage];
     
-    //activity
+    activity.image = image;
     
     //Remove the view from the screen
     [self dismissViewControllerAnimated:YES completion:nil];
