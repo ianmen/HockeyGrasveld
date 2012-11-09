@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerListCategories.h"
+#import "CustomCell.h"
 
 @interface ViewControllerListCategories ()
 
@@ -15,6 +16,18 @@
 @implementation ViewControllerListCategories
 
 @synthesize categoryTable;
+@synthesize categoriesMutableArray;
+@synthesize backgroundImage;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+    }
+    
+    return self;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -23,37 +36,47 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [categoriesMutableArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"categoryCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell"];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // configure your cell here...
+    NSString *categoryName = [categoriesMutableArray objectAtIndex:indexPath.row];
+    NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png", categoryName];
     
-    // cell.categoryLabel = @"Muziek";
+    cell.NameLabel.text = categoryName;
+    
+    cell.CategoryImage.image = [UIImage imageNamed:imageName];
     
     return cell;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
+    categoriesMutableArray = [[NSMutableArray alloc] initWithObjects:
+                              @"Muziek",
+                              @"Eten",
+                              @"Sport",
+                              @"Kunst & Cultuur",
+                              @"Reizen",
+                              @"Games",
+                              @"Natuur & Milieu",
+                              @"Gezondheid & Uiterlijk",
+                              @"Uitgaan & Evenementen",
+                              @"Foto & Film",
+                              @"Boeken",
+                              @"Dieren",
+                              @"Bouwen & Ondernemen",
+                              nil];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -64,4 +87,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sortCategories:(id)sender {
+    backgroundImage.image = [UIImage imageNamed:@"backgroundCategorie"];
+}
+
+- (IBAction)sortAlphabetic:(id)sender {
+    backgroundImage.image = [UIImage imageNamed:@"backgroundAlfabetisch"];
+}
+
+- (IBAction)sortDistance:(id)sender {
+    backgroundImage.image = [UIImage imageNamed:@"backgroundAfstand"];
+}
+
+- (IBAction)sortTime:(id)sender {
+    backgroundImage.image = [UIImage imageNamed:@"backgroundTijd"];
+}
 @end

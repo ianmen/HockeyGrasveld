@@ -708,7 +708,70 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundCategorie.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwT-jz-W05"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfJ-eb-Ccw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="dRu-X3-MY6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Categorie">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortCategories:" destination="7ai-Yx-QlS" eventType="touchUpInside" id="nW0-kf-v6w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHQ-ce-Lhl">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="O2j-cK-Xwv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Alfabetisch">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortAlphabetic:" destination="7ai-Yx-QlS" eventType="touchUpInside" id="WdF-Cj-bnH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfW-ao-bYF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="y9g-UN-YnS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Afstand">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortDistance:" destination="7ai-Yx-QlS" eventType="touchUpInside" id="UD9-ax-nhy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEU-JN-ia4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="M5j-Zu-sXi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Tijd">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortTime:" destination="7ai-Yx-QlS" eventType="touchUpInside" id="eDO-lW-qRC"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZoP-Hb-hEO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -716,16 +779,17 @@
                                     <constraint firstAttribute="width" constant="305" id="uIP-4p-Shr"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="51" id="Lvk-U2-iyI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="51" id="Lvk-U2-iyI" customClass="CustomCell">
                                         <rect key="frame" x="0.0" y="22" width="305" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="categoryIcon_music.png" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-XH-uKe">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="categoryIcon_unknown.png" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-XH-uKe">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="iPS-xU-uq4"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Nsw-1c-px2"/>
+                                                        <constraint firstAttribute="height" constant="40" id="cUm-L8-1R7"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gc-Oo-5IX">
@@ -733,7 +797,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="Ji6-61-rki"/>
                                                         <constraint firstAttribute="width" constant="196" id="Mmh-j3-dkb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -741,14 +805,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="leading" secondItem="Lvk-U2-iyI" secondAttribute="leading" constant="11" id="L4w-Gy-xXy"/>
-                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="top" secondItem="Lvk-U2-iyI" secondAttribute="top" type="default" id="Lji-1M-Eq9"/>
-                                            <constraint firstItem="3gc-Oo-5IX" firstAttribute="leading" secondItem="jMb-XH-uKe" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hzw-gm-DJp"/>
+                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="centerY" secondItem="Lvk-U2-iyI" secondAttribute="centerY" type="default" id="1KV-u4-O4P"/>
+                                            <constraint firstItem="3gc-Oo-5IX" firstAttribute="leading" secondItem="Lvk-U2-iyI" secondAttribute="leading" constant="69" id="DhG-PV-g0P"/>
+                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="leading" secondItem="Lvk-U2-iyI" secondAttribute="leading" constant="10" id="E3e-Os-Xx8"/>
                                             <constraint firstItem="3gc-Oo-5IX" firstAttribute="top" secondItem="Lvk-U2-iyI" secondAttribute="top" constant="14" id="pLL-Wj-lhe"/>
-                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="centerY" secondItem="Lvk-U2-iyI" secondAttribute="centerY" type="default" id="z7v-Ht-8vs"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="N3W-0o-Eim" kind="push" id="ymO-j2-Fx2"/>
+                                            <outlet property="CategoryImage" destination="jMb-XH-uKe" id="hMv-Bl-oqP"/>
+                                            <outlet property="NameLabel" destination="3gc-Oo-5IX" id="kj2-dS-jHU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -758,17 +822,27 @@
                                     <outlet property="delegate" destination="7ai-Yx-QlS" id="qNr-Bs-bAE"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="backgroundCategorie.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwT-jz-W05"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZoP-Hb-hEO" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="6" id="B3i-eJ-Hwu"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="6" id="Dlo-zn-ch1"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" type="default" id="FWP-p3-OSg"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="83" id="Gw6-sB-AoH"/>
+                            <constraint firstAttribute="trailing" secondItem="KEU-JN-ia4" secondAttribute="trailing" constant="7" id="HgI-PA-Lqe"/>
                             <constraint firstItem="ZoP-Hb-hEO" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="37" id="IkJ-NA-eVQ"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="Oj1-cT-RJY"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="Ozu-hv-Snu"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="fZU-bc-blL"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="foZ-Su-X46"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="ZoP-Hb-hEO" secondAttribute="leading" type="default" id="iHg-dz-I2j"/>
+                            <constraint firstAttribute="trailing" secondItem="FfW-ao-bYF" secondAttribute="trailing" constant="83" id="iNN-hJ-DxD"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-61" id="rHX-Kg-NPB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lijst" id="b6J-rq-aCi"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="dwT-jz-W05" id="W4l-IU-FOC"/>
                         <outlet property="categoryTable" destination="ZoP-Hb-hEO" id="JPs-ir-UIh"/>
                     </connections>
                 </viewController>
@@ -890,12 +964,97 @@
         <image name="backgroundWanneer@2x.png" width="640" height="960"/>
         <image name="backgroundWat@2x.png" width="640" height="960"/>
         <image name="backgroundWie@2x.png" width="640" height="960"/>
-        <image name="categoryIcon_music.png" width="26" height="26"/>
+        <image name="categoryIcon_unknown.png" width="26" height="26"/>
         <image name="photo_upload_button.png" width="132" height="126"/>
         <image name="raadplegen_icon.png" width="30" height="31"/>
         <image name="toevoegen_icon.png" width="50" height="59"/>
         <image name="uitextview_background.png" width="573" height="378"/>
     </resources>
+    <classes>
+        <class className="CustomCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="CategoryImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="NameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FacebookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="logIn:"/>
+                <relationship kind="action" name="shareButtonAction:"/>
+                <relationship kind="outlet" name="loginFBOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="postCaptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="postMessageTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="postNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
+            <relationships>
+                <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="action" name="selectCategoryFromPicker:"/>
+                <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="category_icon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="customInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
+            <relationships>
+                <relationship kind="action" name="beginTijd:"/>
+                <relationship kind="action" name="eindTijd:"/>
+                <relationship kind="outlet" name="endDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startDate" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
+            <relationships>
+                <relationship kind="action" name="fetchCoordinates:"/>
+                <relationship kind="action" name="locationNow:"/>
+                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWho" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
+            <relationships>
+                <relationship kind="action" name="finished:"/>
+                <relationship kind="action" name="shareButton:"/>
+                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerListCategories" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerListCategories.h"/>
+            <relationships>
+                <relationship kind="action" name="sortAlphabetic:"/>
+                <relationship kind="action" name="sortCategories:"/>
+                <relationship kind="action" name="sortDistance:"/>
+                <relationship kind="action" name="sortTime:"/>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categoryTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
