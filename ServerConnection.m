@@ -162,7 +162,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSDateComponents *dateComps = [cal components:( NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
     
     //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    ////[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
   //  NSLog(@"Current date: %@",  [dateFormatter stringFromDate:[cal dateFromComponents:dateComps]]);
    // [dateComps setHour:activity.startTime];
