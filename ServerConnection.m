@@ -207,7 +207,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
                 aCD.longitude = [NSNumber numberWithDouble:longitude];
                 aCD.latitude = [NSNumber numberWithDouble:latitude];
                 aCD.imagePath = [imagePath absoluteString];
-                aCD.imagePathThumbnails = [imagePathThumbnail absoluteString];
+                //aCD.imagePathThumbnails = [imagePathThumbnail absoluteString];
                 
                 aCD.address_street = locationStreet;
                 NSError *error;
