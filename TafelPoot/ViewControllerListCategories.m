@@ -40,6 +40,7 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (currentArray == @"categories") {
@@ -86,6 +87,7 @@
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
         
+        NSLog(@"%@", aCD.startDate);
         //Sett the image
         NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
@@ -112,6 +114,7 @@
     
     return cell;
 }
+
 
 - (void)viewDidLoad
 {
@@ -140,10 +143,13 @@
     
     currentArray = @"categories";
     
-    [self updateList];
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
+    //Update the list
+    [self updateList];
+    
 }
 
 
