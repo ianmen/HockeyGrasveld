@@ -75,7 +75,7 @@
     if (currentArray == @"categories") {
         Title = [categoriesMutableArray objectAtIndex:indexPath.row];
         
-        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",Title];
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",Title];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else if (currentArray == @"alphabetic") {
@@ -83,7 +83,7 @@
         Title = aCD.activityName;
         
         //Sett the image
-        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else if (currentArray == @"distance") {

@@ -869,8 +869,8 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="categoryIcon_unknown.png" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-XH-uKe">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="Nsw-1c-px2"/>
-                                                        <constraint firstAttribute="height" constant="40" id="cUm-L8-1R7"/>
+                                                        <constraint firstAttribute="height" constant="35" id="aZ9-ep-hlh"/>
+                                                        <constraint firstAttribute="width" constant="35" id="uKV-TY-8qM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Activiteit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="3gc-Oo-5IX">
@@ -887,10 +887,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="centerY" secondItem="Lvk-U2-iyI" secondAttribute="centerY" type="default" id="1KV-u4-O4P"/>
+                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="centerY" secondItem="Lvk-U2-iyI" secondAttribute="centerY" type="default" id="4ZV-5c-VAA"/>
                                             <constraint firstItem="3gc-Oo-5IX" firstAttribute="leading" secondItem="Lvk-U2-iyI" secondAttribute="leading" constant="69" id="DhG-PV-g0P"/>
-                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="leading" secondItem="Lvk-U2-iyI" secondAttribute="leading" constant="10" id="E3e-Os-Xx8"/>
-                                            <constraint firstItem="3gc-Oo-5IX" firstAttribute="top" secondItem="Lvk-U2-iyI" secondAttribute="top" constant="14" id="pLL-Wj-lhe"/>
+                                            <constraint firstItem="jMb-XH-uKe" firstAttribute="leading" secondItem="Lvk-U2-iyI" secondAttribute="leading" constant="14" id="It1-ce-qyM"/>
+                                            <constraint firstItem="3gc-Oo-5IX" firstAttribute="top" secondItem="Lvk-U2-iyI" secondAttribute="top" constant="14" id="KtI-m4-fcW"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="CategoryImage" destination="jMb-XH-uKe" id="hMv-Bl-oqP"/>
@@ -1052,6 +1052,101 @@
         <image name="toevoegen_icon.png" width="50" height="59"/>
         <image name="uitextview_background.png" width="573" height="378"/>
     </resources>
+    <classes>
+        <class className="CustomCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="CategoryImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="NameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FacebookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonAction:"/>
+                <relationship kind="action" name="logIn:"/>
+                <relationship kind="action" name="shareButtonAction:"/>
+                <relationship kind="outlet" name="loginFBOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="postCaptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="postMessageTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="postNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
+            <relationships>
+                <relationship kind="action" name="addPhoto:"/>
+                <relationship kind="action" name="selectCategoryFromPicker:"/>
+                <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="category_icon" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="customInput" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
+            <relationships>
+                <relationship kind="action" name="beginTijd:"/>
+                <relationship kind="action" name="eindTijd:"/>
+                <relationship kind="outlet" name="endDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startDate" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
+            <relationships>
+                <relationship kind="action" name="fetchCoordinates:"/>
+                <relationship kind="action" name="locationNow:"/>
+                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerActivityWho" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
+            <relationships>
+                <relationship kind="action" name="finished:"/>
+                <relationship kind="action" name="shareButton:"/>
+                <relationship kind="outlet" name="activityName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="category" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="endDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="location" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tags" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerListCategories" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerListCategories.h"/>
+            <relationships>
+                <relationship kind="action" name="sortAlphabetic:"/>
+                <relationship kind="action" name="sortCategories:"/>
+                <relationship kind="action" name="sortDistance:"/>
+                <relationship kind="action" name="sortTime:"/>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categoryTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ViewControllerViewActivity" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerViewActivity.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
