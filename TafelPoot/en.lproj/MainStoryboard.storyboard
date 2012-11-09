@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller - Item-->
@@ -93,6 +93,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addPhoto:" destination="F6t-pD-eeP" eventType="touchUpInside" id="e4A-Gi-rhh"/>
+                                    <action selector="photoDone:" destination="F6t-pD-eeP" eventType="touchUpInside" id="U85-I2-wg5"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_upload_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="vov-Ss-k1g">
@@ -568,7 +569,7 @@
             <objects>
                 <viewController id="CNA-sX-rZm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCO-sl-MXY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qwW-i8-vpa"/>
@@ -826,18 +827,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="baseline" secondItem="hfJ-eb-Ccw" secondAttribute="baseline" type="default" id="7la-nI-rOX"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="6" id="Dlo-zn-ch1"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" type="default" id="FWP-p3-OSg"/>
                             <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="83" id="Gw6-sB-AoH"/>
-                            <constraint firstAttribute="trailing" secondItem="KEU-JN-ia4" secondAttribute="trailing" constant="7" id="HgI-PA-Lqe"/>
                             <constraint firstItem="ZoP-Hb-hEO" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="37" id="IkJ-NA-eVQ"/>
-                            <constraint firstItem="KEU-JN-ia4" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="Oj1-cT-RJY"/>
-                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="Ozu-hv-Snu"/>
-                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="fZU-bc-blL"/>
-                            <constraint firstItem="FfW-ao-bYF" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" type="default" id="foZ-Su-X46"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="baseline" secondItem="ZHQ-ce-Lhl" secondAttribute="baseline" type="default" id="LI6-4Y-Qt6"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="top" secondItem="FfW-ao-bYF" secondAttribute="top" type="default" id="LPl-xa-kpj"/>
+                            <constraint firstItem="FfW-ao-bYF" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="160" id="Ldj-4C-kVA"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="ZHQ-ce-Lhl" secondAttribute="baseline" type="default" id="PMZ-Ex-aFL"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="QSv-BE-4UE"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="baseline" secondItem="FfW-ao-bYF" secondAttribute="baseline" type="default" id="Qid-Uv-Ixe"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="top" secondItem="FfW-ao-bYF" secondAttribute="top" type="default" id="T1Q-dY-gqh"/>
+                            <constraint firstItem="KEU-JN-ia4" firstAttribute="leading" secondItem="Pxe-Fj-w7G" secondAttribute="leading" constant="236" id="Xrj-Ee-jx3"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="ZHQ-ce-Lhl" secondAttribute="top" type="default" id="gxr-wi-ooN"/>
                             <constraint firstItem="hfJ-eb-Ccw" firstAttribute="leading" secondItem="ZoP-Hb-hEO" secondAttribute="leading" type="default" id="iHg-dz-I2j"/>
-                            <constraint firstAttribute="trailing" secondItem="FfW-ao-bYF" secondAttribute="trailing" constant="83" id="iNN-hJ-DxD"/>
                             <constraint firstItem="dwT-jz-W05" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-61" id="rHX-Kg-NPB"/>
+                            <constraint firstItem="ZHQ-ce-Lhl" firstAttribute="baseline" secondItem="KEU-JN-ia4" secondAttribute="baseline" type="default" id="xOu-22-kK5"/>
+                            <constraint firstItem="hfJ-eb-Ccw" firstAttribute="top" secondItem="Pxe-Fj-w7G" secondAttribute="top" constant="-1" id="xsF-i2-hmK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lijst" id="b6J-rq-aCi"/>
@@ -855,7 +862,7 @@
             <objects>
                 <viewController id="N3W-0o-Eim" customClass="ViewControllerViewActivity" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlZ-8S-rOf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-Z3-ImU">
@@ -970,91 +977,6 @@
         <image name="toevoegen_icon.png" width="50" height="59"/>
         <image name="uitextview_background.png" width="573" height="378"/>
     </resources>
-    <classes>
-        <class className="CustomCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="CategoryImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="NameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FacebookViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FacebookViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonAction:"/>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="action" name="shareButtonAction:"/>
-                <relationship kind="outlet" name="loginFBOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="postCaptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="postMessageTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="postNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewControllerActivityWhat" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
-            <relationships>
-                <relationship kind="action" name="addPhoto:"/>
-                <relationship kind="action" name="selectCategoryFromPicker:"/>
-                <relationship kind="outlet" name="accessoryView" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="category" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="category_icon" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="customInput" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="picker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhen.h"/>
-            <relationships>
-                <relationship kind="action" name="beginTijd:"/>
-                <relationship kind="action" name="eindTijd:"/>
-                <relationship kind="outlet" name="endDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startDate" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWhere" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhere.h"/>
-            <relationships>
-                <relationship kind="action" name="fetchCoordinates:"/>
-                <relationship kind="action" name="locationNow:"/>
-                <relationship kind="outlet" name="activityAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cityField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="fetchCoordinatesButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="locationNowButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapKit" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="streetField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerActivityWho" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWho.h"/>
-            <relationships>
-                <relationship kind="action" name="finished:"/>
-                <relationship kind="action" name="shareButton:"/>
-                <relationship kind="outlet" name="xmlResponseMsg" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="xmlStatusResponse" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewControllerListCategories" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerListCategories.h"/>
-            <relationships>
-                <relationship kind="action" name="sortAlphabetic:"/>
-                <relationship kind="action" name="sortCategories:"/>
-                <relationship kind="action" name="sortDistance:"/>
-                <relationship kind="action" name="sortTime:"/>
-                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="categoryTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -1062,7 +984,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="6cK-jp-Qjh"/>
-        <segue reference="VHx-ZB-wPy"/>
-        <segue reference="R9t-Dk-fe4"/>
+        <segue reference="Erl-aD-hl6"/>
+        <segue reference="tCs-I8-nKM"/>
     </inferredMetricsTieBreakers>
 </document>
