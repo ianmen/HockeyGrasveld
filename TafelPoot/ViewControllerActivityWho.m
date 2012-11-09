@@ -49,9 +49,6 @@
     self.category.text = [activity.category copy];
     self.tags.text = [activity.tags copy];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    NSDate *date = [NSDate date];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM yyyy HH:mm"];
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
