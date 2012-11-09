@@ -374,6 +374,7 @@
 		609C4DCA16354790006017DE = {
 			isa = PBXGroup;
 			children = (
+				13044D54164CF8E600859E7E /* Default-568h@2x.png */,
 				6015CD99164A856600AC9A41 /* CoreData.framework */,
 				1BE37A411642955E004B214E /* AdSupport.framework */,
 				1BE37A3F16429554004B214E /* Social.framework */,
@@ -681,6 +682,8 @@
 				1BE37A491642992D004B214E /* FacebookViewController.m in Sources */,
 				608F39BB164297D5006B8A57 /* CustomBackSegue.m in Sources */,
 				1B5554E8164A9CBA00075F4B /* ViewControllerListCategories.m in Sources */,
+				1B5554EF164BD57500075F4B /* CustomCell.m in Sources */,
+				1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */,
 				6015CD9D164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld in Sources */,
 				6015CDA0164A8C0100AC9A41 /* ActivityCD.m in Sources */,
 			);
