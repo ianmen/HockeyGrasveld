@@ -84,6 +84,7 @@ NSInteger FBLoggedIn = 0;
     ServerConnection *svr = [[ServerConnection alloc] init];
     [svr loadActivities];
     
+    
     return YES;
     
 }
