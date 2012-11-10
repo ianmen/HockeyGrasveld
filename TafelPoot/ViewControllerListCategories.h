@@ -11,6 +11,7 @@
 @interface ViewControllerListCategories : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *categoriesArray;
     NSString *currentArray;
+    NSString *currentCategory;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryTable;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSMutableArray *alphabeticMutableArray;
 @property (nonatomic, retain) NSMutableArray *distanceMutableArray;
 @property (nonatomic, retain) NSMutableArray *timeMutableArray;
+@property (nonatomic, retain) NSMutableArray *selectedCategoryMutableArray;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 - (IBAction)sortCategories:(id)sender;
