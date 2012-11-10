@@ -233,8 +233,6 @@
         
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         
-        NSLog(@"Fetched Objects: %@", fetchedObjects);
-        
         selectedCategoryMutableArray = [NSArray arrayWithArray:fetchedObjects];
     }
 }
@@ -296,7 +294,23 @@
         ViewControllerViewActivity *vc = [segue destinationViewController];
         NSIndexPath *p = [self.categoryTable indexPathForSelectedRow];
         
-        ActivityCD *act = [alphabeticMutableArray objectAtIndex: p.row];
+        ActivityCD *act;
+        
+        if (currentArray == @"alphabetic") {
+            act = [alphabeticMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"distance") {
+            act = [distanceMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"time") {
+            act = [timeMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"selectedCategory") {
+            act = [selectedCategoryMutableArray objectAtIndex: p.row];
+        }
+        else {
+            act = [alphabeticMutableArray objectAtIndex: p.row];
+        }
         
         [vc setActivity: act];
     }
