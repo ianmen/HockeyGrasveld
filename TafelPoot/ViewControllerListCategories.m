@@ -88,7 +88,6 @@
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
         
-        NSLog(@"%@", aCD.startDate);
         //Sett the image
         NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
