@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "ActivityCD.h"
 #import <CoreLocation/CoreLocation.h>
+#import "ServerConnection.h"
 
 @interface ViewControllerListCategories ()
 
@@ -55,6 +56,7 @@
         return [distanceMutableArray count];
     }
     else if (currentArray == @"time") {
+        
         return [alphabeticMutableArray count];
     }
     else if (currentArray == @"selectedCategory") {
@@ -158,15 +160,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //Reload the DB
+    ServerConnection *svr = [[ServerConnection alloc] init];
+    [svr loadActivities];
     
     //Update the list
     [self updateList];
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+
+}
 
 //Method for updating the different lists
 -(void)updateList {
+    
     
     //Get the DB connection
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

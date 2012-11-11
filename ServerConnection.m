@@ -19,6 +19,7 @@
     NSString *responseString;
     NSString *responseStatus;
     NSData *responseData;
+    NSString *urlString;
 }
 
 @synthesize delegate;
@@ -229,7 +230,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     for (ActivityCD *Acd in fetchedObjects2){
         
         //Debug test
-//        NSLog(@"%@", Acd.activityName);
+        NSLog(@"%@", Acd.activityName);
 //        NSLog(@"%@",Acd.endDate);
 //        NSLog(@"%@", Acd.address_city);
 //        NSLog(@"%@", Acd.longitude);
@@ -340,7 +341,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSString *currentDate = [dateFormatter stringFromDate:[NSDate date]];
     
     //prepare request
-    NSString *urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
+    urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
@@ -399,6 +400,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     //post
     [request setHTTPBody:postBody];
     
+    
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
@@ -428,7 +430,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     self.responseStatus = [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]];
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+-(void)connection:(NSURLConnection *)connection2 didReceiveData:(NSData *)data
 {
     self.responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     //NSString *a =  [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -444,7 +446,18 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     
     self.responseData = data;
     
-    [self parseActivities];
+   
+    NSString *url3 = connection2.originalRequest.URL.absoluteString;
+     NSLog(@"%@",url3);
+    if([url3 rangeOfString:@"postData"].location == NSNotFound){
+        
+       [self parseActivities];
+        
+    }else{
+         
+    }
+    
+  
     
     [delegate performSelector:@selector(serverResponse)];
 }
