@@ -23,6 +23,7 @@
 @synthesize alphabeticMutableArray;
 @synthesize distanceMutableArray;
 @synthesize timeMutableArray;
+@synthesize selectedCategoryMutableArray;
 @synthesize backgroundImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,6 +55,9 @@
     else if (currentArray == @"time") {
         return [timeMutableArray count];
     }
+    else if (currentArray == @"selectedCategory") {
+        return [selectedCategoryMutableArray count];
+    }
     else {
         return [categoriesMutableArray count];
     }
@@ -83,7 +87,7 @@
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
         
-        //Sett the image
+        //Set the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
@@ -93,6 +97,14 @@
     else if (currentArray == @"time") {
         Title = [timeMutableArray objectAtIndex:indexPath.row];
     }
+    else if (currentArray == @"selectedCategory") {
+        ActivityCD *aCD = [selectedCategoryMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Set the image
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
+    }
     else {
         Title = [categoriesMutableArray objectAtIndex:indexPath.row];
     }
@@ -101,6 +113,37 @@
     cell.NameLabel.text = Title;
     
     return cell;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    // When current array is categories, detailview should not be shown. Instead load the list according to the selected category.
+    if ([identifier isEqualToString:@"showDetails"] && currentArray == @"categories") {
+        // prevent segue from occurring
+        return NO;
+    }
+    // by default perform the segue transition
+    return YES;
+}
+- (void)tableView:(CustomCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (currentArray == @"categories") {
+        CustomCell *cell = (CustomCell *)[categoryTable cellForRowAtIndexPath:indexPath];
+        currentCategory = cell.NameLabel.text;
+        
+        NSLog(@"%@", currentCategory);
+        
+        currentArray = @"selectedCategory";
+        
+        //Clean the list
+        alphabeticMutableArray = nil;
+        
+        [self updateList];
+        [categoryTable reloadData];
+    }
+    else {
+        currentCategory = nil;
+    }
 }
 
 - (void)viewDidLoad
@@ -161,7 +204,7 @@
 
     
     if (currentArray == @"categories") {
-       
+               
     }
     else if (currentArray == @"alphabetic") {
         
@@ -181,9 +224,17 @@
     else if (currentArray == @"time") {
         
     }
-   
-
-    
+    else if (currentArray == @"selectedCategory") {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"(category LIKE[c] %@)", currentCategory];
+        [fetchRequest setPredicate:predicate];
+        
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"activityName" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        selectedCategoryMutableArray = [NSArray arrayWithArray:fetchedObjects];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -243,7 +294,23 @@
         ViewControllerViewActivity *vc = [segue destinationViewController];
         NSIndexPath *p = [self.categoryTable indexPathForSelectedRow];
         
-        ActivityCD *act = [alphabeticMutableArray objectAtIndex: p.row];
+        ActivityCD *act;
+        
+        if (currentArray == @"alphabetic") {
+            act = [alphabeticMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"distance") {
+            act = [distanceMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"time") {
+            act = [timeMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"selectedCategory") {
+            act = [selectedCategoryMutableArray objectAtIndex: p.row];
+        }
+        else {
+            act = [alphabeticMutableArray objectAtIndex: p.row];
+        }
         
         [vc setActivity: act];
     }
