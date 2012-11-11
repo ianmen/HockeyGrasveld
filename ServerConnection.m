@@ -426,16 +426,19 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     self.responseCode = [httpResponse statusCode];
     self.responseStatus = [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]];
-    
-    [delegate performSelector:@selector(serverResponse)];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     self.responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
+    //NSString *a =  [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
     if ([self.responseString rangeOfString:@"ERROR"].location != NSNotFound) {
         self.responseCode = 404;
+        self.responseStatus = @"";
+    } else if ([self.responseString rangeOfString:@"OK"].location != NSNotFound)
+    {
+        self.responseCode = 200;
         self.responseStatus = @"";
     }
     
