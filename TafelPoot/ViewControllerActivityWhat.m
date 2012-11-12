@@ -25,7 +25,7 @@
 @implementation ViewControllerActivityWhat
 {
 
-    Activity *activity;
+    //Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
     UIImage *imageDone;
@@ -34,6 +34,7 @@
 
 @synthesize imageView;
 @synthesize picker;
+@synthesize activity;
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
 
@@ -77,6 +78,12 @@
         self.category.text = activity.category;
         self.tags.text = activity.tags;
         self.description.text = activity.activityDescription;
+        
+        if (activity.image != nil)
+        {
+            self.imageView.image = activity.image;
+        }
+        
     } else {
         activity = [[Activity alloc] init];
     }

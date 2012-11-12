@@ -8,6 +8,7 @@
 
 #import "ViewControllerViewActivity.h"
 #import "ActivityCD.h"
+#import "MapViewAnnotation.h"
 
 @interface ViewControllerViewActivity ()
 {
@@ -28,24 +29,66 @@
     self.textview_activityLocation.text = locationString;
 
     NSString *startDate_string = [NSDateFormatter localizedStringFromDate:activity.startDate
-                                                                dateStyle: NSDateFormatterNoStyle
+                                                                dateStyle: NSDateFormatterShortStyle
                                                                 timeStyle:NSDateFormatterShortStyle];
     
     
     
     NSString *endDate_string = [NSDateFormatter localizedStringFromDate:activity.endDate
-                                                                dateStyle:NSDateFormatterNoStyle
+                                                                dateStyle:NSDateFormatterShortStyle
                                                                 timeStyle:NSDateFormatterShortStyle];
 
     self.textview_activityBeginTime.text = startDate_string;
     self.textview_activityEndTime.text = endDate_string;
     
-    NSLog(@"%@", activity.imagePathThumbnails);
     NSURL *img_url = [NSURL URLWithString:activity.imagePath];
     NSData *img_data = [NSData dataWithContentsOfURL:img_url];
     UIImage *image = [[UIImage alloc] initWithData: img_data];
     
     [self.img_activityImage setImage:image];
+}
+
+- (IBAction)showActivityLocation:(id)sender {
+    NSString *imageName = [NSString stringWithFormat:@"backgroundRaadplegen_locatie@2x.png"];
+    self.img_activityBackground.image = [UIImage imageNamed:imageName];
+    
+    [self.lbl_activityName setHidden:YES];
+    [self.img_activityImage setHidden:YES];
+    [self.textview_activityBeginTime setHidden:YES];
+    [self.textview_activityEndTime setHidden:YES];
+    [self.textview_activityLocation setHidden:YES];
+    [self.textview_activityDescription setHidden:YES];
+    [self.img_beginTimeIcon setHidden: YES];
+    [self.img_endTimeIcon setHidden: YES];
+    [self.mapview_activityLocation setHidden: NO];
+    self.mapview_activityLocation.showsUserLocation = YES;
+    
+    CLLocationCoordinate2D location;
+	location.latitude = [activity.latitude doubleValue];
+	location.longitude = [activity.longitude doubleValue];
+    
+    NSLog(@"%@", activity.latitude);
+    NSLog(@"%@", activity.longitude);
+    
+    
+	// Add the annotation to our map view
+	MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:activity.activityName andCoordinate:location];
+	[self.mapview_activityLocation addAnnotation:newAnnotation];    
+}
+
+- (IBAction)showActivitySummary:(id)sender {
+    NSString *imageName = [NSString stringWithFormat:@"backgroundRaadplegen_overzicht@2x.png"];
+    self.img_activityBackground.image = [UIImage imageNamed:imageName];
+    
+    [self.lbl_activityName setHidden:NO];
+    [self.img_activityImage setHidden:NO];
+    [self.textview_activityBeginTime setHidden:NO];
+    [self.textview_activityEndTime setHidden:NO];
+    [self.textview_activityLocation setHidden:NO];
+    [self.textview_activityDescription setHidden:NO];
+    [self.img_beginTimeIcon setHidden: NO];
+    [self.img_endTimeIcon setHidden: NO];
+    [self.mapview_activityLocation setHidden: YES];
 }
 
 - (void)setActivity:(ActivityCD *)currentActivity
