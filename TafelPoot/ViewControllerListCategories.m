@@ -129,6 +129,37 @@
     return cell;
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    // When current array is categories, detailview should not be shown. Instead load the list according to the selected category.
+    if ([identifier isEqualToString:@"showDetails"] && currentArray == @"categories") {
+        // prevent segue from occurring
+        return NO;
+    }
+    // by default perform the segue transition
+    return YES;
+}
+
+- (void)tableView:(CustomCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (currentArray == @"categories") {
+        CustomCell *cell = (CustomCell *)[categoryTable cellForRowAtIndexPath:indexPath];
+        currentCategory = cell.NameLabel.text;
+        
+        NSLog(@"%@", currentCategory);
+        
+        currentArray = @"selectedCategory";
+        
+        //Clean the list
+        alphabeticMutableArray = nil;
+        
+        [self updateList];
+        [categoryTable reloadData];
+    }
+    else {
+        currentCategory = nil;
+    }
+}
 
 - (void)viewDidLoad
 {
