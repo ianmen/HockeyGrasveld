@@ -39,6 +39,7 @@
 @synthesize customInput = _customInput;
 
 
+
 - (IBAction)photoDone:(id)sender {
     
     //[imageView becomeFirstResponder];
@@ -220,6 +221,7 @@
     
 }
 
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     //Did cancel the picker
@@ -272,6 +274,8 @@
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
     
+
+
 }
 
 - (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
@@ -327,8 +331,14 @@
 	} else if (buttonIndex == 1) {
 		
         //Display the camera capture tool
-        [self startCameraControllerFromViewController: self
-                                        usingDelegate: (id)self];
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        
+
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        
+        [self presentModalViewController:picker animated:YES];
     }
     
 }
@@ -370,6 +380,8 @@
     //remove the spinner from the view
     [hud hide:YES afterDelay:4];
 }
+
+// toetsenbord focus weg
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [self.name resignFirstResponder];
     [self.tags resignFirstResponder];

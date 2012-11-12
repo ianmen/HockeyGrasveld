@@ -230,7 +230,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     for (ActivityCD *Acd in fetchedObjects2){
         
         //Debug test
-        NSLog(@"%@", Acd.activityName);
+ //       NSLog(@"%@", Acd.activityName);
 //        NSLog(@"%@",Acd.endDate);
 //        NSLog(@"%@", Acd.address_city);
 //        NSLog(@"%@", Acd.longitude);
@@ -448,7 +448,6 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     
    
     NSString *url3 = connection2.originalRequest.URL.absoluteString;
-     NSLog(@"%@",url3);
     if([url3 rangeOfString:@"postData"].location == NSNotFound){
         
        [self parseActivities];
