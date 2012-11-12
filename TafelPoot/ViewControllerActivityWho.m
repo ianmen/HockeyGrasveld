@@ -42,7 +42,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    
     serverConn = [[ServerConnection alloc] init];
     
     self.imagePreview.layer.masksToBounds = YES;

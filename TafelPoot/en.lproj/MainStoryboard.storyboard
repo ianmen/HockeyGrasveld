@@ -1245,6 +1245,12 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="ViewControllerActivityMap" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityMap.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
         <class className="ViewControllerActivityWhat" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
             <relationships>
@@ -1306,6 +1312,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerListCategories.h"/>
             <relationships>
                 <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="reload:"/>
                 <relationship kind="action" name="sortAlphabetic:"/>
                 <relationship kind="action" name="sortCategories:"/>
                 <relationship kind="action" name="sortDistance:"/>
