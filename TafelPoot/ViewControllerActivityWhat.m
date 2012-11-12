@@ -352,8 +352,6 @@
     [self presentModalViewController:picker animated:YES];
 }
 
-}
-
 
 
 
