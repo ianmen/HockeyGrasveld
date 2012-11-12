@@ -352,11 +352,12 @@
         UIImagePickerController * picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         
+    
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
         
         [self presentModalViewController:picker animated:YES];
     }
-}
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
