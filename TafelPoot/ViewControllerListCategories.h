@@ -21,10 +21,12 @@
 @property (nonatomic, retain) NSMutableArray *timeMutableArray;
 @property (nonatomic, retain) NSMutableArray *selectedCategoryMutableArray;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 
 - (IBAction)sortCategories:(id)sender;
 - (IBAction)sortAlphabetic:(id)sender;
 - (IBAction)sortDistance:(id)sender;
 - (IBAction)sortTime:(id)sender;
+- (IBAction)backButton:(id)sender;
 
 @end
