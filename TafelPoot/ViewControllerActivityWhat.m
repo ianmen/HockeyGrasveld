@@ -277,10 +277,9 @@
 
 - (IBAction)addPhoto:(id)sender {
     
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Foto library",@"Foto camera", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Foto verwijderen" otherButtonTitles:@"Foto library",@"Foto camera", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
-    
 
 
 }
@@ -318,7 +317,19 @@
 
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
+	if (buttonIndex == 0)
+    {
+        if (activity.image != nil)
+        {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Foto weghalen?"
+                                                           message:nil
+                                                           delegate:self
+                                                 cancelButtonTitle:@"Ja"
+                                                 otherButtonTitles:@"Nee",nil];
+            [alert show];
+        }
+    }
+    else if (buttonIndex == 1) {
         UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];
         mediaUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         
@@ -335,18 +346,18 @@
         mediaUI.delegate = (id)self;
         
         [self presentViewController: mediaUI animated:YES completion:nil];
-	} else if (buttonIndex == 1) {
-		
+	} else if (buttonIndex == 2)
+    {
         //Display the camera capture tool
         UIImagePickerController * picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         
-
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
         
-    [self presentModalViewController:picker animated:YES];
-}
+        [self presentModalViewController:picker animated:YES];
+    }
 
 }
 
