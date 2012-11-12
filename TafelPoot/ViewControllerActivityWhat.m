@@ -273,6 +273,8 @@
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
     
+
+
 }
 
 - (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
@@ -328,8 +330,14 @@
 	} else if (buttonIndex == 1) {
 		
         //Display the camera capture tool
-        [self startCameraControllerFromViewController: self
-                                        usingDelegate: (id)self];
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        
+
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        
+        [self presentModalViewController:picker animated:YES];
     }
     
 }

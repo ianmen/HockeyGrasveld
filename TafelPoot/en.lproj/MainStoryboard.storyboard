@@ -1241,9 +1241,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerViewActivity.h"/>
             <relationships>
                 <relationship kind="outlet" name="img_activityImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lbl_activityBeginTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lbl_activityDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lbl_activityEndTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lbl_activityName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="textview_activityBeginTime" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="textview_activityDescription" candidateClass="UITextView"/>
@@ -1258,6 +1255,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="FYt-HS-10K"/>
         <segue reference="VHx-ZB-wPy"/>
         <segue reference="tCs-I8-nKM"/>
     </inferredMetricsTieBreakers>
