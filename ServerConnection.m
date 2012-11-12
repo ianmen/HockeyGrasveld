@@ -252,8 +252,11 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
         
     }
     
-    //[self loadAllActivitiesFromDb];
-       // NSLog(@"%u",[fetchedObjects2 count]);
+    //Send a done back
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"DownloadingDone"
+     object:self];
 }
 
 -(NSArray*)loadAllActivitiesFromDb
@@ -452,6 +455,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     if([url3 rangeOfString:@"postData"].location == NSNotFound){
         
        [self parseActivities];
+        
         
     }else{
          
