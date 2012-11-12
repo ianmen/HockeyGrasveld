@@ -14,6 +14,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ServerConnection.h"
 #import "MBProgressHUD.h"
+#import "MBProgressHUD.h"
 
 @interface ViewControllerListCategories ()
 
@@ -22,6 +23,7 @@
 @implementation ViewControllerListCategories{
     
     CLLocationManager *locationManager;
+    MBProgressHUD *hud;
  
 }
 
@@ -195,13 +197,6 @@
                               @"Bouwen en Ondernemen",
                               nil];
     
-//    distanceMutableArray = [[NSMutableArray alloc] initWithObjects:
-//                              @"Tompoezen eten",
-//                              @"Voetballen",
-//                              @"Gitaarspelen op het plein",
-//                              nil];
-
-    
     currentArray = @"categories";
     
     [super viewDidLoad];
@@ -234,7 +229,6 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSError *error;
-
     
     if (currentArray == @"categories") {
         backButton.hidden = YES;
@@ -261,63 +255,12 @@
         locationManager = [[CLLocationManager alloc] init];
         locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; // 100 m
+        locationManager.delegate = self;
         [locationManager startUpdatingLocation];
-        CLLocationCoordinate2D usercoord = locationManager.location.coordinate;
         
-        //NSLog(@"Lat now: %f", usercoord.latitude);
-        //NSLog(@"Long now: %f", usercoord.longitude);
+        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Locating";
 
-        //Time to update each item on the distance
-        
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        
-        for(ActivityCD *aCD in fetchedObjects){
-            
-                //Update each and every one of them
-            
-            /// Waar gaan we heen?
-            CLLocationCoordinate2D annocoord;
-            annocoord.latitude = [aCD.latitude doubleValue];
-            annocoord.longitude =  [aCD.latitude doubleValue];
-            
-            //NSLog(@"Lat heen: %f", annocoord.latitude);
-            //NSLog(@"Long heen: %f", annocoord.longitude);
-            
-            // www.ikkanrekenen.nl
-            static const double DEG_TO_RAD = 0.017453292519943295769236907684886;
-            static const double EARTH_RADIUS_IN_METERS = 6372797.560856;
-            
-            double latitudeArc  = (annocoord.latitude - usercoord.latitude) * DEG_TO_RAD;
-            double longitudeArc = (annocoord.longitude - usercoord.longitude) * DEG_TO_RAD;
-            double latitudeH = sin(latitudeArc * 0.5);
-            
-            latitudeH *= latitudeH;
-            double lontitudeH = sin(longitudeArc * 0.5);
-            
-            lontitudeH *= lontitudeH;
-            double tmp = cos(annocoord.latitude*DEG_TO_RAD) * cos(annocoord.latitude*DEG_TO_RAD);
-            
-            double afstand = EARTH_RADIUS_IN_METERS * 2.0 * asin(sqrt(latitudeH + tmp*lontitudeH));
-            int distance = (int)afstand;
-            
-            // We loggen de afstand
-            
-            //NSLog(@"DIST: %d meter", distance );
-            
-            //And we save the distance so we can sort on it later
-            aCD.distance = [NSNumber numberWithInt:distance];
-            
-        }
-        
-        //Update the list
-        // Load all activities in an array
-         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES selector:@selector(compare:)];
-        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-        NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest error:&error];
-        
-        alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects2];
-
-        
         backButton.hidden = YES;
     }
     else if (currentArray == @"time") {
@@ -348,6 +291,57 @@
     }
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    //Get the DB connection
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    //Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+
+    CLLocation *currentLocation = [locations lastObject];
+    
+    //Time to update each item on the distance
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    for(ActivityCD *aCD in fetchedObjects){
+        
+        //Update each and every one of them
+        CLLocationDegrees lat = [aCD.latitude doubleValue];
+        CLLocationDegrees lon = [aCD.longitude doubleValue];
+
+        CLLocation *aLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
+        
+        //Returns the distance in meters
+        CLLocationDistance dist = [aLocation distanceFromLocation:currentLocation];
+        
+        //And we save the distance so we can sort on it later
+        aCD.distance = [NSNumber numberWithDouble:dist];
+        
+    }
+    
+    //Update the list
+    // Load all activities in an array
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:NO selector:@selector(compare:)];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest error:&error];
+    
+    alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects2];
+    
+    //Stop the updating of the locations.
+    [locationManager stopUpdatingLocation];
+    
+    //Reload the table
+    [categoryTable reloadData];
+    
+    //Remove the spinner
+    [hud hide:YES afterDelay:1];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -384,7 +378,6 @@
     alphabeticMutableArray = nil;
     
     [self updateList];
-    [categoryTable reloadData];
 }
 
 - (IBAction)sortTime:(id)sender {

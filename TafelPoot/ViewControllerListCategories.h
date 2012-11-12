@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewControllerListCategories : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface ViewControllerListCategories : UIViewController <UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate> {
     NSMutableArray *categoriesArray;
     NSString *currentArray;
     NSString *currentCategory;
