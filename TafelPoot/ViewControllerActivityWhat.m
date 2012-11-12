@@ -342,7 +342,7 @@
         picker.delegate = self;
         
     
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
         
         [self presentModalViewController:picker animated:YES];
