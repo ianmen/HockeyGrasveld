@@ -25,7 +25,7 @@
 @implementation ViewControllerActivityWhat
 {
 
-    Activity *activity;
+    //Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
     UIImage *imageDone;
@@ -34,8 +34,10 @@
 
 @synthesize imageView;
 @synthesize picker;
+@synthesize activity;
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
+
 
 
 - (IBAction)photoDone:(id)sender {
@@ -76,6 +78,12 @@
         self.category.text = activity.category;
         self.tags.text = activity.tags;
         self.description.text = activity.activityDescription;
+        
+        if (activity.image != nil)
+        {
+            self.imageView.image = activity.image;
+        }
+        
     } else {
         activity = [[Activity alloc] init];
     }
@@ -219,6 +227,7 @@
     
 }
 
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     //Did cancel the picker
@@ -271,6 +280,8 @@
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
     
+
+
 }
 
 - (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
@@ -326,8 +337,14 @@
 	} else if (buttonIndex == 1) {
 		
         //Display the camera capture tool
-        [self startCameraControllerFromViewController: self
-                                        usingDelegate: (id)self];
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        
+
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        
+        [self presentModalViewController:picker animated:YES];
     }
     
 }
@@ -369,6 +386,8 @@
     //remove the spinner from the view
     [hud hide:YES afterDelay:4];
 }
+
+// toetsenbord focus weg
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [self.name resignFirstResponder];
     [self.tags resignFirstResponder];

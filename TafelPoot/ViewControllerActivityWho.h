@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *startDate;
 @property (strong, nonatomic) IBOutlet UILabel *endDate;
 @property (strong, nonatomic) IBOutlet UILabel *xmlStatusResponse;
+@property (strong, nonatomic) Activity *activity;
 
 - (IBAction)finished:(id)sender;
 - (void)setActivity:(Activity*)currentActivity;

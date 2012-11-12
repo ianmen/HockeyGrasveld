@@ -18,13 +18,15 @@
 
 @interface ViewControllerActivityWho ()
 {
-    Activity *activity;
+    //Activity *activity;
     ServerConnection *serverConn;
     MBProgressHUD *hud;
 }
 @end
 
 @implementation ViewControllerActivityWho
+
+@synthesize activity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,7 +47,7 @@
     
     self.imagePreview.layer.masksToBounds = YES;
     self.imagePreview.layer.borderColor = [UIColor redColor].CGColor;
-    self.imagePreview.layer.borderWidth = 2;
+    self.imagePreview.layer.borderWidth = 1;
     
     self.activityName.text = [activity.activityName copy];
     self.category.text = [activity.category copy];
@@ -64,6 +66,11 @@
     [self.imagePreview setImage:activity.image];
     
     serverConn.delegate = self;
+    
+    if (activity.image == nil)
+    {
+        self.imagePreview.image = [UIImage imageNamed:@"no_image"];
+    }
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -79,7 +86,7 @@
                 
                 TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
                 // set initial text
-                [tweetViewController setInitialText:@"Ik heb net de activiteit \"...\" toegevoegd in BredApp! Check het op Facebook: https://www.facebook.com/pages/Testpagina"];
+                [tweetViewController setInitialText:@"Ik heb net de activiteit \"...\" toegevoegd in BredApp! Check het in de Bredapp op je iPhone."];
                 
                 [self presentViewController:tweetViewController animated:YES completion:nil];
             } else {
@@ -177,6 +184,7 @@
 {
     //The posting of the activity is done
 	hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Cross.png"]] ;
 	hud.labelText = @"Mislukt";
     
     //Remove the spinner after a  delay
