@@ -13,6 +13,7 @@
 #import "ActivityCD.h"
 #import <CoreLocation/CoreLocation.h>
 #import "ServerConnection.h"
+#import "MBProgressHUD.h"
 
 @interface ViewControllerListCategories ()
 
@@ -31,6 +32,7 @@
 @synthesize timeMutableArray;
 @synthesize selectedCategoryMutableArray;
 @synthesize backgroundImage;
+@synthesize backButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -119,7 +121,7 @@
         Title = aCD.activityName;
         
         //Sett the image
-        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
 
     }
@@ -141,6 +143,38 @@
     return cell;
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    // When current array is categories, detailview should not be shown. Instead load the list according to the selected category.
+    if ([identifier isEqualToString:@"showDetails"] && currentArray == @"categories") {
+        // prevent segue from occurring
+        return NO;
+    }
+    // by default perform the segue transition
+    return YES;
+}
+
+- (void)tableView:(CustomCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (currentArray == @"categories") {
+        
+        CustomCell *cell = (CustomCell *)[categoryTable cellForRowAtIndexPath:indexPath];
+        currentCategory = cell.NameLabel.text;
+        
+        NSLog(@"%@", currentCategory);
+        
+        currentArray = @"selectedCategory";
+        
+        //Clean the list
+        alphabeticMutableArray = nil;
+        
+        [self updateList];
+        [categoryTable reloadData];
+    }
+    else {
+        currentCategory = nil;
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -202,7 +236,7 @@
 
     
     if (currentArray == @"categories") {
-               
+        backButton.hidden = YES;
     }
     else if (currentArray == @"alphabetic") {
         
@@ -214,7 +248,8 @@
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         
         alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
- 
+        
+        backButton.hidden = YES;
     }
     else if (currentArray == @"distance") {
         
@@ -268,7 +303,7 @@
             
         }
         
-    
+        backButton.hidden = YES;
     }
     else if (currentArray == @"time") {
         
@@ -281,7 +316,7 @@
         
         alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
 
-        
+        backButton.hidden = YES;
     }
     else if (currentArray == @"selectedCategory") {
         NSPredicate *predicate = [NSPredicate predicateWithFormat: @"(category LIKE[c] %@)", currentCategory];
@@ -293,6 +328,8 @@
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         
         selectedCategoryMutableArray = [NSArray arrayWithArray:fetchedObjects];
+        
+        backButton.hidden = NO;
     }
 }
 
@@ -345,6 +382,18 @@
     [self updateList];
     [self.categoryTable reloadData];
 }
+
+- (IBAction)backButton:(id)sender {
+    NSLog(@"CATBACK");
+    currentArray = @"categories";
+    
+    //Clean the list
+    alphabeticMutableArray = nil;
+    
+    [self updateList];
+    [self.categoryTable reloadData];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
