@@ -27,5 +27,5 @@
 @dynamic imagePath;
 @dynamic uID;
 @dynamic imagePathThumbnails;
-
+@dynamic distance;
 @end
