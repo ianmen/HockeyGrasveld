@@ -277,7 +277,7 @@
 
 - (IBAction)addPhoto:(id)sender {
     
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Foto weghalen" otherButtonTitles:@"Foto library",@"Foto camera", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Foto weghalen" otherButtonTitles:@"Mediafolder",@"Fotocamera", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
 
