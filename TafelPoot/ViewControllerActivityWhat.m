@@ -277,7 +277,7 @@
 
 - (IBAction)addPhoto:(id)sender {
     
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Foto verwijderen" otherButtonTitles:@"Foto library",@"Foto camera", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Foto weghalen" otherButtonTitles:@"Mediafolder",@"Fotocamera", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
 
@@ -358,12 +358,16 @@
         
         [self presentModalViewController:picker animated:YES];
     }
-
 }
 
-
-
-
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        activity.image = nil;
+        imageView.image = [UIImage imageNamed:@"photo_upload_button"];
+    }
+}
 
 -(void)uploadingDone{
     
