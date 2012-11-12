@@ -23,10 +23,24 @@
     [super viewDidLoad];
     
     self.lbl_activityName.text = activity.activityName;
-    self.lbl_activityDescription.text = activity.activityDescription;
-    //self.lbl_activityBeginTime.text = activity.startDate;
-    //self.lbl_activityEndTime.text = activity.endDate;
-        
+    self.textview_activityDescription.text = activity.activityDescription;
+    NSString *locationString = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
+    self.textview_activityLocation.text = locationString;
+
+    NSString *startDate_string = [NSDateFormatter localizedStringFromDate:activity.startDate
+                                                                dateStyle: NSDateFormatterNoStyle
+                                                                timeStyle:NSDateFormatterShortStyle];
+    
+    
+    
+    NSString *endDate_string = [NSDateFormatter localizedStringFromDate:activity.endDate
+                                                                dateStyle:NSDateFormatterNoStyle
+                                                                timeStyle:NSDateFormatterShortStyle];
+
+    self.textview_activityBeginTime.text = startDate_string;
+    self.textview_activityEndTime.text = endDate_string;
+    
+    NSLog(@"%@", activity.imagePathThumbnails);
     NSURL *img_url = [NSURL URLWithString:activity.imagePath];
     NSData *img_data = [NSData dataWithContentsOfURL:img_url];
     UIImage *image = [[UIImage alloc] initWithData: img_data];

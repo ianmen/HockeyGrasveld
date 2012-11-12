@@ -22,9 +22,12 @@
 //@property (weak, nonatomic) IBOutlet UITextField *streetField;
 //@property (weak, nonatomic) IBOutlet UITextField *cityField;
 @property (strong, nonatomic) IBOutlet UILabel *lbl_activityName;
-@property (strong, nonatomic) IBOutlet UILabel *lbl_activityDescription;
-@property (strong, nonatomic) IBOutlet UILabel *lbl_activityBeginTime;
-@property (strong, nonatomic) IBOutlet UILabel *lbl_activityEndTime;
+@property (strong, nonatomic) IBOutlet UITextView *textview_activityDescription;
+@property (strong, nonatomic) IBOutlet UITextView *textview_activityLocation;
+
+@property (strong, nonatomic) IBOutlet UITextView *textview_activityBeginTime;
+@property (strong, nonatomic) IBOutlet UITextView *textview_activityEndTime;
+
 @property (strong, nonatomic) IBOutlet UIImageView *img_activityImage;
 
 - (void)setActivity:(ActivityCD *)currentActivity;
