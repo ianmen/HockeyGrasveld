@@ -343,11 +343,15 @@
         
 
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        }
-        
-        [self presentModalViewController:picker animated:YES];
-    }
     
+        
+    [self presentModalViewController:picker animated:YES];
+}
+
+}
+
+
+
 
 
 -(void)uploadingDone{
