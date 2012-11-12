@@ -411,7 +411,6 @@
 				1BE37A3D1642954D004B214E /* Accounts.framework */,
 				1BE37A3A16429539004B214E /* Twitter.framework */,
 				13B86FDB16380CAB001D3EB9 /* MapKit.framework */,
-				13B86FD816380CA5001D3EB9 /* CoreLocation.framework */,
 				609C4DDF16354790006017DE /* TafelPoot */,
 				609C4DD816354790006017DE /* Frameworks */,
 				609C4DD616354790006017DE /* Products */,
@@ -442,6 +441,7 @@
 		609C4DDF16354790006017DE /* TafelPoot */ = {
 			isa = PBXGroup;
 			children = (
+				13B86FD816380CA5001D3EB9 /* CoreLocation.framework */,
 				00CE1325163804D400173D2F /* Controllers */,
 				00CE1323163804A300173D2F /* Models */,
 				00DB89F41638008000512046 /* Utils */,

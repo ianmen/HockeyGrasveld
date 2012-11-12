@@ -59,6 +59,7 @@
         return [alphabeticMutableArray count];
     }
     else if (currentArray == @"distance") {
+        //NSLog(@"")
         return [distanceMutableArray count];
     }
     else if (currentArray == @"time") {
@@ -263,6 +264,9 @@
         [locationManager startUpdatingLocation];
         CLLocationCoordinate2D usercoord = locationManager.location.coordinate;
         
+        //NSLog(@"Lat now: %f", usercoord.latitude);
+        //NSLog(@"Long now: %f", usercoord.longitude);
+
         //Time to update each item on the distance
         
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
@@ -273,12 +277,11 @@
             
             /// Waar gaan we heen?
             CLLocationCoordinate2D annocoord;
-            
-            NSLog(@"%@", aCD.latitude);
-            NSLog(@"%@", aCD.longitude);
-
             annocoord.latitude = [aCD.latitude doubleValue];
-            annocoord.longitude =  [aCD.longitude doubleValue];
+            annocoord.longitude =  [aCD.latitude doubleValue];
+            
+            //NSLog(@"Lat heen: %f", annocoord.latitude);
+            //NSLog(@"Long heen: %f", annocoord.longitude);
             
             // www.ikkanrekenen.nl
             static const double DEG_TO_RAD = 0.017453292519943295769236907684886;
@@ -299,9 +302,21 @@
             
             // We loggen de afstand
             
-            NSLog(@"DIST: %d meter", distance );
+            //NSLog(@"DIST: %d meter", distance );
+            
+            //And we save the distance so we can sort on it later
+            aCD.distance = [NSNumber numberWithInt:distance];
             
         }
+        
+        //Update the list
+        // Load all activities in an array
+         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES selector:@selector(compare:)];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest error:&error];
+        
+        alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects2];
+
         
         backButton.hidden = YES;
     }
@@ -369,7 +384,7 @@
     alphabeticMutableArray = nil;
     
     [self updateList];
-    [self.categoryTable reloadData];
+    [categoryTable reloadData];
 }
 
 - (IBAction)sortTime:(id)sender {
