@@ -358,6 +358,7 @@
         
         [self presentModalViewController:picker animated:YES];
     }
+}
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -367,10 +368,6 @@
         imageView.image = [UIImage imageNamed:@"photo_upload_button"];
     }
 }
-
-
-
-
 
 -(void)uploadingDone{
     
