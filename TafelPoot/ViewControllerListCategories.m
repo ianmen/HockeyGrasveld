@@ -117,7 +117,7 @@
         Title = aCD.activityName;
         
         //Sett the image
-        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else if (currentArray == @"time") {
@@ -244,7 +244,7 @@
     //Remove the spinner after a  delay
     hud2.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
 	hud2.mode = MBProgressHUDModeCustomView;
-	hud2.labelText = @"Voltooid";
+	hud2.labelText = @"Activiteiten ophalen voltooid";
     
     locating = YES;
     
@@ -303,7 +303,7 @@
         
         if(locating){
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Locating";
+        hud.labelText = @"Locatie bepalen";
         }
 
         backButton.hidden = YES;
