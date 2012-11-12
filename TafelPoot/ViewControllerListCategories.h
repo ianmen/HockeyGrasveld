@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSMutableArray *selectedCategoryMutableArray;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+- (IBAction)reload:(id)sender;
 
 - (IBAction)sortCategories:(id)sender;
 - (IBAction)sortAlphabetic:(id)sender;
