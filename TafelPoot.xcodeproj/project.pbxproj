@@ -60,6 +60,8 @@
 		1BE37A44164295C1004B214E /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BE37A43164295C1004B214E /* FacebookSDKResources.bundle */; };
 		1BE37A46164295CA004B214E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A45164295CA004B214E /* FacebookSDK.framework */; };
 		1BE37A491642992D004B214E /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE37A481642992D004B214E /* FacebookViewController.m */; };
+		4D8FE23F1651365D00314524 /* ViewControllerActivityMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8FE23E1651365D00314524 /* ViewControllerActivityMap.m */; };
+		4D8FE2431651369200314524 /* ActivityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8FE2421651369200314524 /* ActivityAnnotation.m */; };
 		6012D4FA1637F6C100319904 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4E51637F6C100319904 /* background1.png */; };
 		6012D4FB1637F6C100319904 /* background1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4E61637F6C100319904 /* background1@2x.png */; };
 		6012D4FC1637F6C100319904 /* backgroundWaar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6012D4E71637F6C100319904 /* backgroundWaar.png */; };
@@ -192,6 +194,10 @@
 		1BE37A45164295CA004B214E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		1BE37A4716429927004B214E /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
 		1BE37A481642992D004B214E /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
+		4D8FE23D1651365D00314524 /* ViewControllerActivityMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityMap.h; sourceTree = "<group>"; };
+		4D8FE23E1651365D00314524 /* ViewControllerActivityMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityMap.m; sourceTree = "<group>"; };
+		4D8FE2411651369200314524 /* ActivityAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityAnnotation.h; sourceTree = "<group>"; };
+		4D8FE2421651369200314524 /* ActivityAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityAnnotation.m; sourceTree = "<group>"; };
 		6012D4E51637F6C100319904 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = ../background1.png; sourceTree = "<group>"; };
 		6012D4E61637F6C100319904 /* background1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background1@2x.png"; path = "../background1@2x.png"; sourceTree = "<group>"; };
 		6012D4E71637F6C100319904 /* backgroundWaar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroundWaar.png; path = ../backgroundWaar.png; sourceTree = "<group>"; };
@@ -302,6 +308,8 @@
 				6012D513163803EC00319904 /* Activity.m */,
 				6015CD9E164A8C0100AC9A41 /* ActivityCD.h */,
 				6015CD9F164A8C0100AC9A41 /* ActivityCD.m */,
+				4D8FE2411651369200314524 /* ActivityAnnotation.h */,
+				4D8FE2421651369200314524 /* ActivityAnnotation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -329,6 +337,8 @@
 				1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */,
 				9954019A1651202E00EB3198 /* MapViewAnnotation.h */,
 				9954019B1651202F00EB3198 /* MapViewAnnotation.m */,
+				4D8FE23D1651365D00314524 /* ViewControllerActivityMap.h */,
+				4D8FE23E1651365D00314524 /* ViewControllerActivityMap.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -740,6 +750,8 @@
 				6015CD9D164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld in Sources */,
 				6015CDA0164A8C0100AC9A41 /* ActivityCD.m in Sources */,
 				9954019C1651202F00EB3198 /* MapViewAnnotation.m in Sources */,
+				4D8FE23F1651365D00314524 /* ViewControllerActivityMap.m in Sources */,
+				4D8FE2431651369200314524 /* ActivityAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

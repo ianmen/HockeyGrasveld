@@ -30,7 +30,7 @@
 @synthesize categoryTable;
 @synthesize categoriesMutableArray;
 @synthesize alphabeticMutableArray;
-@synthesize distanceMutableArray;
+@synthesize distanceMutableArray; 
 @synthesize timeMutableArray;
 @synthesize selectedCategoryMutableArray;
 @synthesize backgroundImage;
@@ -208,20 +208,42 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-
+    
 }
+
+
 
 -(void)updateDB {
     
     //Method for refreshing the database
-    //hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    //hud.labelText = @"Activiteiten ophalen";
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Laden";
+    
+    //Set the notifcation
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateDone)
+                                                 name:@"DownloadingDone"
+                                               object:nil];
     
     //Call the method
     //Reload the DB
     ServerConnection *svr = [[ServerConnection alloc] init];
     [svr loadActivities];
 
+    
+}
+
+-(void)updateDone {
+    
+    //Remove the spinner after a  delay
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
+	hud.mode = MBProgressHUDModeCustomView;
+	hud.labelText = @"Voltooid";
+    
+    //Update the list
+    [self updateList];
+                     
+    [hud hide:YES afterDelay:2];
     
 }
 
@@ -343,11 +365,7 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     for(ActivityCD *aCD in fetchedObjects){
-        
-        
-        NSLog(@"%@", aCD.activityName);
-        NSLog(@"%@", aCD.longitude);
-        NSLog(@"%@", aCD.latitude);
+
         //Update each and every one of them
         CLLocationDegrees lat = [aCD.latitude doubleValue];
         CLLocationDegrees lon = [aCD.longitude doubleValue];
@@ -383,6 +401,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)reload:(id)sender {
+    
+    [self updateDB];
 }
 
 - (IBAction)sortCategories:(id)sender {
@@ -425,7 +448,7 @@
     alphabeticMutableArray = nil;
     
     [self updateList];
-    [self.categoryTable reloadData];
+
 }
 
 - (IBAction)backButton:(id)sender {
@@ -466,5 +489,14 @@
         
         [vc setActivity: act];
     }
+}
+
+- (void) dealloc
+{
+    // If you don't remove yourself as an observer, the Notification Center
+    // will continue to try and send notification objects to the deallocated
+    // object.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 @end

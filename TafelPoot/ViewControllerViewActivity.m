@@ -67,9 +67,7 @@
 	location.latitude = [activity.longitude doubleValue];
 	location.longitude = [activity.latitude doubleValue];
     
-    NSLog(@"%@", activity.latitude);
-    NSLog(@"%@", activity.longitude);
-    
+
     
 	// Add the annotation to our map view
 	MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:activity.activityName andCoordinate:location];
