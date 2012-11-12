@@ -59,7 +59,7 @@
         return [alphabeticMutableArray count];
     }
     else if (currentArray == @"distance") {
-        NSLog(@"")
+        //NSLog(@"")
         return [distanceMutableArray count];
     }
     else if (currentArray == @"time") {
