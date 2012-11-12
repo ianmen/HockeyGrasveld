@@ -223,7 +223,6 @@
     [svr loadActivities];
 
     
-    
 }
 
 //Method for updating the different lists

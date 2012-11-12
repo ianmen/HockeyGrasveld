@@ -64,8 +64,8 @@
     self.mapview_activityLocation.showsUserLocation = YES;
     
     CLLocationCoordinate2D location;
-	location.latitude = [activity.latitude doubleValue];
-	location.longitude = [activity.longitude doubleValue];
+	location.latitude = [activity.longitude doubleValue];
+	location.longitude = [activity.latitude doubleValue];
     
     NSLog(@"%@", activity.latitude);
     NSLog(@"%@", activity.longitude);
