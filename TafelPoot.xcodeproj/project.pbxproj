@@ -74,7 +74,6 @@
 		602E62D81637EDA50095EDA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E62D71637EDA50095EDA3 /* QuartzCore.framework */; };
 		602E62DA1637EDF10095EDA3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6E91635573100727B94 /* Default.png */; };
 		602E62DB1637EDF50095EDA3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99DBD6EA1635573100727B94 /* Default@2x.png */; };
-		6044F619163808C0004F4F06 /* TafelPoot-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DE116354790006017DE /* TafelPoot-Info.plist */; };
 		606B588816354A8300574894 /* PhotoUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B588716354A8300574894 /* PhotoUploader.m */; };
 		6073C0DB1636A49500BB9363 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073C0D81636A36800BB9363 /* MBProgressHUD.m */; };
 		6073C0E21636A82700BB9363 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6073C0E01636A82700BB9363 /* 37x-Checkmark.png */; };
@@ -83,7 +82,6 @@
 		609C4DDA16354790006017DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609C4DD916354790006017DE /* UIKit.framework */; };
 		609C4DDC16354790006017DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609C4DDB16354790006017DE /* Foundation.framework */; };
 		609C4DDE16354790006017DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609C4DDD16354790006017DE /* CoreGraphics.framework */; };
-		609C4DE416354790006017DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DE216354790006017DE /* InfoPlist.strings */; };
 		609C4DE616354790006017DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C4DE516354790006017DE /* main.m */; };
 		609C4DEA16354790006017DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C4DE916354790006017DE /* AppDelegate.m */; };
 		609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609C4DF116354790006017DE /* MainStoryboard.storyboard */; };
@@ -600,8 +598,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6044F619163808C0004F4F06 /* TafelPoot-Info.plist in Resources */,
-				609C4DE416354790006017DE /* InfoPlist.strings in Resources */,
 				609C4DF316354790006017DE /* MainStoryboard.storyboard in Resources */,
 				99DBD6DE1635572600727B94 /* background1.png in Resources */,
 				99DBD6DF1635572600727B94 /* background1@2x.png in Resources */,
@@ -785,7 +781,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -808,7 +803,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -823,6 +818,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
