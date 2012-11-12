@@ -25,7 +25,7 @@
 @implementation ViewControllerActivityWhat
 {
 
-    Activity *activity;
+    //Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
     UIImage *imageDone;
@@ -34,8 +34,10 @@
 
 @synthesize imageView;
 @synthesize picker;
+@synthesize activity;
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
+
 
 
 - (IBAction)photoDone:(id)sender {
@@ -76,6 +78,12 @@
         self.category.text = activity.category;
         self.tags.text = activity.tags;
         self.description.text = activity.activityDescription;
+        
+        if (activity.image != nil)
+        {
+            self.imageView.image = activity.image;
+        }
+        
     } else {
         activity = [[Activity alloc] init];
     }
@@ -115,7 +123,8 @@
     
     if( [self.name.text length] == 0 ) [errors addObject:@"Naam"];
     if( [self.category.text length] == 0 ) [errors addObject:@"Categorie"];
-    if( [self.tags.text length] == 0 ) [errors addObject:@"Tags"];
+    // 12-11-2012 - Stan - Niet meer verplicht
+    //if( [self.tags.text length] == 0 ) [errors addObject:@"Tags"];
     if( [self.description.text length] == 0 ) {
         [errors addObject:@"Beschrijving"];
     } else if( [self.description.text isEqualToString: placeholder] ) {
@@ -219,6 +228,7 @@
     
 }
 
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     //Did cancel the picker
@@ -233,7 +243,7 @@
     if ( [self.category.text isEqualToString: @"Muziek"] ) {
         icon = [UIImage imageNamed:@"categoryIcon_music.png"];
     } else if ( [self.category.text isEqualToString: @"Sport"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_sport.png"];
+        icon = [UIImage imageNamed:@"categoryIcon_Sport.png"];
     } else if ( [self.category.text isEqualToString: @"Eten"] ) {
         icon = [UIImage imageNamed:@"categoryIcon_food.png"];
     } else if ( [self.category.text isEqualToString: @"Reizen"] ) {
@@ -271,6 +281,8 @@
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
     
+
+
 }
 
 - (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
@@ -326,11 +338,17 @@
 	} else if (buttonIndex == 1) {
 		
         //Display the camera capture tool
-        [self startCameraControllerFromViewController: self
-                                        usingDelegate: (id)self];
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        
+
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        
+        [self presentModalViewController:picker animated:YES];
     }
     
-}
+
 
 -(void)uploadingDone{
     
@@ -369,6 +387,8 @@
     //remove the spinner from the view
     [hud hide:YES afterDelay:4];
 }
+
+// toetsenbord focus weg
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [self.name resignFirstResponder];
     [self.tags resignFirstResponder];
@@ -460,7 +480,7 @@
                          self.view.frame = CGRectMake(0, 0, 320, 480);
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Slide down Done..!");
+                         //NSLog(@"Slide down Done..!");
                      }];
 }
 
@@ -477,7 +497,7 @@
                          self.view.frame = CGRectMake(0, -keyboardFrame.size.height - 55, 320, 416);
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Slide up Done..!");
+                        // NSLog(@"Slide up Done..!");
                      }];
 }
 
