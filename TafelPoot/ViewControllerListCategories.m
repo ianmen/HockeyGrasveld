@@ -23,7 +23,7 @@
 @implementation ViewControllerListCategories {
     MBProgressHUD *hud;
     CLLocationManager *locationManager;
-    MBProgressHUD *hud;
+ 
  
 }
 
@@ -202,18 +202,28 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    //Reload the DB
-    ServerConnection *svr = [[ServerConnection alloc] init];
-    [svr loadActivities];
-    
-    //Update the list
-    [self updateList];
+    [self updateDB];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
 
+}
+
+-(void)updateDB {
+    
+    //Method for refreshing the database
+    //hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //hud.labelText = @"Activiteiten ophalen";
+    
+    //Call the method
+    //Reload the DB
+    ServerConnection *svr = [[ServerConnection alloc] init];
+    [svr loadActivities];
+
+    
+    
 }
 
 //Method for updating the different lists
@@ -234,9 +244,7 @@
         backButton.hidden = YES;
     }
     else if (currentArray == @"alphabetic") {
-        //Load the spinner
-        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Activiteiten ophalen";
+
         
         //Load them in alphabetic
 
@@ -246,28 +254,13 @@
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         
         alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
-        
-        //Update spinner when Array is fetched
-        if ([alphabeticMutableArray count] == 0) {
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Cross.png"]] ;
-            hud.mode = MBProgressHUDModeCustomView;
-            hud.labelText = @"Geen activiteiten gevonden";
-        }
-        else {
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
-            hud.mode = MBProgressHUDModeCustomView;
-            hud.labelText = @"Activiteiten opgehaald";
-        }
-        
-        //Remove the spinner after a  delay
-        [hud hide:YES afterDelay:1];
-        
+
+    
         backButton.hidden = YES;
     }
     else if (currentArray == @"distance") {
         //Load the spinner
-        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Activiteiten ophalen";
+
         
         //TODO : if switch if the device is an iphony
         
@@ -285,9 +278,6 @@
         backButton.hidden = YES;
     }
     else if (currentArray == @"time") {
-        //Load the spinner
-        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Activiteiten ophalen";
         
         //Load them in Time
         
@@ -298,28 +288,10 @@
         
         alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
         
-        //Update spinner when Array is fetched
-        if ([alphabeticMutableArray count] == 0) {
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Cross.png"]] ;
-            hud.mode = MBProgressHUDModeCustomView;
-            hud.labelText = @"Geen activiteiten gevonden";
-        }
-        else {
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
-            hud.mode = MBProgressHUDModeCustomView;
-            hud.labelText = @"Activiteiten opgehaald";
-        }
-        
-        //Remove the spinner after a  delay
-        [hud hide:YES afterDelay:1];
-        
-        backButton.hidden = YES;
+               backButton.hidden = YES;
     }
     else if (currentArray == @"selectedCategory") {
-        //Load the spinner
-        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Activiteiten ophalen";
-        
+
         NSPredicate *predicate = [NSPredicate predicateWithFormat: @"(category LIKE[c] %@)", currentCategory];
         [fetchRequest setPredicate:predicate];
         
@@ -330,23 +302,27 @@
         
         selectedCategoryMutableArray = [NSArray arrayWithArray:fetchedObjects];
         
-        //Update spinner when Array is fetched
         if ([selectedCategoryMutableArray count] == 0) {
+            hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.labelText = @"Activiteiten ophalen";
+            
             hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Cross.png"]] ;
             hud.mode = MBProgressHUDModeCustomView;
             hud.labelText = @"Geen activiteiten gevonden";
+            
+            //Remove the spinner after a  delay
+            [hud hide:YES afterDelay:2];
+            
         }
-        else {
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
-            hud.mode = MBProgressHUDModeCustomView;
-            hud.labelText = @"Activiteiten opgehaald";
-        }
+
         
-        //Remove the spinner after a  delay
-        [hud hide:YES afterDelay:1];
+       
         
         backButton.hidden = NO;
     }
+    
+    //Update the list
+    [categoryTable reloadData];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -414,7 +390,7 @@
     alphabeticMutableArray = nil;
     
     [self updateList];
-    [self.categoryTable reloadData];
+    
 }
 
 - (IBAction)sortAlphabetic:(id)sender {
@@ -425,7 +401,7 @@
     alphabeticMutableArray = nil;
     
     [self updateList];
-    [categoryTable reloadData];
+    
 }
 
 - (IBAction)sortDistance:(id)sender {
