@@ -682,6 +682,7 @@
 				1B55555C164D357400075F4B /* catIconLarge_Uitgaan en Evenementen.png in Resources */,
 				1B55555F164D38DA00075F4B /* iconEnd.png in Resources */,
 				1B555560164D38DA00075F4B /* iconStart.png in Resources */,
+				1B3313871651054F003E4781 /* Back-Button.png in Resources */,
 				9954018F1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png in Resources */,
 				995401901651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png in Resources */,
 			);
