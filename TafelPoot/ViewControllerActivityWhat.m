@@ -335,12 +335,12 @@
         
 
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
+        }
         
         [self presentModalViewController:picker animated:YES];
     }
     
-}
+
 
 -(void)uploadingDone{
     
@@ -472,7 +472,7 @@
                          self.view.frame = CGRectMake(0, 0, 320, 480);
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Slide down Done..!");
+                         //NSLog(@"Slide down Done..!");
                      }];
 }
 
@@ -489,7 +489,7 @@
                          self.view.frame = CGRectMake(0, -keyboardFrame.size.height - 55, 320, 416);
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Slide up Done..!");
+                        // NSLog(@"Slide up Done..!");
                      }];
 }
 
