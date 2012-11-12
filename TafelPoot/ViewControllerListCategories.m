@@ -13,12 +13,17 @@
 #import "ActivityCD.h"
 #import <CoreLocation/CoreLocation.h>
 #import "ServerConnection.h"
+#import "MBProgressHUD.h"
 
 @interface ViewControllerListCategories ()
 
 @end
 
-@implementation ViewControllerListCategories
+@implementation ViewControllerListCategories{
+    
+    CLLocationManager *locationManager;
+ 
+}
 
 @synthesize categoryTable;
 @synthesize categoriesMutableArray;
@@ -27,6 +32,7 @@
 @synthesize timeMutableArray;
 @synthesize selectedCategoryMutableArray;
 @synthesize backgroundImage;
+@synthesize backButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -100,6 +106,14 @@
     }
     else if (currentArray == @"distance") {
         Title = [distanceMutableArray objectAtIndex:indexPath.row];
+        
+        //See the name of the activity
+        ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Sett the image
+        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else if (currentArray == @"time") {
         
@@ -107,7 +121,7 @@
         Title = aCD.activityName;
         
         //Sett the image
-        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
 
     }
@@ -143,6 +157,7 @@
 - (void)tableView:(CustomCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (currentArray == @"categories") {
+        
         CustomCell *cell = (CustomCell *)[categoryTable cellForRowAtIndexPath:indexPath];
         currentCategory = cell.NameLabel.text;
         
@@ -221,7 +236,7 @@
 
     
     if (currentArray == @"categories") {
-               
+        backButton.hidden = YES;
     }
     else if (currentArray == @"alphabetic") {
         
@@ -233,11 +248,20 @@
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         
         alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
- 
+        
+        backButton.hidden = YES;
     }
     else if (currentArray == @"distance") {
         
         //TODO : if switch if the device is an iphony
+        
+        //Get the current location
+        // Hier zijn we nu
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; // 100 m
+        [locationManager startUpdatingLocation];
+        CLLocationCoordinate2D usercoord = locationManager.location.coordinate;
         
         //Time to update each item on the distance
         
@@ -247,9 +271,39 @@
             
                 //Update each and every one of them
             
+            /// Waar gaan we heen?
+            CLLocationCoordinate2D annocoord;
+            
+            NSLog(@"%@", aCD.latitude);
+            NSLog(@"%@", aCD.longitude);
+
+            annocoord.latitude = [aCD.latitude doubleValue];
+            annocoord.longitude =  [aCD.longitude doubleValue];
+            
+            // www.ikkanrekenen.nl
+            static const double DEG_TO_RAD = 0.017453292519943295769236907684886;
+            static const double EARTH_RADIUS_IN_METERS = 6372797.560856;
+            
+            double latitudeArc  = (annocoord.latitude - usercoord.latitude) * DEG_TO_RAD;
+            double longitudeArc = (annocoord.longitude - usercoord.longitude) * DEG_TO_RAD;
+            double latitudeH = sin(latitudeArc * 0.5);
+            
+            latitudeH *= latitudeH;
+            double lontitudeH = sin(longitudeArc * 0.5);
+            
+            lontitudeH *= lontitudeH;
+            double tmp = cos(annocoord.latitude*DEG_TO_RAD) * cos(annocoord.latitude*DEG_TO_RAD);
+            
+            double afstand = EARTH_RADIUS_IN_METERS * 2.0 * asin(sqrt(latitudeH + tmp*lontitudeH));
+            int distance = (int)afstand;
+            
+            // We loggen de afstand
+            
+            NSLog(@"DIST: %d meter", distance );
+            
         }
         
-    
+        backButton.hidden = YES;
     }
     else if (currentArray == @"time") {
         
@@ -262,7 +316,7 @@
         
         alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
 
-        
+        backButton.hidden = YES;
     }
     else if (currentArray == @"selectedCategory") {
         NSPredicate *predicate = [NSPredicate predicateWithFormat: @"(category LIKE[c] %@)", currentCategory];
@@ -274,6 +328,8 @@
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         
         selectedCategoryMutableArray = [NSArray arrayWithArray:fetchedObjects];
+        
+        backButton.hidden = NO;
     }
 }
 
@@ -326,6 +382,18 @@
     [self updateList];
     [self.categoryTable reloadData];
 }
+
+- (IBAction)backButton:(id)sender {
+    NSLog(@"CATBACK");
+    currentArray = @"categories";
+    
+    //Clean the list
+    alphabeticMutableArray = nil;
+    
+    [self updateList];
+    [self.categoryTable reloadData];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
