@@ -21,6 +21,7 @@
 
 @implementation ViewControllerListCategories {
     MBProgressHUD *hud;
+    CLLocationManager *locationManager;
 }
 
 @synthesize categoryTable;

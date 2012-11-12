@@ -695,6 +695,8 @@
 				1B33139016510DB2003E4781 /* 37x-Checkmark.png in Resources */,
 				1B33139416510EA4003E4781 /* 37x-Cross@2x.png in Resources */,
 				1B33139616510EDF003E4781 /* 37x-Cross.png in Resources */,
+				9954018F1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png in Resources */,
+				995401901651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
