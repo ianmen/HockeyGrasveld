@@ -78,6 +78,12 @@
         self.category.text = activity.category;
         self.tags.text = activity.tags;
         self.description.text = activity.activityDescription;
+        
+        if (activity.image != nil)
+        {
+            self.imageView.image = activity.image;
+        }
+        
     } else {
         activity = [[Activity alloc] init];
     }

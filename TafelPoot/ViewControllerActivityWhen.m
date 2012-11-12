@@ -204,11 +204,6 @@
 {
     if ([[segue identifier] isEqualToString:@"toWho"])
     {
-//        NSDate *dateFromString = [[NSDate alloc] init]; // <- non freed instance
-//        dateFromString = [dateFormatter dateFromString:<NSString containing date>];
-//        activity.startDate = self.startDate;
-//        activity.endDate = self.endDate;
-        
         ViewControllerActivityWho *vc = [segue destinationViewController];
         
         [vc setActivity:activity];

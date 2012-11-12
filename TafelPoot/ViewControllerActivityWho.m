@@ -66,6 +66,11 @@
     [self.imagePreview setImage:activity.image];
     
     serverConn.delegate = self;
+    
+    if (activity.image == nil)
+    {
+        self.imagePreview.image = [UIImage imageNamed:@"no_image"];
+    }
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -179,7 +184,7 @@
 {
     //The posting of the activity is done
 	hud.mode = MBProgressHUDModeCustomView;
-    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Cross.png"]] ;
 	hud.labelText = @"Mislukt";
     
     //Remove the spinner after a  delay

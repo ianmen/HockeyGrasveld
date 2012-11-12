@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0091C30B165125CB0092F776 /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0091C309165125CB0092F776 /* no_image.png */; };
+		0091C30C165125CB0092F776 /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0091C30A165125CB0092F776 /* no_image@2x.png */; };
 		00CE133B16380A3800173D2F /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE133A16380A3800173D2F /* ServerConnection.m */; };
 		00DB89F9163800F100512046 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB89F6163800F100512046 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		00E3D8ED1636A7EA00F46A68 /* ViewControllerActivityWhere.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EC1636A7EA00F46A68 /* ViewControllerActivityWhere.m */; };
@@ -122,6 +124,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0091C309165125CB0092F776 /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
+		0091C30A165125CB0092F776 /* no_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_image@2x.png"; sourceTree = "<group>"; };
 		00CE133916380A3800173D2F /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		00CE133A16380A3800173D2F /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		00DB89F5163800F100512046 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 		99DBD6F11635573900727B94 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				0091C309165125CB0092F776 /* no_image.png */,
+				0091C30A165125CB0092F776 /* no_image@2x.png */,
 				9954018D1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png */,
 				9954018E1651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png */,
 				998A1D74164A4E090079EF15 /* category icons */,
@@ -697,6 +703,8 @@
 				1B33139616510EDF003E4781 /* 37x-Cross.png in Resources */,
 				9954018F1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png in Resources */,
 				995401901651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png in Resources */,
+				0091C30B165125CB0092F776 /* no_image.png in Resources */,
+				0091C30C165125CB0092F776 /* no_image@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
