@@ -8,11 +8,12 @@
 
 #import "ViewControllerActivityWhere.h"
 #import "ViewControllerActivityWhen.h"
+#import "ViewControllerActivityWhat.h"
 #import "Activity.h"
 
 @interface ViewControllerActivityWhere ()
 {
-    Activity *activity;
+    //Activity *activity;
 }
 @end
 
@@ -22,6 +23,7 @@
 @synthesize streetField = _streetField, cityField = _cityField, fetchCoordinatesButton = _fetchCoordinatesButton;
 
 @synthesize longitude, latitude;
+@synthesize activity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -163,10 +165,10 @@
         
         [vc setActivity:activity];
     } else if ([[segue identifier] isEqualToString:@"toWhat"]) {
-        activity.address_city = [self.cityField.text copy];
-        activity.address_street = [self.streetField.text copy];
+        activity.address_city = @"";
+        activity.address_street = @"";
         
-        ViewControllerActivityWhen *vc = [segue destinationViewController];
+        ViewControllerActivityWhat *vc = [segue destinationViewController];
         
         [vc setActivity:activity];
     }
@@ -229,7 +231,8 @@
              self.longitude = locationManager.location.coordinate.longitude;
              self.latitude = locationManager.location.coordinate.latitude;
              
-             //NSLog(@"%f", longitude);
+             NSLog(@"%f", longitude);
+             NSLog(@"%f", latitude);
          }
          
      }];
@@ -447,8 +450,13 @@
                  self.streetField.text = [NSString stringWithFormat:@"%@", street];
                  self.cityField.text = [NSString stringWithFormat:@"%@", city];
                  
-                 self.longitude = coordinate.latitude;
+                 self.longitude = coordinate.longitude;
                  self.latitude = coordinate.latitude;
+                 
+                 NSLog(@"%f", longitude);
+                 NSLog(@"%f", latitude);
+                 
+                 
              }
              
              

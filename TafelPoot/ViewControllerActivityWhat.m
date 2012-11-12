@@ -25,7 +25,7 @@
 @implementation ViewControllerActivityWhat
 {
 
-    Activity *activity;
+    //Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
     UIImage *imageDone;
@@ -34,6 +34,7 @@
 
 @synthesize imageView;
 @synthesize picker;
+@synthesize activity;
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
 
@@ -77,6 +78,12 @@
         self.category.text = activity.category;
         self.tags.text = activity.tags;
         self.description.text = activity.activityDescription;
+        
+        if (activity.image != nil)
+        {
+            self.imageView.image = activity.image;
+        }
+        
     } else {
         activity = [[Activity alloc] init];
     }
@@ -116,7 +123,8 @@
     
     if( [self.name.text length] == 0 ) [errors addObject:@"Naam"];
     if( [self.category.text length] == 0 ) [errors addObject:@"Categorie"];
-    if( [self.tags.text length] == 0 ) [errors addObject:@"Tags"];
+    // 12-11-2012 - Stan - Niet meer verplicht
+    //if( [self.tags.text length] == 0 ) [errors addObject:@"Tags"];
     if( [self.description.text length] == 0 ) {
         [errors addObject:@"Beschrijving"];
     } else if( [self.description.text isEqualToString: placeholder] ) {
@@ -235,7 +243,7 @@
     if ( [self.category.text isEqualToString: @"Muziek"] ) {
         icon = [UIImage imageNamed:@"categoryIcon_music.png"];
     } else if ( [self.category.text isEqualToString: @"Sport"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_sport.png"];
+        icon = [UIImage imageNamed:@"categoryIcon_Sport.png"];
     } else if ( [self.category.text isEqualToString: @"Eten"] ) {
         icon = [UIImage imageNamed:@"categoryIcon_food.png"];
     } else if ( [self.category.text isEqualToString: @"Reizen"] ) {
