@@ -38,6 +38,7 @@
 @synthesize customInput = _customInput;
 
 
+
 - (IBAction)photoDone:(id)sender {
     
     //[imageView becomeFirstResponder];
@@ -219,6 +220,7 @@
     
 }
 
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     //Did cancel the picker
@@ -369,6 +371,8 @@
     //remove the spinner from the view
     [hud hide:YES afterDelay:4];
 }
+
+// toetsenbord focus weg
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [self.name resignFirstResponder];
     [self.tags resignFirstResponder];
