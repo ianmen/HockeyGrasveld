@@ -14,9 +14,12 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *startDate;
 @property (strong, nonatomic) IBOutlet UILabel *endDate;
+@property (strong, nonatomic) Activity *activity;
 
 - (IBAction)beginTijd:(id)sender;
 - (IBAction)eindTijd:(id)sender;
+
+- (IBAction)back:(id)sender;
 
 - (void)setActivity:(Activity*)currentActivity;
 

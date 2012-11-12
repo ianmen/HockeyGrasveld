@@ -18,13 +18,15 @@
 
 @interface ViewControllerActivityWho ()
 {
-    Activity *activity;
+    //Activity *activity;
     ServerConnection *serverConn;
     MBProgressHUD *hud;
 }
 @end
 
 @implementation ViewControllerActivityWho
+
+@synthesize activity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -177,6 +179,7 @@
 {
     //The posting of the activity is done
 	hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
 	hud.labelText = @"Mislukt";
     
     //Remove the spinner after a  delay

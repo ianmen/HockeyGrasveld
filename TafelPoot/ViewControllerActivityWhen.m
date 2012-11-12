@@ -8,11 +8,12 @@
 
 #import "ViewControllerActivityWhen.h"
 #import "ViewControllerActivityWho.h"
+#import "ViewControllerActivityWhere.h"
 #import "Activity.h"
 
 @interface ViewControllerActivityWhen ()
 {
-    Activity *activity;
+    //Activity *activity;
 }
 @end
 
@@ -26,6 +27,7 @@
 
 @synthesize startDate;
 @synthesize endDate;
+@synthesize activity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +50,7 @@
     if( [activity.endTime length] > 0 ) {
         self.endDate.text = activity.endTime;
     }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,6 +146,9 @@
     [self actionSheet2];
 }
 
+- (IBAction)back:(id)sender {
+}
+
 - (void)setActivity:(Activity*)currentActivity
 {
     activity = currentActivity;
@@ -208,11 +214,11 @@
         [vc setActivity:activity];
     } else if ([[segue identifier] isEqualToString:@"toWhere"])
     {
-//        activity.startDate = [self.startDate];
-//        activity.endDate = [self.endDate ];
+        activity.startDate = nil;
+        activity.endDate = nil;
         
-        ViewControllerActivityWho *vc = [segue destinationViewController];
-        
+        ViewControllerActivityWhere *vc = [segue destinationViewController];
+
         [vc setActivity:activity];
     }
 }

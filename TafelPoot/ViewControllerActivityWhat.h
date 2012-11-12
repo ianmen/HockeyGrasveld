@@ -37,6 +37,8 @@ CGRect keyboardFrame;
 @property (nonatomic, retain) IBOutlet UIDatePicker *customInput;
 @property (strong, nonatomic) IBOutlet UIView *pickerView;
 @property (strong, nonatomic) IBOutlet UIImageView *category_icon;
+@property (strong, nonatomic) Activity *activity;
+
 - (IBAction)selectCategoryFromPicker:(id)sender;
 
 - (IBAction)addPhoto:(id)sender;

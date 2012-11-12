@@ -25,7 +25,7 @@
 @implementation ViewControllerActivityWhat
 {
 
-    Activity *activity;
+    //Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
     UIImage *imageDone;
@@ -34,6 +34,7 @@
 
 @synthesize imageView;
 @synthesize picker;
+@synthesize activity;
 @synthesize accessoryView = _accessoryView;
 @synthesize customInput = _customInput;
 

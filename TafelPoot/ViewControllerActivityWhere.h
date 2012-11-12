@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *fetchCoordinatesButton;
 @property (weak, nonatomic) IBOutlet UIButton *locationNowButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapKit;
+@property (strong, nonatomic) Activity *activity;
 - (IBAction)locationNow:(id)sender;
 - (IBAction)fetchCoordinates:(id)sender;
 
