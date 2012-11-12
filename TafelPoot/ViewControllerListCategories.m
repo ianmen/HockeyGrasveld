@@ -22,7 +22,9 @@
 
 @implementation ViewControllerListCategories {
     MBProgressHUD *hud;
+    MBProgressHUD *hud2;
     CLLocationManager *locationManager;
+    bool locating;
  
  
 }
@@ -202,6 +204,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    locating = YES;
+    
     [self updateDB];
     
 }
@@ -216,8 +220,10 @@
 -(void)updateDB {
     
     //Method for refreshing the database
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Laden";
+    hud2 = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud2.labelText = @"Laden";
+    
+    locating = NO;
     
     //Set the notifcation
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -236,14 +242,16 @@
 -(void)updateDone {
     
     //Remove the spinner after a  delay
-    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
-	hud.mode = MBProgressHUDModeCustomView;
-	hud.labelText = @"Voltooid";
+    hud2.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
+	hud2.mode = MBProgressHUDModeCustomView;
+	hud2.labelText = @"Voltooid";
+    
+    locating = YES;
     
     //Update the list
     [self updateList];
                      
-    [hud hide:YES afterDelay:2];
+    [hud2 hide:YES afterDelay:2];
     
 }
 
@@ -293,8 +301,10 @@
         locationManager.delegate = self;
         [locationManager startUpdatingLocation];
         
+        if(locating){
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"Locating";
+        }
 
         backButton.hidden = YES;
     }
@@ -475,10 +485,10 @@
             act = [alphabeticMutableArray objectAtIndex: p.row];
         }
         else if (currentArray == @"distance") {
-            act = [distanceMutableArray objectAtIndex: p.row];
+            act = [alphabeticMutableArray objectAtIndex: p.row];
         }
         else if (currentArray == @"time") {
-            act = [timeMutableArray objectAtIndex: p.row];
+            act = [alphabeticMutableArray objectAtIndex: p.row];
         }
         else if (currentArray == @"selectedCategory") {
             act = [selectedCategoryMutableArray objectAtIndex: p.row];
