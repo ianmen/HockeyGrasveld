@@ -346,17 +346,16 @@
         mediaUI.delegate = (id)self;
         
         [self presentViewController: mediaUI animated:YES completion:nil];
-	} else if (buttonIndex == 2) {
-		
+	} else if (buttonIndex == 2)
+    {
         //Display the camera capture tool
         UIImagePickerController * picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        [self presentModalViewController:picker animated:YES];
     }
-    
-    //[self presentModalViewController:picker animated:YES];
-    
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -367,6 +366,10 @@
         imageView.image = nil;
     }
 }
+
+
+
+
 
 -(void)uploadingDone{
     
