@@ -104,6 +104,14 @@
     }
     else if (currentArray == @"distance") {
         Title = [distanceMutableArray objectAtIndex:indexPath.row];
+        
+        //See the name of the activity
+        ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Sett the image
+        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else if (currentArray == @"time") {
         
@@ -266,6 +274,14 @@
         
         //TODO : if switch if the device is an iphony
         
+        //Get the current location
+        // Hier zijn we nu
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; // 100 m
+        [locationManager startUpdatingLocation];
+        CLLocationCoordinate2D usercoord = locationManager.location.coordinate;
+        
         //Time to update each item on the distance
         
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
@@ -273,6 +289,36 @@
         for(ActivityCD *aCD in fetchedObjects){
             
                 //Update each and every one of them
+            
+            /// Waar gaan we heen?
+            CLLocationCoordinate2D annocoord;
+            
+            NSLog(@"%@", aCD.latitude);
+            NSLog(@"%@", aCD.longitude);
+
+            annocoord.latitude = [aCD.latitude doubleValue];
+            annocoord.longitude =  [aCD.longitude doubleValue];
+            
+            // www.ikkanrekenen.nl
+            static const double DEG_TO_RAD = 0.017453292519943295769236907684886;
+            static const double EARTH_RADIUS_IN_METERS = 6372797.560856;
+            
+            double latitudeArc  = (annocoord.latitude - usercoord.latitude) * DEG_TO_RAD;
+            double longitudeArc = (annocoord.longitude - usercoord.longitude) * DEG_TO_RAD;
+            double latitudeH = sin(latitudeArc * 0.5);
+            
+            latitudeH *= latitudeH;
+            double lontitudeH = sin(longitudeArc * 0.5);
+            
+            lontitudeH *= lontitudeH;
+            double tmp = cos(annocoord.latitude*DEG_TO_RAD) * cos(annocoord.latitude*DEG_TO_RAD);
+            
+            double afstand = EARTH_RADIUS_IN_METERS * 2.0 * asin(sqrt(latitudeH + tmp*lontitudeH));
+            int distance = (int)afstand;
+            
+            // We loggen de afstand
+            
+            NSLog(@"DIST: %d meter", distance );
             
         }
         
