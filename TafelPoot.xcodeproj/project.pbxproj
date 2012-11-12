@@ -18,6 +18,9 @@
 		13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FD816380CA5001D3EB9 /* CoreLocation.framework */; };
 		13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FDB16380CAB001D3EB9 /* MapKit.framework */; };
 		1B3313871651054F003E4781 /* Back-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3313861651054F003E4781 /* Back-Button.png */; };
+		1B33139016510DB2003E4781 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B33138F16510DB2003E4781 /* 37x-Checkmark.png */; };
+		1B33139416510EA4003E4781 /* 37x-Cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B33139316510EA4003E4781 /* 37x-Cross@2x.png */; };
+		1B33139616510EDF003E4781 /* 37x-Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B33139516510EDF003E4781 /* 37x-Cross.png */; };
 		1B5554CB164A894A00075F4B /* raadplegen_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554CA164A894A00075F4B /* raadplegen_icon.png */; };
 		1B5554D9164A94AE00075F4B /* backgroundAfstand.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554D0164A94AE00075F4B /* backgroundAfstand.png */; };
 		1B5554DA164A94AE00075F4B /* backgroundAfstand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5554D1164A94AE00075F4B /* backgroundAfstand@2x.png */; };
@@ -139,6 +142,9 @@
 		13B86FD816380CA5001D3EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		13B86FDB16380CAB001D3EB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1B3313861651054F003E4781 /* Back-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Button.png"; sourceTree = "<group>"; };
+		1B33138F16510DB2003E4781 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		1B33139316510EA4003E4781 /* 37x-Cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Cross@2x.png"; sourceTree = "<group>"; };
+		1B33139516510EDF003E4781 /* 37x-Cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Cross.png"; sourceTree = "<group>"; };
 		1B5554CA164A894A00075F4B /* raadplegen_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raadplegen_icon.png; sourceTree = "<group>"; };
 		1B5554D0164A94AE00075F4B /* backgroundAfstand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundAfstand.png; sourceTree = "<group>"; };
 		1B5554D1164A94AE00075F4B /* backgroundAfstand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundAfstand@2x.png"; sourceTree = "<group>"; };
@@ -380,8 +386,11 @@
 				00E0F0EF1636CDB20064C35F /* GDataXMLNode.m */,
 				00E0F0E61636C94D0064C35F /* ServerConnection.h */,
 				00E0F0E71636C94D0064C35F /* ServerConnection.m */,
+				1B33138F16510DB2003E4781 /* 37x-Checkmark.png */,
 				6073C0E01636A82700BB9363 /* 37x-Checkmark.png */,
 				6073C0E11636A82700BB9363 /* 37x-Checkmark@2x.png */,
+				1B33139516510EDF003E4781 /* 37x-Cross.png */,
+				1B33139316510EA4003E4781 /* 37x-Cross@2x.png */,
 				6073C0D71636A36800BB9363 /* MBProgressHUD.h */,
 				6073C0D81636A36800BB9363 /* MBProgressHUD.m */,
 			);
@@ -677,6 +686,9 @@
 				1B55555F164D38DA00075F4B /* iconEnd.png in Resources */,
 				1B555560164D38DA00075F4B /* iconStart.png in Resources */,
 				1B3313871651054F003E4781 /* Back-Button.png in Resources */,
+				1B33139016510DB2003E4781 /* 37x-Checkmark.png in Resources */,
+				1B33139416510EA4003E4781 /* 37x-Cross@2x.png in Resources */,
+				1B33139616510EDF003E4781 /* 37x-Cross.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
