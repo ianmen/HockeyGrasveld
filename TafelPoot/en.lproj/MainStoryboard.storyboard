@@ -1134,6 +1134,30 @@
             </objects>
             <point key="canvasLocation" x="1839" y="-356"/>
         </scene>
+        <!--View Controller Activity Map-->
+        <scene sceneID="bbi-DY-5iO">
+            <objects>
+                <viewController id="7um-hX-gTQ" customClass="ViewControllerActivityMap" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o7R-Mt-7XI">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XjF-qo-1NG"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XjF-qo-1NG" firstAttribute="leading" secondItem="o7R-Mt-7XI" secondAttribute="leading" type="default" id="SXV-zC-sQ6"/>
+                            <constraint firstItem="XjF-qo-1NG" firstAttribute="bottom" secondItem="o7R-Mt-7XI" secondAttribute="bottom" type="default" id="eCz-J3-ZAw"/>
+                            <constraint firstItem="XjF-qo-1NG" firstAttribute="top" secondItem="o7R-Mt-7XI" secondAttribute="top" type="default" id="jgB-8u-bfl"/>
+                            <constraint firstItem="XjF-qo-1NG" firstAttribute="trailing" secondItem="o7R-Mt-7XI" secondAttribute="trailing" type="default" id="tWf-h7-q5n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F5h-Kf-y9K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFS-DI-DEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="242"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OeL-JU-aQ0">
             <objects>

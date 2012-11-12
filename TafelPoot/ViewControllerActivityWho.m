@@ -54,7 +54,7 @@
     self.tags.text = [activity.tags copy];
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM yyyy"];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     
     NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
     [timeFormatter setDateFormat:@"HH:mm"];
