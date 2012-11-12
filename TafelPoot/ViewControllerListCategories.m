@@ -485,10 +485,10 @@
             act = [alphabeticMutableArray objectAtIndex: p.row];
         }
         else if (currentArray == @"distance") {
-            act = [distanceMutableArray objectAtIndex: p.row];
+            act = [alphabeticMutableArray objectAtIndex: p.row];
         }
         else if (currentArray == @"time") {
-            act = [timeMutableArray objectAtIndex: p.row];
+            act = [alphabeticMutableArray objectAtIndex: p.row];
         }
         else if (currentArray == @"selectedCategory") {
             act = [selectedCategoryMutableArray objectAtIndex: p.row];
