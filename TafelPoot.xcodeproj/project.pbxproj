@@ -92,6 +92,7 @@
 		9950F30E16426B2C00F60838 /* photo_upload_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9950F30D16426B2C00F60838 /* photo_upload_button.png */; };
 		9954018F1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9954018D1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png */; };
 		995401901651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9954018E1651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png */; };
+		9954019C1651202F00EB3198 /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954019B1651202F00EB3198 /* MapViewAnnotation.m */; };
 		998A1D6B164A4E060079EF15 /* categoryIcon_building.png in Resources */ = {isa = PBXBuildFile; fileRef = 998A1D63164A4E060079EF15 /* categoryIcon_building.png */; };
 		998A1D6C164A4E060079EF15 /* categoryIcon_food.png in Resources */ = {isa = PBXBuildFile; fileRef = 998A1D64164A4E060079EF15 /* categoryIcon_food.png */; };
 		998A1D6D164A4E060079EF15 /* categoryIcon_games.png in Resources */ = {isa = PBXBuildFile; fileRef = 998A1D65164A4E060079EF15 /* categoryIcon_games.png */; };
@@ -229,6 +230,8 @@
 		9950F30D16426B2C00F60838 /* photo_upload_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_upload_button.png; sourceTree = "<group>"; };
 		9954018D1651036700EB3198 /* backgroundRaadplegen_locatie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundRaadplegen_locatie@2x.png"; sourceTree = "<group>"; };
 		9954018E1651036700EB3198 /* backgroundRaadplegen_overzicht@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundRaadplegen_overzicht@2x.png"; sourceTree = "<group>"; };
+		9954019A1651202E00EB3198 /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		9954019B1651202F00EB3198 /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		998A1D63164A4E060079EF15 /* categoryIcon_building.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_building.png; sourceTree = "<group>"; };
 		998A1D64164A4E060079EF15 /* categoryIcon_food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_food.png; sourceTree = "<group>"; };
 		998A1D65164A4E060079EF15 /* categoryIcon_games.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categoryIcon_games.png; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				1B5554EE164BD57500075F4B /* CustomCell.m */,
 				1337F78E164BF1F9009C2AE3 /* ViewControllerViewActivity.h */,
 				1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */,
+				9954019A1651202E00EB3198 /* MapViewAnnotation.h */,
+				9954019B1651202F00EB3198 /* MapViewAnnotation.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */,
 				6015CD9D164A85B400AC9A41 /* CoreDataBreda.xcdatamodeld in Sources */,
 				6015CDA0164A8C0100AC9A41 /* ActivityCD.m in Sources */,
+				9954019C1651202F00EB3198 /* MapViewAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
