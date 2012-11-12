@@ -12,6 +12,7 @@
 #import "Twitter/TWTweetComposeViewController.h"
 #import "FacebookViewController.h"
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 #import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/CALayer.h>
 
@@ -19,6 +20,7 @@
 {
     Activity *activity;
     ServerConnection *serverConn;
+    MBProgressHUD *hud;
 }
 @end
 
@@ -42,13 +44,22 @@
     serverConn = [[ServerConnection alloc] init];
     
     self.imagePreview.layer.masksToBounds = YES;
-    self.imagePreview.layer.borderColor = [UIColor blackColor].CGColor;
-    self.imagePreview.layer.borderWidth = 1;
-    
+    self.imagePreview.layer.borderColor = [UIColor redColor].CGColor;
+    self.imagePreview.layer.borderWidth = 2;
     
     self.activityName.text = [activity.activityName copy];
     self.category.text = [activity.category copy];
     self.tags.text = [activity.tags copy];
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM yyyy"];
+    
+    NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [timeFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
+
+    self.startDate.text = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.startDate],[timeFormatter stringFromDate:activity.startDate]];
+    self.endDate.text = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.endDate],[timeFormatter stringFromDate:activity.endDate]];
     self.location.text = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
     [self.imagePreview setImage:activity.image];
     
@@ -121,6 +132,13 @@
 }
 
 -(void)serverResponse {
+    if (serverConn.responseCode == 200)
+    {
+        [self postingDone];
+    } else {
+        [self postingFailed];
+    }
+    
     self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
 }
 
@@ -137,8 +155,36 @@
 
 - (IBAction)finished:(id)sender
 {
+    //Load the spinner
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Toevoegen";
+
     [serverConn xmlPostActivity:activity];
 }
+
+-(void)postingDone
+{
+    //The posting of the activity is done
+	hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
+	hud.labelText = @"Toegevoegd";
+    
+    //Remove the spinner after a  delay
+    [hud hide:YES afterDelay:2];
+}
+
+-(void)postingFailed
+{
+    //The posting of the activity is done
+	hud.mode = MBProgressHUDModeCustomView;
+	hud.labelText = @"Mislukt";
+    
+    //Remove the spinner after a  delay
+    [hud hide:YES afterDelay:2];
+}
+
+
+
 //-(void)serverResponse {
 //    self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
 //    

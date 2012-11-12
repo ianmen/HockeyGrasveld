@@ -19,6 +19,7 @@
     NSString *responseString;
     NSString *responseStatus;
     NSData *responseData;
+    NSString *urlString;
 }
 
 @synthesize delegate;
@@ -229,7 +230,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     for (ActivityCD *Acd in fetchedObjects2){
         
         //Debug test
-//        NSLog(@"%@", Acd.activityName);
+        NSLog(@"%@", Acd.activityName);
 //        NSLog(@"%@",Acd.endDate);
 //        NSLog(@"%@", Acd.address_city);
 //        NSLog(@"%@", Acd.longitude);
@@ -257,7 +258,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
 
 -(NSArray*)loadAllActivitiesFromDb
 {
-    //Check if the item allready is in the local database
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
                                                
@@ -340,7 +341,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSString *currentDate = [dateFormatter stringFromDate:[NSDate date]];
     
     //prepare request
-    NSString *urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
+    urlString = [NSString stringWithFormat:@"http://klanten.deictprins.nl/school/postData.php"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
@@ -399,6 +400,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     //post
     [request setHTTPBody:postBody];
     
+    
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
@@ -426,22 +428,36 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
     self.responseCode = [httpResponse statusCode];
     self.responseStatus = [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]];
-    
-    [delegate performSelector:@selector(serverResponse)];
 }
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+-(void)connection:(NSURLConnection *)connection2 didReceiveData:(NSData *)data
 {
     self.responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
+    //NSString *a =  [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
     if ([self.responseString rangeOfString:@"ERROR"].location != NSNotFound) {
         self.responseCode = 404;
+        self.responseStatus = @"";
+    } else if ([self.responseString rangeOfString:@"OK"].location != NSNotFound)
+    {
+        self.responseCode = 200;
         self.responseStatus = @"";
     }
     
     self.responseData = data;
     
-    [self parseActivities];
+   
+    NSString *url3 = connection2.originalRequest.URL.absoluteString;
+     NSLog(@"%@",url3);
+    if([url3 rangeOfString:@"postData"].location == NSNotFound){
+        
+       [self parseActivities];
+        
+    }else{
+         
+    }
+    
+  
     
     [delegate performSelector:@selector(serverResponse)];
 }

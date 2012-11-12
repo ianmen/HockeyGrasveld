@@ -7,7 +7,12 @@
 //
 
 #import "ViewControllerListCategories.h"
+#import "ViewControllerViewActivity.h"
 #import "CustomCell.h"
+#import "AppDelegate.h"
+#import "ActivityCD.h"
+#import <CoreLocation/CoreLocation.h>
+#import "ServerConnection.h"
 
 @interface ViewControllerListCategories ()
 
@@ -20,6 +25,7 @@
 @synthesize alphabeticMutableArray;
 @synthesize distanceMutableArray;
 @synthesize timeMutableArray;
+@synthesize selectedCategoryMutableArray;
 @synthesize backgroundImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,6 +43,7 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (currentArray == @"categories") {
@@ -49,7 +56,11 @@
         return [distanceMutableArray count];
     }
     else if (currentArray == @"time") {
-        return [timeMutableArray count];
+        
+        return [alphabeticMutableArray count];
+    }
+    else if (currentArray == @"selectedCategory") {
+        return [selectedCategoryMutableArray count];
     }
     else {
         return [categoriesMutableArray count];
@@ -68,32 +79,86 @@
     
     // configure your cell here...
     
-    NSString *categoryName = [categoriesMutableArray objectAtIndex:indexPath.row];
+    NSString *Title;
     
     if (currentArray == @"categories") {
-        categoryName = [categoriesMutableArray objectAtIndex:indexPath.row];
+        
+        Title = [categoriesMutableArray objectAtIndex:indexPath.row];
+        
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",Title];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        
     }
     else if (currentArray == @"alphabetic") {
-        categoryName = [alphabeticMutableArray objectAtIndex:indexPath.row];
+        
+        ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Set the image
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else if (currentArray == @"distance") {
-        categoryName = [distanceMutableArray objectAtIndex:indexPath.row];
+        Title = [distanceMutableArray objectAtIndex:indexPath.row];
     }
     else if (currentArray == @"time") {
-        categoryName = [timeMutableArray objectAtIndex:indexPath.row];
+        
+        ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Sett the image
+        NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
+
+    }
+    else if (currentArray == @"selectedCategory") {
+        ActivityCD *aCD = [selectedCategoryMutableArray objectAtIndex:indexPath.row];
+        Title = aCD.activityName;
+        
+        //Set the image
+        NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
+        cell.CategoryImage.image = [UIImage imageNamed:imageName];
     }
     else {
-        categoryName = [categoriesMutableArray objectAtIndex:indexPath.row];
+        Title = [categoriesMutableArray objectAtIndex:indexPath.row];
     }
     
-    
-    NSString *imageName = [NSString stringWithFormat:@"categoryIcon_%@.png", categoryName];
-    
-    cell.NameLabel.text = categoryName;
-    
-    cell.CategoryImage.image = [UIImage imageNamed:imageName];
+
+    cell.NameLabel.text = Title;
     
     return cell;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    // When current array is categories, detailview should not be shown. Instead load the list according to the selected category.
+    if ([identifier isEqualToString:@"showDetails"] && currentArray == @"categories") {
+        // prevent segue from occurring
+        return NO;
+    }
+    // by default perform the segue transition
+    return YES;
+}
+
+- (void)tableView:(CustomCell *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (currentArray == @"categories") {
+        CustomCell *cell = (CustomCell *)[categoryTable cellForRowAtIndexPath:indexPath];
+        currentCategory = cell.NameLabel.text;
+        
+        NSLog(@"%@", currentCategory);
+        
+        currentArray = @"selectedCategory";
+        
+        //Clean the list
+        alphabeticMutableArray = nil;
+        
+        [self updateList];
+        [categoryTable reloadData];
+    }
+    else {
+        currentCategory = nil;
+    }
 }
 
 - (void)viewDidLoad
@@ -102,38 +167,114 @@
                               @"Muziek",
                               @"Eten",
                               @"Sport",
-                              @"Kunst & Cultuur",
+                              @"Kunst en Cultuur",
                               @"Reizen",
                               @"Games",
-                              @"Natuur & Milieu",
-                              @"Gezondheid & Uiterlijk",
-                              @"Uitgaan & Evenementen",
-                              @"Foto & Film",
+                              @"Natuur en Milieu",
+                              @"Gezondheid en Uiterlijk",
+                              @"Uitgaan en Evenementen",
+                              @"Foto en Film",
                               @"Boeken",
                               @"Dieren",
-                              @"Bouwen & Ondernemen",
+                              @"Bouwen en Ondernemen",
                               nil];
     
-    alphabeticMutableArray = [[NSMutableArray alloc] initWithObjects:
-                              @"Voetballen",
-                              @"Tompoezen eten",
-                              @"Gitaarspelen op het plein",
-                              nil];
-    distanceMutableArray = [[NSMutableArray alloc] initWithObjects:
-                              @"Tompoezen eten",
-                              @"Voetballen",
-                              @"Gitaarspelen op het plein",
-                              nil];
-    timeMutableArray = [[NSMutableArray alloc] initWithObjects:
-                              @"Gitaarspelen op het plein",
-                              @"Tompoezen eten",
-                              @"Voetballen",
-                              nil];
+//    distanceMutableArray = [[NSMutableArray alloc] initWithObjects:
+//                              @"Tompoezen eten",
+//                              @"Voetballen",
+//                              @"Gitaarspelen op het plein",
+//                              nil];
+
     
     currentArray = @"categories";
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //Reload the DB
+    ServerConnection *svr = [[ServerConnection alloc] init];
+    [svr loadActivities];
+    
+    //Update the list
+    [self updateList];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+
+}
+
+//Method for updating the different lists
+-(void)updateList {
+    
+    
+    //Get the DB connection
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    //Sett the entity
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ActivityCD" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+
+    
+    if (currentArray == @"categories") {
+               
+    }
+    else if (currentArray == @"alphabetic") {
+        
+        //Load them in alphabetic
+
+        // Load all activities in an array
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"activityName" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
+ 
+    }
+    else if (currentArray == @"distance") {
+        
+        //TODO : if switch if the device is an iphony
+        
+        //Time to update each item on the distance
+        
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        for(ActivityCD *aCD in fetchedObjects){
+            
+                //Update each and every one of them
+            
+        }
+        
+    
+    }
+    else if (currentArray == @"time") {
+        
+        //Load them in Time
+        
+        // Load all activities in an array
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES selector:@selector(compare:)];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        alphabeticMutableArray = [NSArray arrayWithArray:fetchedObjects];
+
+        
+    }
+    else if (currentArray == @"selectedCategory") {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"(category LIKE[c] %@)", currentCategory];
+        [fetchRequest setPredicate:predicate];
+        
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"activityName" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        selectedCategoryMutableArray = [NSArray arrayWithArray:fetchedObjects];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -145,24 +286,73 @@
 - (IBAction)sortCategories:(id)sender {
     backgroundImage.image = [UIImage imageNamed:@"backgroundCategorie"];
     currentArray = @"categories";
+    
+    //Clean the list
+    alphabeticMutableArray = nil;
+    
+    [self updateList];
     [self.categoryTable reloadData];
 }
 
 - (IBAction)sortAlphabetic:(id)sender {
     backgroundImage.image = [UIImage imageNamed:@"backgroundAlfabetisch"];
     currentArray = @"alphabetic";
-    [self.categoryTable reloadData];
+    
+    //Clean the list
+    alphabeticMutableArray = nil;
+    
+    [self updateList];
+    [categoryTable reloadData];
 }
 
 - (IBAction)sortDistance:(id)sender {
     backgroundImage.image = [UIImage imageNamed:@"backgroundAfstand"];
     currentArray = @"distance";
+    
+    //Clean the list
+    alphabeticMutableArray = nil;
+    
+    [self updateList];
     [self.categoryTable reloadData];
 }
 
 - (IBAction)sortTime:(id)sender {
     backgroundImage.image = [UIImage imageNamed:@"backgroundTijd"];
     currentArray = @"time";
+    
+    //Clean the list
+    alphabeticMutableArray = nil;
+    
+    [self updateList];
     [self.categoryTable reloadData];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"showDetails"])
+    {
+        ViewControllerViewActivity *vc = [segue destinationViewController];
+        NSIndexPath *p = [self.categoryTable indexPathForSelectedRow];
+        
+        ActivityCD *act;
+        
+        if (currentArray == @"alphabetic") {
+            act = [alphabeticMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"distance") {
+            act = [distanceMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"time") {
+            act = [timeMutableArray objectAtIndex: p.row];
+        }
+        else if (currentArray == @"selectedCategory") {
+            act = [selectedCategoryMutableArray objectAtIndex: p.row];
+        }
+        else {
+            act = [alphabeticMutableArray objectAtIndex: p.row];
+        }
+        
+        [vc setActivity: act];
+    }
 }
 @end

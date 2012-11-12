@@ -24,6 +24,7 @@
 
 @implementation ViewControllerActivityWhat
 {
+
     Activity *activity;
     MBProgressHUD *hud;
     PhotoUploader *up;
@@ -37,6 +38,17 @@
 @synthesize customInput = _customInput;
 
 
+- (IBAction)photoDone:(id)sender {
+    
+    //[imageView becomeFirstResponder];
+	//[self.view addSubview:imageView];
+    
+    [self.name resignFirstResponder];
+    [self.tags resignFirstResponder];
+    [self.description resignFirstResponder];
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,47 +57,6 @@
         // Custom initialization
     }
     return self;
-}
-
-// naar boven schuiven annimatie
--(void)viewWillAppear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideUpView:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideDownView:) name:UIKeyboardWillHideNotification object:nil];
-}
-
--(void)slideDownView:(NSNotification*)notification
-{
-	[[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
-    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
-    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
-    
-	[UIView animateWithDuration:animationDuration
-                          delay:0.0
-                        options:animationCurve
-                     animations:^{
-                         self.view.frame = CGRectMake(0, 0, 320, 480);
-                     }
-                     completion:^(BOOL finished){
-                         NSLog(@"Slide down Done..!");
-                     }];
-}
-
--(void)slideUpView:(NSNotification*)notification
-{
-    [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
-    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
-    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
-	
-	[UIView animateWithDuration:animationDuration
-                          delay:0.0
-                        options:animationCurve
-                     animations:^{
-                         self.view.frame = CGRectMake(0, -keyboardFrame.size.height - 55, 320, 416);
-                     }
-                     completion:^(BOOL finished){
-                         NSLog(@"Slide up Done..!");
-                     }];
 }
 
 //categorie picker
@@ -296,7 +267,6 @@
 
 - (IBAction)addPhoto:(id)sender {
     
-    
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Kies uw bron" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Foto library",@"Foto camera", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:[UIApplication sharedApplication].keyWindow];
@@ -421,8 +391,12 @@
     
 }
 
+
+
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
+  
+    
     NSString *placeholder = @"Beschrijving";
     
     if( [self.description.text isEqualToString: placeholder] ) {
@@ -463,6 +437,53 @@
     self.category.text = [categories objectAtIndex:row];
 }
 
+// naar boven schuiven annimatie
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+   
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideUpView:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideDownView:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)slideDownView:(NSNotification*)notification
+{
+	[[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
+    
+	[UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurve
+                     animations:^{
+                         self.view.frame = CGRectMake(0, 0, 320, 480);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Slide down Done..!");
+                     }];
+}
+
+-(void)slideUpView:(NSNotification*)notification
+{
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[[notification userInfo] objectForKey:UIKeyboardWillShowNotification] getValue:&keyboardFrame];
+	
+	[UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurve
+                     animations:^{
+                         self.view.frame = CGRectMake(0, -keyboardFrame.size.height - 55, 320, 416);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Slide up Done..!");
+                     }];
+}
+
+
+
+ 
 
 
 

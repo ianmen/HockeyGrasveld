@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class Activity;
+@class UIAlertView;
 
 // Naar boven schuiven annimatie
 NSTimeInterval animationDuration;
@@ -21,6 +22,7 @@ CGRect keyboardFrame;
     UIButton *btnDone;
     
 }
+
 
 
 
@@ -38,5 +40,6 @@ CGRect keyboardFrame;
 - (IBAction)selectCategoryFromPicker:(id)sender;
 
 - (IBAction)addPhoto:(id)sender;
+- (IBAction)photoDone:(id)sender;
 
 @end

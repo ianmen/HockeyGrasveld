@@ -28,5 +28,6 @@
 @property (nonatomic, retain) NSString * locationDescription;
 @property (nonatomic, retain) NSString * imagePath;
 @property (nonatomic, retain) NSString * imagePathThumbnails;
+@property (nonatomic, retain) NSNumber * distance;
 
 @end
