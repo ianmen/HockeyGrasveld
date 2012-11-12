@@ -52,6 +52,7 @@
     self.activityName.text = [activity.activityName copy];
     self.category.text = [activity.category copy];
     self.tags.text = [activity.tags copy];
+    self.description.text = [activity.activityDescription copy];
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
