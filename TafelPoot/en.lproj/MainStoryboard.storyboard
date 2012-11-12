@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tw3-8c-Qr1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--View Controller - Item-->
@@ -1026,7 +1026,7 @@
                                     <constraint firstAttribute="height" constant="480" id="WkM-zg-zob"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-Z3-ImU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-Z3-ImU">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="5wk-4l-rSD"/>
                                     <constraint firstAttribute="width" constant="145" id="p2l-hx-MV9"/>
@@ -1192,6 +1192,7 @@
         <image name="categoryIcon_unknown.png" width="26" height="26"/>
         <image name="iconEnd.png" width="47" height="46"/>
         <image name="iconStart.png" width="47" height="46"/>
+        <image name="no_image.png" width="103" height="103"/>
         <image name="photo_upload_button.png" width="132" height="126"/>
         <image name="raadplegen_icon.png" width="30" height="31"/>
         <image name="toevoegen_icon.png" width="50" height="59"/>
