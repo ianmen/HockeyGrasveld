@@ -336,7 +336,7 @@
             
             
             
-            self.longitude = coordinate.latitude;
+            self.longitude = coordinate.longitude;
             self.latitude = coordinate.latitude;
             
             

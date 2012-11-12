@@ -86,7 +86,7 @@
                 
                 TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
                 // set initial text
-                [tweetViewController setInitialText:@"Ik heb net de activiteit \"...\" toegevoegd in BredApp! Check het op Facebook: https://www.facebook.com/pages/Testpagina"];
+                [tweetViewController setInitialText:@"Ik heb net de activiteit \"...\" toegevoegd in BredApp! Check het in de Bredapp op je iPhone."];
                 
                 [self presentViewController:tweetViewController animated:YES completion:nil];
             } else {
