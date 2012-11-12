@@ -231,7 +231,8 @@
              self.longitude = locationManager.location.coordinate.longitude;
              self.latitude = locationManager.location.coordinate.latitude;
              
-             //NSLog(@"%f", longitude);
+             NSLog(@"%f", longitude);
+             NSLog(@"%f", latitude);
          }
          
      }];
@@ -449,8 +450,13 @@
                  self.streetField.text = [NSString stringWithFormat:@"%@", street];
                  self.cityField.text = [NSString stringWithFormat:@"%@", city];
                  
-                 self.longitude = coordinate.latitude;
+                 self.longitude = coordinate.longitude;
                  self.latitude = coordinate.latitude;
+                 
+                 NSLog(@"%f", longitude);
+                 NSLog(@"%f", latitude);
+                 
+                 
              }
              
              

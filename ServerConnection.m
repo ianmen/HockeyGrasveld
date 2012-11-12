@@ -283,6 +283,7 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
 {
     NSDate *now = [NSDate date];
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+
     
     NSDateComponents *dateComps = [cal components:( NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
     

@@ -344,6 +344,10 @@
     
     for(ActivityCD *aCD in fetchedObjects){
         
+        
+        NSLog(@"%@", aCD.activityName);
+        NSLog(@"%@", aCD.longitude);
+        NSLog(@"%@", aCD.latitude);
         //Update each and every one of them
         CLLocationDegrees lat = [aCD.latitude doubleValue];
         CLLocationDegrees lon = [aCD.longitude doubleValue];
