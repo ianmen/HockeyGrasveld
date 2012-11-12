@@ -1192,9 +1192,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Mtm-3t-PSv" kind="relationship" relationship="viewControllers" id="OUy-Ir-lt3"/>
                         <segue destination="aCT-sw-NEt" kind="relationship" relationship="viewControllers" id="tyS-SK-eYP"/>
                         <segue destination="oVq-kz-Xoi" kind="relationship" relationship="viewControllers" id="FXb-Nw-I4Z"/>
+                        <segue destination="Mtm-3t-PSv" kind="relationship" relationship="viewControllers" id="OUy-Ir-lt3"/>
                         <segue destination="aKz-Bf-QHr" kind="relationship" relationship="viewControllers" id="TvC-3v-w3G"/>
                     </connections>
                 </tabBarController>
@@ -1244,6 +1244,12 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewControllerActivityMap" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityMap.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
         </class>
         <class className="ViewControllerActivityWhat" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerActivityWhat.h"/>
@@ -1306,6 +1312,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewControllerListCategories.h"/>
             <relationships>
                 <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="reload:"/>
                 <relationship kind="action" name="sortAlphabetic:"/>
                 <relationship kind="action" name="sortCategories:"/>
                 <relationship kind="action" name="sortDistance:"/>
