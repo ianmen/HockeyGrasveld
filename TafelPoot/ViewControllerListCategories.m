@@ -30,7 +30,7 @@
 @synthesize categoryTable;
 @synthesize categoriesMutableArray;
 @synthesize alphabeticMutableArray;
-@synthesize distanceMutableArray;
+@synthesize distanceMutableArray; 
 @synthesize timeMutableArray;
 @synthesize selectedCategoryMutableArray;
 @synthesize backgroundImage;
