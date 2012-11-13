@@ -83,6 +83,9 @@ NSInteger FBLoggedIn = 0;
 
     [self updateDB];
     
+    //Change tint navigation bar
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:16.0/255.0 green:120.0/255.0 blue:145.0/255.0 alpha:1.0]];
+    
     return YES;
     
 }
