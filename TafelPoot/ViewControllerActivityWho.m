@@ -178,6 +178,8 @@
     
     //Remove the spinner after a  delay
     [hud hide:YES afterDelay:2];
+    
+    [self performSegueWithIdentifier: @"toActivityList" sender: self];
 }
 
 -(void)postingFailed
