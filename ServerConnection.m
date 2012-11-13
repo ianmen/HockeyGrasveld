@@ -371,10 +371,10 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     [postBody appendData:[[NSString stringWithFormat:@"</omschrijving>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:activity.startDate] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:activity.endDate] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<locatie>"] dataUsingEncoding:NSUTF8StringEncoding]];
