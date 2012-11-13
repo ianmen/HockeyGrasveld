@@ -19,7 +19,6 @@
 		1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */; };
 		13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FD816380CA5001D3EB9 /* CoreLocation.framework */; };
 		13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FDB16380CAB001D3EB9 /* MapKit.framework */; };
-		1B3313871651054F003E4781 /* Back-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B3313861651054F003E4781 /* Back-Button.png */; };
 		1B33139016510DB2003E4781 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B33138F16510DB2003E4781 /* 37x-Checkmark.png */; };
 		1B33139416510EA4003E4781 /* 37x-Cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B33139316510EA4003E4781 /* 37x-Cross@2x.png */; };
 		1B33139616510EDF003E4781 /* 37x-Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B33139516510EDF003E4781 /* 37x-Cross.png */; };
@@ -53,6 +52,7 @@
 		1B55555C164D357400075F4B /* catIconLarge_Uitgaan en Evenementen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B555556164D357000075F4B /* catIconLarge_Uitgaan en Evenementen.png */; };
 		1B55555F164D38DA00075F4B /* iconEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55555D164D38D900075F4B /* iconEnd.png */; };
 		1B555560164D38DA00075F4B /* iconStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55555E164D38D900075F4B /* iconStart.png */; };
+		1B6EBB9C1652634000A24E21 /* Back-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EBB9B1652634000A24E21 /* Back-Button.png */; };
 		1BE37A3B16429539004B214E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3A16429539004B214E /* Twitter.framework */; };
 		1BE37A3E1642954D004B214E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3D1642954D004B214E /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BE37A4016429554004B214E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE37A3F16429554004B214E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -152,7 +152,6 @@
 		1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerViewActivity.m; sourceTree = "<group>"; };
 		13B86FD816380CA5001D3EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		13B86FDB16380CAB001D3EB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		1B3313861651054F003E4781 /* Back-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Button.png"; sourceTree = "<group>"; };
 		1B33138F16510DB2003E4781 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		1B33139316510EA4003E4781 /* 37x-Cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Cross@2x.png"; sourceTree = "<group>"; };
 		1B33139516510EDF003E4781 /* 37x-Cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Cross.png"; sourceTree = "<group>"; };
@@ -188,6 +187,7 @@
 		1B555556164D357000075F4B /* catIconLarge_Uitgaan en Evenementen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catIconLarge_Uitgaan en Evenementen.png"; sourceTree = "<group>"; };
 		1B55555D164D38D900075F4B /* iconEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconEnd.png; sourceTree = "<group>"; };
 		1B55555E164D38D900075F4B /* iconStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconStart.png; sourceTree = "<group>"; };
+		1B6EBB9B1652634000A24E21 /* Back-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Button.png"; sourceTree = "<group>"; };
 		1BE37A3A16429539004B214E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		1BE37A3D1642954D004B214E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		1BE37A3F16429554004B214E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -568,7 +568,7 @@
 				1B5554D6164A94AE00075F4B /* backgroundPopulair@2x.png */,
 				1B5554D7164A94AE00075F4B /* backgroundTijd.png */,
 				1B5554D8164A94AE00075F4B /* backgroundTijd@2x.png */,
-				1B3313861651054F003E4781 /* Back-Button.png */,
+				1B6EBB9B1652634000A24E21 /* Back-Button.png */,
 				6012D4EF1637F6C100319904 /* en.lproj */,
 				6012D4F41637F6C100319904 /* icon.png */,
 				6012D4F51637F6C100319904 /* icon@2x.png */,
@@ -718,7 +718,6 @@
 				1B55555C164D357400075F4B /* catIconLarge_Uitgaan en Evenementen.png in Resources */,
 				1B55555F164D38DA00075F4B /* iconEnd.png in Resources */,
 				1B555560164D38DA00075F4B /* iconStart.png in Resources */,
-				1B3313871651054F003E4781 /* Back-Button.png in Resources */,
 				1B33139016510DB2003E4781 /* 37x-Checkmark.png in Resources */,
 				1B33139416510EA4003E4781 /* 37x-Cross@2x.png in Resources */,
 				1B33139616510EDF003E4781 /* 37x-Cross.png in Resources */,
@@ -728,6 +727,7 @@
 				0091C30C165125CB0092F776 /* no_image@2x.png in Resources */,
 				99E83A62165253AC00AEDF57 /* instellingen_icon.png in Resources */,
 				99E83A63165253AC00AEDF57 /* mijnactiviteiten_icon.png in Resources */,
+				1B6EBB9C1652634000A24E21 /* Back-Button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
