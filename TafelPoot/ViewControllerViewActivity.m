@@ -74,7 +74,9 @@
     
 	// Add the annotation to our map view
 	MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:activity.activityName andCoordinate:location];
-	[self.mapview_activityLocation addAnnotation:newAnnotation];    
+	[self.mapview_activityLocation addAnnotation:newAnnotation];
+    
+    self.mapview_activityLocation.centerCoordinate = location;
 }
 
 - (IBAction)showActivitySummary:(id)sender {
