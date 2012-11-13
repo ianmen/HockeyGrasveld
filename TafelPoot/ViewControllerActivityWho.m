@@ -86,7 +86,9 @@
                 
                 TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
                 // set initial text
-                [tweetViewController setInitialText:@"Ik heb net de activiteit \"...\" toegevoegd in BredApp! Check het in de Bredapp op je iPhone."];
+                
+                NSString *tweetMessage = [NSString stringWithFormat:@"Ik heb net de activiteit \"%@\" toegevoegd in BredApp! Check het in de Bredapp op je iPhone.", [activity.activityName copy]];
+                [tweetViewController setInitialText:tweetMessage];
                 
                 [self presentViewController:tweetViewController animated:YES completion:nil];
             } else {
