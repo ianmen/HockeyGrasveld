@@ -25,8 +25,6 @@
     MBProgressHUD *hud2;
     CLLocationManager *locationManager;
     bool locating;
- 
- 
 }
 
 @synthesize categoryTable;
@@ -133,7 +131,13 @@
         
         NSLog(@"%@",[NSString stringWithFormat:@"%i",Distance.intValue]);
         
-        cell.ExtraLabel.text = Distance;
+        if (aCD.distance.intValue < 1000) {
+            cell.ExtraLabel.text = [NSString stringWithFormat:@"%@ m", Distance];
+        }
+        else {
+            Distance = [NSString stringWithFormat:@"%.1f",aCD.distance.doubleValue/1000];
+            cell.ExtraLabel.text = [NSString stringWithFormat:@"%@ km", Distance];
+        }
     }
     else if (currentArray == @"time") {
         
@@ -280,7 +284,7 @@
     //Update the list
     [self updateList];
                      
-    [hud2 hide:YES afterDelay:2];
+    [hud2 hide:YES afterDelay:0.5];
     
 }
 
@@ -371,12 +375,9 @@
             hud.labelText = @"Geen activiteiten gevonden";
             
             //Remove the spinner after a  delay
-            [hud hide:YES afterDelay:2];
+            [hud hide:YES afterDelay:1];
             
         }
-
-        
-       
         
         backButton.hidden = NO;
     }
@@ -405,9 +406,10 @@
     
     for(ActivityCD *aCD in fetchedObjects){
 
+#warning LAT and LON are switched!
         //Update each and every one of them
-        CLLocationDegrees lat = [aCD.latitude doubleValue];
-        CLLocationDegrees lon = [aCD.longitude doubleValue];
+        CLLocationDegrees lon = [aCD.latitude doubleValue];
+        CLLocationDegrees lat = [aCD.longitude doubleValue];
 
         CLLocation *aLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
         
@@ -421,7 +423,7 @@
     
     //Update the list
     // Load all activities in an array
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:NO selector:@selector(compare:)];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES selector:@selector(compare:)];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest error:&error];
     

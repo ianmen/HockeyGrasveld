@@ -27,16 +27,18 @@
     self.textview_activityDescription.text = activity.activityDescription;
     NSString *locationString = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
     self.textview_activityLocation.text = locationString;
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"d MMMM"];
+    
+    NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
 
-    NSString *startDate_string = [NSDateFormatter localizedStringFromDate:activity.startDate
-                                                                dateStyle: NSDateFormatterShortStyle
-                                                                timeStyle:NSDateFormatterShortStyle];
+    NSString *startDate_string = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.startDate],[timeFormatter stringFromDate:activity.startDate]];
     
     
     
-    NSString *endDate_string = [NSDateFormatter localizedStringFromDate:activity.endDate
-                                                                dateStyle:NSDateFormatterShortStyle
-                                                                timeStyle:NSDateFormatterShortStyle];
+    NSString *endDate_string = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.endDate],[timeFormatter stringFromDate:activity.endDate]];
 
     self.textview_activityBeginTime.text = startDate_string;
     self.textview_activityEndTime.text = endDate_string;

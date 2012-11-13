@@ -109,7 +109,7 @@
     NSDate *date = pickerView.date;
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"d MMMM HH:mm"];
     NSString *dateString = [dateFormatter stringFromDate:date];
     
     startDate.text = dateString;
@@ -124,7 +124,7 @@
     NSDate *date = pickerView.date;
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"d MMMM HH:mm"];
     NSString *dateString = [dateFormatter stringFromDate:date];
     
     endDate.text = dateString;
