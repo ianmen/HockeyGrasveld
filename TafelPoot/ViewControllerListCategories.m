@@ -91,6 +91,8 @@
     // configure your cell here...
     
     NSString *Title;
+    NSString *Distance;
+    NSString *Time;
     
     if (currentArray == @"categories") {
         
@@ -98,7 +100,9 @@
         
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",Title];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
-        
+        cell.NameLabel.hidden = NO;
+        cell.ExtraLabel.hidden = YES;
+        cell.ExtraNameLabel.hidden = YES;
     }
     else if (currentArray == @"alphabetic") {
         
@@ -108,6 +112,9 @@
         //Set the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        cell.NameLabel.hidden = NO;
+        cell.ExtraLabel.hidden = YES;
+        cell.ExtraNameLabel.hidden = YES;
     }
     else if (currentArray == @"distance") {
         Title = [distanceMutableArray objectAtIndex:indexPath.row];
@@ -115,20 +122,36 @@
         //See the name of the activity
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
+        Distance = [NSString stringWithFormat:@"%i",aCD.distance.intValue];
         
         //Sett the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        cell.NameLabel.hidden = YES;
+        cell.ExtraLabel.hidden = NO;
+        cell.ExtraNameLabel.hidden = NO;
+        
+        NSLog(@"%@",[NSString stringWithFormat:@"%i",Distance.intValue]);
+        
+        cell.ExtraLabel.text = Distance;
     }
     else if (currentArray == @"time") {
         
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
         
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"HH:mm"];
+        Time = [formatter stringFromDate:aCD.startDate];
+        
         //Sett the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
-
+        cell.NameLabel.hidden = YES;
+        cell.ExtraLabel.hidden = NO;
+        cell.ExtraNameLabel.hidden = NO;
+        
+        cell.ExtraLabel.text = Time;
     }
     else if (currentArray == @"selectedCategory") {
         ActivityCD *aCD = [selectedCategoryMutableArray objectAtIndex:indexPath.row];
@@ -137,13 +160,19 @@
         //Set the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        cell.NameLabel.hidden = NO;
+        cell.ExtraLabel.hidden = YES;
+        cell.ExtraNameLabel.hidden = YES;
     }
     else {
         Title = [categoriesMutableArray objectAtIndex:indexPath.row];
     }
     
-
-    cell.NameLabel.text = Title;
+    if (cell.NameLabel.hidden == NO) {
+        cell.NameLabel.text = Title;
+    } else {
+        cell.ExtraNameLabel.text = Title;
+    }
     
     return cell;
 }
