@@ -349,11 +349,11 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
-    
+
     //set headers
     NSString *contentType = [NSString stringWithFormat:@"text/xml"];
     [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
-    
+
     //create the body
     NSMutableData *postBody = [NSMutableData data];
     [postBody appendData:[[NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>"] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -371,10 +371,10 @@ NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:req delegate:sel
     [postBody appendData:[[NSString stringWithFormat:@"</omschrijving>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:[dateFormatter stringFromDate:activity.startDate]] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</begindatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [postBody appendData:[[NSString stringWithFormat:currentDate] dataUsingEncoding: NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:[dateFormatter stringFromDate:activity.endDate]] dataUsingEncoding: NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</einddatum>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"</datumtijd>"] dataUsingEncoding:NSUTF8StringEncoding]];
     [postBody appendData:[[NSString stringWithFormat:@"<locatie>"] dataUsingEncoding:NSUTF8StringEncoding]];

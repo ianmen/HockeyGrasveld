@@ -195,7 +195,10 @@
     [hud hide:YES afterDelay:2];
 }
 
-
+- (void)viewDidUnload
+{
+    activity = nil;
+}
 
 //-(void)serverResponse {
 //    self.xmlStatusResponse.text = [NSString stringWithFormat:@"Response code: %d (%@)", serverConn.responseCode, serverConn.responseStatus];
