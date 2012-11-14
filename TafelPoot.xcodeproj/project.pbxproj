@@ -15,7 +15,6 @@
 		00E3D8F01636A80E00F46A68 /* ViewControllerActivityWhen.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D8EF1636A80E00F46A68 /* ViewControllerActivityWhen.m */; };
 		00E3D9041636AA1C00F46A68 /* ViewControllerActivityWhat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */; };
 		00E3D90A1636AAB800F46A68 /* ViewControllerActivityWho.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */; };
-		13044D55164CF8E600859E7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13044D54164CF8E600859E7E /* Default-568h@2x.png */; };
 		1337F790164BF1F9009C2AE3 /* ViewControllerViewActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */; };
 		13B86FD916380CA5001D3EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FD816380CA5001D3EB9 /* CoreLocation.framework */; };
 		13B86FDC16380CAB001D3EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B86FDB16380CAB001D3EB9 /* MapKit.framework */; };
@@ -147,7 +146,6 @@
 		00E3D9031636AA1C00F46A68 /* ViewControllerActivityWhat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWhat.m; sourceTree = "<group>"; };
 		00E3D9081636AAB800F46A68 /* ViewControllerActivityWho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerActivityWho.h; sourceTree = "<group>"; };
 		00E3D9091636AAB800F46A68 /* ViewControllerActivityWho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerActivityWho.m; sourceTree = "<group>"; };
-		13044D54164CF8E600859E7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		1337F78E164BF1F9009C2AE3 /* ViewControllerViewActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerViewActivity.h; sourceTree = "<group>"; };
 		1337F78F164BF1F9009C2AE3 /* ViewControllerViewActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerViewActivity.m; sourceTree = "<group>"; };
 		13B86FD816380CA5001D3EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -576,7 +574,6 @@
 				99DBD6D51635572600727B94 /* background1@2x.png */,
 				99DBD6E91635573100727B94 /* Default.png */,
 				99DBD6EA1635573100727B94 /* Default@2x.png */,
-				13044D54164CF8E600859E7E /* Default-568h@2x.png */,
 				99DBD6EB1635573100727B94 /* icon.png */,
 				99DBD6EC1635573100727B94 /* icon@2x.png */,
 				99DBD6D61635572600727B94 /* backgroundWaar.png */,
@@ -700,7 +697,6 @@
 				1B5554E0164A94AE00075F4B /* backgroundTijd.png in Resources */,
 				1B5554E1164A94AE00075F4B /* backgroundTijd@2x.png in Resources */,
 				1B555505164BF22D00075F4B /* categoryIcon_Dieren.png in Resources */,
-				13044D55164CF8E600859E7E /* Default-568h@2x.png in Resources */,
 				1B555533164D2E8800075F4B /* catIconLarge_Muziek.png in Resources */,
 				1B555538164D2FCF00075F4B /* categoryIcon_Sport.png in Resources */,
 				1B555545164D345B00075F4B /* catIconLarge_Boeken.png in Resources */,
@@ -847,6 +843,7 @@
 				GCC_PREFIX_HEADER = "TafelPoot/TafelPoot-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "TafelPoot/TafelPoot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lsqlite3.0",
@@ -870,6 +867,7 @@
 				GCC_PREFIX_HEADER = "TafelPoot/TafelPoot-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "TafelPoot/TafelPoot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lsqlite3.0",
