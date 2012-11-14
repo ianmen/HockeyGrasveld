@@ -238,41 +238,7 @@
 
 - (IBAction)selectCategoryFromPicker:(id)sender {
     [self.pickerView setHidden:YES];
-    UIImage *icon;
     
-    if ( [self.category.text isEqualToString: @"Muziek"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_music.png"];
-    } else if ( [self.category.text isEqualToString: @"Sport"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_Sport.png"];
-    } else if ( [self.category.text isEqualToString: @"Eten"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_food.png"];
-    } else if ( [self.category.text isEqualToString: @"Reizen"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_travel.png"];
-    } else if ( [self.category.text isEqualToString: @"Games"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_games.png"];
-    } else if ( [self.category.text isEqualToString: @"Kunst en Cultuur"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_culture.png"];
-    } else if ( [self.category.text isEqualToString: @"Natuur en Milieu"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_nature.png"];
-    } else if ( [self.category.text isEqualToString: @"Gezondheid en Uiterlijk"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_health.png"];
-    } else if ( [self.category.text isEqualToString: @"Bouwen en Ondernemen"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_building.png"];
-    } else if ( [self.category.text isEqualToString: @"Uitgaan en Evenementen"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_events.png"];
-    } else if ( [self.category.text isEqualToString: @"Foto en Film"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_photo.png"];
-    } else if ( [self.category.text isEqualToString: @"Boeken"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_books.png"];
-    } else if ( [self.category.text isEqualToString: @"Dieren"] ) {
-        icon = [UIImage imageNamed:@"categoryIcon_animals.png"];
-    }  else {
-        icon = [UIImage imageNamed:@"categoryIcon_unknown.png"];
-    }
-    
-    
-    
-    [self.category_icon setImage:icon];
 }
 
 - (IBAction)addPhoto:(id)sender {
@@ -474,6 +440,42 @@
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.category.text = [categories objectAtIndex:row];
+    
+    UIImage *icon;
+    
+    if ( [self.category.text isEqualToString: @"Muziek"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_music.png"];
+    } else if ( [self.category.text isEqualToString: @"Sport"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_Sport.png"];
+    } else if ( [self.category.text isEqualToString: @"Eten"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_food.png"];
+    } else if ( [self.category.text isEqualToString: @"Reizen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_travel.png"];
+    } else if ( [self.category.text isEqualToString: @"Games"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_games.png"];
+    } else if ( [self.category.text isEqualToString: @"Kunst en Cultuur"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_culture.png"];
+    } else if ( [self.category.text isEqualToString: @"Natuur en Milieu"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_nature.png"];
+    } else if ( [self.category.text isEqualToString: @"Gezondheid en Uiterlijk"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_health.png"];
+    } else if ( [self.category.text isEqualToString: @"Bouwen en Ondernemen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_building.png"];
+    } else if ( [self.category.text isEqualToString: @"Uitgaan en Evenementen"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_events.png"];
+    } else if ( [self.category.text isEqualToString: @"Foto en Film"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_photo.png"];
+    } else if ( [self.category.text isEqualToString: @"Boeken"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_books.png"];
+    } else if ( [self.category.text isEqualToString: @"Dieren"] ) {
+        icon = [UIImage imageNamed:@"categoryIcon_animals.png"];
+    }  else {
+        icon = [UIImage imageNamed:@"categoryIcon_unknown.png"];
+    }
+    
+    
+    
+    [self.category_icon setImage:icon];
 }
 
 // naar boven schuiven annimatie
