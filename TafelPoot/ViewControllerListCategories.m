@@ -277,14 +277,14 @@
     //Remove the spinner after a  delay
     hud2.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
 	hud2.mode = MBProgressHUDModeCustomView;
-	hud2.labelText = @"Activiteiten ophalen voltooid";
+	hud2.labelText = @"Klaar..";
     
     locating = YES;
     
     //Update the list
     [self updateList];
                      
-    [hud2 hide:YES afterDelay:0.5];
+    [hud2 hide:YES afterDelay:0.3];
     
 }
 
