@@ -42,14 +42,13 @@
 
     self.textview_activityBeginTime.text = startDate_string;
     self.textview_activityEndTime.text = endDate_string;
-    NSLog(@"%@", activity.imagePath);
     
-    if( [activity.imagePath length] > 0 ) {
-        NSURL *img_url = [NSURL URLWithString:activity.imagePath];
-        NSData *img_data = [NSData dataWithContentsOfURL:img_url];
-        UIImage *image = [[UIImage alloc] initWithData: img_data];
-        
-        [self.img_activityImage setImage:image];
+    if( [activity.imagePath length] > 0 && ([activity.imagePath isEqualToString:@"NO_IMAGE"] == NO) ) {
+            NSURL *img_url = [NSURL URLWithString:activity.imagePath];
+            NSData *img_data = [NSData dataWithContentsOfURL:img_url];
+            UIImage *image = [[UIImage alloc] initWithData: img_data];
+            
+            [self.img_activityImage setImage:image];
     }
 }
 
