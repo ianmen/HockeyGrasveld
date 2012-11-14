@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *NameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *CategoryImage;
+@property (strong, nonatomic) IBOutlet UILabel *ExtraLabel;
+@property (strong, nonatomic) IBOutlet UILabel *ExtraNameLabel;
 
 @end

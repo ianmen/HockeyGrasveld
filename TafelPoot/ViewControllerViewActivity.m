@@ -27,27 +27,28 @@
     self.textview_activityDescription.text = activity.activityDescription;
     NSString *locationString = [NSString stringWithFormat:@"%@, %@", activity.address_street, activity.address_city];
     self.textview_activityLocation.text = locationString;
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"d MMMM"];
+    
+    NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
 
-    NSString *startDate_string = [NSDateFormatter localizedStringFromDate:activity.startDate
-                                                                dateStyle: NSDateFormatterShortStyle
-                                                                timeStyle:NSDateFormatterShortStyle];
+    NSString *startDate_string = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.startDate],[timeFormatter stringFromDate:activity.startDate]];
     
     
     
-    NSString *endDate_string = [NSDateFormatter localizedStringFromDate:activity.endDate
-                                                                dateStyle:NSDateFormatterShortStyle
-                                                                timeStyle:NSDateFormatterShortStyle];
+    NSString *endDate_string = [NSString stringWithFormat:@"%@, %@", [dateFormatter stringFromDate:activity.endDate],[timeFormatter stringFromDate:activity.endDate]];
 
     self.textview_activityBeginTime.text = startDate_string;
     self.textview_activityEndTime.text = endDate_string;
-    NSLog(@"%@", activity.imagePath);
     
-    if( [activity.imagePath length] > 0 ) {
-        NSURL *img_url = [NSURL URLWithString:activity.imagePath];
-        NSData *img_data = [NSData dataWithContentsOfURL:img_url];
-        UIImage *image = [[UIImage alloc] initWithData: img_data];
-        
-        [self.img_activityImage setImage:image];
+    if( [activity.imagePath length] > 0 && ([activity.imagePath isEqualToString:@"NO_IMAGE"] == NO) ) {
+            NSURL *img_url = [NSURL URLWithString:activity.imagePath];
+            NSData *img_data = [NSData dataWithContentsOfURL:img_url];
+            UIImage *image = [[UIImage alloc] initWithData: img_data];
+            
+            [self.img_activityImage setImage:image];
     }
 }
 
@@ -74,7 +75,9 @@
     
 	// Add the annotation to our map view
 	MapViewAnnotation *newAnnotation = [[MapViewAnnotation alloc] initWithTitle:activity.activityName andCoordinate:location];
-	[self.mapview_activityLocation addAnnotation:newAnnotation];    
+	[self.mapview_activityLocation addAnnotation:newAnnotation];
+    
+    self.mapview_activityLocation.centerCoordinate = location;
 }
 
 - (IBAction)showActivitySummary:(id)sender {

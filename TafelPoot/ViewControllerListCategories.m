@@ -25,8 +25,6 @@
     MBProgressHUD *hud2;
     CLLocationManager *locationManager;
     bool locating;
- 
- 
 }
 
 @synthesize categoryTable;
@@ -91,6 +89,8 @@
     // configure your cell here...
     
     NSString *Title;
+    NSString *Distance;
+    NSString *Time;
     
     if (currentArray == @"categories") {
         
@@ -98,7 +98,9 @@
         
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",Title];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
-        
+        cell.NameLabel.hidden = NO;
+        cell.ExtraLabel.hidden = YES;
+        cell.ExtraNameLabel.hidden = YES;
     }
     else if (currentArray == @"alphabetic") {
         
@@ -108,6 +110,9 @@
         //Set the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        cell.NameLabel.hidden = NO;
+        cell.ExtraLabel.hidden = YES;
+        cell.ExtraNameLabel.hidden = YES;
     }
     else if (currentArray == @"distance") {
         Title = [distanceMutableArray objectAtIndex:indexPath.row];
@@ -115,20 +120,42 @@
         //See the name of the activity
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
+        Distance = [NSString stringWithFormat:@"%i",aCD.distance.intValue];
         
         //Sett the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        cell.NameLabel.hidden = YES;
+        cell.ExtraLabel.hidden = NO;
+        cell.ExtraNameLabel.hidden = NO;
+        
+        NSLog(@"%@",[NSString stringWithFormat:@"%i",Distance.intValue]);
+        
+        if (aCD.distance.intValue < 1000) {
+            cell.ExtraLabel.text = [NSString stringWithFormat:@"%@ m", Distance];
+        }
+        else {
+            Distance = [NSString stringWithFormat:@"%.1f",aCD.distance.doubleValue/1000];
+            cell.ExtraLabel.text = [NSString stringWithFormat:@"%@ km", Distance];
+        }
     }
     else if (currentArray == @"time") {
         
         ActivityCD *aCD = [alphabeticMutableArray objectAtIndex:indexPath.row];
         Title = aCD.activityName;
         
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"HH:mm"];
+        Time = [formatter stringFromDate:aCD.startDate];
+        
         //Sett the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
-
+        cell.NameLabel.hidden = YES;
+        cell.ExtraLabel.hidden = NO;
+        cell.ExtraNameLabel.hidden = NO;
+        
+        cell.ExtraLabel.text = Time;
     }
     else if (currentArray == @"selectedCategory") {
         ActivityCD *aCD = [selectedCategoryMutableArray objectAtIndex:indexPath.row];
@@ -137,13 +164,19 @@
         //Set the image
         NSString *imageName = [NSString stringWithFormat:@"catIconLarge_%@.png",aCD.category];
         cell.CategoryImage.image = [UIImage imageNamed:imageName];
+        cell.NameLabel.hidden = NO;
+        cell.ExtraLabel.hidden = YES;
+        cell.ExtraNameLabel.hidden = YES;
     }
     else {
         Title = [categoriesMutableArray objectAtIndex:indexPath.row];
     }
     
-
-    cell.NameLabel.text = Title;
+    if (cell.NameLabel.hidden == NO) {
+        cell.NameLabel.text = Title;
+    } else {
+        cell.ExtraNameLabel.text = Title;
+    }
     
     return cell;
 }
@@ -244,14 +277,14 @@
     //Remove the spinner after a  delay
     hud2.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] ;
 	hud2.mode = MBProgressHUDModeCustomView;
-	hud2.labelText = @"Activiteiten ophalen voltooid";
+	hud2.labelText = @"Klaar..";
     
     locating = YES;
     
     //Update the list
     [self updateList];
                      
-    [hud2 hide:YES afterDelay:2];
+    [hud2 hide:YES afterDelay:0.3];
     
 }
 
@@ -342,12 +375,9 @@
             hud.labelText = @"Geen activiteiten gevonden";
             
             //Remove the spinner after a  delay
-            [hud hide:YES afterDelay:2];
+            [hud hide:YES afterDelay:1];
             
         }
-
-        
-       
         
         backButton.hidden = NO;
     }
@@ -376,9 +406,10 @@
     
     for(ActivityCD *aCD in fetchedObjects){
 
+#warning LAT and LON are switched!
         //Update each and every one of them
-        CLLocationDegrees lat = [aCD.latitude doubleValue];
-        CLLocationDegrees lon = [aCD.longitude doubleValue];
+        CLLocationDegrees lon = [aCD.latitude doubleValue];
+        CLLocationDegrees lat = [aCD.longitude doubleValue];
 
         CLLocation *aLocation = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
         
@@ -392,7 +423,7 @@
     
     //Update the list
     // Load all activities in an array
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:NO selector:@selector(compare:)];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES selector:@selector(compare:)];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest error:&error];
     

@@ -54,7 +54,7 @@
     self.description.text = [activity.activityDescription copy];
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"d MMMM"];
     
     NSDateFormatter *timeFormatter=[[NSDateFormatter alloc] init];
     [timeFormatter setDateFormat:@"HH:mm"];
